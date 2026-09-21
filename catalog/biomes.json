@@ -1,0 +1,728 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "items": [
+    {
+      "facts": {
+        "archetype": "Sandy",
+        "biome": "Acidic Badlands",
+        "internal_name": "sandy_acid",
+        "landscape": "sandy_acid_Landscape.png"
+      },
+      "id": "biome_acidic_badlands",
+      "name": "Acidic Badlands",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Acidic Badlands",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133122,
+          "revision_timestamp": "2026-08-30T07:40:02Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Acidic_Badlands"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Megastructure",
+        "biome": "Automaton Megafactory",
+        "internal_name": "no_name",
+        "landscape": "Megafactory Landscape Header.png"
+      },
+      "id": "biome_automaton_megafactory",
+      "name": "Automaton Megafactory",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Automaton Megafactory",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135295,
+          "revision_timestamp": "2026-09-13T12:04:18Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Automaton_Megafactory"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Forest",
+        "biome": "Autumn Forest",
+        "internal_name": "deciduous_fall",
+        "landscape": "Autumn Forest Biome Header.png"
+      },
+      "id": "biome_autumn_forest",
+      "name": "Autumn Forest",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Autumn Forest",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130694,
+          "revision_timestamp": "2026-08-19T17:08:52Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Autumn_Forest"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Swamp",
+        "biome": "Basic Swamp",
+        "internal_name": "swamp_base",
+        "landscape": "swamp_base_Landscape.png"
+      },
+      "id": "biome_basic_swamp",
+      "name": "Basic Swamp",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Basic Swamp",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135342,
+          "revision_timestamp": "2026-09-13T21:12:02Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Basic_Swamp"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Oasis",
+        "biome": "Bleak Oasis",
+        "internal_name": "oasis_bleak",
+        "landscape": "Bleak Oasis Biome Header.png"
+      },
+      "id": "biome_bleak_oasis",
+      "name": "Bleak Oasis",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Bleak Oasis",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130693,
+          "revision_timestamp": "2026-08-19T17:08:51Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Bleak_Oasis"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Arctic",
+        "biome": "Boneyard",
+        "internal_name": "arctic_glacier_coldrocky",
+        "landscape": "arctic_glacier_coldrocky_Landscape.png"
+      },
+      "id": "biome_boneyard",
+      "name": "Boneyard",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Boneyard",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130667,
+          "revision_timestamp": "2026-08-19T17:04:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Boneyard"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Megastructure",
+        "biome": "Colonies",
+        "internal_name": "no_name",
+        "landscape": "Colony Landscape Header.png"
+      },
+      "id": "biome_colonies",
+      "name": "Colonies",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Colonies",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130659,
+          "revision_timestamp": "2026-08-19T17:03:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Colonies"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Forest",
+        "biome": "Crimson Forest",
+        "internal_name": "deciduous_crimson",
+        "landscape": "Crimson Forest Biome Header.png"
+      },
+      "id": "biome_crimson_forest",
+      "name": "Crimson Forest",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Crimson Forest",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132392,
+          "revision_timestamp": "2026-08-23T23:24:58Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Crimson_Forest"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Arctic",
+        "biome": "Cyberstan Megafactory",
+        "internal_name": "no_name",
+        "landscape": "Cyberstan landscape.png"
+      },
+      "id": "biome_cyberstan_megafactory",
+      "name": "Cyberstan Megafactory",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Cyberstan Megafactory",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130691,
+          "revision_timestamp": "2026-08-19T17:08:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Cyberstan_Megafactory"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Primordial",
+        "biome": "Deadlands",
+        "internal_name": "primordial_dead",
+        "landscape": "primordial_dead_Landscape.png"
+      },
+      "id": "biome_deadlands",
+      "name": "Deadlands",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Deadlands",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134903,
+          "revision_timestamp": "2026-09-09T21:29:42Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Deadlands"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Forest",
+        "biome": "Deciduous Forest",
+        "internal_name": "deciduous_base",
+        "landscape": "Deciduous Grove Biome Header.png"
+      },
+      "id": "biome_deciduous_forest",
+      "name": "Deciduous Forest",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Deciduous Forest",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134888,
+          "revision_timestamp": "2026-09-09T19:53:42Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Deciduous_Forest"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Sandy",
+        "biome": "Desert Cliffs",
+        "internal_name": "sandy_spiky",
+        "landscape": "sandy_spiky_Landscape.png"
+      },
+      "id": "biome_desert_cliffs",
+      "name": "Desert Cliffs",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Desert Cliffs",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130679,
+          "revision_timestamp": "2026-08-19T17:06:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Desert_Cliffs"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Sandy",
+        "biome": "Desert Dunes",
+        "internal_name": "sandy_base",
+        "landscape": "sandy_base_Landscape.png"
+      },
+      "id": "biome_desert_dunes",
+      "name": "Desert Dunes",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Desert Dunes",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130663,
+          "revision_timestamp": "2026-08-19T17:03:51Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Desert_Dunes"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Oasis",
+        "biome": "Desert Oasis",
+        "internal_name": "oasis_base",
+        "landscape": "Tropical Oasis Biome Header.png"
+      },
+      "id": "biome_desert_oasis",
+      "name": "Desert Oasis",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Desert Oasis",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130710,
+          "revision_timestamp": "2026-08-19T17:35:23Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Desert_Oasis"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Primordial",
+        "biome": "Ethereal Jungle",
+        "internal_name": "primordial_purple",
+        "landscape": "primordial_purple_Landscape.png"
+      },
+      "id": "biome_ethereal_jungle",
+      "name": "Ethereal Jungle",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Ethereal Jungle",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134820,
+          "revision_timestamp": "2026-09-08T22:29:08Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Ethereal_Jungle"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Swamp",
+        "biome": "Haunted Swamp",
+        "internal_name": "swamp_haunted",
+        "landscape": "swamp_haunted_Landscape.png"
+      },
+      "id": "biome_haunted_swamp",
+      "name": "Haunted Swamp",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Haunted Swamp",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 131949,
+          "revision_timestamp": "2026-08-22T10:20:38Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Haunted_Swamp"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Special",
+        "biome": "Hive World",
+        "internal_name": "bug_hiveworld",
+        "landscape": "Hive World Landscape.png"
+      },
+      "id": "biome_hive_world",
+      "name": "Hive World",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Hive World",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130664,
+          "revision_timestamp": "2026-08-19T17:04:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Hive_World"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Arctic",
+        "biome": "Icy Glaciers",
+        "internal_name": "arctic_glacier_base",
+        "landscape": "arctic_glacier_base_Landscape.png"
+      },
+      "id": "biome_icy_glaciers",
+      "name": "Icy Glaciers",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Icy Glaciers",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130662,
+          "revision_timestamp": "2026-08-19T17:03:41Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Icy_Glaciers"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Moor",
+        "biome": "Ionic Crimson",
+        "internal_name": "moor_red",
+        "landscape": "moor_red_Landscape.png"
+      },
+      "id": "biome_ionic_crimson",
+      "name": "Ionic Crimson",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Ionic Crimson",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130670,
+          "revision_timestamp": "2026-08-19T17:05:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Ionic_Crimson"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Primordial",
+        "biome": "Ionic Jungle",
+        "internal_name": "primordial_blue",
+        "landscape": "primordial_blue_Landscape.png"
+      },
+      "id": "biome_ionic_jungle",
+      "name": "Ionic Jungle",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Ionic Jungle",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130675,
+          "revision_timestamp": "2026-08-19T17:05:51Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Ionic_Jungle"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Special",
+        "biome": "Magma Desert",
+        "internal_name": "magma_base",
+        "landscape": "Magma Base Landscape.png"
+      },
+      "id": "biome_magma_desert",
+      "name": "Magma Desert",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Magma Desert",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130683,
+          "revision_timestamp": "2026-08-19T17:07:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Magma_Desert"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Megastructure",
+        "biome": "Metropolis",
+        "internal_name": "no_name",
+        "landscape": "Metropolis Landscape Header.png"
+      },
+      "id": "biome_metropolis",
+      "name": "Metropolis",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Metropolis",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130830,
+          "revision_timestamp": "2026-08-20T20:26:30Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Metropolis"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Sandy",
+        "biome": "Moon",
+        "internal_name": "sandy_moon",
+        "landscape": "sandy_moon_Landscape.png"
+      },
+      "id": "biome_moon",
+      "name": "Moon",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Moon",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135032,
+          "revision_timestamp": "2026-09-10T23:22:50Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Moon"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Moor",
+        "biome": "Plains",
+        "internal_name": "moor_baseplanet",
+        "landscape": "moor_baseplanet_Landscape.png"
+      },
+      "id": "biome_plains",
+      "name": "Plains",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Plains",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130660,
+          "revision_timestamp": "2026-08-19T17:03:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Plains"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Sandy",
+        "biome": "Rocky Canyons",
+        "internal_name": "sandy_mineral",
+        "landscape": "sandy_mineral_Landscape.png"
+      },
+      "id": "biome_rocky_canyons",
+      "name": "Rocky Canyons",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Rocky Canyons",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133141,
+          "revision_timestamp": "2026-08-30T10:32:22Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Rocky_Canyons"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Moor",
+        "biome": "Scorched Moor",
+        "internal_name": "moor_arid",
+        "landscape": "moor_arid_Landscape.png"
+      },
+      "id": "biome_scorched_moor",
+      "name": "Scorched Moor",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Scorched Moor",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130676,
+          "revision_timestamp": "2026-08-19T17:06:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Scorched_Moor"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Special",
+        "biome": "Super Earth Metropolis",
+        "landscape": "Super_Earth_landscape.png"
+      },
+      "id": "biome_super_earth_metropolis",
+      "name": "Super Earth Metropolis",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Super Earth Metropolis",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130684,
+          "revision_timestamp": "2026-08-19T17:07:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Super_Earth_Metropolis"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Primordial",
+        "biome": "Supercolony",
+        "internal_name": "primordial_bug",
+        "landscape": "Supercolony_Landscape.png"
+      },
+      "id": "biome_supercolony",
+      "name": "Supercolony",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Supercolony",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130671,
+          "revision_timestamp": "2026-08-19T17:05:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Supercolony"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Moor",
+        "biome": "Tundra",
+        "internal_name": "moor_tundra",
+        "landscape": "moor_tundra_Landscape.png"
+      },
+      "id": "biome_tundra",
+      "name": "Tundra",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Tundra",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130673,
+          "revision_timestamp": "2026-08-19T17:05:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Tundra"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Special",
+        "biome": "Void Source Forest",
+        "internal_name": "rift_active",
+        "landscape": "Rift active landscape.png"
+      },
+      "id": "biome_void_source_forest",
+      "name": "Void Source Forest",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Void Forest",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130695,
+          "revision_timestamp": "2026-08-19T17:09:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Void_Forest"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "archetype": "Primordial",
+        "biome": "Volcanic Jungle",
+        "internal_name": "primordial_base",
+        "landscape": "primordial_base_Landscape.png"
+      },
+      "id": "biome_volcanic_jungle",
+      "name": "Volcanic Jungle",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Volcanic Jungle",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130665,
+          "revision_timestamp": "2026-08-19T17:04:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Volcanic_Jungle"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}

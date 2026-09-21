@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "rules_version": "0.1.0",
+  "rules": [
+    {
+      "id": "immediate_loadout_requires_unlocked",
+      "description": "An immediately usable loadout may contain only items explicitly marked unlocked for the selected character.",
+      "origin": "project_policy",
+      "enabled": true
+    },
+    {
+      "id": "locked_may_be_progression_target",
+      "description": "Locked items may be discussed as future progression targets, but not as currently usable equipment.",
+      "origin": "project_policy",
+      "enabled": true
+    },
+    {
+      "id": "personal_observation_is_scoped",
+      "description": "A player's gameplay observation applies only within its recorded context and is not a universal game fact.",
+      "origin": "project_policy",
+      "enabled": true
+    }
+  ]
+}

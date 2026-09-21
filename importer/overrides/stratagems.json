@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "stratagem_a_mg_43_machine_gun_sentry",
+      "planner_tags": [
+        {"tag": "defensive_utility", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "medium"},
+        {"tag": "stationary", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "high"}
+      ]
+    },
+    {
+      "id": "stratagem_eagle_airstrike",
+      "planner_tags": [
+        {"tag": "area_denial", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "low"},
+        {"tag": "structure_destroy", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "medium"}
+      ]
+    },
+    {
+      "id": "stratagem_orbital_precision_strike",
+      "planner_tags": [
+        {"tag": "anti_tank", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "medium"},
+        {"tag": "precision", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "medium"}
+      ]
+    }
+  ]
+}

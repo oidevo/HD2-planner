@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "id": "mg_43_machine_gun",
+      "planner_tags": [
+        {"tag": "sustained_output", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "medium"},
+        {"tag": "medium_armor_damage", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "medium"}
+      ]
+    },
+    {
+      "id": "sg_225_breaker",
+      "planner_tags": [
+        {"tag": "close_range", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "medium"},
+        {"tag": "burst_output", "origin": "manual_foundation_seed", "provenance_kind": "manually_curated", "confidence": "low"}
+      ]
+    }
+  ]
+}

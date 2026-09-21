@@ -1,0 +1,66 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "files": {
+    "armor": {
+      "hash": "sha256:8a51ef097e7cfa25a300d96d0983a20f53ce5bf90317460700bcc801c874091e",
+      "path": "armor.json"
+    },
+    "armor_passives": {
+      "hash": "sha256:8e60a0a6bc807c3f6d3a4980fc1118981d6722dda7abf6f5687ad4eecb5faacf",
+      "path": "armor_passives.json"
+    },
+    "attachments": {
+      "hash": "sha256:9a347e5d861d5e5c79f83031ebb8023b84fdaef3e5ca6bc124d740837e13f26c",
+      "path": "attachments.json"
+    },
+    "biomes": {
+      "hash": "sha256:bb70c44747a8d10c03293f88b6e9c69f54c664f34f39212b20d2824bedd8d353",
+      "path": "biomes.json"
+    },
+    "boosters": {
+      "hash": "sha256:6fa103fe3b15229d9fc75212492d708cd733dd954de5e9014aa0b5931e72ee7e",
+      "path": "boosters.json"
+    },
+    "enemies": {
+      "hash": "sha256:1ad70b0bc95f8ab47c2fa172f648884c8f80653c0d42c1f086559fe7b6ee735e",
+      "path": "enemies.json"
+    },
+    "grenades": {
+      "hash": "sha256:8f8a2c1ed23c01360749d1b86ebc7cd87048f1d7a38fc09b3dbd7aac719f6e8a",
+      "path": "grenades.json"
+    },
+    "mission_types": {
+      "hash": "sha256:f5a7f79da1449fe5502b817eb8ee8725741388c606baf376f622c336b7c87c84",
+      "path": "mission_types.json"
+    },
+    "ship_modules": {
+      "hash": "sha256:0884979d966e3820b0bc159cdde82cd592b1d0c6a54c8a868320425ec3c9228b",
+      "path": "ship_modules.json"
+    },
+    "stratagems": {
+      "hash": "sha256:d2d73133b69a76425a9bbd07c4b4ed5675e52ccb61e839daf7a8b21e25417bdd",
+      "path": "stratagems.json"
+    },
+    "warbonds": {
+      "hash": "sha256:6746e191dc647b9499f83baa9fc5c93897c076ecfb906c666ac2bf2ad8c166c7",
+      "path": "warbonds.json"
+    },
+    "weapons": {
+      "hash": "sha256:fc41077c237ac11ce1d7749cebde302de4c14695b830a4d832b533372c8e20c4",
+      "path": "weapons.json"
+    }
+  },
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "importer_version": "1.0.0",
+  "normalizer_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}

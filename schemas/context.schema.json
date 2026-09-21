@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hd2/context.schema.json",
+  "title": "Generated denormalized context snapshot",
+  "type": "object",
+  "required": ["generated_file", "catalog", "player", "character_id", "character", "preferences", "inventory", "gameplay_observations", "saved_loadouts"],
+  "properties": {"generated_file": {"type": "object", "required": ["warning", "schema_version", "generated_at", "profile_hash", "catalog_hash"]}, "catalog": {"type": "object"}, "player": {"type": "object"}, "character_id": {"type": "string"}, "character": {"type": "object"}, "preferences": {"type": "object"}, "inventory": {"type": "object"}, "gameplay_observations": {"type": "array"}, "saved_loadouts": {"type": "array"}}
+}

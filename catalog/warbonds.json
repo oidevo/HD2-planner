@@ -1,0 +1,1384 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "items": [
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 230</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2025-03-20",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 230,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "borderline_justice",
+      "name": "Borderline Justice",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Borderline Justice Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134838,
+          "revision_timestamp": "2026-09-09T02:17:18Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Borderline_Justice_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 210</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1500</span> [[Super Credits]]</span>",
+        "credit_claim": "None",
+        "date": "2026-08-12",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 0,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1500,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 210,
+          "currency": "medals"
+        },
+        "type": "Legendary"
+      },
+      "id": "castellan_s_creed",
+      "name": "Castellan's Creed",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Castellan's Creed Legendary Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135144,
+          "revision_timestamp": "2026-09-11T16:54:10Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Castellan%27s_Creed_Legendary_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 300</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2024-09-19",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 300,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "chemical_agents",
+      "name": "Chemical Agents",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Chemical Agents Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134833,
+          "revision_timestamp": "2026-09-09T02:14:19Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Chemical_Agents_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 320</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2025-07-17",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 320,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "control_group",
+      "name": "Control Group",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Control Group Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134841,
+          "revision_timestamp": "2026-09-09T02:18:53Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Control_Group_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 230</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2024-03-14",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 230,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "cutting_edge",
+      "name": "Cutting Edge",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Cutting Edge Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130648,
+          "revision_timestamp": "2026-08-19T17:01:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Cutting_Edge_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 230</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2024-04-11",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 230,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "democratic_detonation",
+      "name": "Democratic Detonation",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Democratic Detonation Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130634,
+          "revision_timestamp": "2026-08-19T16:59:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Democratic_Detonation_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 270</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2025-09-04",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 270,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "dust_devils",
+      "name": "Dust Devils",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Dust Devils Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134843,
+          "revision_timestamp": "2026-09-09T02:19:59Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Dust_Devils_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 370</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2026-03-17",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 370,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "entrenched_division",
+      "name": "Entrenched Division",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Entrenched Division Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134847,
+          "revision_timestamp": "2026-09-09T02:23:44Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Entrenched_Division_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 220</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2026-04-28",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 220,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "exo_experts",
+      "name": "Exo Experts",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Exo Experts Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134848,
+          "revision_timestamp": "2026-09-09T02:24:02Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Exo_Experts_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 390</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2025-06-12",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 390,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "force_of_law",
+      "name": "Force of Law",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Force of Law Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134840,
+          "revision_timestamp": "2026-09-09T02:18:10Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Force_of_Law_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 230</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2024-08-08",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 230,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "freedom_s_flame",
+      "name": "Freedom's Flame",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Freedom's Flame Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134832,
+          "revision_timestamp": "2026-09-09T02:13:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Freedom%27s_Flame_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 1,200</span> [[Medal]]s</span>",
+        "cost": "Free",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 750</span> [[Super Credits]]</span>",
+        "date": "2024-02-08",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 750,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 0,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 1200,
+          "currency": "medals"
+        },
+        "type": "Standard"
+      },
+      "id": "helldivers_mobilize",
+      "name": "Helldivers Mobilize!",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers Mobilize Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134894,
+          "revision_timestamp": "2026-09-09T20:20:06Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_Mobilize_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 230</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2025-05-15",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 230,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "masters_of_ceremony",
+      "name": "Masters of Ceremony",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Masters of Ceremony Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134839,
+          "revision_timestamp": "2026-09-09T02:17:41Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Masters_of_Ceremony_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 280</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,500</span> [[Super Credits]]</span>",
+        "credit_claim": "None",
+        "date": "2025-08-26",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 0,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1500,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 280,
+          "currency": "medals"
+        },
+        "type": "Legendary"
+      },
+      "id": "obedient_democracy_support_troopers",
+      "name": "Obedient Democracy Support Troopers",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Obedient Democracy Support Troopers Legendary Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134842,
+          "revision_timestamp": "2026-09-09T02:19:27Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Obedient_Democracy_Support_Troopers_Legendary_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 230</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2024-05-09",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 230,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "polar_patriots",
+      "name": "Polar Patriots",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Polar Patriots Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130639,
+          "revision_timestamp": "2026-08-19T16:59:51Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Polar_Patriots_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 205</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2025-12-02",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 205,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "python_commandos",
+      "name": "Python Commandos",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Python Commandos Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134844,
+          "revision_timestamp": "2026-09-09T02:20:25Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Python_Commandos_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 360</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2026-01-22",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 360,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "redacted_regiment",
+      "name": "Redacted Regiment",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Redacted Regiment Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134845,
+          "revision_timestamp": "2026-09-09T02:22:40Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Redacted_Regiment_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 175</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,500</span> [[Super Credits]]</span>",
+        "credit_claim": "None",
+        "date": "2025-12-18",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 0,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1500,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 175,
+          "currency": "medals"
+        },
+        "type": "Legendary"
+      },
+      "id": "righteous_revenants",
+      "name": "Righteous Revenants",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Righteous Revenants Legendary Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134836,
+          "revision_timestamp": "2026-09-09T02:16:13Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Righteous_Revenants_Legendary_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 230</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2025-02-06",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 230,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "servants_of_freedom",
+      "name": "Servants of Freedom",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Servants of Freedom Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134837,
+          "revision_timestamp": "2026-09-09T02:16:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Servants_of_Freedom_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 375</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2026-02-03",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 375,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "siege_breakers",
+      "name": "Siege Breakers",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Siege Breakers Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134846,
+          "revision_timestamp": "2026-09-09T02:23:07Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Siege_Breakers_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 200</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2024-02-08",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 200,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "steeled_veterans",
+      "name": "Steeled Veterans",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Steeled Veterans Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130629,
+          "revision_timestamp": "2026-08-19T16:58:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Steeled_Veterans_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 250</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2024-10-31",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 250,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "truth_enforcers",
+      "name": "Truth Enforcers",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Truth Enforcers Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135198,
+          "revision_timestamp": "2026-09-12T10:10:50Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Truth_Enforcers_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 250</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2024-12-13",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 250,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "urban_legends",
+      "name": "Urban Legends",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Urban Legends Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134835,
+          "revision_timestamp": "2026-09-09T02:15:39Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Urban_Legends_Premium_Warbond"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "included_super_credits": {
+          "from": [
+            "facts.credit_claim"
+          ],
+          "kind": "derived"
+        },
+        "purchase_cost": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "total_reward_medal_cost": {
+          "from": [
+            "facts.all_pages"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "all_pages": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 275</span> [[Medal]]s</span>",
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 1,000</span> [[Super Credits]]</span>",
+        "credit_claim": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "date": "2024-06-13",
+        "date_precision": "1",
+        "included_super_credits": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "purchase_cost": {
+          "amount": 1000,
+          "currency": "super_credits"
+        },
+        "total_reward_medal_cost": {
+          "amount": 275,
+          "currency": "medals"
+        },
+        "type": "Premium"
+      },
+      "id": "viper_commandos",
+      "name": "Viper Commandos",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Viper Commandos Premium Warbond",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134831,
+          "revision_timestamp": "2026-09-09T02:12:40Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Viper_Commandos_Premium_Warbond"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}

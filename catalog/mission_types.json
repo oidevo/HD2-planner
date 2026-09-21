@@ -1,0 +1,2742 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "items": [
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "3",
+        "min_difficulty": "2",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_activate_oil_pumps",
+      "name": "Activate Oil Pumps",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Activate Oil Pumps",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109752,
+          "revision_timestamp": "2026-04-07T15:30:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Activate_Oil_Pumps"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "20 Minutes"
+      },
+      "id": "mission_activate_tcs_station",
+      "name": "Activate TCS+ Station",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Activate TCS+ Station",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130619,
+          "revision_timestamp": "2026-08-19T16:56:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Activate_TCS%2B_Station"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "9",
+        "min_difficulty": "2",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_activate_terminid_control_system",
+      "name": "Activate Terminid Control System",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Activate Terminid Control System",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130610,
+          "revision_timestamp": "2026-08-19T16:54:59Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Activate_Terminid_Control_System"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_annex_untapped_mineral_sites",
+      "name": "Annex Untapped Mineral Sites",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Annex Untapped Mineral Sites",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130621,
+          "revision_timestamp": "2026-08-19T16:56:51Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Annex_Untapped_Mineral_Sites"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_anti_air_emplacement",
+      "name": "Anti-Air Emplacement",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Anti-Air Emplacement",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 129934,
+          "revision_timestamp": "2026-08-17T02:12:09Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Anti-Air_Emplacement"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "5",
+        "time_limit": "12 Minutes"
+      },
+      "id": "mission_blitz_destroy_bio_processors",
+      "name": "Blitz: Destroy Bio-Processors",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Blitz: Destroy Bio-Processors",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130617,
+          "revision_timestamp": "2026-08-19T16:56:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Blitz%3A_Destroy_Bio-Processors"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "12 Minutes"
+      },
+      "id": "mission_blitz_destroy_illuminate_warp_gateways",
+      "name": "Blitz: Destroy Illuminate Warp Gateways",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Blitz: Destroy Illuminate Warp Gateways",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132247,
+          "revision_timestamp": "2026-08-23T09:31:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Blitz%3A_Destroy_Illuminate_Warp_Gateways"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "12 Minutes"
+      },
+      "id": "mission_blitz_destroy_illuminate_warp_ships",
+      "name": "Blitz: Destroy Illuminate Warp Ships",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Blitz: Destroy Illuminate Warp Ships",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 122256,
+          "revision_timestamp": "2026-06-07T09:42:52Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Blitz%3A_Destroy_Illuminate_Warp_Ships"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": [
+          "Automaton",
+          "Terminid"
+        ],
+        "max_difficulty": "10",
+        "min_difficulty": [
+          "3",
+          "2"
+        ],
+        "time_limit": "12 Minutes"
+      },
+      "id": "mission_blitz_search_and_destroy",
+      "name": "Blitz: Search and Destroy",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Blitz Search And Destroy/Automaton",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 131917,
+          "revision_timestamp": "2026-08-22T06:27:59Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Blitz_Search_And_Destroy/Automaton"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "12 Minutes"
+      },
+      "id": "mission_blitz_secure_research_site",
+      "name": "Blitz: Secure Research Site",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Blitz: Secure Research Site",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109760,
+          "revision_timestamp": "2026-04-07T15:38:52Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Blitz%3A_Secure_Research_Site"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "12 Minutes"
+      },
+      "id": "mission_blitz_suppress_toxic_pollination",
+      "name": "Blitz: Suppress Toxic Pollination",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Blitz: Suppress Toxic Pollination",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 131914,
+          "revision_timestamp": "2026-08-22T05:30:25Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Blitz%3A_Suppress_Toxic_Pollination"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_chart_terminid_tunnels",
+      "name": "Chart Terminid Tunnels",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Chart Terminid Tunnels",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109761,
+          "revision_timestamp": "2026-04-07T15:39:22Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Chart_Terminid_Tunnels"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "4",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_cleanse_infested_district",
+      "name": "Cleanse Infested District",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Cleanse Infested District",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130616,
+          "revision_timestamp": "2026-08-19T16:56:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Cleanse_Infested_District"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_cognitive_disruptor",
+      "name": "Cognitive Disruptor",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Cognitive Disruptor",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 129789,
+          "revision_timestamp": "2026-08-16T10:45:06Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Cognitive_Disruptor"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_collect_gloom_infused_oil",
+      "name": "Collect Gloom-Infused Oil",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Collect Gloom-Infused Oil",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109764,
+          "revision_timestamp": "2026-04-07T15:40:52Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Collect_Gloom-Infused_Oil"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_collect_gloom_spore_readings",
+      "name": "Collect Gloom Spore Readings",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Collect Gloom Spore Readings",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109763,
+          "revision_timestamp": "2026-04-07T15:40:22Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Collect_Gloom_Spore_Readings"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_collect_meteorological_data",
+      "name": "Collect Meteorological Data",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Collect Meteorological Data",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109765,
+          "revision_timestamp": "2026-04-07T15:41:22Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Collect_Meteorological_Data"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_commando_acquire_evidence",
+      "name": "Commando: Acquire Evidence",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Commando: Acquire Evidence",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135192,
+          "revision_timestamp": "2026-09-12T08:34:48Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Commando%3A_Acquire_Evidence"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_commando_extract_intel",
+      "name": "Commando: Extract Intel",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Commando: Extract Intel",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109767,
+          "revision_timestamp": "2026-04-07T15:42:22Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Commando%3A_Extract_Intel"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_commando_secure_black_box",
+      "name": "Commando: Secure Black Box",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Commando: Secure Black Box",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 116133,
+          "revision_timestamp": "2026-04-26T10:17:08Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Commando%3A_Secure_Black_Box"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_compromise_automaton_defenses",
+      "name": "Compromise Automaton Defenses",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Compromise Automaton Defenses",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135325,
+          "revision_timestamp": "2026-09-13T18:33:39Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Compromise_Automaton_Defenses"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_conduct_geological_survey",
+      "name": "Conduct Geological Survey",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Conduct Geological Survey",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 129173,
+          "revision_timestamp": "2026-08-15T04:40:25Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Conduct_Geological_Survey"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_conduct_mobile_e_711_extraction",
+      "name": "Conduct Mobile E-711 Extraction",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Conduct Mobile E-711 Extraction",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133083,
+          "revision_timestamp": "2026-08-30T04:00:34Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Conduct_Mobile_E-711_Extraction"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_confiscate_assets",
+      "name": "Confiscate Assets",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Confiscate Assets",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135116,
+          "revision_timestamp": "2026-09-11T14:53:18Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Confiscate_Assets"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "9",
+        "min_difficulty": "1",
+        "time_limit": "12 Minutes"
+      },
+      "id": "mission_deactivate_terminid_control_system",
+      "name": "Deactivate Terminid Control System",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Deactivate Terminid Control System",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109775,
+          "revision_timestamp": "2026-04-07T15:59:49Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Deactivate_Terminid_Control_System"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_democratize_the_void",
+      "name": "Democratize the Void",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Democratize the Void",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130342,
+          "revision_timestamp": "2026-08-18T22:36:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Democratize_the_Void"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "9",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_deploy_dark_fluid",
+      "name": "Deploy Dark Fluid",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Deploy Dark Fluid",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109776,
+          "revision_timestamp": "2026-04-07T16:00:09Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Deploy_Dark_Fluid"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "5",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_destroy_command_bunkers",
+      "name": "Destroy Command Bunkers",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Destroy Command Bunkers",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 128285,
+          "revision_timestamp": "2026-08-12T14:15:46Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Destroy_Command_Bunkers"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_destroy_exospire",
+      "name": "Destroy Exospire",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Destroy Exospire",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135317,
+          "revision_timestamp": "2026-09-13T17:59:15Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Destroy_Exospire"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "5",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_destroy_gazer_spire",
+      "name": "Destroy Gazer Spire",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Destroy Gazer Spire",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135314,
+          "revision_timestamp": "2026-09-13T17:53:35Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Destroy_Gazer_Spire"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "3",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_destroy_harvesters",
+      "name": "Destroy Harvesters",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Destroy Harvesters",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109779,
+          "revision_timestamp": "2026-04-07T16:01:09Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Destroy_Harvesters"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_destroy_high_value_target",
+      "name": "Destroy High-Value Target",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Destroy High-Value Target",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 120277,
+          "revision_timestamp": "2026-05-14T13:51:41Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Destroy_High-Value_Target"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_destroy_rogue_research_station",
+      "name": "Destroy Rogue Research Station",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Destroy Rogue Research Station",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 122609,
+          "revision_timestamp": "2026-06-10T17:34:06Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Destroy_Rogue_Research_Station"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_destroy_spore_lung",
+      "name": "Destroy Spore Lung",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Destroy Spore Lung",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 121705,
+          "revision_timestamp": "2026-06-03T10:13:02Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Destroy_Spore_Lung"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "3",
+        "min_difficulty": "2",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_destroy_transmission_network",
+      "name": "Destroy Transmission Network",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Destroy Transmission Network",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 112292,
+          "revision_timestamp": "2026-04-16T17:42:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Destroy_Transmission_Network"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_detector_tower",
+      "name": "Detector Tower",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Detector Tower",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 122612,
+          "revision_timestamp": "2026-06-10T17:36:09Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Detector_Tower"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Super Earth",
+        "time_limit": "none"
+      },
+      "id": "mission_earn_your_helldiver_cape",
+      "name": "Earn Your Helldiver Cape",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Earn Your Helldiver Cape",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133723,
+          "revision_timestamp": "2026-09-02T07:31:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Earn_Your_Helldiver_Cape"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "6",
+        "min_difficulty": "4",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_eliminate_automaton_factory_strider",
+      "name": "Eliminate Automaton Factory Strider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eliminate Automaton Factory Strider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135214,
+          "revision_timestamp": "2026-09-12T16:29:47Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eliminate_Automaton_Factory_Strider"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "3",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_eliminate_automaton_hulks",
+      "name": "Eliminate Automaton Hulks",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eliminate Automaton Hulks",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109784,
+          "revision_timestamp": "2026-04-07T16:02:49Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eliminate_Automaton_Hulks"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "5",
+        "min_difficulty": "4",
+        "time_limit": "40 minutes"
+      },
+      "id": "mission_eliminate_bile_titans",
+      "name": "Eliminate Bile Titans",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eliminate Bile Titans",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109785,
+          "revision_timestamp": "2026-04-07T16:03:09Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eliminate_Bile_Titans"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "2",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_eliminate_brood_commanders",
+      "name": "Eliminate Brood Commanders",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eliminate Brood Commanders",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109786,
+          "revision_timestamp": "2026-04-07T16:03:29Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eliminate_Brood_Commanders"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "3",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_eliminate_chargers",
+      "name": "Eliminate Chargers",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eliminate Chargers",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 123179,
+          "revision_timestamp": "2026-06-17T22:48:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eliminate_Chargers"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "2",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_eliminate_devastators",
+      "name": "Eliminate Devastators",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eliminate Devastators",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109788,
+          "revision_timestamp": "2026-04-07T16:04:00Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eliminate_Devastators"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "5",
+        "min_difficulty": "5",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_eliminate_impaler",
+      "name": "Eliminate Impaler",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eliminate Impaler",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109789,
+          "revision_timestamp": "2026-04-07T16:04:12Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eliminate_Impaler"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_eliminate_overseers",
+      "name": "Eliminate Overseers",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eliminate Overseers",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 129278,
+          "revision_timestamp": "2026-08-15T15:47:23Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eliminate_Overseers"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_emergency_evacuation",
+      "name": "Emergency Evacuation",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Emergency Evacuation",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109790,
+          "revision_timestamp": "2026-04-07T16:04:23Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Emergency_Evacuation"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "4",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_enable_oil_extraction",
+      "name": "Enable Oil Extraction",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Enable Oil Extraction",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130615,
+          "revision_timestamp": "2026-08-19T16:55:51Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Enable_Oil_Extraction"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_enemy_bio_processors",
+      "name": "Enemy Bio-Processors",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Enemy Bio-Processors",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130552,
+          "revision_timestamp": "2026-08-19T16:43:47Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Enemy_Bio-Processors"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "2",
+        "time_limit": "15 Minutes"
+      },
+      "id": "mission_eradicate_automaton_forces",
+      "name": "Eradicate Automaton Forces",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eradicate Automaton Forces",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126488,
+          "revision_timestamp": "2026-07-22T15:44:39Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eradicate_Automaton_Forces"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "15 Minutes"
+      },
+      "id": "mission_eradicate_illuminate_forces",
+      "name": "Eradicate Illuminate Forces",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eradicate Illuminate Forces",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132916,
+          "revision_timestamp": "2026-08-29T08:31:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eradicate_Illuminate_Forces"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "2",
+        "time_limit": "15 Minutes"
+      },
+      "id": "mission_eradicate_terminid_swarm",
+      "name": "Eradicate Terminid Swarm",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Eradicate Terminid Swarm",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126490,
+          "revision_timestamp": "2026-07-22T15:46:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Eradicate_Terminid_Swarm"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_erase_terrorist_memorials",
+      "name": "Erase Terrorist Memorials",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Erase Terrorist Memorials",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134868,
+          "revision_timestamp": "2026-09-09T12:56:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Erase_Terrorist_Memorials"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_evacuate_colonists",
+      "name": "Evacuate Colonists",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Evacuate Colonists",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109794,
+          "revision_timestamp": "2026-04-07T16:05:10Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Evacuate_Colonists"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "10",
+        "min_difficulty": "5",
+        "time_limit": "20 Minutes"
+      },
+      "id": "mission_evacuate_high_value_assets",
+      "name": "Evacuate High-Value Assets",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Evacuate High-Value Assets",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135407,
+          "revision_timestamp": "2026-09-15T05:05:07Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Evacuate_High-Value_Assets"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_extract_anomalous_material",
+      "name": "Extract Anomalous Material",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Extract Anomalous Material",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 131913,
+          "revision_timestamp": "2026-08-22T05:29:26Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Extract_Anomalous_Material"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_extract_e_711",
+      "name": "Extract E-711",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Extract E-711",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 129138,
+          "revision_timestamp": "2026-08-14T23:12:33Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Extract_E-711"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_extract_research_probe_data",
+      "name": "Extract Research Probe Data",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Extract Research Probe Data",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109797,
+          "revision_timestamp": "2026-04-07T16:05:44Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Extract_Research_Probe_Data"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_free_colony",
+      "name": "Free Colony",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Free Colony",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 128297,
+          "revision_timestamp": "2026-08-12T14:27:08Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Free_Colony"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_gunship_facility",
+      "name": "Gunship Facility",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Gunship Facility",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127998,
+          "revision_timestamp": "2026-08-10T15:38:32Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Gunship_Facility"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "4",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_halt_cyborg_production",
+      "name": "Halt Cyborg Production",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Halt Cyborg Production",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130623,
+          "revision_timestamp": "2026-08-19T16:57:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Halt_Cyborg_Production"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_infiltrate_illuminate_lair",
+      "name": "Infiltrate Illuminate Lair",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Infiltrate Illuminate Lair",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135190,
+          "revision_timestamp": "2026-09-12T06:49:09Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Infiltrate_Illuminate_Lair"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_intercept_convoy",
+      "name": "Intercept Convoy",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Intercept Convoy",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127782,
+          "revision_timestamp": "2026-08-06T10:50:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Intercept_Convoy"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_launch_icbm",
+      "name": "Launch ICBM",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Launch ICBM",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127477,
+          "revision_timestamp": "2026-08-02T08:09:48Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Launch_ICBM"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_mobile_radar",
+      "name": "Mobile Radar",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Mobile Radar",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127485,
+          "revision_timestamp": "2026-08-02T08:17:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Mobile_Radar"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_mortar_emplacement",
+      "name": "Mortar Emplacement",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Mortar Emplacement",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 129937,
+          "revision_timestamp": "2026-08-17T02:22:12Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Mortar_Emplacement"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "4",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_neutralize_ground_to_orbit_defenses",
+      "name": "Neutralize Ground-to-Orbit Defenses",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Neutralize Ground-to-Orbit Defenses",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109801,
+          "revision_timestamp": "2026-04-07T16:06:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Neutralize_Ground-to-Orbit_Defenses"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "4",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_nuke_nursery",
+      "name": "Nuke Nursery",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Nuke Nursery",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130609,
+          "revision_timestamp": "2026-08-19T16:54:49Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Nuke_Nursery"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "2",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_purge_hatcheries",
+      "name": "Purge Hatcheries",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Purge Hatcheries",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 122613,
+          "revision_timestamp": "2026-06-10T17:36:17Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Purge_Hatcheries"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_radar_station",
+      "name": "Radar Station",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "LiDAR Station",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134358,
+          "revision_timestamp": "2026-09-06T16:02:20Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/LiDAR_Station"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "15 Minutes"
+      },
+      "id": "mission_rapid_acquisition",
+      "name": "Rapid Acquisition",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Rapid Acquisition",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 129567,
+          "revision_timestamp": "2026-08-15T19:11:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Rapid_Acquisition"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_raze_strategic_infrastructure",
+      "name": "Raze Strategic Infrastructure",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Raze Strategic Infrastructure",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 110563,
+          "revision_timestamp": "2026-04-12T04:04:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Raze_Strategic_Infrastructure"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_recover_scientific_specimen",
+      "name": "Recover Scientific Specimen",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Recover Scientific Specimen",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133380,
+          "revision_timestamp": "2026-09-01T09:15:20Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Recover_Scientific_Specimen"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_recover_sssd",
+      "name": "Recover SSSD",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Recover SSSD",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 112270,
+          "revision_timestamp": "2026-04-16T17:36:19Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Recover_SSSD"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_reinforcement_pods",
+      "name": "Reinforcement Pods",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Reinforcement Pods",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130372,
+          "revision_timestamp": "2026-08-19T00:25:12Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Reinforcement_Pods"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "20 Minutes"
+      },
+      "id": "mission_repel_invasion_fleet",
+      "name": "Repel Invasion Fleet",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Repel Invasion Fleet",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133869,
+          "revision_timestamp": "2026-09-03T20:28:29Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Repel_Invasion_Fleet"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_restart_pumps",
+      "name": "Restart Pumps",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Restart Pumps",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109806,
+          "revision_timestamp": "2026-04-07T16:07:29Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Restart_Pumps"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminid",
+        "faction_id": "terminids",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_restore_air_quality",
+      "name": "Restore Air Quality",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Restore Air Quality",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130614,
+          "revision_timestamp": "2026-08-19T16:55:41Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Restore_Air_Quality"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "9",
+        "min_difficulty": "1",
+        "time_limit": "15 Minutes"
+      },
+      "id": "mission_retrieve_essential_personnel",
+      "name": "Retrieve Essential Personnel",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Retrieve Essential Personnel",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 124466,
+          "revision_timestamp": "2026-06-24T12:46:36Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Retrieve_Essential_Personnel"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_retrieve_mutant_larva",
+      "name": "Retrieve Mutant Larva",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Retrieve Mutant Larva",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 123185,
+          "revision_timestamp": "2026-06-17T23:07:47Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Retrieve_Mutant_Larva"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_retrieve_recon_craft_intel",
+      "name": "Retrieve Recon Craft Intel",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Retrieve Recon Craft Intel",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109809,
+          "revision_timestamp": "2026-04-07T16:08:03Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Retrieve_Recon_Craft_Intel"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_retrieve_valuable_data",
+      "name": "Retrieve Valuable Data",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Retrieve Valuable Data",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 128298,
+          "revision_timestamp": "2026-08-12T14:31:13Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Retrieve_Valuable_Data"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "3",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_sabotage_air_base",
+      "name": "Sabotage Air Base",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Sabotage Air Base",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 129990,
+          "revision_timestamp": "2026-08-17T14:26:53Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Sabotage_Air_Base"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_sabotage_orgo_plasma_synthesis",
+      "name": "Sabotage Orgo-Plasma Synthesis",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Sabotage Orgo-Plasma Synthesis",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130622,
+          "revision_timestamp": "2026-08-19T16:57:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Sabotage_Orgo-Plasma_Synthesis"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_sabotage_supply_bases",
+      "name": "Sabotage Supply Bases",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Sabotage Supply Bases",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 128284,
+          "revision_timestamp": "2026-08-12T14:13:55Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Sabotage_Supply_Bases"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_seaf_artillery",
+      "name": "SEAF Artillery",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "SEAF Artillery",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134859,
+          "revision_timestamp": "2026-09-09T04:45:08Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/SEAF_Artillery"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_seaf_sam_site",
+      "name": "SEAF SAM Site",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "SEAF SAM Site",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132216,
+          "revision_timestamp": "2026-08-23T05:49:58Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/SEAF_SAM_Site"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_secondary_extraction_zone",
+      "name": "Secondary Extraction Zone",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Secondary Extraction Zone",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130401,
+          "revision_timestamp": "2026-08-19T07:03:07Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Secondary_Extraction_Zone"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automaton",
+        "faction_id": "automatons",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_seize_industrial_complex",
+      "name": "Seize Industrial Complex",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Seize Industrial Complex",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130612,
+          "revision_timestamp": "2026-08-19T16:55:19Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Seize_Industrial_Complex"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_shrieker_nest",
+      "name": "Shrieker Nest",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Shrieker Nest",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135292,
+          "revision_timestamp": "2026-09-13T10:28:35Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Shrieker_Nest"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_spore_spewer",
+      "name": "Spore Spewer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Spore Spewer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 112267,
+          "revision_timestamp": "2026-04-16T17:35:33Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Spore_Spewer"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_spread_democracy",
+      "name": "Spread Democracy",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Spread Democracy",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134275,
+          "revision_timestamp": "2026-09-06T10:15:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Spread_Democracy"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_stalker_lair",
+      "name": "Stalker Lair",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Stalker Lair",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 119055,
+          "revision_timestamp": "2026-05-01T20:14:46Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Stalker_Lair"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "2",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_start_fuel_pumps",
+      "name": "Start Fuel Pumps",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Start Fuel Pumps",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 109751,
+          "revision_timestamp": "2026-04-07T15:06:18Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Start_Fuel_Pumps"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "mission_stratagem_jammer",
+      "name": "Stratagem Jammer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Stratagem Jammer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 112301,
+          "revision_timestamp": "2026-04-16T17:45:15Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Stratagem_Jammer"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "max_difficulty": "10",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_take_down_overship",
+      "name": "Take Down Overship",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Take Down Overship",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130608,
+          "revision_timestamp": "2026-08-19T16:54:39Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Take_Down_Overship"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "2",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_terminate_illegal_broadcast",
+      "name": "Terminate Illegal Broadcast",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Terminate Illegal Broadcast",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 122608,
+          "revision_timestamp": "2026-06-10T17:33:00Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Terminate_Illegal_Broadcast"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Any",
+        "faction_id": "any",
+        "max_difficulty": "2",
+        "min_difficulty": "1",
+        "time_limit": "40 Minutes"
+      },
+      "id": "mission_upload_escape_pod_data",
+      "name": "Upload Escape Pod Data",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Upload Escape Pod Data",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 119163,
+          "revision_timestamp": "2026-05-02T22:04:16Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Upload_Escape_Pod_Data"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}

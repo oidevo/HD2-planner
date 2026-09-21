@@ -1,0 +1,55 @@
+{
+  "fixture_version": "1.0.0",
+  "source_catalog_version": "2026.09.21.2",
+  "review_status": "explicitly_reviewed",
+  "notes": "A deterministic representative slice, not a replacement catalog. Expected values include only normalized facts supported by the accepted source snapshot.",
+  "equipment": {
+    "primaries": [
+      {"id": "ar_23_liberator", "expected": {"category": "primary", "armor_penetration": "light"}},
+      {"id": "sg_225_breaker", "expected": {"category": "primary", "warbond_id": "helldivers_mobilize", "warbond_page": 4}},
+      {"id": "r_63cs_diligence_counter_sniper", "expected": {"category": "primary", "armor_penetration": "medium"}}
+    ],
+    "secondaries": [
+      {"id": "p_2_peacemaker", "expected": {"category": "secondary", "armor_penetration": "light"}},
+      {"id": "p_4_senator", "expected": {"category": "secondary", "armor_penetration": "heavy"}},
+      {"id": "gp_31_grenade_pistol", "expected": {"category": "secondary", "warbond_id": "democratic_detonation"}}
+    ],
+    "grenades": [
+      {"id": "g_12_high_explosive", "expected": {"damage_types": ["explosion"]}},
+      {"id": "g_123_thermite", "expected": {"damage_types": ["fire", "explosion"]}},
+      {"id": "g_23_stun", "expected": {"warbond_id": "cutting_edge", "warbond_page": 2}}
+    ]
+  },
+  "stratagems": [
+    {"id": "stratagem_ac_8_autocannon", "roles": ["backpack_support_weapon"], "expected": {"player_equippable": true, "support_weapon_id": "ac_8_autocannon", "occupies_backpack_slot": true}},
+    {"id": "stratagem_mg_43_machine_gun", "roles": ["non_backpack_support_weapon"], "expected": {"player_equippable": true, "support_weapon_id": "mg_43_machine_gun", "armor_penetration": "medium"}},
+    {"id": "stratagem_eat_17_expendable_anti_tank", "roles": ["anti_tank", "non_backpack_support_weapon"], "expected": {"player_equippable": true, "anti_tank": true}},
+    {"id": "stratagem_eagle_airstrike", "roles": ["eagle"], "expected": {"player_equippable": true, "category": "eagle"}},
+    {"id": "stratagem_orbital_precision_strike", "roles": ["orbital", "anti_tank"], "expected": {"player_equippable": true, "category": "orbital", "anti_tank": true}},
+    {"id": "stratagem_a_mg_43_machine_gun_sentry", "roles": ["sentry"], "expected": {"player_equippable": true, "category": "sentry"}},
+    {"id": "stratagem_lift_850_jump_pack", "roles": ["utility", "backpack"], "expected": {"player_equippable": true, "category": "backpack", "occupies_backpack_slot": true}}
+  ],
+  "enemies": {
+    "terminids": ["enemy_scavenger", "enemy_charger", "enemy_bile_titan"],
+    "automatons": ["enemy_trooper", "enemy_hulk_bruiser", "enemy_factory_strider"],
+    "illuminate": ["enemy_voteless", "enemy_harvester", "enemy_leviathan"]
+  },
+  "missions": [
+    {"id": "mission_eradicate_terminid_swarm", "expected": {"faction_id": "terminids", "time_limit": "15 Minutes"}},
+    {"id": "mission_destroy_command_bunkers", "expected": {"faction_id": "automatons", "time_limit": "40 Minutes"}},
+    {"id": "mission_take_down_overship", "expected": {"faction_id": "illuminate", "time_limit": "40 Minutes"}},
+    {"id": "mission_launch_icbm", "expected": {"faction_id": "any", "time_limit": "40 Minutes"}}
+  ],
+  "warbond_progression": {
+    "warbond_id": "steeled_veterans",
+    "purchase_cost": {"currency": "super_credits", "amount": 1000},
+    "page_unlock_requirements_available": false,
+    "reward_dependencies_available": false,
+    "representative_rewards": [
+      {"id": "p_4_senator", "page": 1, "medal_cost": 15},
+      {"id": "ar_23c_liberator_concussive", "page": 1, "medal_cost": 20},
+      {"id": "sg_225ie_breaker_incendiary", "page": 2, "medal_cost": 60},
+      {"id": "jar_5_dominator", "page": 3, "medal_cost": 80}
+    ]
+  }
+}

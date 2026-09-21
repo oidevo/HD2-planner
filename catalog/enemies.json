@@ -1,0 +1,3240 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "items": [
+    {
+      "facts": {
+        "faction": "Cyborg Legion",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_agitator",
+      "name": "Agitator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Agitator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134992,
+          "revision_timestamp": "2026-09-10T13:05:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Agitator"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "1,000",
+        "min_difficulty": "[[File:Impossible_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Impossible]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_alpha_commander",
+      "name": "Alpha Commander",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Alpha Commander",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135089,
+          "revision_timestamp": "2026-09-11T14:35:42Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Alpha_Commander"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "325",
+        "min_difficulty": "[[File:Impossible_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Impossible]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_alpha_warrior",
+      "name": "Alpha Warrior",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Alpha Warrior",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135084,
+          "revision_timestamp": "2026-09-11T14:33:50Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Alpha_Warrior"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "4,000 (Hull Main) <br> 2,100 (Turret Main)",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_annihilator_tank",
+      "name": "Annihilator Tank",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Annihilator Tank",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135129,
+          "revision_timestamp": "2026-09-11T15:12:20Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Annihilator_Tank"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "300",
+        "min_difficulty": "4 - Medium"
+      },
+      "id": "enemy_apprentice",
+      "name": "Apprentice",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Apprentice",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127227,
+          "revision_timestamp": "2026-07-31T03:25:29Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AApprentice"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_assault_raider",
+      "name": "Assault Raider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Assault Raider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135114,
+          "revision_timestamp": "2026-09-11T14:51:43Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Assault_Raider"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "4,000 (Main)<br> 2,100 (Turret)",
+        "min_difficulty": "[[File:Suicide_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Suicide Mission]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_barrager_tank",
+      "name": "Barrager Tank",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Barrager Tank",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135332,
+          "revision_timestamp": "2026-09-13T19:07:45Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Barrager_Tank"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Bugs",
+        "fire_mult": "0",
+        "health": "3,200",
+        "min_difficulty": "8 - Very Hard"
+      },
+      "id": "enemy_behemoth",
+      "name": "Behemoth",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Behemoth",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127207,
+          "revision_timestamp": "2026-07-30T21:45:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3ABehemoth"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": [
+          "Automatons",
+          "Cyborgs"
+        ],
+        "fire_mult": "0",
+        "health": [
+          "750",
+          "300 HP + 500 Constitution"
+        ],
+        "min_difficulty": [
+          "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+          "4 - Medium"
+        ],
+        "size": "1"
+      },
+      "id": "enemy_berserker",
+      "name": "Berserker",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Berserker",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135118,
+          "revision_timestamp": "2026-09-11T14:57:30Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Berserker"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_bile_spewer",
+      "name": "Bile Spewer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Bile Spewer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135087,
+          "revision_timestamp": "2026-09-11T14:35:15Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Bile_Spewer"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "60",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_bile_spitter",
+      "name": "Bile Spitter",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Bile Spitter",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135077,
+          "revision_timestamp": "2026-09-11T14:31:12Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Bile_Spitter"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "6,500",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "3"
+      },
+      "id": "enemy_bile_titan",
+      "name": "Bile Titan",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Bile Titan",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135096,
+          "revision_timestamp": "2026-09-11T14:38:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Bile_Titan"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "325",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_bile_warrior",
+      "name": "Bile Warrior",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Bile Warrior",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135083,
+          "revision_timestamp": "2026-09-11T14:33:37Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Bile_Warrior"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_brawler",
+      "name": "Brawler",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Brawler",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135110,
+          "revision_timestamp": "2026-09-11T14:47:29Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Brawler"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": [
+          "Terminids",
+          "Bugs"
+        ],
+        "fire_mult": "0",
+        "health": [
+          "800",
+          "1,600 HP + 1,000 Constitution"
+        ],
+        "min_difficulty": [
+          "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+          "5 - Challenging"
+        ],
+        "size": "2"
+      },
+      "id": "enemy_brood_commander",
+      "name": "Brood Commander",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Brood Commander",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135088,
+          "revision_timestamp": "2026-09-11T14:35:28Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Brood_Commander"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "3,500",
+        "min_difficulty": "9 - Hard as Hell"
+      },
+      "id": "enemy_butcher",
+      "name": "Butcher",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Butcher",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127305,
+          "revision_timestamp": "2026-07-31T19:43:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AButcher"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "2,400",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_charger",
+      "name": "Charger",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Charger",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135822,
+          "revision_timestamp": "2026-09-19T18:30:56Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Charger"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "3,000",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_charger_behemoth",
+      "name": "Charger Behemoth",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Charger Behemoth",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135094,
+          "revision_timestamp": "2026-09-11T14:36:50Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Charger_Behemoth"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "class": "Fodder",
+        "faction": "Super Earth Federation",
+        "fire_mult": "0",
+        "health": "70",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_civilian",
+      "name": "Civilian",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Civilian",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133794,
+          "revision_timestamp": "2026-09-03T12:50:38Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Civilian"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_commissar",
+      "name": "Commissar",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Commissar",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135111,
+          "revision_timestamp": "2026-09-11T14:48:56Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Commissar"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "250",
+        "min_difficulty": "3 - Easy"
+      },
+      "id": "enemy_comrade",
+      "name": "Comrade",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Comrade",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127300,
+          "revision_timestamp": "2026-07-31T16:13:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AComrade"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Incineration Corps",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_conflagration_devastator",
+      "name": "Conflagration Devastator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Conflagration Devastator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135176,
+          "revision_timestamp": "2026-09-12T02:43:48Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Conflagration_Devastator"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "2,500",
+        "min_difficulty": "5 - Challenging"
+      },
+      "id": "enemy_council_member",
+      "name": "Council Member",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Council Member",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127231,
+          "revision_timestamp": "2026-07-31T03:50:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3ACouncil_Member"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "600",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_crescent_overseer",
+      "name": "Crescent Overseer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Crescent Overseer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135797,
+          "revision_timestamp": "2026-09-19T15:36:38Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Crescent_Overseer"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Vote Snatchers",
+        "fire_mult": "0",
+        "health": "6,000",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_crusher",
+      "name": "Crusher",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Crusher",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135704,
+          "revision_timestamp": "2026-09-17T18:40:48Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Crusher"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_devastator",
+      "name": "Devastator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Devastator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135120,
+          "revision_timestamp": "2026-09-11T15:01:48Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Devastator"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "6,500",
+        "min_difficulty": "[[File:Hard_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Hard]]</span>",
+        "size": "3"
+      },
+      "id": "enemy_dragonroach",
+      "name": "Dragonroach",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Dragonroach",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135097,
+          "revision_timestamp": "2026-09-11T14:38:19Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Dragonroach"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "3,500",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "3"
+      },
+      "id": "enemy_dropship",
+      "name": "Dropship",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Dropship",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135133,
+          "revision_timestamp": "2026-09-11T15:17:18Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Dropship"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "450",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_elevated_overseer",
+      "name": "Elevated Overseer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Elevated Overseer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135795,
+          "revision_timestamp": "2026-09-19T15:35:49Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Elevated_Overseer"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Bugs",
+        "fire_mult": "0",
+        "health": "400 HP + 100 Constitution",
+        "min_difficulty": "6 - Very Challenging"
+      },
+      "id": "enemy_elite",
+      "name": "Elite",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Elite",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127201,
+          "revision_timestamp": "2026-07-30T21:09:15Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AElite"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "10,000",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "3"
+      },
+      "id": "enemy_factory_strider",
+      "name": "Factory Strider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Factory Strider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135134,
+          "revision_timestamp": "2026-09-11T15:17:45Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Factory_Strider"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "arc_mult": "1.8",
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "5,000",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_fleshmob",
+      "name": "Fleshmob",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Fleshmob",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135182,
+          "revision_timestamp": "2026-09-12T02:52:49Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Fleshmob"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Appropriators",
+        "fire_mult": "0",
+        "health": "2,500",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>"
+      },
+      "id": "enemy_gatekeeper",
+      "name": "Gatekeeper",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Gatekeeper",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135035,
+          "revision_timestamp": "2026-09-10T23:38:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Gatekeeper"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "250,000",
+        "min_difficulty": "Enemy Master"
+      },
+      "id": "enemy_great_eye",
+      "name": "Great Eye",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Great Eye",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127406,
+          "revision_timestamp": "2026-08-01T14:02:09Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AGreat_Eye"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "450",
+        "min_difficulty": "8 - Very Hard"
+      },
+      "id": "enemy_grotesque",
+      "name": "Grotesque",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Grotesque",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127298,
+          "revision_timestamp": "2026-07-31T15:51:18Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AGrotesque"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Super Earth",
+        "fire_mult": "0",
+        "health": "12,000",
+        "size": "2"
+      },
+      "id": "enemy_ground_all_terrain_extraction_rig_gater",
+      "name": "Ground All-Terrain Extraction Rig (GATER)",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Ground All-Terrain Extraction Rig (GATER)",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133108,
+          "revision_timestamp": "2026-08-30T05:59:32Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Ground_All-Terrain_Extraction_Rig_%28GATER%29"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "950",
+        "min_difficulty": "[[File:Hard_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Hard]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_gunship",
+      "name": "Gunship",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Gunship",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135132,
+          "revision_timestamp": "2026-09-11T15:16:20Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Gunship"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "3,000",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_harvester",
+      "name": "Harvester",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Harvester",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135183,
+          "revision_timestamp": "2026-09-12T02:53:16Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Harvester"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_heavy_devastator",
+      "name": "Heavy Devastator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Heavy Devastator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135122,
+          "revision_timestamp": "2026-09-11T15:05:22Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Heavy_Devastator"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "class": "Light",
+        "faction": "Super Earth Federation",
+        "fire_mult": "0",
+        "gas_mult": "1.3",
+        "health": "125",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_helldiver",
+      "name": "Helldiver",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldiver",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135621,
+          "revision_timestamp": "2026-09-17T07:58:44Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldiver"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "500",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_hive_guard",
+      "name": "Hive Guard",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Hive Guard",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135085,
+          "revision_timestamp": "2026-09-11T14:34:15Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Hive_Guard"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": [
+          "Bugs",
+          "Terminids"
+        ],
+        "fire_mult": "0",
+        "health": [
+          "250,000",
+          "150,000"
+        ],
+        "min_difficulty": [
+          "Enemy Master",
+          "[[File:Suicide_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Suicide Mission]]</span>"
+        ],
+        "size": "3"
+      },
+      "id": "enemy_hive_lord",
+      "name": "Hive Lord",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Hive Lord",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127407,
+          "revision_timestamp": "2026-08-01T14:03:49Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AHive_Lord"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "200",
+        "min_difficulty": "3 - Easy"
+      },
+      "id": "enemy_hound",
+      "name": "Hound",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Hound",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127297,
+          "revision_timestamp": "2026-07-31T15:48:10Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AHound"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "2,000 HP + 400 Constitution",
+        "min_difficulty": "5 - Challenging"
+      },
+      "id": "enemy_hulk",
+      "name": "Hulk",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Hulk",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127306,
+          "revision_timestamp": "2026-07-31T19:49:19Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AHulk"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "1,800",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_hulk_bruiser",
+      "name": "Hulk Bruiser",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Hulk Bruiser",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135127,
+          "revision_timestamp": "2026-09-11T15:10:58Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Hulk_Bruiser"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Incineration Corps",
+        "fire_mult": "0",
+        "health": "1,800",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_hulk_firebomber",
+      "name": "Hulk Firebomber",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Hulk Firebomber",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135177,
+          "revision_timestamp": "2026-09-12T02:44:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Hulk_Firebomber"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "1,800",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_hulk_obliterator",
+      "name": "Hulk Obliterator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Hulk Obliterator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135125,
+          "revision_timestamp": "2026-09-11T15:08:27Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Hulk_Obliterator"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "1,800",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_hulk_scorcher",
+      "name": "Hulk Scorcher",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Hulk Scorcher",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135126,
+          "revision_timestamp": "2026-09-11T15:10:35Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Hulk_Scorcher"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": [
+          "HD1 Illuminate",
+          "Terminids"
+        ],
+        "fire_mult": "0",
+        "health": [
+          "400",
+          "130 - [[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span> & Below <br> 160 - [[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span> & Above"
+        ],
+        "min_difficulty": [
+          "2 - Very Easy <br> 13 - An Exercise in Futility (Shielded Variant)",
+          "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>"
+        ],
+        "size": "0"
+      },
+      "id": "enemy_hunter",
+      "name": "Hunter",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Hunter",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127224,
+          "revision_timestamp": "2026-07-31T03:11:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AHunter"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "18,001",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "3"
+      },
+      "id": "enemy_illuminate_overship",
+      "name": "Illuminate Overship",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Illuminate Overship",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133901,
+          "revision_timestamp": "2026-09-04T07:44:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Illuminate_Overship"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "1,500",
+        "min_difficulty": "5 - Challenging"
+      },
+      "id": "enemy_illusionist",
+      "name": "Illusionist",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Illusionist",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127230,
+          "revision_timestamp": "2026-07-31T03:41:46Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AIllusionist"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "250",
+        "min_difficulty": "2 - Very Easy"
+      },
+      "id": "enemy_immolator",
+      "name": "Immolator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Immolator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127299,
+          "revision_timestamp": "2026-07-31T15:54:22Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AImmolator"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": [
+          "Bugs",
+          "Terminids"
+        ],
+        "fire_mult": "0",
+        "health": [
+          "2,200 <br> 600 (Tentacle)",
+          "4,000"
+        ],
+        "min_difficulty": [
+          "4 - Medium",
+          "[[File:Hard_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Hard]]</span>"
+        ],
+        "size": "2"
+      },
+      "id": "enemy_impaler",
+      "name": "Impaler",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Impaler",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127203,
+          "revision_timestamp": "2026-07-30T21:27:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AImpaler"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Incineration Corps",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_incendiary_mg_devastator",
+      "name": "Incendiary MG Devastator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Incendiary MG Devastator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135175,
+          "revision_timestamp": "2026-09-12T02:37:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Incendiary_MG_Devastator"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Incineration Corps",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_incendiary_rocket_raider",
+      "name": "Incendiary Rocket Raider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Incendiary Rocket Raider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135174,
+          "revision_timestamp": "2026-09-12T02:37:06Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Incendiary_Rocket_Raider"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "160 HP + 1,000 Constitution",
+        "min_difficulty": "7 - Hard"
+      },
+      "id": "enemy_infantry_fighting_vehicle",
+      "name": "Infantry Fighting Vehicle",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Infantry Fighting Vehicle",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127403,
+          "revision_timestamp": "2026-08-01T13:56:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AInfantry_Fighting_Vehicle"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "75",
+        "min_difficulty": "1 - Dive in the Park"
+      },
+      "id": "enemy_initiate",
+      "name": "Initiate",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Initiate",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127292,
+          "revision_timestamp": "2026-07-31T15:28:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AInitiate"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Jet Brigade",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_jet_brigade_commissar",
+      "name": "Jet Brigade Commissar",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Jet Brigade Commissar",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135135,
+          "revision_timestamp": "2026-09-11T15:19:06Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Commissar"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Jet Brigade",
+        "fire_mult": "0",
+        "health": "750",
+        "size": "1"
+      },
+      "id": "enemy_jet_brigade_devastator",
+      "name": "Jet Brigade Devastator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Jet Brigade Devastator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135138,
+          "revision_timestamp": "2026-09-11T15:22:27Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Devastator"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Jet Brigade",
+        "fire_mult": "0",
+        "health": "1,800",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_jet_brigade_hulk_bruiser",
+      "name": "Jet Brigade Hulk Bruiser",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Jet Brigade Hulk Bruiser",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135140,
+          "revision_timestamp": "2026-09-11T15:26:36Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Hulk_Bruiser"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Jet Brigade",
+        "fire_mult": "0",
+        "health": "1,800",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_jet_brigade_hulk_scorcher",
+      "name": "Jet Brigade Hulk Scorcher",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Jet Brigade Hulk Scorcher",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135139,
+          "revision_timestamp": "2026-09-11T15:22:43Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Hulk_Scorcher"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Jet Brigade",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_jet_brigade_mg_raider",
+      "name": "Jet Brigade MG Raider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Jet Brigade MG Raider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135137,
+          "revision_timestamp": "2026-09-11T15:21:20Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_MG_Raider"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Jet Brigade",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_jet_brigade_trooper",
+      "name": "Jet Brigade Trooper",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Jet Brigade Trooper",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135136,
+          "revision_timestamp": "2026-09-11T15:20:40Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Jet_Brigade_Trooper"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "350",
+        "min_difficulty": "13 - An Exercise in Futility"
+      },
+      "id": "enemy_legionnaire",
+      "name": "Legionnaire",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Legionnaire",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127296,
+          "revision_timestamp": "2026-07-31T15:43:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3ALegionnaire"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "15,000",
+        "min_difficulty": "[[File:Impossible_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Impossible]]</span>",
+        "size": "3"
+      },
+      "id": "enemy_leviathan",
+      "name": "Leviathan",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Leviathan",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135186,
+          "revision_timestamp": "2026-09-12T02:54:51Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Leviathan"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Hard_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Hard]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_marauder",
+      "name": "Marauder",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Marauder",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135115,
+          "revision_timestamp": "2026-09-11T14:52:39Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Marauder"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_mg_raider",
+      "name": "MG Raider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "MG Raider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135117,
+          "revision_timestamp": "2026-09-11T14:54:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/MG_Raider"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_nursing_spewer",
+      "name": "Nursing Spewer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Nursing Spewer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135086,
+          "revision_timestamp": "2026-09-11T14:35:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Nursing_Spewer"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "450",
+        "min_difficulty": "5 - Challenging"
+      },
+      "id": "enemy_obelisk",
+      "name": "Obelisk",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Obelisk",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127229,
+          "revision_timestamp": "2026-07-31T03:37:47Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AObelisk"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "50",
+        "min_difficulty": "1 - Dive in the Park"
+      },
+      "id": "enemy_observer",
+      "name": "Observer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Observer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127210,
+          "revision_timestamp": "2026-07-30T22:58:28Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AObserver"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "50",
+        "min_difficulty": "13 - An Exercise in Futility"
+      },
+      "id": "enemy_obsidian_observer",
+      "name": "Obsidian Observer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Obsidian Observer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127223,
+          "revision_timestamp": "2026-07-31T03:09:30Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AObsidian_Observer"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Appropriators",
+        "fire_mult": "0",
+        "health": "400",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>"
+      },
+      "id": "enemy_obtruder",
+      "name": "Obtruder",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Obtruder",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135037,
+          "revision_timestamp": "2026-09-10T23:39:36Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Obtruder"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "350",
+        "min_difficulty": "5 - Challenging"
+      },
+      "id": "enemy_outcast",
+      "name": "Outcast",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Outcast",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127228,
+          "revision_timestamp": "2026-07-31T03:29:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AOutcast"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "600",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_overseer",
+      "name": "Overseer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Overseer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135796,
+          "revision_timestamp": "2026-09-19T15:36:06Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Overseer"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "60",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_pouncer",
+      "name": "Pouncer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Pouncer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135078,
+          "revision_timestamp": "2026-09-11T14:31:35Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Pouncer"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Predator Strain",
+        "fire_mult": "0",
+        "health": "175",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_predator_hunter",
+      "name": "Predator Hunter",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Predator Hunter",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135098,
+          "revision_timestamp": "2026-09-11T14:38:50Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Predator_Hunter"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Predator Strain",
+        "fire_mult": "0",
+        "health": "650",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_predator_stalker",
+      "name": "Predator Stalker",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Predator Stalker",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135099,
+          "revision_timestamp": "2026-09-11T14:39:28Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Predator_Stalker"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Incineration Corps",
+        "fire_mult": "0",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_pyro_trooper",
+      "name": "Pyro Trooper",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Pyro Trooper",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135173,
+          "revision_timestamp": "2026-09-12T02:36:02Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Pyro_Trooper"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborg Legion",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_radical",
+      "name": "Radical",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Radical",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134991,
+          "revision_timestamp": "2026-09-10T13:04:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Radical"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "500",
+        "min_difficulty": "[[File:Impossible_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Impossible]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_reinforced_scout_strider",
+      "name": "Reinforced Scout Strider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Reinforced Scout Strider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135124,
+          "revision_timestamp": "2026-09-11T15:08:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Reinforced_Scout_Strider"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_rocket_devastator",
+      "name": "Rocket Devastator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Rocket Devastator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135121,
+          "revision_timestamp": "2026-09-11T15:04:52Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Rocket_Devastator"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_rocket_raider",
+      "name": "Rocket Raider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Rocket Raider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135113,
+          "revision_timestamp": "2026-09-11T14:50:41Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Rocket_Raider"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Rupture Strain",
+        "fire_mult": "0",
+        "health": "2,400",
+        "min_difficulty": "Extreme?",
+        "size": "2"
+      },
+      "id": "enemy_rupture_charger",
+      "name": "Rupture Charger",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Rupture Charger",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135108,
+          "revision_timestamp": "2026-09-11T14:44:36Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Rupture_Charger"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Rupture Strain",
+        "fire_mult": "0",
+        "health": "750",
+        "min_difficulty": "[[File:Extreme_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Extreme]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_rupture_spewer",
+      "name": "Rupture Spewer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Rupture Spewer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135107,
+          "revision_timestamp": "2026-09-11T14:43:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Rupture_Spewer"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Rupture Strain",
+        "fire_mult": "0",
+        "health": "250",
+        "min_difficulty": "[[File:Extreme_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Extreme]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_rupture_warrior",
+      "name": "Rupture Warrior",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Rupture Warrior",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135105,
+          "revision_timestamp": "2026-09-11T14:42:38Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Rupture_Warrior"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "60",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_scavenger",
+      "name": "Scavenger",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Scavenger",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135076,
+          "revision_timestamp": "2026-09-11T14:30:36Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Scavenger"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Bugs",
+        "fire_mult": "0",
+        "health": "30",
+        "min_difficulty": "1 - Dive in the Park"
+      },
+      "id": "enemy_scout",
+      "name": "Scout",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Scout",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127193,
+          "revision_timestamp": "2026-07-30T20:49:48Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AScout"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "500",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_scout_strider",
+      "name": "Scout Strider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Scout Strider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135123,
+          "revision_timestamp": "2026-09-11T15:07:12Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Scout_Strider"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "class": "Light",
+        "faction": "Super Earth Federation",
+        "fire_mult": "0",
+        "health": "150",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_seaf_soldier",
+      "name": "SEAF Soldier",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "SEAF Soldier",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135790,
+          "revision_timestamp": "2026-09-19T13:26:56Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/SEAF_Soldier"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Bugs",
+        "fire_mult": "0",
+        "health": "100 HP + 750 Constitution",
+        "min_difficulty": "13 - An Exercise in Futility"
+      },
+      "id": "enemy_shadow",
+      "name": "Shadow",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Shadow",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127196,
+          "revision_timestamp": "2026-07-30T21:01:18Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AShadow"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "4,000 (Main) <br> 2,100 (Turret)",
+        "min_difficulty": "[[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_shredder_tank",
+      "name": "Shredder Tank",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Shredder Tank",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135130,
+          "revision_timestamp": "2026-09-11T15:13:29Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Shredder_Tank"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_shrieker",
+      "name": "Shrieker",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Shrieker",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135619,
+          "revision_timestamp": "2026-09-17T06:31:16Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Shrieker"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "300,000",
+        "min_difficulty": "Enemy Master"
+      },
+      "id": "enemy_siege_mech",
+      "name": "Siege Mech",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Siege Mech",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127409,
+          "revision_timestamp": "2026-08-01T14:10:29Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3ASiege_Mech"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Spore Burst Strain",
+        "fire_mult": "0",
+        "health": "7,000",
+        "min_difficulty": "[[File:Hard_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Hard]]</span>",
+        "size": "3"
+      },
+      "id": "enemy_spore_burst_bile_titan",
+      "name": "Spore Burst Bile Titan",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Spore Burst Bile Titan",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135104,
+          "revision_timestamp": "2026-09-11T14:41:55Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Spore_Burst_Bile_Titan"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Spore Burst Strain",
+        "fire_mult": "0",
+        "health": "160",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_spore_burst_hunter",
+      "name": "Spore Burst Hunter",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Spore Burst Hunter",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135101,
+          "revision_timestamp": "2026-09-11T14:40:20Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Spore_Burst_Hunter"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Spore Burst Strain",
+        "fire_mult": "0",
+        "health": "60",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_spore_burst_scavenger",
+      "name": "Spore Burst Scavenger",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Spore Burst Scavenger",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135100,
+          "revision_timestamp": "2026-09-11T14:40:05Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Spore_Burst_Scavenger"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Spore Burst Strain",
+        "fire_mult": "0",
+        "health": "325",
+        "min_difficulty": "[[File:Easy_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Easy]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_spore_burst_warrior",
+      "name": "Spore Burst Warrior",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Spore Burst Warrior",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135102,
+          "revision_timestamp": "2026-09-11T14:41:17Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Spore_Burst_Warrior"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Terminids",
+        "faction_id": "terminids",
+        "fire_mult": "0",
+        "health": "2,400",
+        "min_difficulty": "[[File:Suicide_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Suicide Mission]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_spore_charger",
+      "name": "Spore Charger",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Spore Charger",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135093,
+          "revision_timestamp": "2026-09-11T14:36:30Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Spore_Charger"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "250",
+        "min_difficulty": "1 - Dive in the Park"
+      },
+      "id": "enemy_squadleader_soldier",
+      "name": "'Squadleader' Soldier",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Squadleader Soldier",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127295,
+          "revision_timestamp": "2026-07-31T15:39:07Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3ASquadleader_Soldier"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": [
+          "Bugs",
+          "Terminids"
+        ],
+        "fire_mult": "0",
+        "health": [
+          "50 HP + 450 Constitution",
+          "800"
+        ],
+        "min_difficulty": [
+          "5 - Challenging",
+          "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>"
+        ],
+        "size": "2"
+      },
+      "id": "enemy_stalker",
+      "name": "Stalker",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Stalker",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127197,
+          "revision_timestamp": "2026-07-30T21:02:59Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AStalker"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "800",
+        "size": "2"
+      },
+      "id": "enemy_stingray",
+      "name": "Stingray",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Stingray",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135184,
+          "revision_timestamp": "2026-09-12T02:54:00Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Stingray"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "350",
+        "min_difficulty": "7 - Hard"
+      },
+      "id": "enemy_strider",
+      "name": "Strider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Strider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127226,
+          "revision_timestamp": "2026-07-31T03:18:48Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AStrider"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Bugs",
+        "fire_mult": "0",
+        "health": "2,100",
+        "min_difficulty": "5 - Challenging"
+      },
+      "id": "enemy_tank",
+      "name": "Tank",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Tank",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127206,
+          "revision_timestamp": "2026-07-30T21:40:09Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3ATank"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "HD1 Illuminate",
+        "fire_mult": "0",
+        "health": "300",
+        "min_difficulty": "1 - Dive in the Park"
+      },
+      "id": "enemy_tripod",
+      "name": "Tripod",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Tripod",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127225,
+          "revision_timestamp": "2026-07-31T03:14:41Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3ATripod"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "125",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_trooper",
+      "name": "Trooper",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Trooper",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135109,
+          "revision_timestamp": "2026-09-11T14:45:56Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Trooper"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Bugs",
+        "fire_mult": "0",
+        "health": "30",
+        "min_difficulty": "7 - Hard"
+      },
+      "id": "enemy_vanguard",
+      "name": "Vanguard",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Vanguard",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127194,
+          "revision_timestamp": "2026-07-30T20:51:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AVanguard"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Appropriators",
+        "fire_mult": "0",
+        "health": "3,000",
+        "min_difficulty": "[[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span>"
+      },
+      "id": "enemy_veracitor",
+      "name": "Veracitor",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Veracitor",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135034,
+          "revision_timestamp": "2026-09-10T23:37:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Veracitor"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "100 (Light) <br> 130 (Medium) <br> 160 (Heavy)",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "0"
+      },
+      "id": "enemy_voteless",
+      "name": "Voteless",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Voteless",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135187,
+          "revision_timestamp": "2026-09-12T03:23:47Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Voteless"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborg Legion",
+        "fire_mult": "0",
+        "health": "9,000",
+        "min_difficulty": "[[File:Suicide_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Suicide Mission]]</span>",
+        "size": "3"
+      },
+      "id": "enemy_vox_engine",
+      "name": "Vox Engine",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Vox Engine",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134993,
+          "revision_timestamp": "2026-09-10T13:06:55Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Vox_Engine"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Automatons",
+        "faction_id": "automatons",
+        "fire_mult": "0",
+        "health": "3,500",
+        "min_difficulty": "[[File:Extreme_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Extreme]]</span>",
+        "size": "2"
+      },
+      "id": "enemy_war_strider",
+      "name": "War Strider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "War Strider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135195,
+          "revision_timestamp": "2026-09-12T09:23:35Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/War_Strider"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Cyborgs",
+        "fire_mult": "0",
+        "health": "3,000 HP + 1,000 Constitution",
+        "min_difficulty": "5 - Challenging"
+      },
+      "id": "enemy_warlord",
+      "name": "Warlord",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Warlord",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127402,
+          "revision_timestamp": "2026-08-01T13:50:17Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AWarlord"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "faction_id": {
+          "from": [
+            "facts.faction"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "faction": "Illuminate",
+        "faction_id": "illuminate",
+        "fire_mult": "0",
+        "health": "3,500",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "3"
+      },
+      "id": "enemy_warp_ship",
+      "name": "Warp Ship",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Warp Ship",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135185,
+          "revision_timestamp": "2026-09-12T02:54:25Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Warp_Ship"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": [
+          "Bugs",
+          "Terminids"
+        ],
+        "fire_mult": "0",
+        "health": [
+          "270 HP + 50 Constitution",
+          "250 - [[File:Medium_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Medium]]</span> & Below <br> 325 - [[File:Challenging_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Challenging]]</span> & Above"
+        ],
+        "min_difficulty": [
+          "2 - Very Easy",
+          "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>"
+        ],
+        "size": "1"
+      },
+      "id": "enemy_warrior",
+      "name": "Warrior",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Warrior",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127200,
+          "revision_timestamp": "2026-07-30T21:08:33Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AWarrior"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": [
+          "HD1 Illuminate",
+          "Illuminate"
+        ],
+        "fire_mult": "0",
+        "health": [
+          "50",
+          "600"
+        ],
+        "min_difficulty": [
+          "8 - Very Hard",
+          "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>"
+        ],
+        "size": "1"
+      },
+      "id": "enemy_watcher",
+      "name": "Watcher",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Helldivers 1:Watcher",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127215,
+          "revision_timestamp": "2026-07-30T23:54:10Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Helldivers_1%3AWatcher"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "faction": "Vote Snatchers",
+        "fire_mult": "0",
+        "health": "450",
+        "min_difficulty": "[[File:Trivial_Difficulty_Icon.svg|x16px|link=Difficulty]] <span>[[Difficulty|Trivial]]</span>",
+        "size": "1"
+      },
+      "id": "enemy_wretch",
+      "name": "Wretch",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Wretch",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135640,
+          "revision_timestamp": "2026-09-17T14:17:41Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Wretch"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}

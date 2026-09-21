@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+dist/
+catalog-staging/
+catalog-review/
+importer/raw/
+generated/*/
+!generated/example_player/
+profiles/*.json
+!profiles/example_player.json
+

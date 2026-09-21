@@ -1,0 +1,21 @@
+{
+  "armor": "b_01_tactical",
+  "booster": "hellpod_space_optimization",
+  "created_at": "2026-09-21",
+  "difficulty_range": [4, 7],
+  "game_version": null,
+  "grenade": "g_12_high_explosive",
+  "id": "example_illuminate_general",
+  "intended_faction": "illuminate",
+  "last_modified": "2026-09-21",
+  "mission_type": null,
+  "name": "Example Illuminate General",
+  "notes": "Demonstrates storage and availability validation; it is not a recommendation.",
+  "primary": "sg_225_breaker",
+  "role": "generalist",
+  "schema_version": "1.0.0",
+  "secondary": "p_2_peacemaker",
+  "stratagems": ["stratagem_mg_43_machine_gun", "stratagem_eagle_airstrike", "stratagem_orbital_precision_strike", "stratagem_a_mg_43_machine_gun_sentry"],
+  "strengths": ["Example only"],
+  "weaknesses": ["Not evaluated by a recommendation engine"]
+}

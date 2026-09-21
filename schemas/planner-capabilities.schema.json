@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hd2/planner-capabilities.schema.json",
+  "title": "Planner capability vocabulary",
+  "type": "object",
+  "required": ["schema_version", "capability_version", "capabilities", "supporting_facts"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "capability_version": {"type": "string"},
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "evidence_class", "description"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "evidence_class": {"enum": ["fact_supported", "curated_assessment"]},
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "supporting_facts": {"type": "array", "items": {"type": "string"}},
+    "excluded_initial_capabilities": {"type": "array"}
+  }
+}

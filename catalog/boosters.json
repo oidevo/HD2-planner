@@ -1,0 +1,376 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "items": [
+    {
+      "facts": {},
+      "id": "armed_resupply_pods",
+      "name": "Armed Resupply Pods",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Armed Resupply Pods",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 79383,
+          "revision_timestamp": "2025-08-09T23:30:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Armed_Resupply_Pods"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "concealed_insertion",
+      "name": "Concealed Insertion",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Concealed Insertion",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 110637,
+          "revision_timestamp": "2026-04-12T19:40:55Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Concealed_Insertion"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "dead_sprint",
+      "name": "Dead Sprint",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Dead Sprint",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133905,
+          "revision_timestamp": "2026-09-04T10:24:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Dead_Sprint"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "experimental_infusion",
+      "name": "Experimental Infusion",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Experimental Infusion",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 110631,
+          "revision_timestamp": "2026-04-12T19:30:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Experimental_Infusion"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "expert_extraction_pilot",
+      "name": "Expert Extraction Pilot",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Expert Extraction Pilot",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 110629,
+          "revision_timestamp": "2026-04-12T19:26:02Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Expert_Extraction_Pilot"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "firebomb_hellpods",
+      "name": "Firebomb Hellpods",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Firebomb Hellpods",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 110632,
+          "revision_timestamp": "2026-04-12T19:32:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Firebomb_Hellpods"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "flexible_reinforcement_budget",
+      "name": "Flexible Reinforcement Budget",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Flexible Reinforcement Budget",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 91117,
+          "revision_timestamp": "2025-11-26T20:13:22Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Flexible_Reinforcement_Budget"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "hellpod_space_optimization",
+      "name": "Hellpod Space Optimization",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Hellpod Space Optimization",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 107748,
+          "revision_timestamp": "2026-03-22T14:36:07Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Hellpod_Space_Optimization"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "increased_reinforcement_budget",
+      "name": "Increased Reinforcement Budget",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Increased Reinforcement Budget",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 79059,
+          "revision_timestamp": "2025-08-01T22:57:52Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Increased_Reinforcement_Budget"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "integrated_extinguishers",
+      "name": "Integrated Extinguishers",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Integrated Extinguishers",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135711,
+          "revision_timestamp": "2026-09-17T18:58:26Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Integrated_Extinguishers"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "localization_confusion",
+      "name": "Localization Confusion",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Localization Confusion",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 110628,
+          "revision_timestamp": "2026-04-12T19:23:20Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Localization_Confusion"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "motivational_shocks",
+      "name": "Motivational Shocks",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Motivational Shocks",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 110630,
+          "revision_timestamp": "2026-04-12T19:28:00Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Motivational_Shocks"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "muscle_enhancement",
+      "name": "Muscle Enhancement",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Muscle Enhancement",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 101394,
+          "revision_timestamp": "2026-02-12T19:06:03Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Muscle_Enhancement"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "sample_extricator",
+      "name": "Sample Extricator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Sample Extricator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132489,
+          "revision_timestamp": "2026-08-24T22:21:53Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Sample_Extricator"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "sample_scanner",
+      "name": "Sample Scanner",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Sample Scanner",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 110635,
+          "revision_timestamp": "2026-04-12T19:38:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Sample_Scanner"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "stamina_enhancement",
+      "name": "Stamina Enhancement",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Stamina Enhancement",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 122720,
+          "revision_timestamp": "2026-06-12T09:04:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Stamina_Enhancement"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "stun_pods",
+      "name": "Stun Pods",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Stun Pods",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133150,
+          "revision_timestamp": "2026-08-30T14:19:06Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Stun_Pods"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "surplus_eat_allocation",
+      "name": "Surplus EAT Allocation",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Surplus EAT Allocation",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135442,
+          "revision_timestamp": "2026-09-15T13:31:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Surplus_EAT_Allocation"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "uav_recon_booster",
+      "name": "UAV Recon Booster",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "UAV Recon Booster",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 79056,
+          "revision_timestamp": "2025-08-01T22:57:42Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/UAV_Recon_Booster"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "vitality_enhancement",
+      "name": "Vitality Enhancement",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Vitality Enhancement",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135291,
+          "revision_timestamp": "2026-09-13T09:44:38Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Vitality_Enhancement"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}

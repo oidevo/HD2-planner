@@ -1,0 +1,61 @@
+{
+  "characters": {
+    "main": {
+      "display_name": "Example PC Character",
+      "inventory": {
+        "armor": {"b_01_tactical": {"status": "unlocked"}},
+        "armor_passives": {"extra_padding": {"status": "unlocked"}},
+        "boosters": {"hellpod_space_optimization": {"status": "unlocked"}},
+        "grenades": {"g_12_high_explosive": {"status": "unlocked"}},
+        "primary_weapons": {"sg_225_breaker": {"status": "unlocked"}},
+        "secondary_weapons": {"p_2_peacemaker": {"status": "unlocked"}},
+        "ship_modules": {"donation_access_license": {"status": "unlocked"}},
+        "stratagems": {
+          "stratagem_a_mg_43_machine_gun_sentry": {"status": "unlocked"},
+          "stratagem_eagle_airstrike": {"status": "locked"},
+          "stratagem_mg_43_machine_gun": {"status": "unlocked"},
+          "stratagem_orbital_precision_strike": {"status": "unlocked"}
+        },
+        "support_weapons": {"mg_43_machine_gun": {"status": "unlocked"}},
+        "warbonds": {"helldivers_mobilize": {"status": "unlocked"}},
+        "weapon_attachments": {"drum_magazine": {"status": "unknown"}}
+      },
+      "level": 33,
+      "onboarding": {"completed_sections": ["warbonds", "primary_weapons", "secondary_weapons", "support_weapons", "grenades", "armor", "boosters", "stratagems", "ship_modules"], "skipped_sections": ["weapon_attachments"]},
+      "platform": "PC",
+      "preference_overrides": {"general": {"preferred_role": "mobile crowd control"}, "item_preferences": {"stratagem_a_mg_43_machine_gun_sentry": "dislike"}},
+      "resources": {"common_samples": 42, "medals": 17, "rare_samples": 11, "requisition": 22000, "super_credits": 350, "super_samples": 2}
+    },
+    "xbox": {
+      "display_name": "Example Xbox Character",
+      "inventory": {
+        "armor": {"b_01_tactical": {"status": "unlocked"}},
+        "armor_passives": {"extra_padding": {"status": "unlocked"}},
+        "boosters": {},
+        "grenades": {"g_12_high_explosive": {"status": "unlocked"}},
+        "primary_weapons": {"sg_225_breaker": {"status": "locked"}},
+        "secondary_weapons": {"p_2_peacemaker": {"status": "unlocked"}},
+        "ship_modules": {},
+        "stratagems": {"stratagem_mg_43_machine_gun": {"status": "unlocked"}, "stratagem_orbital_precision_strike": {"status": "unlocked"}},
+        "support_weapons": {"mg_43_machine_gun": {"status": "unlocked"}},
+        "warbonds": {},
+        "weapon_attachments": {}
+      },
+      "level": 1,
+      "onboarding": {"completed_sections": ["primary_weapons", "secondary_weapons", "support_weapons", "grenades", "armor", "stratagems"], "skipped_sections": ["warbonds", "weapon_attachments", "boosters", "ship_modules"]},
+      "platform": "Xbox",
+      "preference_overrides": {"general": {}, "item_preferences": {"sg_225_breaker": "avoid"}},
+      "resources": {}
+    }
+  },
+  "gameplay_observations": [
+    {"character": "main", "confidence": "low", "date": "2026-09-21", "difficulty": null, "faction": "illuminate", "item_id": "stratagem_a_mg_43_machine_gun_sentry", "mission_type": null, "notes": "Sentries felt almost useless during my first Illuminate missions.", "rating": "poor"}
+  ],
+  "player": {"display_name": "Example Player", "id": "example_player"},
+  "preferences": {"general": {"preferred_weapon_style": "automatic"}, "item_preferences": {"sg_225_breaker": "favorite"}},
+  "profile_updated_at": "2026-09-21T00:00:00Z",
+  "progression_notes": ["Confirm attachment progress before asking for weapon-customization advice."],
+  "saved_loadout_files": ["example_illuminate_general.json"],
+  "saved_loadouts": [],
+  "schema_version": "1.0.0"
+}

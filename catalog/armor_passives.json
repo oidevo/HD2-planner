@@ -1,0 +1,574 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "items": [
+    {
+      "facts": {},
+      "id": "acclimated",
+      "name": "Acclimated",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Acclimated",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133332,
+          "revision_timestamp": "2026-08-31T22:26:58Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Acclimated"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "adreno_defibrillator",
+      "name": "Adreno-Defibrillator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Adreno-Defibrillator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133319,
+          "revision_timestamp": "2026-08-31T21:31:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Adreno-Defibrillator"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "advanced_filtration",
+      "name": "Advanced Filtration",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Advanced Filtration",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133336,
+          "revision_timestamp": "2026-08-31T22:29:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Advanced_Filtration"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "ballistic_padding",
+      "name": "Ballistic Padding",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Ballistic Padding",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132745,
+          "revision_timestamp": "2026-08-27T00:08:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Ballistic_Padding"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "blunt_force_mitigation",
+      "name": "Blunt-Force Mitigation",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Blunt-Force Mitigation",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135545,
+          "revision_timestamp": "2026-09-15T18:51:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Blunt-Force_Mitigation"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "concussive_padding_grenadier",
+      "name": "Concussive Padding, Grenadier",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Concussive Padding, Grenadier",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133322,
+          "revision_timestamp": "2026-08-31T21:44:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Concussive_Padding%2C_Grenadier"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "concussive_padding_hazmat",
+      "name": "Concussive Padding, Hazmat",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Concussive Padding, Hazmat",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132819,
+          "revision_timestamp": "2026-08-27T18:53:50Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Concussive_Padding%2C_Hazmat"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "concussive_padding_reinforced",
+      "name": "Concussive Padding, Reinforced",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Concussive Padding, Reinforced",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135546,
+          "revision_timestamp": "2026-09-15T18:52:58Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Concussive_Padding%2C_Reinforced"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "democracy_protects",
+      "name": "Democracy Protects",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Democracy Protects",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133346,
+          "revision_timestamp": "2026-08-31T23:19:08Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Democracy_Protects"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "desert_stormer",
+      "name": "Desert Stormer",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Desert Stormer",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133317,
+          "revision_timestamp": "2026-08-31T21:27:00Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Desert_Stormer"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "electrical_conduit",
+      "name": "Electrical Conduit",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Electrical Conduit",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133337,
+          "revision_timestamp": "2026-08-31T22:30:34Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Electrical_Conduit"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "engineering_kit",
+      "name": "Engineering Kit",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Engineering Kit",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132821,
+          "revision_timestamp": "2026-08-27T20:24:10Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Engineering_Kit"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "extra_padding",
+      "name": "Extra Padding",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Extra Padding",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135547,
+          "revision_timestamp": "2026-09-15T18:53:36Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Extra_Padding"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "feet_first",
+      "name": "Feet First",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Feet First",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 122091,
+          "revision_timestamp": "2026-06-05T18:31:30Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Feet_First"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "fortified",
+      "name": "Fortified",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Fortified",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133339,
+          "revision_timestamp": "2026-08-31T22:34:10Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Fortified"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "gunslinger",
+      "name": "Gunslinger",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Gunslinger",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132822,
+          "revision_timestamp": "2026-08-27T20:27:45Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Gunslinger"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "inflammable",
+      "name": "Inflammable",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Inflammable",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 127791,
+          "revision_timestamp": "2026-08-06T14:31:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Inflammable"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "integrated_explosives",
+      "name": "Integrated Explosives",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Integrated Explosives",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135573,
+          "revision_timestamp": "2026-09-15T21:58:49Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Integrated_Explosives"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "kinetic_displacement_mitigation",
+      "name": "Kinetic Displacement Mitigation",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Kinetic Displacement Mitigation",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135548,
+          "revision_timestamp": "2026-09-15T18:54:11Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Kinetic_Displacement_Mitigation"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "med_kit",
+      "name": "Med-Kit",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Med-Kit",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 97796,
+          "revision_timestamp": "2026-01-25T18:57:05Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Med-Kit"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "oxygenator",
+      "name": "Oxygenator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Oxygenator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133670,
+          "revision_timestamp": "2026-09-01T20:05:46Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Oxygenator"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "peak_physique",
+      "name": "Peak Physique",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Peak Physique",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132097,
+          "revision_timestamp": "2026-08-23T00:34:33Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Peak_Physique"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "reduced_signature",
+      "name": "Reduced Signature",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Reduced Signature",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133327,
+          "revision_timestamp": "2026-08-31T22:20:27Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Reduced_Signature"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "reinforced_epaulettes",
+      "name": "Reinforced Epaulettes",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Reinforced Epaulettes",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132429,
+          "revision_timestamp": "2026-08-24T01:03:52Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Reinforced_Epaulettes"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "rock_solid",
+      "name": "Rock Solid",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Rock Solid",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135550,
+          "revision_timestamp": "2026-09-15T18:54:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Rock_Solid"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "scout",
+      "name": "Scout",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Scout",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133340,
+          "revision_timestamp": "2026-08-31T22:34:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Scout"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "servo_assisted",
+      "name": "Servo-Assisted",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Servo-Assisted",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133326,
+          "revision_timestamp": "2026-08-31T22:19:23Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Servo-Assisted"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "siege_ready",
+      "name": "Siege-Ready",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Siege-Ready",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132098,
+          "revision_timestamp": "2026-08-23T00:37:02Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Siege-Ready"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "supplementary_adrenaline",
+      "name": "Supplementary Adrenaline",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Supplementary Adrenaline",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135551,
+          "revision_timestamp": "2026-09-15T18:55:30Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Supplementary_Adrenaline"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "true_grit",
+      "name": "True Grit",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "True Grit",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 133324,
+          "revision_timestamp": "2026-08-31T22:15:42Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/True_Grit"
+        }
+      ]
+    },
+    {
+      "facts": {},
+      "id": "unflinching",
+      "name": "Unflinching",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Unflinching",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135552,
+          "revision_timestamp": "2026-09-15T18:56:02Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Unflinching"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}

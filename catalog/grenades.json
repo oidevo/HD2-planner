@@ -1,0 +1,1413 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "items": [
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 65</span> [[Medal]]s</span>",
+        "damage": "0",
+        "source": "[[Force of Law Premium Warbond#Page 3|Force of Law]] <small><span  class=\"explain \" title=\"Page 3\">P3</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 65,
+          "currency": "medals"
+        },
+        "warbond_id": "force_of_law",
+        "warbond_page": 3,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_109_urchin",
+      "name": "G-109 Urchin",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-109 Urchin",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134064,
+          "revision_timestamp": "2026-09-05T07:02:39Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-109_Urchin"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 25</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=Explosion]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">300 Explosion </span>]]</span><br> <span class=\"DamageIcons icon-outline\">[[File:Damage Fire Icon.svg|20px|link=Damage|alt=Fire]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orangered;\">100 Fire DPS </span>]]</span>",
+        "damage_types": [
+          "explosion",
+          "fire"
+        ],
+        "source": "[[Steeled Veterans Premium Warbond#Page 2|Steeled Veterans]] <small><span  class=\"explain \" title=\"Page 2\">P2</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 25,
+          "currency": "medals"
+        },
+        "warbond_id": "steeled_veterans",
+        "warbond_page": 2,
+        "weapon_category": "Throwables",
+        "weapon_type": "Standard"
+      },
+      "id": "g_10_incendiary",
+      "name": "G-10 Incendiary",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-10 Incendiary",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 123870,
+          "revision_timestamp": "2026-06-19T21:54:30Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-10_Incendiary"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "3",
+        "capacity_count": 3,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 15</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Fire Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orangered;\">150/s over 6.5s Fire</span>]]</span><br> <span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">2000 Explosion</span>]]</span>",
+        "damage_types": [
+          "fire",
+          "explosion"
+        ],
+        "source": "[[Democratic Detonation Premium Warbond#Page 1|Democratic Detonation]] <small><span  class=\"explain \" title=\"Page 1\">P1</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 15,
+          "currency": "medals"
+        },
+        "warbond_id": "democratic_detonation",
+        "warbond_page": 1,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_123_thermite",
+      "name": "G-123 Thermite",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-123 Thermite",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126403,
+          "revision_timestamp": "2026-07-19T19:46:25Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-123_Thermite"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">800 Explosion</span>]]</span>",
+        "damage_types": [
+          "explosion"
+        ],
+        "source": "Starter Equipment",
+        "weapon_category": "Throwables",
+        "weapon_type": "Standard"
+      },
+      "id": "g_12_high_explosive",
+      "name": "G-12 High Explosive",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-12 High Explosive",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126141,
+          "revision_timestamp": "2026-07-17T21:07:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-12_High_Explosive"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 25</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=Explosion]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">150 Explosion </span>]]</span><br><span class=\"DamageIcons icon-outline\">[[File:Damage Fire Icon.svg|20px|link=Damage|alt=Fire]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orangered;\">100 Fire DPS </span>]]</span>",
+        "damage_types": [
+          "explosion",
+          "fire"
+        ],
+        "source": "[[Polar Patriots Premium Warbond#Page 2|Polar Patriots]] <small><span  class=\"explain \" title=\"Page 2\">P2</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 25,
+          "currency": "medals"
+        },
+        "warbond_id": "polar_patriots",
+        "warbond_page": 2,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_13_incendiary_impact",
+      "name": "G-13 Incendiary Impact",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-13 Incendiary Impact",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 128954,
+          "revision_timestamp": "2026-08-14T06:54:12Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-13_Incendiary_Impact"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "6",
+        "capacity_count": 6,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 65</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Fire Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orangered;\">20 DPS Fire</span>]]</span><br><span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">50 Explosion</span>]]</span>",
+        "damage_types": [
+          "fire",
+          "explosion"
+        ],
+        "source": "[[Masters of Ceremony Premium Warbond#Page 3|Masters of Ceremony]] <small><span  class=\"explain \" title=\"Page 3\">P3</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 65,
+          "currency": "medals"
+        },
+        "warbond_id": "masters_of_ceremony",
+        "warbond_page": 3,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_142_pyrotech",
+      "name": "G-142 Pyrotech",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-142 Pyrotech",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 125762,
+          "revision_timestamp": "2026-07-13T06:07:38Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-142_Pyrotech"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 20</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">400 Explosion</span>]]</span>",
+        "damage_types": [
+          "explosion"
+        ],
+        "source": "[[Helldivers Mobilize Warbond#Page 5|Helldivers Mobilize!]] <small><span  class=\"explain \" title=\"Page 5\">P5</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 20,
+          "currency": "medals"
+        },
+        "warbond_id": "helldivers_mobilize",
+        "warbond_page": 5,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_16_impact",
+      "name": "G-16 Impact",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-16 Impact",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126328,
+          "revision_timestamp": "2026-07-19T00:45:27Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-16_Impact"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 25</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=Explosion]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">0 </span>]]</span>",
+        "damage_types": [
+          "explosion"
+        ],
+        "source": "[[Cutting Edge Premium Warbond#Page 2|Cutting Edge]] <small><span  class=\"explain \" title=\"Page 2\">P2</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 25,
+          "currency": "medals"
+        },
+        "warbond_id": "cutting_edge",
+        "warbond_page": 2,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_23_stun",
+      "name": "G-23 Stun",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-23 Stun",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126725,
+          "revision_timestamp": "2026-07-26T10:01:13Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-23_Stun"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 65</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Arc Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: cyan;\">100 Arc</span>]]</span> (x10)",
+        "damage_types": [
+          "arc"
+        ],
+        "source": "[[Control Group Premium Warbond#Page 3|Control Group]] <small><span  class=\"explain \" title=\"Page 3\">P3</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 65,
+          "currency": "medals"
+        },
+        "warbond_id": "control_group",
+        "warbond_page": 3,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_31_arc",
+      "name": "G-31 Arc",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-31 Arc",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132452,
+          "revision_timestamp": "2026-08-24T13:52:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-31_Arc"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 25</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=Explosion]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">0 </span>]]</span>",
+        "damage_types": [
+          "explosion"
+        ],
+        "source": "[[Helldivers Mobilize Warbond#Page 8|Helldivers Mobilize!]] <small><span  class=\"explain \" title=\"Page 8\">P8</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 25,
+          "currency": "medals"
+        },
+        "warbond_id": "helldivers_mobilize",
+        "warbond_page": 8,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_3_smoke",
+      "name": "G-3 Smoke",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-3 Smoke",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 120276,
+          "revision_timestamp": "2026-05-14T13:31:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-3_Smoke"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "4",
+        "capacity_count": 4,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 50</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">2,000 Explosion</span>]]</span><br><span class=\"DamageIcons icon-outline\">[[File:Damage Fire Icon.svg|20px|link=Damage|alt=Fire]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orangered;\">600 Flamewall </span>]]</span> (x2)",
+        "damage_types": [
+          "explosion",
+          "fire"
+        ],
+        "source": "[[Castellan’s Creed Legendary Warbond|Castellan’s Creed]]",
+        "unlock_cost_normalized": {
+          "amount": 50,
+          "currency": "medals"
+        },
+        "warbond_id": "castellan_s_creed",
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_40_k_melta_mine",
+      "name": "G/40-K Melta Mine",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G/40-K Melta Mine",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135966,
+          "revision_timestamp": "2026-09-21T15:25:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G/40-K_Melta_Mine"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "2",
+        "capacity_count": 2,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 50</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">2,000 Explosion</span>]]</span>",
+        "damage_types": [
+          "explosion"
+        ],
+        "source": "[[Entrenched Division Premium Warbond#Page 2|Entrenched Division]] <small><span  class=\"explain \" title=\"Page 2\">P2</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 50,
+          "currency": "medals"
+        },
+        "warbond_id": "entrenched_division",
+        "warbond_page": 2,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_48_giga_grenade",
+      "name": "G-48 Giga Grenade",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-48 Giga Grenade",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 129943,
+          "revision_timestamp": "2026-08-17T04:09:38Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-48_Giga_Grenade"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "4",
+        "capacity_count": 4,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 30</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Gas Icon.svg|20px|link=Damage|alt=Gas]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: green;\">3 Gas (Explosion) </span>]]</span><br><span class=\"DamageIcons icon-outline\">[[File:Damage Gas Icon.svg|20px|link=Damage|alt=Gas]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: green;\">25 DPS Gas </span>]]</span>",
+        "damage_types": [
+          "gas"
+        ],
+        "source": "[[Chemical Agents Premium Warbond#Page 1|Chemical Agents]] <small><span  class=\"explain \" title=\"Page 1\">P1</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 30,
+          "currency": "medals"
+        },
+        "warbond_id": "chemical_agents",
+        "warbond_page": 1,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_4_gas",
+      "name": "G-4 Gas",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-4 Gas",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134066,
+          "revision_timestamp": "2026-09-05T07:07:28Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-4_Gas"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 65</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">500 Explosion</span>]]</span>",
+        "damage_types": [
+          "explosion"
+        ],
+        "source": "[[Servants of Freedom Premium Warbond#Page 3|Servants of Freedom]] <small><span  class=\"explain \" title=\"Page 3\">P3</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 65,
+          "currency": "medals"
+        },
+        "warbond_id": "servants_of_freedom",
+        "warbond_page": 3,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_50_seeker",
+      "name": "G-50 Seeker",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-50 Seeker",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135535,
+          "revision_timestamp": "2026-09-15T18:37:53Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-50_Seeker"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> </span> [[Medal]]s</span>",
+        "source": "[[Ironclad Democracy Premium Warbond|Ironclad Democracy]]",
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_60_anti_tank_seeker",
+      "name": "G-60 Anti-Tank Seeker",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-60 Anti-Tank Seeker",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135596,
+          "revision_timestamp": "2026-09-16T06:49:02Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-60_Anti-Tank_Seeker"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "6",
+        "capacity_count": 6,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 2</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=Explosion]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">500 Explosion </span>]]</span><br><span class=\"DamageIcons icon-outline\">[[File:Damage Ballistic Icon.svg|20px|link=Damage|alt=Ballistic]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: default;\">110 Shrapnel </span>]]</span> (x35)",
+        "damage_types": [
+          "explosion",
+          "ballistic"
+        ],
+        "source": "[[Helldivers Mobilize Warbond#Page 1|Helldivers Mobilize!]] <small><span  class=\"explain \" title=\"Page 1\">P1</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 2,
+          "currency": "medals"
+        },
+        "warbond_id": "helldivers_mobilize",
+        "warbond_page": 1,
+        "weapon_category": "Throwables",
+        "weapon_type": "Standard"
+      },
+      "id": "g_6_frag",
+      "name": "G-6 Frag",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-6 Frag",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126327,
+          "revision_timestamp": "2026-07-19T00:42:42Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-6_Frag"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 65</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">300 Explosion</span>]]</span> (Grenade)<br> <span class=\"DamageIcons icon-outline\">[[File:Damage Ballistic Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: default;\">300 Ballistic</span>]]</span> (Bomblets <br><span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">100 Explosion</span>]]</span> x18)",
+        "damage_types": [
+          "explosion",
+          "ballistic"
+        ],
+        "source": "[[Dust Devils Premium Warbond#Page 3|Dust Devils]] <small><span  class=\"explain \" title=\"Page 3\">P3</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 65,
+          "currency": "medals"
+        },
+        "warbond_id": "dust_devils",
+        "warbond_page": 3,
+        "weapon_category": "Throwables",
+        "weapon_type": "Standard"
+      },
+      "id": "g_7_pineapple",
+      "name": "G-7 Pineapple",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-7 Pineapple",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134063,
+          "revision_timestamp": "2026-09-05T07:01:19Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-7_Pineapple"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "5",
+        "capacity_count": 5,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Credit.svg|link=Super Credits|alt=]] 300</span> [[Super Credits]]</span>",
+        "damage": "0",
+        "source": "[[Superstore]]",
+        "unlock_cost_normalized": {
+          "amount": 300,
+          "currency": "super_credits"
+        },
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_89_smokescreen",
+      "name": "G-89 Smokescreen",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-89 Smokescreen",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 120279,
+          "revision_timestamp": "2026-05-14T14:09:53Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-89_Smokescreen"
+        }
+      ]
+    },
+    {
+      "facts": {
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> </span> [[Medal]]s</span>",
+        "source": "[[Ironclad Democracy Premium Warbond|Ironclad Democracy]]",
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_8_immolation",
+      "name": "G-8 Immolation",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G-8 Immolation",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135592,
+          "revision_timestamp": "2026-09-16T06:36:25Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G-8_Immolation"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "4",
+        "capacity_count": 4,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 65</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">0 Explosion</span>]]</span>",
+        "damage_types": [
+          "explosion"
+        ],
+        "source": "[[Siege Breakers Premium Warbond#Page 3|Siege Breakers]] <small><span  class=\"explain \" title=\"Page 3\">P3</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 65,
+          "currency": "medals"
+        },
+        "warbond_id": "siege_breakers",
+        "warbond_page": 3,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "g_sh_39_shield",
+      "name": "G/SH-39 Shield",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "G/SH-39 Shield",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135960,
+          "revision_timestamp": "2026-09-21T10:38:58Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/G/SH-39_Shield"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "20",
+        "capacity_count": 20,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 60</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Ballistic Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: default;\">300 Ballistic</span>]]</span>",
+        "damage_types": [
+          "ballistic"
+        ],
+        "source": "[[Viper Commandos Premium Warbond#Page 3|Viper Commandos]] <small><span  class=\"explain \" title=\"Page 3\">P3</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 60,
+          "currency": "medals"
+        },
+        "warbond_id": "viper_commandos",
+        "warbond_page": 3,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "k_2_throwing_knife",
+      "name": "K-2 Throwing Knife",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "K-2 Throwing Knife",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 120451,
+          "revision_timestamp": "2026-05-17T15:56:39Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/K-2_Throwing_Knife"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "4",
+        "capacity_count": 4,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 65</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">1,000 Explosion</span>]]</span>",
+        "damage_types": [
+          "explosion"
+        ],
+        "source": "[[Borderline Justice Premium Warbond#Page 3|Borderline Justice]] <small><span  class=\"explain \" title=\"Page 3\">P3</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 65,
+          "currency": "medals"
+        },
+        "warbond_id": "borderline_justice",
+        "warbond_page": 3,
+        "weapon_category": "Throwables",
+        "weapon_type": "Standard"
+      },
+      "id": "ted_63_dynamite",
+      "name": "TED-63 Dynamite",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "TED-63 Dynamite",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130417,
+          "revision_timestamp": "2026-08-19T12:36:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/TED-63_Dynamite"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "capacity_count": {
+          "from": [
+            "facts.capacity"
+          ],
+          "kind": "derived"
+        },
+        "damage_types": {
+          "from": [
+            "facts.damage"
+          ],
+          "kind": "derived"
+        },
+        "unlock_cost_normalized": {
+          "from": [
+            "facts.cost"
+          ],
+          "kind": "derived"
+        },
+        "warbond_id": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        },
+        "warbond_page": {
+          "from": [
+            "facts.source"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "capacity": "4",
+        "capacity_count": 4,
+        "cost": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\"><span class=\"Medalicon\">[[File:Medal.svg|link=Medal|alt=]]</span> 65</span> [[Medal]]s</span>",
+        "damage": "<span class=\"DamageIcons icon-outline\">[[File:Damage Explosion Icon.svg|20px|link=Damage|alt=]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: orange;\">1,000 Explosion</span>]]</span><br><span class=\"DamageIcons icon-outline\">[[File:Damage Ballistic Icon.svg|20px|link=Damage|alt=Ballistic]]</span>&nbsp;<span class=\"DamageIcons\" >[[Damage#Damage_Types|<span style=\"color: default;\">110 Shrapnel </span>]]</span> (x35)",
+        "damage_types": [
+          "explosion",
+          "ballistic"
+        ],
+        "source": "[[Redacted Regiment Premium Warbond#Page 3|Redacted Regiment]] <small><span  class=\"explain \" title=\"Page 3\">P3</span></small>",
+        "unlock_cost_normalized": {
+          "amount": 65,
+          "currency": "medals"
+        },
+        "warbond_id": "redacted_regiment",
+        "warbond_page": 3,
+        "weapon_category": "Throwables",
+        "weapon_type": "Special"
+      },
+      "id": "tm_1_lure_mine",
+      "name": "TM-1 Lure Mine",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "TM-1 Lure Mine",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135964,
+          "revision_timestamp": "2026-09-21T11:03:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/TM-1_Lure_Mine"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}

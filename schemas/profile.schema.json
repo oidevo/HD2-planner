@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hd2/profile.schema.json",
+  "title": "HD2 portable player profile",
+  "type": "object",
+  "required": ["schema_version", "player", "preferences", "characters", "gameplay_observations"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "player": {"type": "object", "required": ["id", "display_name"], "properties": {"id": {"type": "string"}, "display_name": {"type": "string"}}},
+    "preferences": {"$ref": "#/$defs/preferences"},
+    "characters": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/character"}},
+    "gameplay_observations": {"type": "array", "items": {"$ref": "#/$defs/observation"}},
+    "saved_loadouts": {"type": "array"},
+    "saved_loadout_files": {"type": "array", "items": {"type": "string"}},
+    "progression_notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "preferences": {"type": "object", "properties": {"general": {"type": "object"}, "item_preferences": {"type": "object", "additionalProperties": {"enum": ["favorite", "like", "neutral", "dislike", "avoid"]}}}},
+    "state": {"type": "object", "required": ["status"], "properties": {"status": {"enum": ["unknown", "locked", "unlocked"]}}},
+    "inventory": {"type": "object", "additionalProperties": {"type": "object", "additionalProperties": {"$ref": "#/$defs/state"}}},
+    "character": {"type": "object", "required": ["platform", "level", "inventory"], "properties": {"platform": {"type": "string"}, "level": {"type": "integer", "minimum": 0}, "inventory": {"$ref": "#/$defs/inventory"}, "preference_overrides": {"$ref": "#/$defs/preferences"}, "resources": {"type": "object"}}},
+    "observation": {"type": "object", "required": ["date", "character", "rating", "confidence", "notes"], "properties": {"date": {"type": "string"}, "character": {"type": "string"}, "item_id": {"type": ["string", "null"]}, "faction": {"type": ["string", "null"]}, "mission_type": {"type": ["string", "null"]}, "difficulty": {"type": ["integer", "null"]}, "rating": {"type": "string"}, "confidence": {"type": "string"}, "notes": {"type": "string"}}}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hd2/planner-constraints.schema.json",
+  "title": "Mechanical planner constraints",
+  "type": "object",
+  "required": ["schema_version", "constraints_version", "constraints"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "constraints_version": {"type": "string"},
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "applies_to", "origin"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "kind": {"enum": ["slot_cardinality", "shared_capacity", "relationship", "mutual_exclusion"]},
+          "origin": {"enum": ["game_rule", "derived_catalog_rule"]},
+          "readiness": {"enum": ["ready", "blocked"]}
+        }
+      }
+    }
+  }
+}

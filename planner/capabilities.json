@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "capability_version": "1.0.0",
+  "capabilities": [
+    {"id": "light_clear", "evidence_class": "curated_assessment", "description": "Efficiently handles groups of light enemies."},
+    {"id": "medium_armor_damage", "evidence_class": "curated_assessment", "description": "Reliably contributes against medium-armored threats; penetration facts are evidence, not sufficient proof of effectiveness."},
+    {"id": "anti_tank", "evidence_class": "fact_supported", "description": "Explicitly marked Anti-Tank by the structured source."},
+    {"id": "structure_destroy", "evidence_class": "curated_assessment", "description": "Reliably destroys relevant enemy structures or objectives; explosive damage alone does not establish this."},
+    {"id": "crowd_control", "evidence_class": "curated_assessment", "description": "Restricts, stuns, slows, redirects, or otherwise controls groups."},
+    {"id": "burst_output", "evidence_class": "curated_assessment", "description": "Delivers high effect in a short window."},
+    {"id": "sustained_output", "evidence_class": "curated_assessment", "description": "Maintains useful effect over an extended engagement."},
+    {"id": "close_range", "evidence_class": "curated_assessment", "description": "Best suited to close engagement distances."},
+    {"id": "long_range", "evidence_class": "curated_assessment", "description": "Reliably operates at long engagement distances."},
+    {"id": "area_denial", "evidence_class": "curated_assessment", "description": "Makes an area unsafe or difficult for enemies over time."},
+    {"id": "defensive_utility", "evidence_class": "curated_assessment", "description": "Protects a position, player, or team."},
+    {"id": "mobility", "evidence_class": "curated_assessment", "description": "Improves repositioning or traversal."},
+    {"id": "team_support", "evidence_class": "curated_assessment", "description": "Provides material benefit to teammates beyond raw damage."},
+    {"id": "objective_utility", "evidence_class": "curated_assessment", "description": "Provides reliable utility for completing mission objectives."}
+  ],
+  "supporting_facts": [
+    "armor_penetration",
+    "anti_tank",
+    "damage_types",
+    "explosive",
+    "traits_normalized",
+    "cooldown_seconds",
+    "occupies_backpack_slot"
+  ],
+  "excluded_initial_capabilities": [
+    {"id": "shield_breaking", "reason": "The accepted catalog has no reliable normalized shield interaction data."},
+    {"id": "heavy_damage", "reason": "Too vague; use the explicit anti_tank fact plus a curated assessment where needed."}
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0.0",
+  "constraints_version": "1.0.0",
+  "constraints": [
+    {
+      "id": "one_primary",
+      "kind": "slot_cardinality",
+      "slot": "primary",
+      "minimum": 1,
+      "maximum": 1,
+      "applies_to": "complete_loadout",
+      "origin": "game_rule"
+    },
+    {
+      "id": "one_secondary",
+      "kind": "slot_cardinality",
+      "slot": "secondary",
+      "minimum": 1,
+      "maximum": 1,
+      "applies_to": "complete_loadout",
+      "origin": "game_rule"
+    },
+    {
+      "id": "one_grenade",
+      "kind": "slot_cardinality",
+      "slot": "grenade",
+      "minimum": 1,
+      "maximum": 1,
+      "applies_to": "complete_loadout",
+      "origin": "game_rule"
+    },
+    {
+      "id": "one_body_armor",
+      "kind": "slot_cardinality",
+      "slot": "body_armor",
+      "minimum": 1,
+      "maximum": 1,
+      "applies_to": "complete_loadout",
+      "origin": "game_rule"
+    },
+    {
+      "id": "one_booster",
+      "kind": "slot_cardinality",
+      "slot": "booster",
+      "minimum": 0,
+      "maximum": 1,
+      "applies_to": "player_loadout",
+      "origin": "game_rule",
+      "notes": "A solo planner may leave this empty when no booster is available; team uniqueness is not yet modeled."
+    },
+    {
+      "id": "four_distinct_stratagems",
+      "kind": "slot_cardinality",
+      "slot": "stratagem",
+      "minimum": 4,
+      "maximum": 4,
+      "distinct": true,
+      "applies_to": "ordinary_complete_loadout",
+      "origin": "game_rule",
+      "notes": "Mission modifiers that reduce available slots require an explicit future override; they are not represented in the catalog."
+    },
+    {
+      "id": "one_backpack_slot",
+      "kind": "shared_capacity",
+      "capacity": 1,
+      "consumer_fact": "occupies_backpack_slot",
+      "applies_to": "player_loadout",
+      "origin": "game_rule"
+    },
+    {
+      "id": "support_weapon_via_stratagem",
+      "kind": "relationship",
+      "source_collection": "stratagems",
+      "source_fact": "support_weapon_id",
+      "target_collection": "weapons",
+      "applies_to": "player_loadout",
+      "origin": "derived_catalog_rule"
+    },
+    {
+      "id": "armor_passive_is_armor_property",
+      "kind": "relationship",
+      "source_collection": "armor",
+      "source_fact": "passive_id",
+      "target_collection": "armor_passives",
+      "applies_to": "player_loadout",
+      "origin": "derived_catalog_rule",
+      "notes": "An armor passive is not an independently equipped slot."
+    },
+    {
+      "id": "one_attachment_per_weapon_slot",
+      "kind": "mutual_exclusion",
+      "group_by": ["weapon_id", "attachment_slot"],
+      "maximum": 1,
+      "applies_to": "weapon_configuration",
+      "origin": "game_rule",
+      "readiness": "blocked",
+      "notes": "Compatibility is normalized, but per-weapon attachment unlocks and per-weapon effects are not yet reliable."
+    }
+  ]
+}

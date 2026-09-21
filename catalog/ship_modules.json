@@ -1,0 +1,1949 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "items": [
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 60</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 5</span> [[Sample#Super|Super Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 60,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 5,
+            "currency": "super_samples"
+          }
+        ],
+        "path_id": "engineering_bay",
+        "prerequisite_module_id": "synthetic_supplementation",
+        "prior": "Synthetic Supplementation",
+        "section": "Engineering Bay",
+        "tier": "2"
+      },
+      "id": "advanced_construction",
+      "name": "Advanced Construction",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Advanced Construction",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134470,
+          "revision_timestamp": "2026-09-06T18:18:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Advanced_Construction"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 200</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 250</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 20</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 30000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 200,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 250,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 20,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 30000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "hangar",
+        "prerequisite_module_id": "xxl_weapons_bay",
+        "prior": "XXL Weapons Bay",
+        "section": "Hangar",
+        "tier": "5"
+      },
+      "id": "advanced_crew_training",
+      "name": "Advanced Crew Training",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Advanced Crew Training",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134471,
+          "revision_timestamp": "2026-09-06T18:19:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Advanced_Crew_Training"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 200</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 150</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 15</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 25,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 200,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 150,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 15,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 25000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "orbital_cannons",
+        "prerequisite_module_id": "zero_g_breech_loading",
+        "prior": "Zero-G Breech Loading",
+        "section": "Orbital Cannons",
+        "tier": "4"
+      },
+      "id": "atmospheric_monitoring",
+      "name": "Atmospheric Monitoring",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Atmospheric Monitoring",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134437,
+          "revision_timestamp": "2026-09-06T17:37:55Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Atmospheric_Monitoring"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 150</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 150</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 20</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 25,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 150,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 150,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 20,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 25000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "robotics_workshop",
+        "prerequisite_module_id": "high_quality_lubricant",
+        "prior": "High-Quality Lubricant",
+        "section": "Robotics Workshop",
+        "tier": "4"
+      },
+      "id": "blast_absorption",
+      "name": "Blast Absorption",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Blast Absorption",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134472,
+          "revision_timestamp": "2026-09-06T18:19:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Blast_Absorption"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 200</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 150</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 20</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 20,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 200,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 150,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 20,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 20000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "engineering_bay",
+        "prerequisite_module_id": "rapid_launch_system",
+        "prior": "Rapid Launch System",
+        "section": "Engineering Bay",
+        "tier": "4"
+      },
+      "id": "circuit_expansion",
+      "name": "Circuit Expansion",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Circuit Expansion",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134473,
+          "revision_timestamp": "2026-09-06T18:19:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Circuit_Expansion"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 250</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 200</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 30</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 35,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 250,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 200,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 30,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 35000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "robotics_workshop",
+        "prerequisite_module_id": "blast_absorption",
+        "prior": "Blast Absorption",
+        "section": "Robotics Workshop",
+        "tier": "5"
+      },
+      "id": "cross_platform_compatibility",
+      "name": "Cross-Platform Compatibility",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Cross-Platform Compatibility",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134474,
+          "revision_timestamp": "2026-09-06T18:19:34Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Cross-Platform_Compatibility"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 60</span> [[Sample#Common|Common Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 60,
+            "currency": "common_samples"
+          }
+        ],
+        "path_id": "patriotic_administration_center",
+        "prerequisite_module_id": null,
+        "prior": "None",
+        "section": "Patriotic Administration Center",
+        "tier": "1"
+      },
+      "id": "donation_access_license",
+      "name": "Donation Access License",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Donation Access License",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134469,
+          "revision_timestamp": "2026-09-06T18:16:21Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Donation_Access_License"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 60</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 20</span> [[Sample#Rare|Rare Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 60,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 20,
+            "currency": "rare_samples"
+          }
+        ],
+        "path_id": "robotics_workshop",
+        "prerequisite_module_id": null,
+        "prior": "None",
+        "section": "Robotics Workshop",
+        "tier": "1"
+      },
+      "id": "dynamic_tracking",
+      "name": "Dynamic Tracking",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Dynamic Tracking",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134499,
+          "revision_timestamp": "2026-09-06T18:23:44Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Dynamic_Tracking"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 200</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 150</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 15</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 25,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 200,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 150,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 15,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 25000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "bridge",
+        "prerequisite_module_id": "power_steering",
+        "prior": "Power Steering",
+        "section": "Bridge",
+        "tier": "4"
+      },
+      "id": "enhanced_combustion",
+      "name": "Enhanced Combustion",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Enhanced Combustion",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134475,
+          "revision_timestamp": "2026-09-06T18:19:44Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Enhanced_Combustion"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 80</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 10</span> [[Sample#Super|Super Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 80,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 10,
+            "currency": "super_samples"
+          }
+        ],
+        "path_id": "hangar",
+        "prerequisite_module_id": "pit_crew_hazard_pay",
+        "prior": "Pit Crew Hazard Pay",
+        "section": "Hangar",
+        "tier": "3"
+      },
+      "id": "expanded_weapons_bay",
+      "name": "Expanded Weapons Bay",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Expanded Weapons Bay",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134476,
+          "revision_timestamp": "2026-09-06T18:19:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Expanded_Weapons_Bay"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 100</span> [[Sample#Common|Common Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 100,
+            "currency": "common_samples"
+          }
+        ],
+        "path_id": "orbital_cannons",
+        "prerequisite_module_id": null,
+        "prior": "None",
+        "section": "Orbital Cannons",
+        "tier": "1"
+      },
+      "id": "exploding_shrapnel",
+      "name": "Exploding Shrapnel",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Exploding Shrapnel",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134477,
+          "revision_timestamp": "2026-09-06T18:20:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Exploding_Shrapnel"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 60</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 5</span> [[Sample#Super|Super Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 60,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 5,
+            "currency": "super_samples"
+          }
+        ],
+        "path_id": "patriotic_administration_center",
+        "prerequisite_module_id": "streamlined_request_process",
+        "prior": "Streamlined Request Process",
+        "section": "Patriotic Administration Center",
+        "tier": "3"
+      },
+      "id": "hand_carts",
+      "name": "Hand Carts",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Hand Carts",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134478,
+          "revision_timestamp": "2026-09-06T18:20:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Hand_Carts"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 250</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 200</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 20</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 35,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 250,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 200,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 20,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 35000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "orbital_cannons",
+        "prerequisite_module_id": "atmospheric_monitoring",
+        "prior": "Atmospheric Monitoring",
+        "section": "Orbital Cannons",
+        "tier": "5"
+      },
+      "id": "high_density_explosives",
+      "name": "High-Density Explosives",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "High-Density Explosives",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134480,
+          "revision_timestamp": "2026-09-06T18:20:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/High-Density_Explosives"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 80</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 10</span> [[Sample#Super|Super Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 80,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 10,
+            "currency": "super_samples"
+          }
+        ],
+        "path_id": "robotics_workshop",
+        "prerequisite_module_id": "shock_absorption_gel",
+        "prior": "Shock Absorption Gel",
+        "section": "Robotics Workshop",
+        "tier": "3"
+      },
+      "id": "high_quality_lubricant",
+      "name": "High-Quality Lubricant",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "High-Quality Lubricant",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134481,
+          "revision_timestamp": "2026-09-06T18:20:34Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/High-Quality_Lubricant"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          }
+        ],
+        "path_id": "hangar",
+        "prerequisite_module_id": null,
+        "prior": "None",
+        "section": "Hangar",
+        "tier": "1"
+      },
+      "id": "liquid_ventilated_cockpit",
+      "name": "Liquid-Ventilated Cockpit",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Liquid-Ventilated Cockpit",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134483,
+          "revision_timestamp": "2026-09-06T18:20:44Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Liquid-Ventilated_Cockpit"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 250</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 200</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 20</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 35,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 250,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 200,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 20,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 35000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "bridge",
+        "prerequisite_module_id": "enhanced_combustion",
+        "prior": "Enhanced Combustion",
+        "section": "Bridge",
+        "tier": "5"
+      },
+      "id": "morale_augmentation",
+      "name": "Morale Augmentation",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Morale Augmentation",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134486,
+          "revision_timestamp": "2026-09-06T18:20:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Morale_Augmentation"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 60</span> [[Sample#Rare|Rare Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 60,
+            "currency": "rare_samples"
+          }
+        ],
+        "path_id": "orbital_cannons",
+        "prerequisite_module_id": "exploding_shrapnel",
+        "prior": "Exploding Shrapnel",
+        "section": "Orbital Cannons",
+        "tier": "2"
+      },
+      "id": "more_guns",
+      "name": "More Guns",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "More Guns",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134488,
+          "revision_timestamp": "2026-09-06T18:21:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/More_Guns"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 40</span> [[Sample#Rare|Rare Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 40,
+            "currency": "rare_samples"
+          }
+        ],
+        "path_id": "bridge",
+        "prerequisite_module_id": "targeting_software_upgrade",
+        "prior": "Targeting Software Upgrade",
+        "section": "Bridge",
+        "tier": "2"
+      },
+      "id": "nuclear_radar",
+      "name": "Nuclear Radar",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Nuclear Radar",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134490,
+          "revision_timestamp": "2026-09-06T18:21:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Nuclear_Radar"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 200</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 200</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 20</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 30,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 200,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 200,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 20,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 30000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "patriotic_administration_center",
+        "prerequisite_module_id": "superior_packing_methodology",
+        "prior": "Superior Packing Methodology",
+        "section": "Patriotic Administration Center",
+        "tier": "5"
+      },
+      "id": "payroll_management_system",
+      "name": "Payroll Management System",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Payroll Management System",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134491,
+          "revision_timestamp": "2026-09-06T18:21:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Payroll_Management_System"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 40</span> [[Sample#Rare|Rare Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 40,
+            "currency": "rare_samples"
+          }
+        ],
+        "path_id": "hangar",
+        "prerequisite_module_id": "liquid_ventilated_cockpit",
+        "prior": "Liquid-Ventilated Cockpit",
+        "section": "Hangar",
+        "tier": "2"
+      },
+      "id": "pit_crew_hazard_pay",
+      "name": "Pit Crew Hazard Pay",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Pit Crew Hazard Pay",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134492,
+          "revision_timestamp": "2026-09-06T18:21:34Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Pit_Crew_Hazard_Pay"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 80</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 10</span> [[Sample#Super|Super Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 80,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 10,
+            "currency": "super_samples"
+          }
+        ],
+        "path_id": "bridge",
+        "prerequisite_module_id": "nuclear_radar",
+        "prior": "Nuclear Radar",
+        "section": "Bridge",
+        "tier": "3"
+      },
+      "id": "power_steering",
+      "name": "Power Steering",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Power Steering",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134493,
+          "revision_timestamp": "2026-09-06T18:21:44Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Power_Steering"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 80</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 10</span> [[Sample#Super|Super Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 80,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 10,
+            "currency": "super_samples"
+          }
+        ],
+        "path_id": "engineering_bay",
+        "prior": "Engineering Bay",
+        "section": "Engineering Bay",
+        "tier": "3"
+      },
+      "id": "rapid_launch_system",
+      "name": "Rapid Launch System",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Rapid Launch System",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134494,
+          "revision_timestamp": "2026-09-06T18:21:54Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Rapid_Launch_System"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 40</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 5</span> [[Sample#Super|Super Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 40,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 5,
+            "currency": "super_samples"
+          }
+        ],
+        "path_id": "robotics_workshop",
+        "prerequisite_module_id": "dynamic_tracking",
+        "prior": "Dynamic Tracking",
+        "section": "Robotics Workshop",
+        "tier": "2"
+      },
+      "id": "shock_absorption_gel",
+      "name": "Shock Absorption Gel",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Shock Absorption Gel",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134495,
+          "revision_timestamp": "2026-09-06T18:22:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Shock_Absorption_Gel"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 250</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 200</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 25</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 30,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 250,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 200,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 25,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 30000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "engineering_bay",
+        "prerequisite_module_id": "circuit_expansion",
+        "prior": "Circuit Expansion",
+        "section": "Engineering Bay",
+        "tier": "5"
+      },
+      "id": "streamlined_launch_process",
+      "name": "Streamlined Launch Process",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Streamlined Launch Process",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134496,
+          "revision_timestamp": "2026-09-06T18:22:14Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Streamlined_Launch_Process"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 40</span> [[Sample#Rare|Rare Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 40,
+            "currency": "rare_samples"
+          }
+        ],
+        "path_id": "patriotic_administration_center",
+        "prerequisite_module_id": "donation_access_license",
+        "prior": "Donation Access License",
+        "section": "Patriotic Administration Center",
+        "tier": "2"
+      },
+      "id": "streamlined_request_process",
+      "name": "Streamlined Request Process",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Streamlined Request Process",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134463,
+          "revision_timestamp": "2026-09-06T18:14:27Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Streamlined_Request_Process"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 150</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 150</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 15</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 20,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 150,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 150,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 15,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 20000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "patriotic_administration_center",
+        "prerequisite_module_id": "hand_carts",
+        "prior": "Hand Carts",
+        "section": "Patriotic Administration Center",
+        "tier": "4"
+      },
+      "id": "superior_packing_methodology",
+      "name": "Superior Packing Methodology",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Superior Packing Methodology",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134464,
+          "revision_timestamp": "2026-09-06T18:14:37Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Superior_Packing_Methodology"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 60</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 10</span> [[Sample#Rare|Rare Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 60,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 10,
+            "currency": "rare_samples"
+          }
+        ],
+        "path_id": "engineering_bay",
+        "prerequisite_module_id": null,
+        "prior": "None",
+        "section": "Engineering Bay",
+        "tier": "1"
+      },
+      "id": "synthetic_supplementation",
+      "name": "Synthetic Supplementation",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Synthetic Supplementation",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134465,
+          "revision_timestamp": "2026-09-06T18:14:47Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Synthetic_Supplementation"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 60</span> [[Sample#Common|Common Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 60,
+            "currency": "common_samples"
+          }
+        ],
+        "path_id": "bridge",
+        "prerequisite_module_id": null,
+        "prior": "None",
+        "section": "Bridge",
+        "tier": "1"
+      },
+      "id": "targeting_software_upgrade",
+      "name": "Targeting Software Upgrade",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Targeting Software Upgrade",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134466,
+          "revision_timestamp": "2026-09-06T18:14:57Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Targeting_Software_Upgrade"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 150</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 150</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 15</span> [[Sample#Super|Super Sample]]</span>",
+        "cost4": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Requisition Slip.svg|link=Requisition Slips|alt=]] 25,000</span> [[Requisition Slips]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 150,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 150,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 15,
+            "currency": "super_samples"
+          },
+          {
+            "amount": 25000,
+            "currency": "requisition"
+          }
+        ],
+        "path_id": "hangar",
+        "prerequisite_module_id": "expanded_weapons_bay",
+        "prior": "Expanded Weapons Bay",
+        "section": "Hangar",
+        "tier": "4"
+      },
+      "id": "xxl_weapons_bay",
+      "name": "XXL Weapons Bay",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "XXL Weapons Bay",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134467,
+          "revision_timestamp": "2026-09-06T18:15:07Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/XXL_Weapons_Bay"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "costs_normalized": {
+          "from": [
+            "facts.cost1",
+            "facts.cost2",
+            "facts.cost3",
+            "facts.cost4",
+            "facts.cost5"
+          ],
+          "kind": "derived"
+        },
+        "path_id": {
+          "from": [
+            "facts.section"
+          ],
+          "kind": "derived"
+        },
+        "prerequisite_module_id": {
+          "from": [
+            "facts.prior"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "cost1": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Common Sample Logo.svg|link=Sample#Common|alt=]] 80</span> [[Sample#Common|Common Sample]]</span>",
+        "cost2": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Rare Sample Logo.svg|link=Sample#Rare|alt=]] 80</span> [[Sample#Rare|Rare Sample]]</span>",
+        "cost3": "<span class=\"Currencyicons\"><span style=\"white-space:nowrap\">[[File:Super Sample Logo.svg|link=Sample#Super|alt=]] 10</span> [[Sample#Super|Super Sample]]</span>",
+        "costs_normalized": [
+          {
+            "amount": 80,
+            "currency": "common_samples"
+          },
+          {
+            "amount": 80,
+            "currency": "rare_samples"
+          },
+          {
+            "amount": 10,
+            "currency": "super_samples"
+          }
+        ],
+        "path_id": "orbital_cannons",
+        "prerequisite_module_id": "more_guns",
+        "prior": "More Guns",
+        "section": "Orbital Cannons",
+        "tier": "3"
+      },
+      "id": "zero_g_breech_loading",
+      "name": "Zero-G Breech Loading",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Zero-G Breech Loading",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 134468,
+          "revision_timestamp": "2026-09-06T18:15:17Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Zero-G_Breech_Loading"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}

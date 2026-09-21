@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hd2/community.schema.json",
+  "title": "Dated community/meta observation collection",
+  "type": "object",
+  "required": ["schema_version", "observations"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "observations": {"type": "array", "items": {"type": "object", "required": ["id", "source", "source_url", "source_type", "observation_date", "loadout"], "properties": {"id": {"type": "string"}, "source": {"type": "string"}, "source_url": {"type": "string"}, "source_type": {"type": "string"}, "author": {"type": ["string", "null"]}, "observation_date": {"type": "string"}, "game_version": {"type": ["string", "null"]}, "faction": {"type": ["string", "null"]}, "difficulty": {"type": ["integer", "null"]}, "mission_type": {"type": ["string", "null"]}, "loadout": {"type": "object"}, "notes": {"type": "string"}, "evidence_quality": {"enum": ["low", "medium", "high", "unknown"]}}}}
+  }
+}

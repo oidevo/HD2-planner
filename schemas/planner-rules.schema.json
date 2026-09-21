@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hd2/planner-rules.schema.json",
+  "title": "Planner rules (not game facts)",
+  "type": "object",
+  "required": ["schema_version", "rules_version", "rules"],
+  "properties": {"schema_version": {"const": "1.0.0"}, "rules_version": {"type": "string"}, "rules": {"type": "array", "items": {"type": "object", "required": ["id", "description", "origin", "enabled"]}}}
+}

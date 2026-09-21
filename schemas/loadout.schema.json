@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hd2/loadout.schema.json",
+  "title": "HD2 saved loadout",
+  "type": "object",
+  "required": ["schema_version", "id", "name", "primary", "secondary", "grenade", "armor", "booster", "stratagems", "created_at", "last_modified"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"}, "id": {"type": "string"}, "name": {"type": "string"},
+    "primary": {"type": ["string", "null"]}, "secondary": {"type": ["string", "null"]}, "grenade": {"type": ["string", "null"]}, "armor": {"type": ["string", "null"]}, "booster": {"type": ["string", "null"]},
+    "stratagems": {"type": "array", "maxItems": 4, "uniqueItems": true, "items": {"type": "string"}},
+    "intended_faction": {"type": ["string", "null"]}, "difficulty_range": {"type": ["array", "null"], "items": {"type": "integer"}}, "mission_type": {"type": ["string", "null"]}, "role": {"type": ["string", "null"]}, "notes": {"type": "string"}, "strengths": {"type": "array", "items": {"type": "string"}}, "weaknesses": {"type": "array", "items": {"type": "string"}}, "created_at": {"type": "string"}, "last_modified": {"type": "string"}, "game_version": {"type": ["string", "null"]}
+  }
+}

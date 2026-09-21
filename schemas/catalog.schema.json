@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/hd2/catalog.schema.json",
+  "title": "HD2 catalog collection",
+  "type": "object",
+  "required": ["schema_version", "catalog_version", "game_version", "generated_at", "sources", "items"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "catalog_version": {"type": "string"},
+    "game_version": {"type": "string"},
+    "generated_at": {"type": "string"},
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+    "items": {"type": "array", "items": {"$ref": "#/$defs/item"}}
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["name", "url", "retrieved_at"],
+      "properties": {"name": {"type": "string"}, "url": {"type": "string"}, "license": {"type": "string"}, "retrieved_at": {"type": "string"}}
+    },
+    "item": {
+      "type": "object",
+      "required": ["id", "name", "facts", "planner_tags", "provenance"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+        "name": {"type": "string"},
+        "facts": {"type": "object"},
+        "fact_provenance": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["kind", "from"],
+            "properties": {
+              "kind": {"enum": ["imported", "derived", "manually_curated"]},
+              "from": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        },
+        "planner_tags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["tag", "origin", "provenance_kind"],
+            "properties": {
+              "tag": {"type": "string"},
+              "origin": {"type": "string"},
+              "provenance_kind": {"enum": ["imported", "derived", "manually_curated"]},
+              "confidence": {"enum": ["low", "medium", "high", "unknown"]}
+            }
+          }
+        },
+        "provenance": {"type": "array", "items": {"type": "object", "required": ["source", "retrieved_at"]}}
+      }
+    }
+  }
+}

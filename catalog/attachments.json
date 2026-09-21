@@ -1,0 +1,1809 @@
+{
+  "catalog_version": "2026.09.21.2",
+  "game_version": "unknown",
+  "generated_at": "2026-09-21T19:18:47Z",
+  "items": [
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Eruptor,Diligence Counter Sniper,Hyena,Adjudicator,Coyote,Deadeye,Amendment,Censor",
+        "compatible_weapon_ids": [
+          "ar_2_coyote",
+          "br_14_adjudicator",
+          "r_2_amendment",
+          "r_36_eruptor",
+          "r_4_hyena",
+          "r_63cs_diligence_counter_sniper",
+          "r_6_deadeye",
+          "r_72_censor"
+        ],
+        "ergonomics": "-4",
+        "optic_range": "50m &nbsp;&bull;&nbsp; 100m &nbsp;&bull;&nbsp; 200m",
+        "slot": "optics",
+        "type": "Optics"
+      },
+      "id": "10x_sniper_scope",
+      "name": "10x Sniper Scope",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "10x Sniper Scope",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126820,
+          "revision_timestamp": "2026-07-27T19:24:03Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/10x_Sniper_Scope"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Carbine,Liberator Concussive,Punisher Plasma,Purifier,Scorcher,Exploding Crossbow,Breaker,Breaker Incendiary,Breaker Spray&Pray,Cookout,Halt,Punisher,Slugger,Dominator,Defender,Knight,Reprimand,Suppressor,Trident,Sweeper,Stoker,Gallant,Diligence Counter Sniper,Hyena,Double-Edge Sickle,Scythe,Sickle,Variable,Diligence,Amendment,Censor",
+        "compatible_weapon_ids": [
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_59_suppressor",
+          "cb_9_exploding_crossbow",
+          "jar_5_dominator",
+          "las_13_trident",
+          "las_16_sickle",
+          "las_17_double_edge_sickle",
+          "las_5_scythe",
+          "mp_98_knight",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_2_amendment",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_72_censor",
+          "sg_20_halt",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "sg_451_cookout",
+          "sg_8_punisher",
+          "sg_8p_punisher_plasma",
+          "sg_8s_slugger",
+          "sg_97_sweeper",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_flam_34_stoker",
+          "vg_70_variable"
+        ],
+        "optic_range": "37.5m",
+        "slot": "optics",
+        "type": "Optics"
+      },
+      "id": "1_5x_tube_red_dot",
+      "name": "1.5x Tube Red Dot",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "1.5x Tube Red Dot",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126819,
+          "revision_timestamp": "2026-07-27T19:21:53Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/1.5x_Tube_Red_Dot"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Adjudicator,Liberator,Tenderizer,Double-Edge Sickle,Scythe,Sickle,Variable,One-Two,Liberator Concussive,Defender,Knight,Pummeler,Pacifier,Trident,Sweeper,Stoker,Gallant,Liberator Penetrator,Eruptor,Hyena",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_32_pacifier",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "br_14_adjudicator",
+          "las_13_trident",
+          "las_16_sickle",
+          "las_17_double_edge_sickle",
+          "las_5_scythe",
+          "mp_98_knight",
+          "r_36_eruptor",
+          "r_4_hyena",
+          "sg_97_sweeper",
+          "smg_203_gallant",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker",
+          "vg_70_variable"
+        ],
+        "ergonomics": "-1",
+        "optic_range": "25m &nbsp;&bull;&nbsp; 50m &nbsp;&bull;&nbsp; 100m",
+        "slot": "optics",
+        "type": "Optics"
+      },
+      "id": "2x_tube_red_dot",
+      "name": "2x Tube Red Dot",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "2x Tube Red Dot",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126821,
+          "revision_timestamp": "2026-07-27T19:24:35Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/2x_Tube_Red_Dot"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Penetrator,Deadeye,Diligence,Amendment,Liberator Carbine,Liberator Concussive,Dominator,Pacifier,Coyote,Suppressor,Sweeper,Stoker,Eruptor,Diligence Counter Sniper,Hyena,Adjudicator,Liberator,Tenderizer,Double-Edge Sickle,Sickle,Variable,One-Two",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "br_14_adjudicator",
+          "jar_5_dominator",
+          "las_16_sickle",
+          "las_17_double_edge_sickle",
+          "r_2_amendment",
+          "r_36_eruptor",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_6_deadeye",
+          "sg_97_sweeper",
+          "smg_flam_34_stoker",
+          "vg_70_variable"
+        ],
+        "ergonomics": "-2",
+        "optic_range": "25m &nbsp;&bull;&nbsp; 75m &nbsp;&bull;&nbsp; 150m",
+        "slot": "optics",
+        "type": "Optics"
+      },
+      "id": "4x_combat_scope",
+      "name": "4x Combat Scope",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "4x Combat Scope",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126822,
+          "revision_timestamp": "2026-07-27T19:24:36Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/4x_Combat_Scope"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Penetrator,Purifier,Scorcher,Double Freedom,Pacifier,Defender,Trident,Diligence,Breaker Spray&Pray,Liberator Carbine,Liberator Concussive,Adjudicator,Dominator,Eruptor,Censor,Coyote,Suppressor,Breaker,Diligence Counter Sniper,Tenderizer,Scythe,Liberator",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "br_14_adjudicator",
+          "dbs_2_double_freedom",
+          "jar_5_dominator",
+          "las_13_trident",
+          "las_5_scythe",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_36_eruptor",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_72_censor",
+          "sg_225_breaker",
+          "sg_225sp_breaker_spray_pray",
+          "smg_37_defender"
+        ],
+        "ergonomics": "+5",
+        "slot": "underbarrel",
+        "sway": "-25%",
+        "type": "Underbarrel",
+        "vertical_recoil": "+20%"
+      },
+      "id": "angled_foregrip",
+      "name": "Angled Foregrip",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Angled Foregrip",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126823,
+          "revision_timestamp": "2026-07-27T19:24:38Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Angled_Foregrip"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Reprimand,Stoker,Liberator,Knight,Diligence,Defender,Pummeler,Tenderizer,Hyena,Liberator Penetrator,Diligence Counter Sniper,Gallant,Liberator Carbine,Adjudicator,One-Two,Pacifier,Coyote",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "br_14_adjudicator",
+          "mp_98_knight",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker"
+        ],
+        "ergonomics": "-5",
+        "slot": "muzzle",
+        "sway": "+25%",
+        "type": "Muzzle",
+        "vertical_recoil": "-30%"
+      },
+      "id": "compensator",
+      "name": "Compensator",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Compensator",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126824,
+          "revision_timestamp": "2026-07-27T19:24:39Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Compensator"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": [
+          "Breaker Spray&Pray",
+          "Breaker,Breaker Incendiary",
+          "Defender,Pummeler",
+          "Liberator Carbine",
+          "Liberator,Liberator Penetrator,Liberator Concussive",
+          "Stoker",
+          "Suppressor"
+        ],
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_59_suppressor",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker"
+        ],
+        "ergonomics": [
+          "-10",
+          "-15"
+        ],
+        "mag_capacity": [
+          "26",
+          "75",
+          "60"
+        ],
+        "max_magazines": [
+          "8",
+          "4",
+          "6"
+        ],
+        "slot": "magazine",
+        "type": "Magazine"
+      },
+      "id": "drum_magazine",
+      "name": "Drum Magazine",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Drum Magazine",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126743,
+          "revision_timestamp": "2026-07-26T17:31:41Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Drum_Magazine"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": [
+          "Breaker,Breaker Incendiary,Breaker Spray&Pray,Sweeper",
+          "Punisher"
+        ],
+        "compatible_weapon_ids": [
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "sg_8_punisher",
+          "sg_97_sweeper"
+        ],
+        "horizontal_spread": "+60%",
+        "slot": "muzzle",
+        "sway": "+25%",
+        "type": "Muzzle",
+        "vertical_spread": "-70%"
+      },
+      "id": "duckbill",
+      "name": "Duckbill",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Duckbill",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 135884,
+          "revision_timestamp": "2026-09-20T23:48:42Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Duckbill"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": [
+          "Breaker Spray&Pray",
+          "Breaker,Breaker Incendiary",
+          "Censor",
+          "Defender,Pummeler",
+          "Hyena",
+          "Knight,Gallant",
+          "Liberator Carbine",
+          "Liberator,Liberator Penetrator,Liberator Concussive,Suppressor",
+          "Stoker"
+        ],
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_59_suppressor",
+          "mp_98_knight",
+          "r_4_hyena",
+          "r_72_censor",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "smg_203_gallant",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker"
+        ],
+        "ergonomics": [
+          "-8",
+          "-15",
+          "-5"
+        ],
+        "mag_capacity": [
+          "16",
+          "30",
+          "45",
+          "15",
+          "70"
+        ],
+        "max_magazines": [
+          "13",
+          "7",
+          "6",
+          "5",
+          "8"
+        ],
+        "slot": "magazine",
+        "type": "Magazine"
+      },
+      "id": "extended_magazine",
+      "name": "Extended Magazine",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Extended Magazine",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 130808,
+          "revision_timestamp": "2026-08-20T17:06:19Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Extended_Magazine"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Carbine,Hyena,Liberator,Pacifier,Defender,Pummeler,One-Two,Gallant,Coyote,Reprimand,Diligence Counter Sniper,Tenderizer,Knight,Adjudicator,Diligence,Liberator Penetrator",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "br_14_adjudicator",
+          "mp_98_knight",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_72_pummeler"
+        ],
+        "ergonomics": "-3",
+        "horizontal_recoil": "-20%",
+        "slot": "muzzle",
+        "sway": "+10%",
+        "type": "Muzzle",
+        "vertical_recoil": "-10%"
+      },
+      "id": "flash_hider",
+      "name": "Flash Hider",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Flash Hider",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126826,
+          "revision_timestamp": "2026-07-27T19:24:43Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Flash_Hider"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Double Freedom,Liberator Penetrator,Purifier,Scorcher,Diligence Counter Sniper,Breaker,Tenderizer,Defender,Liberator Carbine,Liberator Concussive,Adjudicator,Pacifier,Coyote,Suppressor,Gallant,Censor,Breaker Spray&Pray,Diligence,Reprimand,Liberator,Knight,Dominator,Eruptor",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "br_14_adjudicator",
+          "dbs_2_double_freedom",
+          "jar_5_dominator",
+          "mp_98_knight",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_36_eruptor",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_72_censor",
+          "sg_225_breaker",
+          "sg_225sp_breaker_spray_pray",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender"
+        ],
+        "ergonomics": "-7",
+        "slot": "underbarrel",
+        "type": "Underbarrel",
+        "vertical_recoil": "-20%"
+      },
+      "id": "flashlight_vertical_foregrip",
+      "name": "Flashlight Vertical Foregrip",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Flashlight Vertical Foregrip",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126827,
+          "revision_timestamp": "2026-07-27T19:24:45Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Flashlight_Vertical_Foregrip"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Breaker,Breaker Incendiary,Breaker Spray&Pray,Punisher,Sweeper",
+        "compatible_weapon_ids": [
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "sg_8_punisher",
+          "sg_97_sweeper"
+        ],
+        "horizontal_spread": "-50%",
+        "slot": "muzzle",
+        "type": "Muzzle",
+        "vertical_spread": "-50%"
+      },
+      "id": "full_choke",
+      "name": "Full Choke",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Full Choke",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126828,
+          "revision_timestamp": "2026-07-27T19:24:46Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Full_Choke"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Breaker,Breaker Incendiary,Breaker Spray&Pray,Punisher,Sweeper",
+        "compatible_weapon_ids": [
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "sg_8_punisher",
+          "sg_97_sweeper"
+        ],
+        "horizontal_spread": "-25%",
+        "slot": "muzzle",
+        "type": "Muzzle",
+        "vertical_spread": "-25%"
+      },
+      "id": "half_choke",
+      "name": "Half Choke",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Half Choke",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126829,
+          "revision_timestamp": "2026-07-27T19:24:47Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Half_Choke"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Scythe",
+        "compatible_weapon_ids": [
+          "las_5_scythe"
+        ],
+        "ergonomics": "-10",
+        "heatsink_overheat": "150",
+        "max_magazines": "3",
+        "slot": "magazine",
+        "type": "Magazine"
+      },
+      "id": "high_capacity_heatsink",
+      "name": "High Capacity Heatsink",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "High Capacity Heatsink",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126830,
+          "revision_timestamp": "2026-07-27T19:24:50Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/High_Capacity_Heatsink"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Scythe",
+        "compatible_weapon_ids": [
+          "las_5_scythe"
+        ],
+        "heatsink_overheat": "60",
+        "max_magazines": "4",
+        "slot": "magazine",
+        "type": "Magazine"
+      },
+      "id": "high_dissipation_heatsink",
+      "name": "High Dissipation Heatsink",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "High Dissipation Heatsink",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126831,
+          "revision_timestamp": "2026-07-27T19:25:00Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/High_Dissipation_Heatsink"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Carbine,Blitzer,Punisher Plasma,Purifier,Scorcher,Exploding Crossbow,Breaker,Breaker Incendiary,Breaker Spray&Pray,Cookout,Halt,Punisher,Slugger,Dominator,Defender,Knight,Pummeler,Reprimand,Pacifier,Coyote,Suppressor,Trident,Sweeper,Stoker,Gallant,Eruptor,Diligence Counter Sniper,Hyena,Adjudicator,Liberator,Tenderizer,Double-Edge Sickle,Scythe,Sickle,Variable,One-Two,Liberator Penetrator,Deadeye,Diligence,Amendment,Censor",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "arc_12_blitzer",
+          "br_14_adjudicator",
+          "cb_9_exploding_crossbow",
+          "jar_5_dominator",
+          "las_13_trident",
+          "las_16_sickle",
+          "las_17_double_edge_sickle",
+          "las_5_scythe",
+          "mp_98_knight",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_2_amendment",
+          "r_36_eruptor",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_6_deadeye",
+          "r_72_censor",
+          "sg_20_halt",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "sg_451_cookout",
+          "sg_8_punisher",
+          "sg_8p_punisher_plasma",
+          "sg_8s_slugger",
+          "sg_97_sweeper",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker",
+          "vg_70_variable"
+        ],
+        "optic_range": "25m",
+        "slot": "optics",
+        "type": "Optics"
+      },
+      "id": "holographic_sight",
+      "name": "Holographic Sight",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Holographic Sight",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126832,
+          "revision_timestamp": "2026-07-27T19:25:03Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Holographic_Sight"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Concussive,Blitzer,Punisher Plasma,Purifier,Scorcher,Breaker Incendiary,Breaker,Breaker Spray&Pray,Cookout,Halt,Punisher,Slugger,Dominator,Reprimand,Suppressor,Trident,Liberator,Tenderizer,Double-Edge Sickle,Sickle,One-Two,Eruptor,Liberator Penetrator,Deadeye,Diligence,Censor",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "arc_12_blitzer",
+          "jar_5_dominator",
+          "las_13_trident",
+          "las_16_sickle",
+          "las_17_double_edge_sickle",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_36_eruptor",
+          "r_63_diligence",
+          "r_6_deadeye",
+          "r_72_censor",
+          "sg_20_halt",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "sg_451_cookout",
+          "sg_8_punisher",
+          "sg_8p_punisher_plasma",
+          "sg_8s_slugger",
+          "smg_32_reprimand"
+        ],
+        "ergonomics": "+5",
+        "optic_range": "25m",
+        "slot": "optics",
+        "type": "Optics"
+      },
+      "id": "iron_sight",
+      "name": "Iron Sight",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Iron Sight",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126833,
+          "revision_timestamp": "2026-07-27T19:25:04Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Iron_Sight"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Censor,Suppressor",
+        "compatible_weapon_ids": [
+          "ar_59_suppressor",
+          "r_72_censor"
+        ],
+        "ergonomics": "-3",
+        "slot": "underbarrel",
+        "type": "Underbarrel"
+      },
+      "id": "laser_sight",
+      "name": "Laser Sight",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Laser Sight",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126834,
+          "revision_timestamp": "2026-07-27T19:25:08Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Laser_Sight"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator,Double Freedom,Tenderizer,Diligence,Dominator,Eruptor,Adjudicator,Defender,Trident,Breaker,Censor,Coyote,Diligence Counter Sniper,Breaker Spray&Pray,Suppressor,Liberator Penetrator,Purifier,Scorcher,Pacifier,Liberator Carbine,Liberator Concussive",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "br_14_adjudicator",
+          "dbs_2_double_freedom",
+          "jar_5_dominator",
+          "las_13_trident",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_36_eruptor",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_72_censor",
+          "sg_225_breaker",
+          "sg_225sp_breaker_spray_pray",
+          "smg_37_defender"
+        ],
+        "ergonomics": "+3",
+        "slot": "underbarrel",
+        "sway": "-15%",
+        "type": "Underbarrel",
+        "vertical_recoil": "+20%"
+      },
+      "id": "laser_sight_angled_foregrip",
+      "name": "Laser Sight Angled Foregrip",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Laser Sight Angled Foregrip",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126835,
+          "revision_timestamp": "2026-07-27T19:25:09Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Laser_Sight_Angled_Foregrip"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Carbine,Liberator Concussive,Liberator,Liberator Penetrator,Tenderizer,Purifier,Scorcher,Scythe,Breaker Incendiary,Breaker,Breaker Spray&Pray,Dominator,Defender,Knight,Pummeler,Reprimand,Pacifier,Trident,Gallant,Censor,Suppressor,Adjudicator,Eruptor,Diligence Counter Sniper,Diligence,Coyote,Double Freedom,Hyena",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "br_14_adjudicator",
+          "dbs_2_double_freedom",
+          "jar_5_dominator",
+          "las_13_trident",
+          "las_5_scythe",
+          "mp_98_knight",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_36_eruptor",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_72_censor",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_72_pummeler"
+        ],
+        "ergonomics": "-5",
+        "slot": "underbarrel",
+        "type": "Underbarrel"
+      },
+      "id": "laser_sight_w_flashlight",
+      "name": "Laser Sight W/ Flashlight",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Laser Sight W/ Flashlight",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126836,
+          "revision_timestamp": "2026-07-27T19:25:10Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Laser_Sight_W/_Flashlight"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": [
+          "Hyena",
+          "Stoker,Gallant,Liberator,Knight,Adjudicator,Liberator Penetrator,Tenderizer,Diligence Counter Sniper,Pacifier,Coyote,Diligence,Liberator Carbine,One-Two,Reprimand,Defender,Pummeler"
+        ],
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "br_14_adjudicator",
+          "mp_98_knight",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker"
+        ],
+        "ergonomics": "-5",
+        "horizontal_recoil": "-40%",
+        "slot": "muzzle",
+        "sway": [
+          "+50%",
+          "+20%"
+        ],
+        "type": "Muzzle"
+      },
+      "id": "muzzle_brake",
+      "name": "Muzzle Brake",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Muzzle Brake",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 128387,
+          "revision_timestamp": "2026-08-12T17:02:01Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Muzzle_Brake"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Hyena,Tenderizer,Liberator Carbine,Liberator,Diligence,Breaker,Punisher,Defender,Knight,Pummeler,Reprimand,One-Two,Sweeper,Stoker,Gallant,Diligence Counter Sniper,Pacifier,Adjudicator,Liberator Penetrator,Coyote",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "br_14_adjudicator",
+          "mp_98_knight",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "sg_225_breaker",
+          "sg_8_punisher",
+          "sg_97_sweeper",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker"
+        ],
+        "slot": "muzzle",
+        "type": "Muzzle"
+      },
+      "id": "no_attachment",
+      "name": "No Attachment",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "No Attachment",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126838,
+          "revision_timestamp": "2026-07-27T19:25:24Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/No_Attachment"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Breaker Spray&Pray",
+        "compatible_weapon_ids": [
+          "sg_225sp_breaker_spray_pray"
+        ],
+        "slot": "muzzle",
+        "type": "Muzzle"
+      },
+      "id": "no_choke",
+      "name": "No Choke",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "No Choke",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126839,
+          "revision_timestamp": "2026-07-27T19:25:25Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/No_Choke"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Coyote,Sweeper,Stoker",
+        "compatible_weapon_ids": [
+          "ar_2_coyote",
+          "sg_97_sweeper",
+          "smg_flam_34_stoker"
+        ],
+        "optic_range": "25m",
+        "slot": "optics",
+        "type": "Optics"
+      },
+      "id": "no_optics",
+      "name": "No Optics",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "No Optics",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126840,
+          "revision_timestamp": "2026-07-27T19:25:27Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/No_Optics"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Carbine,Liberator Concussive,Liberator,Liberator Penetrator,Tenderizer,Purifier,Scorcher,Scythe,Breaker Incendiary,Breaker,Breaker Spray&Pray,Dominator,Defender,Knight,Pummeler,Reprimand,Pacifier,Trident,Gallant,Censor,Suppressor,Hyena,Adjudicator,Eruptor,Diligence Counter Sniper,Diligence,Coyote,Double Freedom",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "br_14_adjudicator",
+          "dbs_2_double_freedom",
+          "jar_5_dominator",
+          "las_13_trident",
+          "las_5_scythe",
+          "mp_98_knight",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_36_eruptor",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_72_censor",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_72_pummeler"
+        ],
+        "slot": "underbarrel",
+        "type": "Underbarrel"
+      },
+      "id": "no_underbarrel",
+      "name": "No Underbarrel",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "No Underbarrel",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126841,
+          "revision_timestamp": "2026-07-27T19:25:28Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/No_Underbarrel"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Carbine,Liberator Concussive,Blitzer,Punisher Plasma,Purifier,Scorcher,Exploding Crossbow,Breaker Incendiary,Breaker,Breaker Spray&Pray,Cookout,Halt,Punisher,Slugger,Dominator,Defender,Knight,Pummeler,Reprimand,Pacifier,Coyote,Suppressor,Sweeper,Stoker,Gallant,Diligence Counter Sniper,Hyena,Adjudicator,Liberator,Tenderizer,Scythe,Variable,One-Two,Liberator Penetrator,Deadeye,Diligence,Amendment,Censor",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "arc_12_blitzer",
+          "br_14_adjudicator",
+          "cb_9_exploding_crossbow",
+          "jar_5_dominator",
+          "las_5_scythe",
+          "mp_98_knight",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_2_amendment",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_6_deadeye",
+          "r_72_censor",
+          "sg_20_halt",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "sg_451_cookout",
+          "sg_8_punisher",
+          "sg_8p_punisher_plasma",
+          "sg_8s_slugger",
+          "sg_97_sweeper",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker",
+          "vg_70_variable"
+        ],
+        "optic_range": "25m",
+        "slot": "optics",
+        "type": "Optics"
+      },
+      "id": "reflex_sight",
+      "name": "Reflex Sight",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Reflex Sight",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126842,
+          "revision_timestamp": "2026-07-27T19:25:30Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Reflex_Sight"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Liberator Carbine,Liberator Concussive,Blitzer,Punisher Plasma,Purifier,Scorcher,Exploding Crossbow,Breaker Incendiary,Breaker,Breaker Spray&Pray,Cookout,Halt,Punisher,Slugger,Dominator,Defender,Knight,Pummeler,Reprimand,Pacifier,Coyote,Suppressor,Trident,Sweeper,Stoker,Gallant,Adjudicator,Liberator,Tenderizer,Double-Edge Sickle,Scythe,Sickle,Variable,One-Two,Eruptor,Diligence Counter Sniper,Hyena,Liberator Penetrator,Deadeye,Diligence,Amendment,Censor",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "ar_gl_21_one_two",
+          "arc_12_blitzer",
+          "br_14_adjudicator",
+          "cb_9_exploding_crossbow",
+          "jar_5_dominator",
+          "las_13_trident",
+          "las_16_sickle",
+          "las_17_double_edge_sickle",
+          "las_5_scythe",
+          "mp_98_knight",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_2_amendment",
+          "r_36_eruptor",
+          "r_4_hyena",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_6_deadeye",
+          "r_72_censor",
+          "sg_20_halt",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "sg_451_cookout",
+          "sg_8_punisher",
+          "sg_8p_punisher_plasma",
+          "sg_8s_slugger",
+          "sg_97_sweeper",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker",
+          "vg_70_variable"
+        ],
+        "optic_range": "25m",
+        "slot": "optics",
+        "type": "Optics"
+      },
+      "id": "reflex_sight_mk2",
+      "name": "Reflex Sight Mk2",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Reflex Sight Mk2",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126843,
+          "revision_timestamp": "2026-07-27T19:25:31Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Reflex_Sight_Mk2"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": [
+          "Breaker Spray&Pray",
+          "Breaker,Breaker Incendiary",
+          "Censor",
+          "Defender,Pummeler",
+          "Hyena",
+          "Knight,Gallant",
+          "Liberator Carbine",
+          "Liberator,Liberator Penetrator,Liberator Concussive",
+          "Stoker",
+          "Suppressor"
+        ],
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_59_suppressor",
+          "mp_98_knight",
+          "r_4_hyena",
+          "r_72_censor",
+          "sg_225_breaker",
+          "sg_225ie_breaker_incendiary",
+          "sg_225sp_breaker_spray_pray",
+          "smg_203_gallant",
+          "smg_37_defender",
+          "smg_72_pummeler",
+          "smg_flam_34_stoker"
+        ],
+        "ergonomics": [
+          "+5",
+          "+10",
+          "+3",
+          "+11"
+        ],
+        "mag_capacity": [
+          "13",
+          "20",
+          "35",
+          "10",
+          "50",
+          "30",
+          "25"
+        ],
+        "max_magazines": [
+          "20",
+          "11",
+          "8",
+          "12",
+          "9",
+          "7",
+          "16",
+          "13"
+        ],
+        "slot": "magazine",
+        "type": "Magazine"
+      },
+      "id": "short_magazine",
+      "name": "Short Magazine",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Short Magazine",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 132113,
+          "revision_timestamp": "2026-08-23T01:08:48Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Short_Magazine"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Scythe",
+        "compatible_weapon_ids": [
+          "las_5_scythe"
+        ],
+        "heatsink_overheat": "100",
+        "max_magazines": "4",
+        "slot": "magazine",
+        "type": "Magazine"
+      },
+      "id": "standard_heatsink",
+      "name": "Standard Heatsink",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Standard Heatsink",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126844,
+          "revision_timestamp": "2026-07-27T19:25:35Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Standard_Heatsink"
+        }
+      ]
+    },
+    {
+      "fact_provenance": {
+        "compatible_weapon_ids": {
+          "from": [
+            "facts.available_on"
+          ],
+          "kind": "derived"
+        },
+        "slot": {
+          "from": [
+            "facts.type"
+          ],
+          "kind": "derived"
+        }
+      },
+      "facts": {
+        "available_on": "Breaker,Double Freedom,Diligence,Liberator Carbine,Liberator Concussive,Breaker Spray&Pray,Dominator,Liberator Penetrator,Purifier,Scorcher,Tenderizer,Defender,Diligence Counter Sniper,Censor,Coyote,Liberator,Knight,Gallant,Suppressor,Eruptor,Pacifier,Adjudicator,Reprimand",
+        "compatible_weapon_ids": [
+          "ar_23_liberator",
+          "ar_23a_liberator_carbine",
+          "ar_23c_liberator_concussive",
+          "ar_23p_liberator_penetrator",
+          "ar_2_coyote",
+          "ar_32_pacifier",
+          "ar_59_suppressor",
+          "ar_61_tenderizer",
+          "br_14_adjudicator",
+          "dbs_2_double_freedom",
+          "jar_5_dominator",
+          "mp_98_knight",
+          "plas_101_purifier",
+          "plas_1_scorcher",
+          "r_36_eruptor",
+          "r_63_diligence",
+          "r_63cs_diligence_counter_sniper",
+          "r_72_censor",
+          "sg_225_breaker",
+          "sg_225sp_breaker_spray_pray",
+          "smg_203_gallant",
+          "smg_32_reprimand",
+          "smg_37_defender"
+        ],
+        "ergonomics": "-5",
+        "slot": "underbarrel",
+        "type": "Underbarrel",
+        "vertical_recoil": "-20%"
+      },
+      "id": "vertical_foregrip",
+      "name": "Vertical Foregrip",
+      "planner_tags": [],
+      "provenance": [
+        {
+          "importer_version": "1.0.0",
+          "page": "Vertical Foregrip",
+          "retrieved_at": "2026-09-21T19:18:47Z",
+          "revision_id": 126845,
+          "revision_timestamp": "2026-07-27T19:25:36Z",
+          "source": "helldivers_wiki",
+          "source_name": "The Helldivers Wiki",
+          "source_url": "https://helldivers.wiki.gg/wiki/Vertical_Foregrip"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    }
+  ]
+}
