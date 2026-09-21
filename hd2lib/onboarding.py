@@ -3,9 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Callable
 
-from .catalog import catalog_index
 from .constants import DISPLAY_CATEGORIES, INVENTORY_TO_CATALOG
-from .profile import add_character, new_profile, save_profile
+from .profile import add_character, inventory_item_ineligibility, new_profile, save_profile
 
 
 Ask = Callable[[str], str]
@@ -52,7 +51,10 @@ def setup_profile(catalog: dict[str, Any], output_directory: Path, ask: Ask = in
             if action == "n":
                 profile["characters"][character_id]["onboarding"]["skipped_sections"].append(category)
             else:
-                review_inventory(profile, character_id, category, catalog, path, ask, tell)
+                completed = review_inventory(profile, character_id, category, catalog, path, ask, tell)
+                if not completed:
+                    tell(f"Stopped safely. Resume with: python hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
+                    return path
             save_profile(path, profile)
     tell("Setup complete. Generate context with: " + f"python hd2.py export-context --player {profile['player']['id']} --character {next(iter(profile['characters']))}")
     return path
@@ -61,15 +63,13 @@ def setup_profile(catalog: dict[str, Any], output_directory: Path, ask: Ask = in
 def items_for_inventory_category(catalog: dict[str, Any], category: str, warbond: str | None = None) -> list[dict[str, Any]]:
     collection = INVENTORY_TO_CATALOG[category]
     items = catalog["collections"][collection]
-    if collection == "weapons":
-        expected = {"primary_weapons": "primary", "secondary_weapons": "secondary", "support_weapons": "support_weapon"}[category]
-        items = [item for item in items if item.get("facts", {}).get("category") == expected]
+    items = [item for item in items if not inventory_item_ineligibility(category, item, collection)]
     if warbond:
         items = [item for item in items if item.get("facts", {}).get("warbond_id") == warbond]
     return sorted(items, key=lambda item: item["name"])
 
 
-def review_inventory(profile: dict[str, Any], character_id: str, category: str, catalog: dict[str, Any], profile_path: Path, ask: Ask = input, tell: Tell = print, warbond: str | None = None) -> None:
+def review_inventory(profile: dict[str, Any], character_id: str, category: str, catalog: dict[str, Any], profile_path: Path, ask: Ask = input, tell: Tell = print, warbond: str | None = None) -> bool:
     category = DISPLAY_CATEGORIES.get(category, category)
     if category not in INVENTORY_TO_CATALOG:
         raise ValueError(f"Unknown inventory category {category!r}")
@@ -79,7 +79,7 @@ def review_inventory(profile: dict[str, Any], character_id: str, category: str, 
     items = items_for_inventory_category(catalog, category, warbond)
     if not items:
         tell("No catalog items match this section.")
-        return
+        return True
     tell("Commands: u=unlocked, l=locked, ?=unknown, f=favorite+unlocked, d=dislike (keeps unlock state), Enter=keep, s=skip rest, q=stop")
     for item in items:
         prior = inventory.get(item["id"], {}).get("status", "unknown")
@@ -88,7 +88,7 @@ def review_inventory(profile: dict[str, Any], character_id: str, category: str, 
         if command == "q":
             save_profile(profile_path, profile)
             tell("Stopped safely; current answers were saved.")
-            return
+            return False
         if command == "s":
             break
         if command in {"u", "l", "?", "f"}:
@@ -106,4 +106,4 @@ def review_inventory(profile: dict[str, Any], character_id: str, category: str, 
     if category in skipped:
         skipped.remove(category)
     save_profile(profile_path, profile)
-
+    return True

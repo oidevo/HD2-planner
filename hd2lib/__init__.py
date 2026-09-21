@@ -1,4 +1,5 @@
 """Offline-first Helldivers 2 inventory and loadout planning foundation."""
 
-__version__ = "0.1.0"
+from .version import application_version
 
+__version__ = application_version()

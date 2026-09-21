@@ -2,6 +2,8 @@
 
 Requirements: Python 3.10 or newer. No third-party packages, server, account, or network connection are needed.
 
+Profiles, loadouts, and generated context are stored in your operating system's HD2 Planner data directory, not alongside the downloaded application. Print it with `python hd2.py data-dir`.
+
 From the project folder run:
 
 ```text
@@ -16,7 +18,7 @@ python hd2.py inventory review --player your_id --character main --category stra
 python hd2.py inventory review --player your_id --character main --category primaries --warbond cutting_edge
 ```
 
-Inventory commands use `u` for unlocked, `l` for locked, `?` for unknown, `f` for favorite and unlocked, and `d` for dislike without changing availability. Preference and unlock state are intentionally independent.
+Inventory commands use `u` for unlocked, `l` for locked, `?` for unknown, `f` for favorite and unlocked, and `d` for dislike without changing availability. Enter `q` during an item review to stop setup immediately; prior answers are retained and the current category remains incomplete. Preference and unlock state are intentionally independent.
 
 Example abbreviated session:
 
@@ -44,4 +46,3 @@ When finished, export a self-contained context:
 ```text
 python hd2.py export-context --player alex --character pc
 ```
-

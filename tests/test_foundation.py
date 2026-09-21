@@ -6,13 +6,17 @@ import tempfile
 import unittest
 import urllib.request
 import zipfile
+from contextlib import redirect_stderr, redirect_stdout
 from copy import deepcopy
+from io import StringIO
 from pathlib import Path
 from unittest.mock import patch
 
 from hd2lib.catalog import CatalogError, catalog_hash, compare_catalogs, load_catalog
+from hd2lib.cli import run
 from hd2lib.exporter import build_context, context_markdown, export_context, validate_generated
 from hd2lib.loadout import validate_for_character
+from hd2lib.onboarding import items_for_inventory_category, setup_profile
 from hd2lib.packaging import build_package
 from hd2lib.profile import add_character, effective_preferences, import_profile, new_profile, validate_profile
 from hd2lib.storage import read_json, write_json
@@ -65,6 +69,17 @@ class FoundationTests(unittest.TestCase):
         profile["characters"]["pc"]["inventory"]["primary_weapons"]["not_real"] = {"status": "unlocked"}
         self.assertTrue(any("invalid item id" in error for error in validate_profile(profile, self.catalog)))
 
+    def test_profile_rejects_helmet_in_armor_inventory(self):
+        profile = self.profile()
+        helmet = next(item for item in self.catalog["collections"]["armor"] if item["facts"].get("equipment_slot") == "helmet")
+        profile["characters"]["pc"]["inventory"]["armor"][helmet["id"]] = {"status": "unlocked"}
+        self.assertTrue(any("is not body armor" in error for error in validate_profile(profile, self.catalog)))
+
+    def test_profile_rejects_non_equippable_stratagem(self):
+        profile = self.profile()
+        profile["characters"]["pc"]["inventory"]["stratagems"]["stratagem_hellbomb"] = {"status": "unlocked"}
+        self.assertTrue(any("not a player-equippable stratagem" in error for error in validate_profile(profile, self.catalog)))
+
     def test_loadout_validation_catches_unavailable(self):
         profile = self.profile()
         character = profile["characters"]["pc"]
@@ -100,6 +115,31 @@ class FoundationTests(unittest.TestCase):
             result = validate_generated(json_path, profile, self.catalog)
             self.assertTrue(result["stale"])
             self.assertIn("profile_hash", result["stale_reasons"])
+
+    def test_export_context_cli_accepts_valid_profile(self):
+        profile = self.profile()
+        with tempfile.TemporaryDirectory() as temporary, patch("hd2lib.cli._profile", return_value=(Path("profile.json"), profile)), patch("hd2lib.cli.load_catalog", return_value=self.catalog):
+            output = Path(temporary) / "generated"
+            stdout = StringIO()
+            with redirect_stdout(stdout):
+                status = run(["export-context", "--player", "tester", "--character", "pc", "--output", str(output)])
+            self.assertEqual(status, 0)
+            self.assertTrue((output / "tester" / "pc-context.json").exists())
+            self.assertTrue((output / "tester" / "pc-context.md").exists())
+            self.assertIn("Generated:", stdout.getvalue())
+
+    def test_export_context_cli_rejects_invalid_profile_before_writing(self):
+        profile = self.profile()
+        profile["characters"]["pc"]["inventory"]["stratagems"]["stratagem_hellbomb"] = {"status": "unlocked"}
+        with tempfile.TemporaryDirectory() as temporary, patch("hd2lib.cli._profile", return_value=(Path("profile.json"), profile)), patch("hd2lib.cli.load_catalog", return_value=self.catalog):
+            output = Path(temporary) / "generated"
+            stderr = StringIO()
+            with redirect_stderr(stderr):
+                status = run(["export-context", "--player", "tester", "--character", "pc", "--output", str(output)])
+            self.assertEqual(status, 1)
+            self.assertFalse(output.exists())
+            self.assertIn("Export rejected; no files created", stderr.getvalue())
+            self.assertIn("not a player-equippable stratagem", stderr.getvalue())
 
     def test_onboarding_import_validates_before_modifying(self):
         profile = self.profile()
@@ -143,6 +183,42 @@ class FoundationTests(unittest.TestCase):
         index = {item["id"]: item for item in self.catalog["collections"]["stratagems"]}
         self.assertFalse(index["stratagem_hellbomb"]["facts"]["player_equippable"])
         self.assertTrue(index["stratagem_eagle_airstrike"]["facts"]["player_equippable"])
+
+    def test_armor_onboarding_lists_only_body_armor(self):
+        shown = items_for_inventory_category(self.catalog, "armor")
+        expected = [item for item in self.catalog["collections"]["armor"] if item["facts"].get("equipment_slot") == "body_armor"]
+        self.assertEqual({item["id"] for item in shown}, {item["id"] for item in expected})
+        self.assertFalse(any(item["facts"].get("equipment_slot") == "helmet" for item in shown))
+
+    def test_stratagem_onboarding_lists_only_player_equippable_records(self):
+        shown = items_for_inventory_category(self.catalog, "stratagems")
+        expected = [item for item in self.catalog["collections"]["stratagems"] if item["facts"].get("player_equippable") is True]
+        self.assertEqual({item["id"] for item in shown}, {item["id"] for item in expected})
+        self.assertNotIn("stratagem_hellbomb", {item["id"] for item in shown})
+
+    def test_weapon_onboarding_retains_category_and_warbond_filters(self):
+        candidate = next(item for item in self.catalog["collections"]["weapons"] if item["facts"].get("category") == "primary" and item["facts"].get("warbond_id"))
+        warbond = candidate["facts"]["warbond_id"]
+        shown = items_for_inventory_category(self.catalog, "primary_weapons", warbond)
+        expected = [item for item in self.catalog["collections"]["weapons"] if item["facts"].get("category") == "primary" and item["facts"].get("warbond_id") == warbond]
+        self.assertEqual({item["id"] for item in shown}, {item["id"] for item in expected})
+
+    def test_setup_item_quit_stops_and_preserves_partial_category(self):
+        answers = iter(["Tester", "tester", "pc", "PC", "1", "n", "y", "u", "q"])
+
+        def ask(_: str) -> str:
+            try:
+                return next(answers)
+            except StopIteration:
+                raise AssertionError("setup continued after item-level quit")
+
+        with tempfile.TemporaryDirectory() as temporary:
+            path = setup_profile(self.catalog, Path(temporary), ask=ask, tell=lambda _: None)
+            profile = read_json(path)
+        character = profile["characters"]["pc"]
+        self.assertEqual(len(character["inventory"]["warbonds"]), 1)
+        self.assertNotIn("warbonds", character["onboarding"]["completed_sections"])
+        self.assertNotIn("warbonds", character["onboarding"]["skipped_sections"])
 
     def test_normalization_helpers_do_not_require_wiki_prose(self):
         self.assertEqual(split_traits("Explosive &nbsp;&bull;&nbsp; Anti-Tank"), ["Explosive", "Anti-Tank"])

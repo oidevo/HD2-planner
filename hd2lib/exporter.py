@@ -5,9 +5,10 @@ from pathlib import Path
 from typing import Any
 
 from .catalog import catalog_hash, catalog_index
-from .constants import GENERATED_DIR, LOADOUTS_DIR, SCHEMA_VERSION
+from .constants import SCHEMA_VERSION
+from .data import user_data_paths
 from .loadout import validate_loadout_schema
-from .profile import effective_preferences
+from .profile import ProfileError, effective_preferences, validate_profile
 from .storage import fingerprint, read_json, slugify, utc_now, write_json
 
 
@@ -33,7 +34,8 @@ def _inventory_snapshot(character: dict[str, Any], catalog: dict[str, Any], pref
     return snapshot
 
 
-def _load_linked_loadouts(profile: dict[str, Any], root: Path = LOADOUTS_DIR) -> list[dict[str, Any]]:
+def _load_linked_loadouts(profile: dict[str, Any], root: Path | None = None) -> list[dict[str, Any]]:
+    root = user_data_paths().loadouts if root is None else root
     result = list(profile.get("saved_loadouts", []))
     for relative in profile.get("saved_loadout_files", []):
         path = root / relative
@@ -152,7 +154,11 @@ def context_markdown(context: dict[str, Any]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-def export_context(profile: dict[str, Any], character_id: str, catalog: dict[str, Any], output_root: Path = GENERATED_DIR) -> tuple[Path, Path]:
+def export_context(profile: dict[str, Any], character_id: str, catalog: dict[str, Any], output_root: Path | None = None) -> tuple[Path, Path]:
+    errors = validate_profile(profile, catalog)
+    if errors:
+        raise ProfileError("Export rejected; no files created:\n- " + "\n- ".join(errors))
+    output_root = user_data_paths().initialize().generated if output_root is None else output_root
     context = build_context(profile, character_id, catalog)
     output = output_root / profile["player"]["id"]
     json_path = output / f"{character_id}-context.json"
@@ -176,4 +182,3 @@ def validate_generated(path: Path, profile: dict[str, Any], catalog: dict[str, A
     expected = {"profile_hash": fingerprint(profile), "catalog_hash": catalog_hash(catalog)}
     stale_reasons = [key for key, value in expected.items() if metadata.get(key) != value]
     return {"valid": not stale_reasons, "stale": bool(stale_reasons), "stale_reasons": stale_reasons, "expected": expected, "found": metadata}
-

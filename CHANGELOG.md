@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 — 2026-09-21
+
+- Moved runtime personal data to a per-user OS data directory with a safe legacy-copy command.
+- Added version reporting, GitHub Release checks, explicit profile migrations with backups, and release-safe packaging.
+
 ## Unreleased — planner-readiness audit
 
 - Added deterministic catalog normalization with field-level provenance for planner-critical relationships and typed values.

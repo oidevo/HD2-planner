@@ -1,12 +1,11 @@
 from pathlib import Path
 
-SCHEMA_VERSION = "1.0.0"
-APP_VERSION = "0.1.0"
+from .version import PROFILE_SCHEMA_VERSION, application_version
+
+SCHEMA_VERSION = PROFILE_SCHEMA_VERSION
+APP_VERSION = application_version()
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG_DIR = ROOT / "catalog"
-PROFILES_DIR = ROOT / "profiles"
-GENERATED_DIR = ROOT / "generated"
-LOADOUTS_DIR = PROFILES_DIR / "loadouts"
 
 CATALOG_FILES = {
     "weapons": "weapons.json",
@@ -56,4 +55,3 @@ DISPLAY_CATEGORIES = {
 
 UNLOCK_STATES = {"unknown", "locked", "unlocked"}
 PREFERENCE_STATES = {"favorite", "like", "neutral", "dislike", "avoid"}
-

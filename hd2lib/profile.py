@@ -5,7 +5,8 @@ from pathlib import Path
 from typing import Any
 
 from .catalog import catalog_index
-from .constants import INVENTORY_TO_CATALOG, PREFERENCE_STATES, PROFILES_DIR, SCHEMA_VERSION, UNLOCK_STATES
+from .constants import INVENTORY_TO_CATALOG, PREFERENCE_STATES, SCHEMA_VERSION, UNLOCK_STATES
+from .data import user_data_paths
 from .storage import read_json, slugify, utc_now, write_json
 
 
@@ -47,11 +48,13 @@ def add_character(profile: dict[str, Any], character_id: str, platform: str, lev
     }
 
 
-def profile_path(player_id: str, directory: Path = PROFILES_DIR) -> Path:
+def profile_path(player_id: str, directory: Path | None = None) -> Path:
+    directory = user_data_paths().initialize().profiles if directory is None else directory
     return directory / f"{slugify(player_id)}.json"
 
 
-def find_profile(player_id: str, directory: Path = PROFILES_DIR) -> Path:
+def find_profile(player_id: str, directory: Path | None = None) -> Path:
+    directory = user_data_paths().initialize().profiles if directory is None else directory
     direct = profile_path(player_id, directory)
     if direct.exists():
         return direct
@@ -71,6 +74,28 @@ def effective_preferences(profile: dict[str, Any], character_id: str) -> dict[st
     base.setdefault("general", {}).update(overrides.get("general", {}))
     base.setdefault("item_preferences", {}).update(overrides.get("item_preferences", {}))
     return base
+
+
+def inventory_item_ineligibility(category: str, item: dict[str, Any], collection: str | None = None) -> str | None:
+    """Return why a catalog item cannot be recorded in an inventory category."""
+    item_id = item.get("id", "item")
+    collection = collection or item.get("_collection")
+    expected_collection = INVENTORY_TO_CATALOG[category]
+    if collection != expected_collection:
+        return f"{item_id!r} does not belong in {category}"
+    facts = item.get("facts", {})
+    expected_weapon_category = {
+        "primary_weapons": "primary",
+        "secondary_weapons": "secondary",
+        "support_weapons": "support_weapon",
+    }.get(category)
+    if expected_weapon_category and facts.get("category") != expected_weapon_category:
+        return f"{item_id!r} has the wrong weapon category for {category}"
+    if category == "armor" and facts.get("equipment_slot") != "body_armor":
+        return f"{item_id!r} is not body armor"
+    if category == "stratagems" and facts.get("player_equippable") is not True:
+        return f"{item_id!r} is not a player-equippable stratagem"
+    return None
 
 
 def validate_profile(profile: dict[str, Any], catalog: dict[str, Any]) -> list[str]:
@@ -99,21 +124,9 @@ def validate_profile(profile: dict[str, Any], catalog: dict[str, Any]) -> list[s
                 if item_id not in index:
                     errors.append(f"characters.{character_id}: invalid item id {item_id!r}")
                     continue
-                expected = INVENTORY_TO_CATALOG[category]
-                if index[item_id]["_collection"] != expected:
-                    errors.append(f"characters.{character_id}: {item_id!r} does not belong in {category}")
-                facts = index[item_id].get("facts", {})
-                expected_weapon_category = {
-                    "primary_weapons": "primary",
-                    "secondary_weapons": "secondary",
-                    "support_weapons": "support_weapon",
-                }.get(category)
-                if expected_weapon_category and facts.get("category") != expected_weapon_category:
-                    errors.append(f"characters.{character_id}: {item_id!r} has the wrong weapon category for {category}")
-                if category == "armor" and facts.get("equipment_slot") != "body_armor":
-                    errors.append(f"characters.{character_id}: {item_id!r} is not body armor")
-                if category == "stratagems" and facts.get("player_equippable") is not True:
-                    errors.append(f"characters.{character_id}: {item_id!r} is not a player-equippable stratagem")
+                reason = inventory_item_ineligibility(category, index[item_id])
+                if reason:
+                    errors.append(f"characters.{character_id}: {reason}")
                 status = state.get("status") if isinstance(state, dict) else None
                 if status not in UNLOCK_STATES:
                     errors.append(f"characters.{character_id}.{item_id}: invalid status {status!r}")

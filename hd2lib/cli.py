@@ -6,13 +6,18 @@ import sys
 from pathlib import Path
 
 from .catalog import compare_catalogs, load_catalog, validate_catalog
-from .constants import CATALOG_DIR, GENERATED_DIR, PROFILES_DIR, ROOT
+from .constants import CATALOG_DIR, ROOT
+from .data import user_data_paths
 from .exporter import export_context, validate_generated
+from .local_data import migrate_local_data
 from .loadout import validate_for_character
+from .migrations import migrate_profile_file
 from .onboarding import review_inventory, setup_profile
 from .packaging import build_package
 from .profile import ProfileError, find_profile, import_profile, save_profile, validate_profile
 from .storage import read_json, write_json
+from .update import check_for_update
+from .version import PROFILE_SCHEMA_VERSION, application_version
 
 
 def parser() -> argparse.ArgumentParser:
@@ -20,6 +25,11 @@ def parser() -> argparse.ArgumentParser:
     sub = command.add_subparsers(dest="command", required=True)
 
     sub.add_parser("setup", help="Create a player and one or more characters interactively")
+    sub.add_parser("data-dir", help="Print the persistent per-user data directory")
+    sub.add_parser("version", help="Print application, catalog, and profile schema versions")
+    sub.add_parser("update-check", help="Check GitHub Releases without downloading anything")
+    sub.add_parser("migrate-local-data", help="Copy legacy repo-local personal data into persistent storage")
+    sub.add_parser("migrate", help="Migrate supported persistent profiles and create backups")
 
     inventory = sub.add_parser("inventory", help="Maintain a character inventory")
     inventory_sub = inventory.add_subparsers(dest="inventory_command", required=True)
@@ -40,7 +50,7 @@ def parser() -> argparse.ArgumentParser:
     export = sub.add_parser("export-context", help="Generate portable JSON and Markdown context")
     export.add_argument("--player", required=True)
     export.add_argument("--character", required=True)
-    export.add_argument("--output", type=Path, default=GENERATED_DIR)
+    export.add_argument("--output", type=Path, help="Override the persistent generated directory")
 
     generated = sub.add_parser("validate-generated", help="Check whether an export is stale")
     generated.add_argument("path", type=Path)
@@ -73,19 +83,49 @@ def parser() -> argparse.ArgumentParser:
 
 def _profile(player_id: str) -> tuple[Path, dict]:
     path = find_profile(player_id)
+    migrate_profile_file(path, load_catalog(), user_data_paths())
     return path, read_json(path)
 
 
 def run(argv: list[str] | None = None) -> int:
     args = parser().parse_args(argv)
     try:
+        paths = user_data_paths()
+        if args.command == "data-dir":
+            print("HD2 Planner data directory:\n" + str(paths.initialize().root)); return 0
+        if args.command == "version":
+            manifest = load_catalog()["manifest"]
+            print(f"HD2 Planner {application_version()}\nCatalog {manifest.get('catalog_version', 'unknown')}\nProfile schema {PROFILE_SCHEMA_VERSION}")
+            return 0
+        if args.command == "update-check":
+            result = check_for_update()
+            print(f"Installed: {result.installed}")
+            if result.error:
+                print(result.error); return 0
+            print(f"Latest:    {result.latest}")
+            print(("Update available:\n" if result.available else "You are up to date.\n") + str(result.url))
+            return 0
+        if args.command == "migrate-local-data":
+            result = migrate_local_data(ROOT, paths)
+            print(f"Persistent data directory: {paths.root}")
+            print(f"Copied {len(result.copied)} file(s); skipped {len(result.skipped)} existing destination(s).")
+            for path in result.copied: print(f"- copied: {path}")
+            for path in result.skipped: print(f"- skipped (already exists): {path}")
+            return 0
+        if args.command == "migrate":
+            catalog = load_catalog(); paths.initialize(); changed = []
+            for path in sorted(paths.profiles.glob("*.json")):
+                backup = migrate_profile_file(path, catalog, paths)
+                if backup: changed.append((path, backup))
+            print("No profile migrations needed." if not changed else "Migrated profiles:\n" + "\n".join(f"- {path} (backup: {backup})" for path, backup in changed))
+            return 0
         if args.command == "setup":
-            setup_profile(load_catalog(), PROFILES_DIR)
+            setup_profile(load_catalog(), paths.initialize().profiles)
             return 0
         if args.command == "profile":
             catalog = load_catalog()
             if args.profile_command == "import":
-                output = import_profile(args.path, PROFILES_DIR, catalog, args.overwrite)
+                output = import_profile(args.path, paths.initialize().profiles, catalog, args.overwrite)
                 print(f"Imported validated profile: {output}")
             else:
                 errors = validate_profile(read_json(args.path), catalog)
@@ -100,8 +140,8 @@ def run(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "export-context":
             _, profile = _profile(args.player)
-            paths = export_context(profile, args.character, load_catalog(), args.output)
-            print("Generated:\n- " + "\n- ".join(str(path) for path in paths))
+            output_paths = export_context(profile, args.character, load_catalog(), args.output)
+            print("Generated:\n- " + "\n- ".join(str(path) for path in output_paths))
             return 0
         if args.command == "validate-generated":
             _, profile = _profile(args.player)
@@ -146,4 +186,3 @@ def run(argv: list[str] | None = None) -> int:
         print(f"Error: {exc}", file=sys.stderr)
         return 1
     return 1
-
