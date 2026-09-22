@@ -411,6 +411,7 @@ def macos_bundle_errors(bundle: Path, *, expected_version: str = APP_VERSION) ->
         "catalog/catalog_manifest.json",
         "schemas/profile.schema.json",
         "planner/rules.json",
+        "planner/presentation_order.json",
         "onboarding/LOCAL_SETUP.md",
         "VERSION",
         "LICENSE",

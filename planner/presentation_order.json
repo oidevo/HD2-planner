@@ -1,0 +1,62 @@
+{
+  "capture": {
+    "captured_at": null,
+    "evidence_references": [],
+    "game_build": "unknown",
+    "notes": "No complete in-game screenshots or recordings were supplied with this change. Empty item lists deliberately avoid inventing game order."
+  },
+  "schema_version": "1.0.0",
+  "screens": [
+    {
+      "groups": [
+        {
+          "categories": ["warbonds"],
+          "heading": "Warbonds",
+          "id": "warbonds",
+          "item_ids": [],
+          "verification": "unverified"
+        }
+      ],
+      "heading": "Requisitions / Warbonds",
+      "id": "requisitions_warbonds",
+      "verification": "unverified"
+    },
+    {
+      "groups": [
+        {"categories": ["stratagems"], "heading": "Support Weapons", "id": "support_weapon", "item_ids": [], "verification": "unverified"},
+        {"categories": ["stratagems"], "heading": "Backpacks", "id": "backpack", "item_ids": [], "verification": "unverified"},
+        {"categories": ["stratagems"], "heading": "Eagle", "id": "eagle", "item_ids": [], "verification": "unverified"},
+        {"categories": ["stratagems"], "heading": "Orbital", "id": "orbital", "item_ids": [], "verification": "unverified"},
+        {"categories": ["stratagems"], "heading": "Sentries", "id": "sentry", "item_ids": [], "verification": "unverified"},
+        {"categories": ["stratagems"], "heading": "Emplacements", "id": "emplacement", "item_ids": [], "verification": "unverified"},
+        {"categories": ["stratagems"], "heading": "Vehicles", "id": "vehicle", "item_ids": [], "verification": "unverified"},
+        {"categories": ["stratagems"], "heading": "Other", "id": "other", "item_ids": [], "verification": "unverified"}
+      ],
+      "heading": "Stratagems",
+      "id": "stratagems",
+      "verification": "unverified"
+    },
+    {
+      "groups": [
+        {"categories": ["ship_modules"], "heading": "Ship modules", "id": "ship_modules", "item_ids": [], "verification": "unverified"}
+      ],
+      "heading": "Ship Management",
+      "id": "ship_management",
+      "verification": "unverified"
+    },
+    {
+      "groups": [
+        {"categories": ["primary_weapons"], "heading": "Primary weapons", "id": "primary_weapons", "item_ids": [], "verification": "unverified"},
+        {"categories": ["secondary_weapons"], "heading": "Secondary weapons", "id": "secondary_weapons", "item_ids": [], "verification": "unverified"},
+        {"categories": ["grenades"], "heading": "Grenades", "id": "grenades", "item_ids": [], "verification": "unverified"},
+        {"categories": ["armor"], "heading": "Armor", "id": "armor", "item_ids": [], "verification": "unverified"},
+        {"categories": ["boosters"], "heading": "Boosters", "id": "boosters", "item_ids": [], "verification": "unverified"},
+        {"categories": ["weapon_attachments"], "heading": "Weapon modifications", "id": "weapon_attachments", "item_ids": [], "verification": "unverified"}
+      ],
+      "heading": "Armory",
+      "id": "armory",
+      "verification": "unverified"
+    }
+  ],
+  "source_catalog_version": "2026.09.21.2"
+}
