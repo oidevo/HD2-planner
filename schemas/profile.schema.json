@@ -5,7 +5,7 @@
   "type": "object",
   "required": ["schema_version", "player", "preferences", "characters", "gameplay_observations"],
   "properties": {
-    "schema_version": {"const": "1.0.0"},
+    "schema_version": {"const": "1.1.0"},
     "player": {"type": "object", "required": ["id", "display_name"], "properties": {"id": {"type": "string"}, "display_name": {"type": "string"}}},
     "preferences": {"$ref": "#/$defs/preferences"},
     "characters": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/character"}},
@@ -18,7 +18,7 @@
     "preferences": {"type": "object", "properties": {"general": {"type": "object"}, "item_preferences": {"type": "object", "additionalProperties": {"enum": ["favorite", "like", "neutral", "dislike", "avoid"]}}}},
     "state": {"type": "object", "required": ["status"], "properties": {"status": {"enum": ["unknown", "locked", "unlocked"]}, "level": {"type": "integer", "minimum": 0}}},
     "inventory": {"type": "object", "additionalProperties": {"type": "object", "additionalProperties": {"$ref": "#/$defs/state"}}},
-    "character": {"type": "object", "required": ["platform", "level", "inventory"], "properties": {"platform": {"type": "string"}, "level": {"type": "integer", "minimum": 0}, "inventory": {"$ref": "#/$defs/inventory"}, "preference_overrides": {"$ref": "#/$defs/preferences"}, "resources": {"type": "object"}}},
+    "character": {"type": "object", "required": ["platform", "level", "inventory"], "properties": {"platform": {"type": "string"}, "level": {"type": "integer", "minimum": 0}, "inventory": {"$ref": "#/$defs/inventory"}, "weapon_attachments_by_weapon": {"type": "object", "additionalProperties": {"type": "object", "additionalProperties": {"$ref": "#/$defs/state"}}}, "legacy_attachment_review": {"type": "object", "additionalProperties": {"$ref": "#/$defs/state"}}, "preference_overrides": {"$ref": "#/$defs/preferences"}, "resources": {"type": "object", "properties": {"medals": {"type": "integer", "minimum": 0}, "requisition": {"type": "integer", "minimum": 0}, "super_credits": {"type": "integer", "minimum": 0}, "common_samples": {"type": "integer", "minimum": 0}, "rare_samples": {"type": "integer", "minimum": 0}, "super_samples": {"type": "integer", "minimum": 0}}}}},
     "observation": {"type": "object", "required": ["date", "character", "rating", "confidence", "notes"], "properties": {"date": {"type": "string"}, "character": {"type": ["string", "null"]}, "item_id": {"type": ["string", "null"]}, "faction": {"type": ["string", "null"]}, "mission_type": {"type": ["string", "null"]}, "difficulty": {"type": ["integer", "null"]}, "rating": {"type": "string"}, "confidence": {"type": "string"}, "notes": {"type": "string"}}}
   }
 }

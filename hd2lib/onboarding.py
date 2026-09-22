@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from .constants import DISPLAY_CATEGORIES, INVENTORY_TO_CATALOG
-from .profile import add_character, inventory_item_ineligibility, new_profile, save_profile, set_inventory_item_status
+from .profile import add_character, inventory_item_ineligibility, new_profile, save_profile, set_inventory_item_status, set_weapon_attachment_status
 
 
 Ask = Callable[[str], str]
@@ -44,6 +44,8 @@ def setup_profile(catalog: dict[str, Any], output_directory: Path, ask: Ask = in
     for character_id in profile["characters"]:
         tell(f"\nInventory for {character_id}. Each completed or skipped section is saved immediately.")
         for category in INVENTORY_TO_CATALOG:
+            if category == "weapon_attachments":
+                continue
             action = ask(f"Review {category.replace('_', ' ')} now? [Y/n/quit]: ").strip().casefold()
             if action == "quit" or action == "q":
                 tell(f"Stopped safely. Resume with: python3.14 hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
@@ -69,14 +71,19 @@ def items_for_inventory_category(catalog: dict[str, Any], category: str, warbond
     return sorted(items, key=lambda item: item["name"])
 
 
-def review_inventory(profile: dict[str, Any], character_id: str, category: str, catalog: dict[str, Any], profile_path: Path, ask: Ask = input, tell: Tell = print, warbond: str | None = None) -> bool:
+def review_inventory(profile: dict[str, Any], character_id: str, category: str, catalog: dict[str, Any], profile_path: Path, ask: Ask = input, tell: Tell = print, warbond: str | None = None, weapon: str | None = None) -> bool:
     category = DISPLAY_CATEGORIES.get(category, category)
     if category not in INVENTORY_TO_CATALOG:
         raise ValueError(f"Unknown inventory category {category!r}")
     character = profile["characters"][character_id]
-    inventory = character["inventory"].setdefault(category, {})
+    if category == "weapon_attachments" and not weapon:
+        raise ValueError("Attachment review requires --weapon with a catalog weapon ID")
+    inventory = (character.setdefault("weapon_attachments_by_weapon", {}).setdefault(weapon, {})
+                 if category == "weapon_attachments" else character["inventory"].setdefault(category, {}))
     preferences = character["preference_overrides"].setdefault("item_preferences", {})
     items = items_for_inventory_category(catalog, category, warbond)
+    if category == "weapon_attachments":
+        items = [item for item in items if weapon in item.get("facts", {}).get("compatible_weapon_ids", [])]
     if not items:
         tell("No catalog items match this section.")
         return True
@@ -93,7 +100,10 @@ def review_inventory(profile: dict[str, Any], character_id: str, category: str, 
             break
         if command in {"u", "l", "?", "f"}:
             status = {"u": "unlocked", "l": "locked", "?": "unknown", "f": "unlocked"}[command]
-            set_inventory_item_status(profile, character_id, category, item["id"], status, catalog)
+            if category == "weapon_attachments":
+                set_weapon_attachment_status(profile, character_id, weapon or "", item["id"], status, catalog)
+            else:
+                set_inventory_item_status(profile, character_id, category, item["id"], status, catalog)
         if command == "f":
             preferences[item["id"]] = "favorite"
         elif command == "d":

@@ -47,9 +47,10 @@ The flow creates the profile immediately, saves after every character and invent
 python3.14 hd2.py inventory review --player your_id --character main --category primaries
 python3.14 hd2.py inventory review --player your_id --character main --category stratagems
 python3.14 hd2.py inventory review --player your_id --character main --category primaries --warbond cutting_edge
+python3.14 hd2.py inventory review --player your_id --character main --category weapon_attachments --weapon sg_225_breaker
 ```
 
-Inventory commands use `u` for unlocked, `l` for locked, `?` for unknown, `f` for favorite and unlocked, and `d` for dislike without changing availability. Enter `q` during an item review to stop setup immediately; prior answers are retained and the current category remains incomplete. Preference and unlock state are intentionally independent.
+Inventory commands use `u` for owned (`unlocked` in JSON), `l` for not owned (`locked`), `?` for unreviewed (`unknown`), `f` for favorite and owned, and `d` for dislike without changing ownership. Attachment review requires a stable weapon ID and records answers only for that character and weapon. Enter `q` during an item review to stop setup immediately; prior answers are retained and the current category remains incomplete. Preference and ownership are independent. In the GUI, click a resource balance to edit it; blank means unrecorded and zero is a recorded value. Legacy global attachment answers are backed up and held for per-weapon review.
 
 Example abbreviated session:
 

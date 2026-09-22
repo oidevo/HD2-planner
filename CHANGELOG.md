@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0 — 2026-09-22
+
+- Redesigned the inventory workspace around clearer category navigation, compact progress-oriented rows, responsive inspectors, and focused bulk actions so players can review and maintain a character's equipment with less visual friction.
+- Added guided inventory review, Warbond ownership and known-content browsing, and richer character-resource editing while preserving the distinction between an unrecorded value and an explicit zero.
+- Kept character data isolated, validated, and atomically written; compatible existing profiles continue to load and the catalog and profile-schema versions remain unchanged.
+- Expanded the release workflow to publish both the ordinary offline source ZIP and the unsigned, self-contained Apple Silicon macOS app archive from the same GitHub Release. The macOS artifact is built and verified on Apple Silicon with the pinned Python.org Python 3.14.7, Tcl/Tk 9.0.4, and PyInstaller 6.22.3 baseline.
+
 ## 0.4.0 — 2026-09-21
 
 - Added an unsigned, self-contained Apple Silicon `HD2 Planner.app` built with PyInstaller 6.22.3 and embedding tested Python 3.14.7 plus Tcl/Tk 9.0.4; the embedded app requires no external Python and ignores `HD2_PLANNER_PYTHON`.

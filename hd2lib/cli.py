@@ -40,6 +40,7 @@ def parser() -> argparse.ArgumentParser:
     review.add_argument("--character", required=True)
     review.add_argument("--category", required=True)
     review.add_argument("--warbond")
+    review.add_argument("--weapon", help="Required for weapon_attachments; stable weapon catalog ID")
 
     profile = sub.add_parser("profile", help="Profile operations")
     profile_sub = profile.add_subparsers(dest="profile_command", required=True)
@@ -145,7 +146,7 @@ def run(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "inventory":
             path, profile = _profile(args.player)
-            review_inventory(profile, args.character, args.category, load_catalog(), path, warbond=args.warbond)
+            review_inventory(profile, args.character, args.category, load_catalog(), path, warbond=args.warbond, weapon=args.weapon)
             return 0
         if args.command == "export-context":
             _, profile = _profile(args.player)

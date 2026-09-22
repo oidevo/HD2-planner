@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  source-package:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,7 +24,81 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Build release ZIP
         run: python hd2.py package
+      - name: Upload source ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-zip
+          path: dist/helldivers-planner-*.zip
+          if-no-files-found: error
+
+  macos-app:
+    # macos-14 is GitHub's Apple Silicon runner; the distributable must never
+    # be built with the runner's Homebrew Python or actions/setup-python.
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the pinned official Python.org runtime
+        env:
+          PYTHON_PKG_SHA256: 70c5239ad2d62925d2947e46921d0ddd3d35be3d2f0a2d50db33da507dbcb419
+          PYTHON_PKG_URL: https://www.python.org/ftp/python/3.14.7/python-3.14.7-macos11.pkg
+        run: |
+          curl --fail --location --retry 3 --output python-3.14.7-macos11.pkg "$PYTHON_PKG_URL"
+          echo "$PYTHON_PKG_SHA256  python-3.14.7-macos11.pkg" | shasum -a 256 -c -
+          sudo installer -pkg python-3.14.7-macos11.pkg -target /
+      - name: Create the pinned Tk-enabled build environment
+        env:
+          OFFICIAL_PYTHON: /Library/Frameworks/Python.framework/Versions/3.14/bin/python3.14
+        run: |
+          "$OFFICIAL_PYTHON" -c 'import platform, sys, tkinter; assert sys.version.split()[0] == "3.14.7"; assert platform.machine() == "arm64"; assert tkinter.Tcl().eval("info patchlevel") == "9.0.4"; assert "homebrew" not in sys.base_prefix.casefold(); print(sys.executable, sys.base_prefix, platform.machine(), tkinter.Tcl().eval("info patchlevel"))'
+          "$OFFICIAL_PYTHON" -m venv .build/macos
+          .build/macos/bin/python -m pip install --disable-pip-version-check -r requirements-build-macos.txt
+      - name: Run source validation with the official runtime
+        run: |
+          .build/macos/bin/python -m unittest discover -s tests -v
+          .build/macos/bin/python hd2.py catalog validate catalog
+          .build/macos/bin/python hd2.py profile validate profiles/example_player.json
+      - name: Build and verify the self-contained app
+        run: |
+          .build/macos/bin/python hd2.py package --macos-app
+          HD2_TEST_MACOS_APP="$PWD/dist/HD2 Planner.app" .build/macos/bin/python -m unittest discover -s tests -v
+      - name: Verify release launch isolation and immutable bundle
+        shell: bash
+        run: |
+          app="$PWD/dist/HD2 Planner.app"
+          verification_root="$(mktemp -d)"
+          copied_app="$verification_root/HD2 Planner.app"
+          ditto "$app" "$copied_app"
+          before="$(shasum -a 256 "$copied_app/Contents/MacOS/HD2 Planner")"
+          HD2_PLANNER_DATA_DIR="$verification_root/player-data" HD2_PLANNER_PYTHON=/not/a/python PATH=/usr/bin:/bin "$copied_app/Contents/MacOS/HD2 Planner" &
+          app_pid=$!
+          sleep 5
+          kill -0 "$app_pid"
+          kill "$app_pid"
+          wait "$app_pid" || true
+          after="$(shasum -a 256 "$copied_app/Contents/MacOS/HD2 Planner")"
+          test "$before" = "$after"
+          test ! -e "$copied_app/Contents/Resources/profiles"
+      - name: Upload Apple Silicon app ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-arm64-app-zip
+          path: dist/hd2-planner-*-macos-arm64.zip
+          if-no-files-found: error
+
+  release:
+    needs: [source-package, macos-app]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download release artifacts
+        uses: actions/download-artifact@v5
+        with:
+          path: release-artifacts
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" dist/*.zip --title "HD2 Planner $GITHUB_REF_NAME" --generate-notes
+        shell: bash
+        run: |
+          mapfile -t assets < <(find release-artifacts -type f -name '*.zip' | sort)
+          test "${#assets[@]}" -eq 2
+          printf '%s\n' "${assets[@]}"
+          gh release create "$GITHUB_REF_NAME" "${assets[@]}" --title "HD2 Planner $GITHUB_REF_NAME" --generate-notes

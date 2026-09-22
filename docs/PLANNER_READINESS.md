@@ -15,7 +15,7 @@ The architecture is sound: canonical JSON, generated presentation files, source 
 - **Catalog schema:** the envelope, IDs, provenance, tags, and derived-field provenance are documented, but `facts` remains intentionally open-ended. Category-specific semantics are enforced by normalization/tests rather than a large union schema. This is appropriate for the current importer, but Pass 2 must not interpret arbitrary raw keys as typed facts.
 - **Importer:** Cargo/MediaWiki revision provenance is strong and ordinary use is offline. The old generic deduplication is lossy when one ID represents multiple row relationships; this is visible in attachment effects and merged HD1/HD2 enemy names. Cross-catalog normalization now runs after all tables are present. Candidate review remains mandatory.
 - **Provenance and overrides:** imported records retain source revisions and manual patches append separate provenance. The only manual overrides seed a few planner tags. Those tags now identify themselves as manually curated; they are not game facts.
-- **Player/profile schema:** multiple characters, independent inventories, three-state ownership, preferences, resources, and scoped observations are suitable foundations. Warbond ownership is only one coarse status, resources are untyped, and there is no page/reward claim state. Separately recording `armor_passives` can drift from owned armor; planners should derive equipped passive from armor rather than treat it as an owned slot.
+- **Player/profile schema:** multiple characters, independent inventories, three-state ownership, per-weapon attachment purchase answers, preferences, resources, and scoped observations are suitable foundations. Warbond ownership is only one coarse status, resources are untyped, and there is no verified page-gate or Medals-spent state. Separately recording `armor_passives` can drift from owned armor; planners should derive equipped passive from armor rather than treat it as an owned slot.
 - **Saved-loadout schema:** it represents the actual planning slots used by Pass 1 and allows partial drafts. It intentionally has no attachment configuration, helmet, or cape. Runtime validation now enforces item category and stratagem selectability, but the JSON schema alone cannot enforce catalog referential integrity or distinguish a draft from an ordinary complete loadout.
 - **Planner rules:** the three existing rules correctly separate immediate availability, future progression targets, and scoped player observations. Mechanical rules were missing and are now in `planner/constraints.json`; no scoring or ranking rules were added.
 - **Tests:** the original suite covered storage, character isolation, availability, provenance, catalog comparison, export integrity, privacy, and offline operation. New tests cover normalized relationships, non-equippable stratagems, slot semantics, tag provenance, constraints, and the reviewed fixture.
@@ -56,7 +56,7 @@ The architecture is sound: canonical JSON, generated presentation files, source 
 | backpack dependency | Ready for selectable support weapons | Explicit on the stratagem, not the duplicate weapon record. |
 | special mechanics | Partial | Trait strings exist for 82 weapons but are not a complete behavioral model. |
 | progression | Partial | Warbond/page/cost links exist for many rewards; other sources and incomplete Warbond data remain. |
-| attachments | Compatibility ready; effects/progression blocked | Explicit IDs are now available, but per-weapon effects and unlock state are not. |
+| attachments | Compatibility and player answers ready; effects/progression blocked | Explicit IDs and per-weapon purchase answers are available, but catalog unlock requirements and per-weapon effects are not. |
 
 Every weapon record still contains at least one presentation-markup field, usually source or damage. Planner code should use normalized fields and preserve raw values only for audit/display.
 
@@ -64,7 +64,7 @@ Every weapon record still contains at least one presentation-markup field, usual
 
 The catalog can reliably answer which of the 30 attachment definitions is compatible with which of 43 weapons and whether its slot is optics, muzzle, underbarrel, or magazine. Attachments in the same slot are mechanically mutually exclusive for a particular weapon; this rule is explicit in `planner/constraints.json`.
 
-It cannot reliably answer unlock requirement, attachment cost, or per-weapon resulting effect. Five attachment rows were produced by multiple Cargo rows and contain list-valued effects after deduplication. The importer lost the row-level pairing between weapon and effect, so those arrays must not be assigned across weapons by position. The current global inventory key (for example `drum_magazine`) also cannot represent a magazine being unlocked for one weapon but not another.
+It cannot reliably answer unlock requirement, attachment cost, or per-weapon resulting effect. Five attachment rows were produced by multiple Cargo rows and contain list-valued effects after deduplication. The importer lost the row-level pairing between weapon and effect, so those arrays must not be assigned across weapons by position. Profile schema 1.1.0 now records purchase answers by character and weapon ID. Migrated global answers remain in `legacy_attachment_review` for explicit per-weapon review.
 
 **Attachment progression is not sufficiently reliable for Pass 2.** A future source/import must preserve `(weapon_id, attachment_id, slot, unlock_requirement, cost, effect)` as a relationship record or equivalent composite-key structure.
 
@@ -202,7 +202,7 @@ The saved-loadout format permits incomplete drafts (`null` equipment and fewer t
 Planner-critical missing information:
 
 - complete Warbond reward/page/prerequisite graph and player claim state;
-- per-weapon attachment unlock, cost, effect, and ownership state;
+- per-weapon attachment requirements, cost, and effects (purchase answers are now recorded in profiles);
 - armor-passive mechanical effects;
 - enemy game scope, coarse threat role, armor/shield facts, movement/attack mode, and selected reliable mechanics;
 - mission objective style and static/mobile/defensive classification;

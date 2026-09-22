@@ -31,6 +31,7 @@ from .profile import (
     set_inventory_item_status,
     set_inventory_items_status,
     set_weapon_level,
+    set_weapon_attachment_status,
     validate_profile,
 )
 from .presentation_order import load_presentation_order, sort_with_presentation_order
@@ -278,7 +279,9 @@ class PlannerService:
     ) -> list[InventoryRow]:
         if category not in INVENTORY_TO_CATALOG:
             raise ValueError(f"Unknown inventory category {category!r}")
-        inventory = self.character().get("inventory", {}).get(category, {})
+        inventory = (self.character().get("weapon_attachments_by_weapon", {}).get(compatible_weapon_id, {})
+                     if category == "weapon_attachments" and compatible_weapon_id else
+                     self.character().get("inventory", {}).get(category, {}))
         query = search.strip().casefold()
         rows: list[InventoryRow] = []
         for item in items_for_inventory_category(self.catalog, category):
@@ -351,6 +354,32 @@ class PlannerService:
 
     def inventory_status(self, category: str, item_id: str) -> str:
         return self.character().get("inventory", {}).get(category, {}).get(item_id, {}).get("status", "unknown")
+
+    def attachment_status(self, weapon_id: str, attachment_id: str) -> str:
+        return self.character().get("weapon_attachments_by_weapon", {}).get(weapon_id, {}).get(attachment_id, {}).get("status", "unknown")
+
+    def set_attachment_status(self, weapon_id: str, attachment_id: str, status: str) -> None:
+        self._mutate(lambda: set_weapon_attachment_status(
+            self._require_profile(), self.character_id or "", weapon_id, attachment_id, status, self.catalog,
+        ))
+
+    def legacy_attachment_status(self, attachment_id: str) -> str | None:
+        return self.character().get("legacy_attachment_review", {}).get(attachment_id, {}).get("status")
+
+    def reward_access(self, row: InventoryRow) -> str:
+        """Only claim purchasability when both ownership and page access are verified."""
+        if not row.warbond_id:
+            return "Catalog link unverified"
+        warbond = self.inventory_status("warbonds", row.warbond_id)
+        if warbond != "unlocked":
+            if row.status == "unlocked":
+                return "Owned item · Warbond ownership differs; review source or special grant"
+            return "Warbond not owned" if warbond == "locked" else "Warbond ownership unreviewed"
+        page = row.facts.get("warbond_page")
+        if not isinstance(page, int) or page < 1:
+            return "Warbond owned · Reward page unverified"
+        # The accepted catalog does not establish page gate thresholds or spending.
+        return "Warbond owned · Page access unverified"
 
     def set_inventory_status(self, category: str, item_id: str, status: str) -> None:
         if status not in UNLOCK_STATES:

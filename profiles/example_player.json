@@ -17,9 +17,10 @@
           "stratagem_orbital_precision_strike": {"status": "unlocked"}
         },
         "support_weapons": {"mg_43_machine_gun": {"status": "unlocked"}},
-        "warbonds": {"helldivers_mobilize": {"status": "unlocked"}},
-        "weapon_attachments": {"drum_magazine": {"status": "unknown"}}
+        "warbonds": {"helldivers_mobilize": {"status": "unlocked"}}
       },
+      "legacy_attachment_review": {"drum_magazine": {"status": "unknown"}},
+      "weapon_attachments_by_weapon": {},
       "level": 33,
       "onboarding": {"completed_sections": ["warbonds", "primary_weapons", "secondary_weapons", "support_weapons", "grenades", "armor", "boosters", "stratagems", "ship_modules"], "skipped_sections": ["weapon_attachments"]},
       "platform": "PC",
@@ -38,9 +39,9 @@
         "ship_modules": {},
         "stratagems": {"stratagem_mg_43_machine_gun": {"status": "unlocked"}, "stratagem_orbital_precision_strike": {"status": "unlocked"}},
         "support_weapons": {"mg_43_machine_gun": {"status": "unlocked"}},
-        "warbonds": {},
-        "weapon_attachments": {}
+        "warbonds": {}
       },
+      "weapon_attachments_by_weapon": {},
       "level": 1,
       "onboarding": {"completed_sections": ["primary_weapons", "secondary_weapons", "support_weapons", "grenades", "armor", "stratagems"], "skipped_sections": ["warbonds", "weapon_attachments", "boosters", "ship_modules"]},
       "platform": "Xbox",
@@ -57,5 +58,5 @@
   "progression_notes": ["Confirm attachment progress before asking for weapon-customization advice."],
   "saved_loadout_files": ["example_illuminate_general.json"],
   "saved_loadouts": [],
-  "schema_version": "1.0.0"
+  "schema_version": "1.1.0"
 }

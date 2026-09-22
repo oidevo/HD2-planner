@@ -52,9 +52,9 @@ class UpdateArchitectureTests(unittest.TestCase):
         output = StringIO()
         with redirect_stdout(output):
             self.assertEqual(run(["version"]), 0)
-        self.assertIn("HD2 Planner 0.4.0", output.getvalue())
+        self.assertIn("HD2 Planner 0.5.0", output.getvalue())
         self.assertIn("Catalog 2026.09.21.2", output.getvalue())
-        self.assertIn("Profile schema 1.0.0", output.getvalue())
+        self.assertIn("Profile schema 1.1.0", output.getvalue())
 
     def test_profile_and_generated_use_external_paths(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -65,10 +65,10 @@ class UpdateArchitectureTests(unittest.TestCase):
             self.assertTrue(path.exists()); self.assertTrue(generated.is_relative_to(paths.generated))
 
     def test_update_check_newer_equal_and_network_failure(self):
-        payload = json.dumps({"tag_name": "v0.5.0", "html_url": "https://github.com/oidevo/HD2-planner/releases/tag/v0.5.0"}).encode()
+        payload = json.dumps({"tag_name": "v0.6.0", "html_url": "https://github.com/oidevo/HD2-planner/releases/tag/v0.6.0"}).encode()
         with patch("urllib.request.urlopen", return_value=_Response(payload)):
-            result = check_for_update(); self.assertTrue(result.available); self.assertEqual(result.latest, "0.5.0")
-        payload = json.dumps({"tag_name": "v0.4.0", "html_url": "https://example.test/release"}).encode()
+            result = check_for_update(); self.assertTrue(result.available); self.assertEqual(result.latest, "0.6.0")
+        payload = json.dumps({"tag_name": "v0.5.0", "html_url": "https://example.test/release"}).encode()
         with patch("urllib.request.urlopen", return_value=_Response(payload)):
             self.assertFalse(check_for_update().available)
         with patch("urllib.request.urlopen", side_effect=OSError("offline")):
@@ -83,7 +83,7 @@ class UpdateArchitectureTests(unittest.TestCase):
             write_json(path, old)
             backup = migrate_profile_file(path, self.catalog, paths)
             self.assertIsNotNone(backup); self.assertTrue(backup.exists())
-            self.assertEqual(read_json(path)["schema_version"], "1.0.0")
+            self.assertEqual(read_json(path)["schema_version"], "1.1.0")
             self.assertIsNone(migrate_profile_file(path, self.catalog, paths))
 
     def test_failed_migration_leaves_original_recoverable(self):
