@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from .resources import resource_root
 
-PROFILE_SCHEMA_VERSION = "1.0.0"
+PROFILE_SCHEMA_VERSION = "1.1.0"
 
 
 def application_version() -> str:

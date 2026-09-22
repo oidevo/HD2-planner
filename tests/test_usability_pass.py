@@ -62,12 +62,12 @@ class InspectorPresentationTests(unittest.TestCase):
 
 class BulkCopyTests(unittest.TestCase):
     def test_unreviewed_label_and_exact_confirmation_copy(self):
-        self.assertEqual(BULK_UNREVIEWED_LABEL, "Mark unreviewed visible items as locked…")
+        self.assertEqual(BULK_UNREVIEWED_LABEL, "Mark unreviewed visible items not owned…")
         heading, message = bulk_confirmation_copy(7, "locked", True)
         self.assertIn("7 unreviewed visible", heading)
-        self.assertIn("Locked", heading)
+        self.assertIn("Not owned", heading)
         self.assertIn("Exactly 7", message)
-        self.assertIn("does not block", message)
+        self.assertIn("Not owned", message)
 
 
 class PresentationOrderTests(unittest.TestCase):

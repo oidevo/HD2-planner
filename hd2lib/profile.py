@@ -5,9 +5,10 @@ from pathlib import Path
 from typing import Any
 
 from .catalog import catalog_index
-from .constants import INVENTORY_TO_CATALOG, PREFERENCE_STATES, SCHEMA_VERSION, UNLOCK_STATES
+from .constants import INVENTORY_TO_CATALOG, PREFERENCE_STATES, UNLOCK_STATES
 from .data import UserDataPaths, user_data_paths
 from .storage import read_json, slugify, utc_now, write_json
+from .version import PROFILE_SCHEMA_VERSION
 
 
 class ProfileError(ValueError):
@@ -15,12 +16,12 @@ class ProfileError(ValueError):
 
 
 def empty_inventory() -> dict[str, dict[str, dict[str, str]]]:
-    return {key: {} for key in INVENTORY_TO_CATALOG}
+    return {key: {} for key in INVENTORY_TO_CATALOG if key != "weapon_attachments"}
 
 
 def new_profile(player_id: str, display_name: str) -> dict[str, Any]:
     return {
-        "schema_version": SCHEMA_VERSION,
+        "schema_version": PROFILE_SCHEMA_VERSION,
         "profile_updated_at": utc_now(),
         "player": {"id": slugify(player_id), "display_name": display_name},
         "preferences": {"general": {}, "item_preferences": {}},
@@ -42,6 +43,7 @@ def add_character(profile: dict[str, Any], character_id: str, platform: str, lev
         "platform": platform,
         "level": level,
         "inventory": empty_inventory(),
+        "weapon_attachments_by_weapon": {},
         "preference_overrides": {"general": {}, "item_preferences": {}},
         "resources": {},
         "onboarding": {"completed_sections": [], "skipped_sections": []},
@@ -135,6 +137,8 @@ def set_inventory_item_status(
         raise ProfileError(f"Unknown inventory status {status!r}")
     if category not in INVENTORY_TO_CATALOG:
         raise ProfileError(f"Unknown inventory category {category!r}")
+    if category == "weapon_attachments":
+        raise ProfileError("Attachments must be recorded for a specific weapon")
     item = catalog_index(catalog).get(item_id)
     if item is None:
         raise ProfileError(f"Unknown catalog item {item_id!r}")
@@ -197,9 +201,29 @@ def set_character_resources(
         current[key] = value
 
 
+def set_weapon_attachment_status(
+    profile: dict[str, Any], character_id: str, weapon_id: str,
+    attachment_id: str, status: str, catalog: dict[str, Any],
+) -> None:
+    if status not in UNLOCK_STATES:
+        raise ProfileError(f"Unknown attachment status {status!r}")
+    index = catalog_index(catalog)
+    weapon = index.get(weapon_id)
+    attachment = index.get(attachment_id)
+    if not weapon or weapon.get("_collection") != "weapons":
+        raise ProfileError(f"Unknown weapon {weapon_id!r}")
+    if not attachment or attachment.get("_collection") != "attachments":
+        raise ProfileError(f"Unknown attachment {attachment_id!r}")
+    if weapon_id not in attachment.get("facts", {}).get("compatible_weapon_ids", []):
+        raise ProfileError(f"{attachment_id!r} is not compatible with {weapon_id!r}")
+    weapons = profile["characters"][character_id].setdefault("weapon_attachments_by_weapon", {})
+    entries = weapons.setdefault(weapon_id, {})
+    entries[attachment_id] = {"status": status}
+
+
 def validate_profile(profile: dict[str, Any], catalog: dict[str, Any]) -> list[str]:
     errors: list[str] = []
-    if profile.get("schema_version") != SCHEMA_VERSION:
+    if profile.get("schema_version") != PROFILE_SCHEMA_VERSION:
         errors.append(f"Unsupported profile schema_version: {profile.get('schema_version')!r}")
     player = profile.get("player")
     if not isinstance(player, dict) or not player.get("id") or not player.get("display_name"):
@@ -211,10 +235,43 @@ def validate_profile(profile: dict[str, Any], catalog: dict[str, Any]) -> list[s
     index = catalog_index(catalog)
     for character_id, character in characters.items():
         level = character.get("level")
-        if not isinstance(level, int) or level < 0:
+        if not isinstance(level, int) or isinstance(level, bool) or level < 0:
             errors.append(f"characters.{character_id}.level must be a non-negative integer")
         inventory = character.get("inventory", {})
+        if inventory.get("weapon_attachments"):
+            errors.append(f"characters.{character_id}: global attachment state requires migration")
+        attachments_by_weapon = character.get("weapon_attachments_by_weapon", {})
+        if not isinstance(attachments_by_weapon, dict):
+            errors.append(f"characters.{character_id}.weapon_attachments_by_weapon must be an object")
+            attachments_by_weapon = {}
+        for weapon_id, entries in attachments_by_weapon.items():
+            weapon = index.get(weapon_id)
+            if not weapon or weapon.get("_collection") != "weapons" or not isinstance(entries, dict):
+                errors.append(f"characters.{character_id}: invalid weapon attachment group {weapon_id!r}")
+                continue
+            for attachment_id, state in entries.items():
+                attachment = index.get(attachment_id)
+                if not attachment or attachment.get("_collection") != "attachments" or weapon_id not in attachment.get("facts", {}).get("compatible_weapon_ids", []):
+                    errors.append(f"characters.{character_id}: invalid attachment {attachment_id!r} for {weapon_id!r}")
+                if not isinstance(state, dict) or state.get("status") not in UNLOCK_STATES:
+                    errors.append(f"characters.{character_id}: invalid attachment status for {weapon_id!r}/{attachment_id!r}")
+        legacy_review = character.get("legacy_attachment_review", {})
+        if not isinstance(legacy_review, dict):
+            errors.append(f"characters.{character_id}.legacy_attachment_review must be an object")
+            legacy_review = {}
+        for attachment_id, state in legacy_review.items():
+            if attachment_id not in index or index[attachment_id].get("_collection") != "attachments" or not isinstance(state, dict) or state.get("status") not in UNLOCK_STATES:
+                errors.append(f"characters.{character_id}: invalid legacy attachment answer {attachment_id!r}")
+        resources = character.get("resources", {})
+        if not isinstance(resources, dict):
+            errors.append(f"characters.{character_id}.resources must be an object")
+        else:
+            for key in ("medals", "requisition", "super_credits", "common_samples", "rare_samples", "super_samples"):
+                if key in resources and (not isinstance(resources[key], int) or isinstance(resources[key], bool) or resources[key] < 0):
+                    errors.append(f"characters.{character_id}.resources.{key} must be a non-negative integer")
         for category in INVENTORY_TO_CATALOG:
+            if category == "weapon_attachments":
+                continue
             entries = inventory.get(category, {})
             if not isinstance(entries, dict):
                 errors.append(f"characters.{character_id}.inventory.{category} must be an object")

@@ -37,7 +37,7 @@ The PyInstaller specification is `build-support/macos/hd2_planner.spec`. Generat
 
 Immutable catalog, schemas, planner inputs, onboarding documentation, examples, version metadata, application code, and license material are read from the frozen bundle. Profiles, loadouts, generated contexts, preferences/settings, backups, migration state, logs, and caches remain exclusively in the established external data directory. Replacing the app therefore does not replace user data. `HD2_PLANNER_DATA_DIR` remains available for isolated testing and CLI/source workflows; `HD2_PLANNER_PYTHON` has no effect on the embedded app.
 
-The frozen resources include `planner/presentation_order.json`; it is immutable presentation metadata linked to the packaged catalog version, not a player-data file or a game-fact catalog. Appearance choice is stored only in the external `settings.json`. Character deletion backups are written only to the external `backups/` directory.
+The frozen resources include `planner/presentation_order.json`; it is immutable presentation metadata linked to the packaged catalog version, not a player-data file or a game-fact catalog. Appearance, pinned navigation, and inspector width are stored only in the external `settings.json`. Character deletion and profile migration backups are written only to the external `backups/` directory.
 
 The archive and app must not include real profiles, generated output, settings, backups, migration state, logs, caches, tests, fixtures, build tools, virtual environments, Git data, or machine-specific paths.
 

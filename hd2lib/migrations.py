@@ -25,7 +25,23 @@ def _v090_to_v100(profile: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
-MIGRATIONS: dict[str, tuple[str, Migration]] = {"0.9.0": ("1.0.0", _v090_to_v100)}
+def _v100_to_v110(profile: dict[str, Any]) -> dict[str, Any]:
+    """Keep ambiguous global attachment answers for explicit per-weapon review."""
+    result = copy.deepcopy(profile)
+    for character in result.get("characters", {}).values():
+        inventory = character.setdefault("inventory", {})
+        legacy = inventory.pop("weapon_attachments", {})
+        character.setdefault("weapon_attachments_by_weapon", {})
+        if legacy:
+            character["legacy_attachment_review"] = legacy
+    result["schema_version"] = "1.1.0"
+    return result
+
+
+MIGRATIONS: dict[str, tuple[str, Migration]] = {
+    "0.9.0": ("1.0.0", _v090_to_v100),
+    "1.0.0": ("1.1.0", _v100_to_v110),
+}
 
 
 def migration_path(from_version: str, target: str = PROFILE_SCHEMA_VERSION) -> list[Migration]:

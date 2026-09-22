@@ -175,10 +175,10 @@ class GUIModelTests(unittest.TestCase):
 
     def test_attachment_state_editing_persists(self):
         attachment = self.service.inventory_rows("weapon_attachments", compatible_weapon_id="sg_225_breaker")[0]
-        self.service.set_inventory_status("weapon_attachments", attachment.item_id, "unlocked")
+        self.service.set_attachment_status("sg_225_breaker", attachment.item_id, "unlocked")
         reopened = PlannerService(paths=self.paths, catalog=self.catalog)
         reopened.open_profile("tester", "pc")
-        self.assertEqual(reopened.inventory_status("weapon_attachments", attachment.item_id), "unlocked")
+        self.assertEqual(reopened.attachment_status("sg_225_breaker", attachment.item_id), "unlocked")
 
     def test_autosave_uses_canonical_profile_writer(self):
         with patch("hd2lib.gui_model.save_profile", wraps=save_profile) as writer:

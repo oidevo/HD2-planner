@@ -38,10 +38,11 @@ boundary, see [Apple Silicon macOS app documentation](docs/MACOS_APP.md).
 
 - Tracks independent inventories for multiple characters/accounts.
 - Records player and character preferences, optional resource balances,
-  weapon levels, scoped observations, and saved loadouts.
-- Uses explicit availability: **unlocked** is known usable now, **locked** is
-  known unavailable, and **unknown** has not been recorded. Availability and
-  preference are deliberately separate.
+  weapon levels and weapon-specific attachment purchases, scoped observations,
+  and saved loadouts.
+- Uses explicit ownership: **owned** (`unlocked` in the portable JSON),
+  **not owned** (`locked`), and **unreviewed** (`unknown`). Existing unknown
+  answers stay unknown until you review them. Ownership and preference are separate.
 - Provides a local GUI plus resumable CLI onboarding and inventory review.
 - Exports self-contained Markdown and JSON context files for ChatGPT. Upload a
   file yourself when you want to use it; the app never calls ChatGPT.
@@ -53,9 +54,36 @@ scoring engine and does not automatically choose or modify a loadout.
 
 ### Warbonds and presentation order
 
-Marking a Warbond unlocked means that the Warbond itself is owned. It does not
-unlock linked rewards: the catalog does not yet contain a complete reward,
-page-gate, dependency, or claim-state graph.
+Marking a Warbond owned records the Warbond itself. It never changes its rewards
+or deducts currency. Open a Warbond to browse its known catalog-linked items,
+grouped by catalog page where present. The catalog lacks complete rewards,
+page-gate thresholds, and Medals-spent history, so the app shows **Page access
+unverified** instead of claiming a reward is available to buy. Owned rewards
+from grants or incomplete links remain recorded and are flagged for review.
+
+### Fast inventory workflow
+
+The full-width banner shows player, active character, level, and each resource.
+Click a balance or level to edit in place: Enter saves, Escape cancels, and a
+blank resource means unrecorded while `0` means recorded zero. The character
+switcher and adjacent menu handle switching, creation, editing, and deletion. The menu button or
+Ctrl/Command+B pins the navigation open or closed; hovering over a collapsed
+rail temporarily reveals it. The item inspector has a draggable divider, and
+moves below the list on narrow windows.
+
+In inventory, click the **Owned?** checkmark to save one ownership change at
+once. Click elsewhere on a row to inspect it without changing ownership. An
+Undo button appears briefly after a checkmark change. Use the context menu to
+restore **Unreviewed** or set a precise status. Bulk changes ask for confirmation.
+Weapon details show level and compatible attachments; attachment purchases are
+recorded separately for each character and weapon.
+
+Opening an older profile creates a backup before migrating its schema. Old
+global attachment answers are kept as **legacy answers awaiting review**, not
+assigned to every compatible weapon. The banner’s **Review legacy mods** button
+lists those answers and lets you apply one to a chosen compatible weapon; the
+weapon inspector also shows the old answer. The original answer stays available for later
+review. CLI attachment review now requires `--weapon WEAPON_ID`.
 
 Game-screen order is tracked separately from catalog facts. No complete
 in-game captures were supplied for this release, so the shipped presentation
@@ -149,8 +177,8 @@ See [catalog documentation](catalog/README.md),
 ## Project limitations
 
 - There is no recommendation, ranking, or loadout-substitution engine.
-- Complete Warbond reward dependencies, page gates, and reward claim state are
-  not modeled.
+- Complete Warbond rewards, page gates, and Medals spent within each Warbond
+  are not modeled; purchase access remains unverified.
 - No verified in-game presentation order is shipped until complete captures
   are supplied and recorded as evidence.
 - Some catalog relationships—especially attachment progression/effects,

@@ -11,7 +11,7 @@ Interview rules:
 1. Work in manageable sections. Ask only a small group of related questions at a time.
 2. Begin with my player display name and a short, portable player ID using lowercase letters, digits, and underscores.
 3. Ask how many independent characters/accounts I use. For each, collect a short character ID, display name, platform, and level. Never assume cross-progression; inventories and resources are independent.
-4. Then interview one character at a time in these sections: warbonds owned; primary weapons; secondary weapons; support weapons; weapon attachments/progression; grenades; armor and relevant passives; boosters; stratagems; ship modules; optional resource balances; character-specific preferences.
+4. Then interview one character at a time in these sections: warbonds owned; primary weapons; secondary weapons; support weapons; weapon-specific attachment purchases/progression; grenades; armor and relevant passives; boosters; stratagems; ship modules; optional resource balances; character-specific preferences.
 5. For each inventory item, record exactly one unlock status: `unlocked`, `locked`, or `unknown`. Do not infer unlocks from level, a warbond, another item, another character, a stated preference, or general game knowledge.
 6. Preference is separate from availability. If I volunteer it, use `favorite`, `like`, `neutral`, `dislike`, or `avoid`. A disliked item may still be unlocked; a favorite may still be locked.
 7. I may say `skip` for any item or entire section. Treat skipped availability as unknown; do not fill it in yourself.
@@ -26,7 +26,7 @@ The final JSON shape must be:
 
 ```json
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "profile_updated_at": "ISO-8601 UTC timestamp",
   "player": {
     "id": "portable_player_id",
@@ -48,13 +48,15 @@ The final JSON shape must be:
         "primary_weapons": {"weapon_id": {"status": "unlocked"}},
         "secondary_weapons": {},
         "support_weapons": {},
-        "weapon_attachments": {},
         "grenades": {},
         "armor": {},
         "armor_passives": {},
         "boosters": {},
         "stratagems": {},
         "ship_modules": {}
+      },
+      "weapon_attachments_by_weapon": {
+        "weapon_id": {"attachment_id": {"status": "unlocked"}}
       },
       "preference_overrides": {
         "general": {},
@@ -86,4 +88,3 @@ The final JSON shape must be:
 ```
 
 Every inventory category shown above must exist for every character, even if it is `{}`. Start the interview now with the player identity and character list only.
-

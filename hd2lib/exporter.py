@@ -37,6 +37,21 @@ def _inventory_snapshot(character: dict[str, Any], catalog: dict[str, Any], pref
     return snapshot
 
 
+def _attachment_snapshot(character: dict[str, Any], catalog: dict[str, Any]) -> list[dict[str, str]]:
+    index = catalog_index(catalog)
+    result: list[dict[str, str]] = []
+    for weapon_id, attachments in sorted(character.get("weapon_attachments_by_weapon", {}).items()):
+        for attachment_id, state in sorted(attachments.items()):
+            result.append({
+                "weapon_id": weapon_id,
+                "weapon": index[weapon_id]["name"],
+                "attachment_id": attachment_id,
+                "attachment": index[attachment_id]["name"],
+                "status": state["status"],
+            })
+    return result
+
+
 def _load_linked_loadouts(profile: dict[str, Any], root: Path | None = None) -> list[dict[str, Any]]:
     root = user_data_paths().loadouts if root is None else root
     result = list(profile.get("saved_loadouts", []))
@@ -81,6 +96,9 @@ def build_context(profile: dict[str, Any], character_id: str, catalog: dict[str,
         },
         "preferences": preferences,
         "inventory": _inventory_snapshot(character, catalog, preferences),
+        "weapon_attachments_by_weapon": character.get("weapon_attachments_by_weapon", {}),
+        "attachment_progression": _attachment_snapshot(character, catalog),
+        "legacy_attachment_review": character.get("legacy_attachment_review", {}),
         "gameplay_observations": observations,
         "saved_loadouts": _load_linked_loadouts(profile),
         "progression_notes": profile.get("progression_notes", []),
@@ -90,7 +108,7 @@ def build_context(profile: dict[str, Any], character_id: str, catalog: dict[str,
 def _state_table(items: list[dict[str, Any]]) -> str:
     if not items:
         return "_No recorded items; treat availability as unknown._\n"
-    lines = ["| Item | Unlock | Preference |", "|---|---|---|"]
+    lines = ["| Item | Ownership | Preference |", "|---|---|---|"]
     lines.extend(
         f"| {item['name']} (`{item['id']}`)"
         + (f" — level {item['level']}" if "level" in item else "")
@@ -117,7 +135,7 @@ def context_markdown(context: dict[str, Any]) -> str:
         f"- Game version: {context['catalog'].get('game_version')}", f"- Generated: {metadata['generated_at']}",
         f"- profile_hash: `{metadata['profile_hash']}`", f"- catalog_hash: `{metadata['catalog_hash']}`", "",
         "## How to interpret this document", "",
-        "`unlocked` means immediately usable, `locked` means known unavailable, and `unknown` means not yet recorded. Player preference is independent of unlock state. Personal gameplay observations are context-scoped evidence, not universal rules. Community observations, when present, are dated third-party evidence rather than game facts.", "",
+        "`unlocked` means recorded owned, `locked` means recorded not owned, and `unknown` means unreviewed. Warbond ownership does not grant reward ownership or verify page purchase access. Player preference is independent of ownership. Personal gameplay observations are context-scoped evidence, not universal rules. Community observations, when present, are dated third-party evidence rather than game facts.", "",
         "**When recommending an immediately usable loadout, do not equip locked or unknown items. Locked items may be suggested as future progression targets. Do not treat a personal negative experience as a universal game rule.**", "",
         "## Resources", "",
     ]
@@ -140,7 +158,12 @@ def context_markdown(context: dict[str, Any]) -> str:
         "## Weapons", "", "### Primary", "", _state_table(inventory.get("primary_weapons", [])),
         "### Secondary", "", _state_table(inventory.get("secondary_weapons", [])),
         "### Support", "", _state_table(inventory.get("support_weapons", [])),
-        "## Weapon attachments / progression", "", _state_table(inventory.get("weapon_attachments", [])),
+        "## Weapon attachments / progression", "",
+        "Attachment purchase state is scoped to each weapon. Legacy global answers require review.", "",
+        "| Weapon | Attachment | Ownership |", "|---|---|---|",
+        *(f"| {entry['weapon']} (`{entry['weapon_id']}`) | {entry['attachment']} (`{entry['attachment_id']}`) | {entry['status']} |" for entry in context.get("attachment_progression", [])), "",
+        "### Legacy attachment answers awaiting review", "",
+        "```json", json.dumps(context.get("legacy_attachment_review", {}), indent=2, ensure_ascii=False), "```", "",
         "## Grenades", "", _state_table(inventory.get("grenades", [])),
         "## Armor / passives", "", "### Armor", "", _state_table(inventory.get("armor", [])),
         "### Passives", "", _state_table(inventory.get("armor_passives", [])),

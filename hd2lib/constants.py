@@ -1,7 +1,7 @@
 from .resources import resource_root
-from .version import PROFILE_SCHEMA_VERSION, application_version
+from .version import application_version
 
-SCHEMA_VERSION = PROFILE_SCHEMA_VERSION
+SCHEMA_VERSION = "1.0.0"  # Catalog and generated-context schema; profile evolves independently.
 APP_VERSION = application_version()
 ROOT = resource_root()
 CATALOG_DIR = ROOT / "catalog"
