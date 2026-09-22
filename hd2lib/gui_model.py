@@ -26,6 +26,7 @@ from .profile import (
     new_profile,
     profile_summaries,
     save_profile,
+    set_character_resources,
     set_inventory_item_status,
     set_inventory_items_status,
     set_weapon_level,
@@ -53,6 +54,24 @@ class ProfileChoice:
     player_id: str
     display_name: str
     path: Path
+
+
+@dataclass(frozen=True)
+class PreferenceRow:
+    item_id: str
+    name: str
+    preference: str
+    scope: str
+
+
+RESOURCE_FIELDS = (
+    ("medals", "Medals"),
+    ("requisition", "Requisition slips"),
+    ("super_credits", "Super credits"),
+    ("common_samples", "Common samples"),
+    ("rare_samples", "Rare samples"),
+    ("super_samples", "Super samples"),
+)
 
 
 class PlannerService:
@@ -149,6 +168,35 @@ class PlannerService:
         self._mutate(lambda: character.update({
             "display_name": name.strip(), "platform": platform.strip() or "unknown", "level": level,
         }))
+
+    def resources(self) -> dict[str, Any]:
+        """Return a copy of the selected character's recorded balances."""
+        return dict(self.character().get("resources", {}))
+
+    @staticmethod
+    def parse_resource_inputs(values: dict[str, str]) -> dict[str, int | None]:
+        """Parse focused-dialog text, keeping blanks distinct from zero."""
+        result: dict[str, int | None] = {}
+        allowed = {key for key, _label in RESOURCE_FIELDS}
+        for key, raw in values.items():
+            if key not in allowed:
+                raise ProfileError(f"Unknown resource {key!r}")
+            value = raw.strip()
+            if not value:
+                result[key] = None
+                continue
+            if not value.isdecimal():
+                raise ProfileError("Resource amounts must be non-negative whole numbers or blank")
+            result[key] = int(value)
+        return result
+
+    def set_resources(self, resources: dict[str, int | None]) -> None:
+        allowed = {key for key, _label in RESOURCE_FIELDS}
+        if set(resources) - allowed:
+            raise ProfileError(f"Unknown resource fields: {', '.join(sorted(set(resources) - allowed))}")
+        self._mutate(lambda: set_character_resources(
+            self._require_profile(), self.character_id or "", resources,
+        ))
 
     def character(self) -> dict[str, Any]:
         profile = self._require_profile()
@@ -268,6 +316,36 @@ class PlannerService:
                 prefs[item_id] = preference
 
         self._mutate(change)
+
+    def explicit_item_preferences(self, *, search: str = "") -> list[PreferenceRow]:
+        """Return only non-neutral effective preferences for the selected character."""
+        profile = self._require_profile()
+        character = self.character()
+        base = profile.get("preferences", {}).get("item_preferences", {})
+        overrides = character.get("preference_overrides", {}).get("item_preferences", {})
+        effective = dict(base)
+        effective.update(overrides)
+        query = search.strip().casefold()
+        rows: list[PreferenceRow] = []
+        for item_id, preference in effective.items():
+            if preference == "neutral" or item_id not in self.index:
+                continue
+            name = self.index[item_id]["name"]
+            if query and query not in name.casefold() and query not in item_id.casefold():
+                continue
+            rows.append(PreferenceRow(
+                item_id=item_id,
+                name=name,
+                preference=preference,
+                scope="Character override" if item_id in overrides else "Player preference",
+            ))
+        return sorted(rows, key=lambda row: row.name.casefold())
+
+    def item_preference(self, item_id: str) -> str:
+        profile = self._require_profile()
+        base = profile.get("preferences", {}).get("item_preferences", {})
+        overrides = self.character().get("preference_overrides", {}).get("item_preferences", {})
+        return overrides.get(item_id, base.get(item_id, "neutral"))
 
     def set_general_preference(self, key: str, value: str) -> None:
         key = key.strip()

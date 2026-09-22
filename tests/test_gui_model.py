@@ -95,6 +95,67 @@ class GUIModelTests(unittest.TestCase):
         _, markdown = self.service.generate_context()
         self.assertIn("level 18", markdown.read_text(encoding="utf-8"))
 
+    def test_resource_inputs_preserve_blank_versus_zero(self):
+        parsed = self.service.parse_resource_inputs({
+            "medals": "0", "requisition": "", "super_credits": " 25 ",
+        })
+        self.assertEqual(parsed, {"medals": 0, "requisition": None, "super_credits": 25})
+        self.service.set_resources(parsed)
+        saved = read_json(self.paths.profiles / "tester.json")
+        self.assertEqual(saved["characters"]["pc"]["resources"], {"medals": 0, "super_credits": 25})
+
+    def test_resource_edit_preserves_unrecognized_legacy_fields(self):
+        self.service.character()["resources"]["future_currency"] = "preserved"
+        self.service.set_resources({"medals": 4})
+        saved = read_json(self.paths.profiles / "tester.json")
+        self.assertEqual(saved["characters"]["pc"]["resources"]["future_currency"], "preserved")
+
+    def test_resource_inputs_reject_negative_fractional_and_text_values(self):
+        for value in ("-1", "1.5", "ten"):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, "non-negative whole numbers"):
+                self.service.parse_resource_inputs({"medals": value})
+
+    def test_resource_save_is_atomic_and_rolls_back_display_model(self):
+        self.service.set_resources({"medals": 7})
+        before_file = (self.paths.profiles / "tester.json").read_bytes()
+        with patch("hd2lib.gui_model.save_profile", side_effect=OSError("disk full")):
+            with self.assertRaisesRegex(OSError, "disk full"):
+                self.service.set_resources({"medals": 99})
+        self.assertEqual(self.service.resources(), {"medals": 7})
+        self.assertEqual((self.paths.profiles / "tester.json").read_bytes(), before_file)
+
+    def test_resources_are_character_specific(self):
+        self.service.set_resources({"medals": 12, "rare_samples": 3})
+        self.service.select_character("xbox")
+        self.assertEqual(self.service.resources(), {})
+        self.service.set_resources({"medals": 1})
+        self.service.select_character("pc")
+        self.assertEqual(self.service.resources(), {"medals": 12, "rare_samples": 3})
+
+    def test_resources_are_in_json_and_markdown_context(self):
+        self.service.set_resources({"medals": 17, "requisition": 0, "super_samples": None})
+        json_path, markdown_path = self.service.generate_context()
+        context = read_json(json_path)
+        self.assertEqual(context["character"]["resources"], {"medals": 17, "requisition": 0})
+        markdown = markdown_path.read_text(encoding="utf-8")
+        self.assertIn("- Medals: 17", markdown)
+        self.assertIn("- Requisition slips: 0", markdown)
+
+    def test_preferences_list_only_explicit_non_neutral_values(self):
+        self.assertEqual(self.service.explicit_item_preferences(), [])
+        self.service.profile["preferences"]["item_preferences"]["ar_23_liberator"] = "like"
+        self.service.set_item_preference("sg_225_breaker", "favorite")
+        rows = self.service.explicit_item_preferences()
+        self.assertEqual({row.item_id for row in rows}, {"ar_23_liberator", "sg_225_breaker"})
+        self.assertEqual({row.scope for row in rows}, {"Player preference", "Character override"})
+        self.service.set_item_preference("sg_225_breaker", "neutral")
+        self.assertEqual([row.item_id for row in self.service.explicit_item_preferences()], ["ar_23_liberator"])
+
+    def test_explicit_preference_search_does_not_expand_to_neutral_catalog(self):
+        self.service.set_item_preference("sg_225_breaker", "avoid")
+        self.assertEqual([row.item_id for row in self.service.explicit_item_preferences(search="breaker")], ["sg_225_breaker"])
+        self.assertEqual(self.service.explicit_item_preferences(search="liberator"), [])
+
     def test_attachment_state_editing_persists(self):
         attachment = self.service.inventory_rows("weapon_attachments", compatible_weapon_id="sg_225_breaker")[0]
         self.service.set_inventory_status("weapon_attachments", attachment.item_id, "unlocked")

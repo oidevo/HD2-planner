@@ -73,7 +73,7 @@ Catalog metadata keeps `schema_version`, `catalog_version`, `game_version`, and 
 
 1. Update `VERSION` and relevant changelog/catalog metadata.
 2. Commit the version and changelog changes, then run `python3.12 -m unittest discover -s tests`.
-3. Create and push a matching tag, for example `git tag v0.2.1` then `git push origin v0.2.1`.
+3. Create and push a matching tag, for example `git tag v0.3.0` then `git push origin v0.3.0`.
 4. GitHub Actions verifies the tag, runs tests, builds the ZIP, and publishes a GitHub Release with generated notes. Do not create a separate draft release for the same tag.
 5. Friends use `python3.12 hd2.py update-check`, replace the application folder, and retain their external personal data.
 
@@ -91,7 +91,7 @@ The recommended interactive workflow is the desktop checklist:
 python3.12 hd2.py gui
 ```
 
-Its sidebar switches independent characters without restarting. Inventory screens provide live search, status/Warbond/group filters, visible-only bulk actions, and explicit `unlocked`, `locked`, and `unknown` states. Double-click or Space toggles an item between unlocked and unknown; right-click exposes all three states. Every mutation is validated and written atomically to the same external JSON profile used by the CLI.
+Its compact navigation rail switches independent characters without restarting. Inventory screens provide live search, status/Warbond/group filters, visible-only bulk actions, a responsive item inspector, and explicit `unlocked`, `locked`, and `unknown` states. Double-click or Space toggles an item between unlocked and unknown; right-click exposes all three states. Character levels and optional resource balances can be edited directly from the character card. Every mutation is validated and written atomically to the same external JSON profile used by the CLI.
 
 The Primaries, Secondaries, and Support Weapons screens can record an optional weapon level. Compatible attachments are shown from catalog relationships; their current ownership state remains global because the catalog does not reliably expose per-weapon attachment progression. Preferences, gameplay observations, saved-loadout validation, context generation, update checking, and data-directory information are available as lightweight secondary screens.
 
@@ -156,7 +156,7 @@ The importer prefers Cargo, uses MediaWiki page/category data only for gaps, ser
 python3.12 hd2.py package
 ```
 
-This creates `dist/helldivers-planner-0.2.1.zip` with the application, catalog snapshot, example profile/loadout under `examples/`, onboarding documents, schemas, tests, README, and attribution. It excludes all real profiles, loadouts, generated contexts, settings, backups, caches, staging/raw importer data, and virtual environments. Friends unzip it, run setup, export context, and work offline.
+This creates `dist/helldivers-planner-0.3.0.zip` with the application, catalog snapshot, example profile/loadout under `examples/`, onboarding documents, schemas, tests, README, and attribution. It excludes all real profiles, loadouts, generated contexts, settings, backups, caches, staging/raw importer data, and virtual environments. Friends unzip it, run setup, export context, and work offline.
 
 ## Tests
 

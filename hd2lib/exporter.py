@@ -119,7 +119,23 @@ def context_markdown(context: dict[str, Any]) -> str:
         "## How to interpret this document", "",
         "`unlocked` means immediately usable, `locked` means known unavailable, and `unknown` means not yet recorded. Player preference is independent of unlock state. Personal gameplay observations are context-scoped evidence, not universal rules. Community observations, when present, are dated third-party evidence rather than game facts.", "",
         "**When recommending an immediately usable loadout, do not equip locked or unknown items. Locked items may be suggested as future progression targets. Do not treat a personal negative experience as a universal game rule.**", "",
-        "## Preferences", "", "```json", json.dumps(context["preferences"], indent=2, ensure_ascii=False), "```", "",
+        "## Resources", "",
+    ]
+    resources = character.get("resources", {})
+    if resources:
+        resource_labels = {
+            "medals": "Medals", "requisition": "Requisition slips",
+            "super_credits": "Super credits", "common_samples": "Common samples",
+            "rare_samples": "Rare samples", "super_samples": "Super samples",
+        }
+        lines.extend(
+            f"- {resource_labels.get(key, key.replace('_', ' ').title())}: {value}"
+            for key, value in resources.items()
+        )
+    else:
+        lines.append("_No resource balances recorded._")
+    lines.extend([
+        "", "## Preferences", "", "```json", json.dumps(context["preferences"], indent=2, ensure_ascii=False), "```", "",
         "## Warbonds", "", _state_table(inventory.get("warbonds", [])),
         "## Weapons", "", "### Primary", "", _state_table(inventory.get("primary_weapons", [])),
         "### Secondary", "", _state_table(inventory.get("secondary_weapons", [])),
@@ -130,7 +146,7 @@ def context_markdown(context: dict[str, Any]) -> str:
         "### Passives", "", _state_table(inventory.get("armor_passives", [])),
         "## Boosters", "", _state_table(inventory.get("boosters", [])),
         "## Stratagems", "",
-    ]
+    ])
     stratagems = inventory.get("stratagems", [])
     groups = (("Support", "support_weapon"), ("Backpack", "backpack"), ("Eagle", "eagle"), ("Orbital", "orbital"), ("Sentry / Emplacement", "sentry_emplacement"), ("Vehicle", "vehicle"), ("Other", "other"))
     used: set[str] = set()

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0 — 2026-09-21
+
+- Redesigned the Tkinter/ttk interface as a focused inventory-planning workspace with compact grouped navigation, a clear active state, restrained native styling, responsive inventory inspectors, aligned filtering, review progress, and contextual bulk actions.
+- Added focused character-resource editing for medals, requisition slips, super credits, and sample balances. Blank values remain unrecorded, zero remains explicit, character isolation is preserved, and writes continue through the validated atomic profile path.
+- Reworked first-run setup, preferences, settings, update results, confirmations, and context-generation dialogs. Preferences now show explicit non-neutral choices instead of the neutral catalog default.
+- Added resource balances to Markdown context snapshots and clarified that context generation creates local Markdown/JSON files for ChatGPT without calling ChatGPT or making recommendations.
+- Expanded automated coverage for resource validation, blank-versus-zero behavior, atomic rollback, character isolation, context inclusion, explicit preferences, GUI persistence, CLI interoperability, dialogs, and release-package privacy.
+- Kept the catalog version and profile schema version unchanged; existing external user-data locations and compatible profiles remain intact.
+
 ## 0.2.1 — 2026-09-21
 
 - Raised the supported runtime minimum to Python 3.12; the desktop interface now consistently directs users to a Tk-enabled Python 3.12+ installation and reports the executable and detected version when Tkinter is absent.

@@ -178,6 +178,24 @@ def set_weapon_level(
         entry["level"] = level
 
 
+def set_character_resources(
+    profile: dict[str, Any], character_id: str, resources: dict[str, int | None],
+) -> None:
+    """Update recorded resources while preserving blanks and unknown future fields."""
+    if character_id not in profile.get("characters", {}):
+        raise ProfileError(f"Unknown character {character_id!r}")
+    current = profile["characters"][character_id].setdefault("resources", {})
+    if not isinstance(current, dict):
+        raise ProfileError("Character resources must be an object")
+    for key, value in resources.items():
+        if value is None:
+            current.pop(key, None)
+            continue
+        if not isinstance(value, int) or isinstance(value, bool) or value < 0:
+            raise ProfileError(f"Resource {key!r} must be a non-negative whole number or blank")
+        current[key] = value
+
+
 def validate_profile(profile: dict[str, Any], catalog: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     if profile.get("schema_version") != SCHEMA_VERSION:
