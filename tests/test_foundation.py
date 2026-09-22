@@ -273,7 +273,7 @@ class FoundationTests(unittest.TestCase):
     def test_packaging_excludes_private_profiles(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary) / "root"; root.mkdir()
-            for name in ("hd2.py", "README.md", "LICENSE", "LICENSE_OR_ATTRIBUTION.md", "CHANGELOG.md", "pyproject.toml"):
+            for name in ("hd2.py", "hd2_gui.py", ".python-version", "README.md", "LICENSE", "LICENSE_OR_ATTRIBUTION.md", "CHANGELOG.md", "pyproject.toml"):
                 (root / name).write_text(name, encoding="utf-8")
             (root / "profiles" / "loadouts").mkdir(parents=True)
             (root / "profiles" / "example_player.json").write_text("{}", encoding="utf-8")
@@ -283,6 +283,8 @@ class FoundationTests(unittest.TestCase):
             with zipfile.ZipFile(archive) as zipped:
                 names = zipped.namelist()
             self.assertTrue(any(name.endswith("profiles/example_player.json") for name in names))
+            self.assertTrue(any(name.endswith("hd2_gui.py") for name in names))
+            self.assertTrue(any(name.endswith(".python-version") for name in names))
             self.assertFalse(any("private_alex" in name for name in names))
 
     def test_offline_context_operation_never_uses_network(self):

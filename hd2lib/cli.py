@@ -9,12 +9,13 @@ from .catalog import compare_catalogs, load_catalog, validate_catalog
 from .constants import CATALOG_DIR, ROOT
 from .data import user_data_paths
 from .exporter import export_context, validate_generated
+from .gui_runtime import missing_tkinter_message, tkinter_import_failed
 from .local_data import migrate_local_data
 from .loadout import validate_for_character
 from .migrations import migrate_profile_file
 from .onboarding import review_inventory, setup_profile
 from .packaging import build_package
-from .profile import ProfileError, find_profile, import_profile, save_profile, validate_profile
+from .profile import ProfileError, import_profile, load_profile, validate_profile
 from .storage import read_json, write_json
 from .update import check_for_update
 from .version import PROFILE_SCHEMA_VERSION, application_version
@@ -25,6 +26,7 @@ def parser() -> argparse.ArgumentParser:
     sub = command.add_subparsers(dest="command", required=True)
 
     sub.add_parser("setup", help="Create a player and one or more characters interactively")
+    sub.add_parser("gui", help="Open the desktop inventory checklist")
     sub.add_parser("data-dir", help="Print the persistent per-user data directory")
     sub.add_parser("version", help="Print application, catalog, and profile schema versions")
     sub.add_parser("update-check", help="Check GitHub Releases without downloading anything")
@@ -82,15 +84,21 @@ def parser() -> argparse.ArgumentParser:
 
 
 def _profile(player_id: str) -> tuple[Path, dict]:
-    path = find_profile(player_id)
-    migrate_profile_file(path, load_catalog(), user_data_paths())
-    return path, read_json(path)
+    return load_profile(player_id, load_catalog(), user_data_paths())
 
 
 def run(argv: list[str] | None = None) -> int:
     args = parser().parse_args(argv)
     try:
         paths = user_data_paths()
+        if args.command == "gui":
+            try:
+                from .gui import launch_gui
+            except ImportError as exc:
+                if tkinter_import_failed(exc):
+                    raise RuntimeError(missing_tkinter_message()) from exc
+                raise
+            return launch_gui()
         if args.command == "data-dir":
             print("HD2 Planner data directory:\n" + str(paths.initialize().root)); return 0
         if args.command == "version":
@@ -182,7 +190,7 @@ def run(argv: list[str] | None = None) -> int:
             result = build_package(args.output)
             print(f"Created offline package: {result}")
             return 0
-    except (ValueError, KeyError, OSError, ProfileError) as exc:
+    except (ValueError, KeyError, OSError, ProfileError, RuntimeError) as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 1
     return 1

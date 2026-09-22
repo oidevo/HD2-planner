@@ -9,7 +9,7 @@ from .constants import APP_VERSION, ROOT
 
 
 INCLUDE_FILES = [
-    "hd2.py", "VERSION", "README.md", "LICENSE", "LICENSE_OR_ATTRIBUTION.md", "CHANGELOG.md", "pyproject.toml",
+    "hd2.py", "hd2_gui.py", "VERSION", ".python-version", "README.md", "LICENSE", "LICENSE_OR_ATTRIBUTION.md", "CHANGELOG.md", "pyproject.toml",
 ]
 INCLUDE_DIRS = ["hd2lib", "catalog", "community", "docs", "planner", "importer", "onboarding", "schemas", "tests"]
 
