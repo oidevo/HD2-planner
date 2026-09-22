@@ -72,6 +72,15 @@ class GUIModelTests(unittest.TestCase):
         outside = next(row.item_id for row in self.service.inventory_rows("primary_weapons") if row.item_id not in visible_ids)
         self.assertEqual(self.service.inventory_status("primary_weapons", outside), "unknown")
 
+    def test_bulk_noop_does_not_rewrite_already_matching_items(self):
+        item_id = "sg_225_breaker"
+        self.service.set_inventory_status("primary_weapons", item_id, "locked")
+        with patch("hd2lib.gui_model.save_profile", wraps=save_profile) as writer:
+            changed = self.service.bulk_set_status("primary_weapons", [item_id], "locked")
+        self.assertEqual(changed, 0)
+        writer.assert_not_called()
+        self.assertEqual(read_json(self.paths.profiles / "tester.json")["characters"]["pc"]["inventory"]["primary_weapons"][item_id]["status"], "locked")
+
     def test_search_filtering(self):
         rows = self.service.inventory_rows("primary_weapons", search="breaker incendiary")
         self.assertTrue(rows)
@@ -151,6 +160,14 @@ class GUIModelTests(unittest.TestCase):
         self.service.set_item_preference("sg_225_breaker", "neutral")
         self.assertEqual([row.item_id for row in self.service.explicit_item_preferences()], ["ar_23_liberator"])
 
+    def test_neutral_character_override_can_remove_inherited_player_preference(self):
+        self.service.profile["preferences"]["item_preferences"]["ar_23_liberator"] = "like"
+        self.service.set_item_preference("ar_23_liberator", "neutral")
+        self.assertEqual(self.service.item_preference("ar_23_liberator"), "neutral")
+        self.assertEqual(self.service.explicit_item_preferences(), [])
+        context = read_json(self.service.generate_context()[0])
+        self.assertEqual(context["preferences"]["item_preferences"]["ar_23_liberator"], "neutral")
+
     def test_explicit_preference_search_does_not_expand_to_neutral_catalog(self):
         self.service.set_item_preference("sg_225_breaker", "avoid")
         self.assertEqual([row.item_id for row in self.service.explicit_item_preferences(search="breaker")], ["sg_225_breaker"])
@@ -201,6 +218,59 @@ class GUIModelTests(unittest.TestCase):
         count = self.service.lock_items_from_locked_warbonds()
         self.assertGreater(count, 0)
         self.assertEqual(self.service.inventory_status("primary_weapons", candidate.item_id), "locked")
+
+    def test_warbond_ownership_and_reward_availability_are_independent(self):
+        candidate = next(row for row in self.service.inventory_rows("primary_weapons") if row.warbond_id)
+        self.service.set_inventory_status("warbonds", candidate.warbond_id, "unlocked")
+        self.assertEqual(self.service.inventory_status("primary_weapons", candidate.item_id), "unknown")
+        contents = self.service.warbond_contents(candidate.warbond_id, category="primary_weapons", status="unknown")
+        self.assertIn(candidate.item_id, [row.item_id for row in contents])
+        self.service.set_inventory_status("primary_weapons", candidate.item_id, "locked")
+        self.assertNotIn(candidate.item_id, [row.item_id for row in self.service.warbond_contents(candidate.warbond_id, category="primary_weapons", status="unknown")])
+        self.assertIn(candidate.item_id, [row.item_id for row in self.service.warbond_contents(candidate.warbond_id, category="primary_weapons", status="locked")])
+
+    def test_delete_character_creates_backup_and_preserves_unrelated_profile_data(self):
+        profile = self.service.profile
+        profile["preferences"]["general"]["style"] = "defensive"
+        profile["saved_loadouts"] = [{"id": "keep", "name": "Keep"}]
+        profile["gameplay_observations"] = [
+            {"date": "2026-09-22", "character": "pc", "rating": "good", "confidence": "low", "notes": "remove"},
+            {"date": "2026-09-22", "character": "xbox", "rating": "good", "confidence": "low", "notes": "keep scoped"},
+            {"date": "2026-09-22", "character": None, "rating": "good", "confidence": "low", "notes": "keep unscoped"},
+        ]
+        self.service._save()
+        backup, selected = self.service.delete_character("Main")
+        self.assertTrue(backup.exists())
+        self.assertIn("pc", read_json(backup)["characters"])
+        saved = read_json(self.paths.profiles / "tester.json")
+        self.assertNotIn("pc", saved["characters"])
+        self.assertEqual(selected, "xbox")
+        self.assertEqual(saved["preferences"]["general"]["style"], "defensive")
+        self.assertEqual(saved["saved_loadouts"][0]["id"], "keep")
+        self.assertEqual([item["notes"] for item in saved["gameplay_observations"]], ["keep scoped", "keep unscoped"])
+
+    def test_delete_character_rejects_bad_confirmation_before_backup(self):
+        with self.assertRaisesRegex(ValueError, "Confirmation did not match"):
+            self.service.delete_character("not the character")
+        self.assertEqual(list(self.paths.backups.iterdir()), [])
+        self.assertIn("pc", self.service.profile["characters"])
+
+    def test_delete_character_refuses_final_character(self):
+        self.service.profile["characters"].pop("xbox")
+        self.service._save()
+        with self.assertRaisesRegex(ValueError, "final character"):
+            self.service.delete_character("Main")
+        self.assertEqual(list(self.paths.backups.iterdir()), [])
+
+    def test_delete_character_rolls_back_memory_and_file_on_failed_write(self):
+        before = (self.paths.profiles / "tester.json").read_bytes()
+        with patch("hd2lib.gui_model.save_profile", side_effect=OSError("disk full")):
+            with self.assertRaisesRegex(OSError, "disk full"):
+                self.service.delete_character("pc")
+        self.assertIn("pc", self.service.profile["characters"])
+        self.assertEqual(self.service.character_id, "pc")
+        self.assertEqual((self.paths.profiles / "tester.json").read_bytes(), before)
+        self.assertEqual(len(list(self.paths.backups.glob("*-pre-character-delete.json"))), 1)
 
     def test_gui_changes_are_readable_by_cli_backend(self):
         self.service.set_inventory_status("stratagems", "stratagem_eagle_airstrike", "unlocked")

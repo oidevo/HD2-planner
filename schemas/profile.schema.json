@@ -19,6 +19,6 @@
     "state": {"type": "object", "required": ["status"], "properties": {"status": {"enum": ["unknown", "locked", "unlocked"]}, "level": {"type": "integer", "minimum": 0}}},
     "inventory": {"type": "object", "additionalProperties": {"type": "object", "additionalProperties": {"$ref": "#/$defs/state"}}},
     "character": {"type": "object", "required": ["platform", "level", "inventory"], "properties": {"platform": {"type": "string"}, "level": {"type": "integer", "minimum": 0}, "inventory": {"$ref": "#/$defs/inventory"}, "preference_overrides": {"$ref": "#/$defs/preferences"}, "resources": {"type": "object"}}},
-    "observation": {"type": "object", "required": ["date", "character", "rating", "confidence", "notes"], "properties": {"date": {"type": "string"}, "character": {"type": "string"}, "item_id": {"type": ["string", "null"]}, "faction": {"type": ["string", "null"]}, "mission_type": {"type": ["string", "null"]}, "difficulty": {"type": ["integer", "null"]}, "rating": {"type": "string"}, "confidence": {"type": "string"}, "notes": {"type": "string"}}}
+    "observation": {"type": "object", "required": ["date", "character", "rating", "confidence", "notes"], "properties": {"date": {"type": "string"}, "character": {"type": ["string", "null"]}, "item_id": {"type": ["string", "null"]}, "faction": {"type": ["string", "null"]}, "mission_type": {"type": ["string", "null"]}, "difficulty": {"type": ["integer", "null"]}, "rating": {"type": "string"}, "confidence": {"type": "string"}, "notes": {"type": "string"}}}
   }
 }

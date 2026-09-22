@@ -57,6 +57,7 @@ class MacOSAppPackagingTests(unittest.TestCase):
             "catalog/catalog_manifest.json",
             "schemas/profile.schema.json",
             "planner/rules.json",
+            "planner/presentation_order.json",
             "onboarding/LOCAL_SETUP.md",
             "VERSION",
             "LICENSE",

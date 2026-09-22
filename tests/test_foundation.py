@@ -278,6 +278,8 @@ class FoundationTests(unittest.TestCase):
             (root / "profiles" / "loadouts").mkdir(parents=True)
             (root / "profiles" / "example_player.json").write_text("{}", encoding="utf-8")
             (root / "profiles" / "private_alex.json").write_text("{}", encoding="utf-8")
+            (root / "generated" / "alex").mkdir(parents=True)
+            (root / "generated" / "alex" / "context.json").write_text("{}", encoding="utf-8")
             destination = Path(temporary) / "out"
             archive = build_package(destination, root)
             with zipfile.ZipFile(archive) as zipped:
@@ -286,6 +288,7 @@ class FoundationTests(unittest.TestCase):
             self.assertTrue(any(name.endswith("hd2_gui.py") for name in names))
             self.assertTrue(any(name.endswith(".python-version") for name in names))
             self.assertFalse(any("private_alex" in name for name in names))
+            self.assertFalse(any("generated/alex/context.json" in name for name in names))
 
     def test_offline_context_operation_never_uses_network(self):
         profile = self.profile()

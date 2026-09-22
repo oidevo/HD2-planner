@@ -8,8 +8,9 @@ testable without a display server.
 from __future__ import annotations
 
 import copy
+import shutil
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, Iterable
 
@@ -32,6 +33,7 @@ from .profile import (
     set_weapon_level,
     validate_profile,
 )
+from .presentation_order import load_presentation_order, sort_with_presentation_order
 from .storage import read_json, slugify
 from .update import UpdateResult, check_for_update
 
@@ -88,6 +90,10 @@ class PlannerService:
         self.paths = (paths or user_data_paths()).initialize()
         self.catalog = catalog or load_catalog()
         self.index = catalog_index(self.catalog)
+        self.presentation_order = load_presentation_order(
+            catalog_version=str(self.catalog["manifest"].get("catalog_version")),
+            known_item_ids=set(self.index),
+        )
         self.context_exporter = context_exporter
         self.update_checker = update_checker
         self.profile: dict[str, Any] | None = None
@@ -168,6 +174,47 @@ class PlannerService:
         self._mutate(lambda: character.update({
             "display_name": name.strip(), "platform": platform.strip() or "unknown", "level": level,
         }))
+
+    def delete_character(self, typed_confirmation: str) -> tuple[Path, str]:
+        """Back up and atomically remove only the selected character's state."""
+        profile = self._require_profile()
+        if self.character_id is None:
+            raise ProfileError("No character selected")
+        if len(profile.get("characters", {})) <= 1:
+            raise ProfileError(
+                "The final character cannot be deleted here. A separate player-profile deletion workflow is required."
+            )
+        character_id = self.character_id
+        character = profile["characters"][character_id]
+        display_name = str(character.get("display_name", character_id))
+        if typed_confirmation not in {display_name, character_id}:
+            raise ProfileError("Confirmation did not match the character display name or ID; nothing was deleted.")
+        if self.profile_path is None:
+            raise ProfileError("No profile path is available")
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        backup = self.paths.backups / f"{self.profile_path.stem}-{stamp}-pre-character-delete.json"
+        number = 1
+        while backup.exists():
+            backup = self.paths.backups / f"{self.profile_path.stem}-{stamp}-pre-character-delete-{number}.json"
+            number += 1
+        backup.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(self.profile_path, backup)
+
+        before = copy.deepcopy(profile)
+        before_character_id = character_id
+        try:
+            del profile["characters"][character_id]
+            profile["gameplay_observations"] = [
+                observation for observation in profile.get("gameplay_observations", [])
+                if observation.get("character") != character_id
+            ]
+            self.character_id = next(iter(profile["characters"]))
+            self._save()
+        except BaseException:
+            self.profile = before
+            self.character_id = before_character_id
+            raise
+        return backup, self.character_id
 
     def resources(self) -> dict[str, Any]:
         """Return a copy of the selected character's recorded balances."""
@@ -255,11 +302,52 @@ class PlannerService:
                 warbond_id=item_warbond, group=item_group, detail=self._item_detail(category, facts),
                 level=state.get("level"), facts=facts,
             ))
-        if category == "ship_modules":
-            rows.sort(key=lambda row: (row.group or "", int(row.facts.get("tier", 0) or 0), row.name.casefold()))
-        elif category == "stratagems":
-            rows.sort(key=lambda row: (row.group or "other", row.name.casefold()))
-        return rows
+        screen = {
+            "warbonds": "requisitions_warbonds",
+            "stratagems": "stratagems",
+            "ship_modules": "ship_management",
+        }.get(category, "armory")
+        return sort_with_presentation_order(
+            rows, self.presentation_order, screen,
+            item_id=lambda row: row.item_id,
+            group_id=lambda row: row.group if category in {"stratagems", "ship_modules"} else category,
+            fallback=lambda row: (
+                int(row.facts.get("tier", 0) or 0) if category == "ship_modules" else 0,
+                row.name.casefold(), row.item_id,
+            ),
+        )
+
+    def ordering_message(self, category: str) -> str:
+        screen = {
+            "warbonds": "requisitions_warbonds",
+            "stratagems": "stratagems",
+            "ship_modules": "ship_management",
+        }.get(category, "armory")
+        return self.presentation_order.verification_message(screen)
+
+    def warbond_contents(
+        self, warbond_id: str, *, category: str = "all", status: str = "all",
+    ) -> list[InventoryRow]:
+        if warbond_id not in {item["id"] for item in self.catalog["collections"]["warbonds"]}:
+            raise ProfileError(f"Unknown Warbond {warbond_id!r}")
+        categories = [
+            key for key in INVENTORY_TO_CATALOG
+            if key not in {"warbonds", "armor_passives", "weapon_attachments"}
+        ]
+        if category != "all":
+            if category not in categories:
+                raise ValueError(f"Unsupported Warbond content category {category!r}")
+            categories = [category]
+        rows = [
+            row for content_category in categories
+            for row in self.inventory_rows(content_category, status=status, warbond_id=warbond_id)
+        ]
+        category_rank = {key: index for index, key in enumerate(categories)}
+        return sorted(rows, key=lambda row: (
+            category_rank[row.category],
+            int(row.facts.get("warbond_page", 2**31 - 1) or 2**31 - 1),
+            row.name.casefold(), row.item_id,
+        ))
 
     def inventory_status(self, category: str, item_id: str) -> str:
         return self.character().get("inventory", {}).get(category, {}).get(item_id, {}).get("status", "unknown")
@@ -283,6 +371,12 @@ class PlannerService:
         if status not in UNLOCK_STATES:
             raise ValueError(f"Unknown inventory status {status!r}")
         selected = list(dict.fromkeys(item_ids))
+        inventory = self.character().get("inventory", {}).get(category, {})
+        selected = [
+            item_id for item_id in selected
+            if inventory.get(item_id, {}).get("status", "unknown") != status
+            and (not only_unknown or inventory.get(item_id, {}).get("status", "unknown") == "unknown")
+        ]
         changed = 0
 
         def change() -> None:
@@ -311,7 +405,11 @@ class PlannerService:
         def change() -> None:
             prefs = self.character().setdefault("preference_overrides", {}).setdefault("item_preferences", {})
             if preference == "neutral":
-                prefs.pop(item_id, None)
+                base = self._require_profile().get("preferences", {}).get("item_preferences", {})
+                if base.get(item_id, "neutral") == "neutral":
+                    prefs.pop(item_id, None)
+                else:
+                    prefs[item_id] = "neutral"
             else:
                 prefs[item_id] = preference
 

@@ -37,6 +37,8 @@ The PyInstaller specification is `build-support/macos/hd2_planner.spec`. Generat
 
 Immutable catalog, schemas, planner inputs, onboarding documentation, examples, version metadata, application code, and license material are read from the frozen bundle. Profiles, loadouts, generated contexts, preferences/settings, backups, migration state, logs, and caches remain exclusively in the established external data directory. Replacing the app therefore does not replace user data. `HD2_PLANNER_DATA_DIR` remains available for isolated testing and CLI/source workflows; `HD2_PLANNER_PYTHON` has no effect on the embedded app.
 
+The frozen resources include `planner/presentation_order.json`; it is immutable presentation metadata linked to the packaged catalog version, not a player-data file or a game-fact catalog. Appearance choice is stored only in the external `settings.json`. Character deletion backups are written only to the external `backups/` directory.
+
 The archive and app must not include real profiles, generated output, settings, backups, migration state, logs, caches, tests, fixtures, build tools, virtual environments, Git data, or machine-specific paths.
 
 The official runtime contains compiler-host source paths for diagnostics. Packaging replaces only those fixed-length home-directory prefixes with neutral embedded-source prefixes, then applies the ad-hoc signatures required for arm64 loading. It does not add a Developer ID signature or notarization.
@@ -52,10 +54,11 @@ Run every check with the selected Tk-enabled Python 3.14.7 build environment:
 5. Set `HD2_TEST_MACOS_APP` to the final app path and rerun the tests.
 6. Inspect all Mach-O files with `file`, `lipo`, and `otool -L`; require arm64 only and no Homebrew, user-home, or system-Python dependency.
 7. Copy the app outside the repository, record its digest, and launch it with a restricted `PATH` and an invalid `HD2_PLANNER_PYTHON` value.
-8. Exercise profile creation/opening, level, resources, inventory, preferences, context generation, restart persistence, and CLI interoperability against disposable external data. The frozen entry point exposes `--release-verify-seed` and `--release-verify-reopen` solely for this isolated release check; both refuse to run without an explicit `HD2_PLANNER_DATA_DIR`.
-9. Confirm the app digest did not change.
-10. Extract the ordinary ZIP and run its complete test suite.
-11. Run `git diff --check` and inspect the final diff/status for generated or private data.
+8. Exercise System, Light, and Dark appearance, including navigation, tables, inspector, dialogs, menus, selections, and disabled controls. Confirm a real dark-mode launch is readable and System follows a live macOS appearance change.
+9. Exercise profile creation/opening, level, resources, inventory, Warbond ownership and known-content browsing, preferences, character deletion/backup/cancellation, context generation, restart persistence, and CLI interoperability against disposable external data. The frozen entry point exposes `--release-verify-seed` and `--release-verify-reopen` solely for this isolated release check; both refuse to run without an explicit `HD2_PLANNER_DATA_DIR`.
+10. Confirm the app digest did not change.
+11. Extract the ordinary ZIP and run its complete test suite.
+12. Run `git diff --check` and inspect the final diff/status for generated or private data.
 
 ## Unsigned distribution
 

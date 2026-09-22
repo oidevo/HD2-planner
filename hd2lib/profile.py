@@ -153,7 +153,8 @@ def set_inventory_items_status(
     inventory = profile["characters"][character_id]["inventory"].setdefault(category, {})
     targets = [
         item_id for item_id in dict.fromkeys(item_ids)
-        if not only_unknown or inventory.get(item_id, {}).get("status", "unknown") == "unknown"
+        if inventory.get(item_id, {}).get("status", "unknown") != status
+        and (not only_unknown or inventory.get(item_id, {}).get("status", "unknown") == "unknown")
     ]
     for item_id in targets:
         set_inventory_item_status(profile, character_id, category, item_id, status, catalog)
@@ -241,7 +242,9 @@ def validate_profile(profile: dict[str, Any], catalog: dict[str, Any]) -> list[s
             if preference not in PREFERENCE_STATES:
                 errors.append(f"characters.{character_id}.{item_id}: invalid preference {preference!r}")
     for number, observation in enumerate(profile.get("gameplay_observations", []), 1):
-        if observation.get("character") not in characters:
+        if "character" not in observation:
+            errors.append(f"observation {number}: character is required (use null for unscoped)")
+        elif observation.get("character") is not None and observation.get("character") not in characters:
             errors.append(f"observation {number}: unknown character")
         if observation.get("item_id") and observation["item_id"] not in index:
             errors.append(f"observation {number}: invalid item id {observation['item_id']!r}")
