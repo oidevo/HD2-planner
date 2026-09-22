@@ -89,6 +89,7 @@ jobs:
     needs: [source-package, macos-app]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Download release artifacts
         uses: actions/download-artifact@v5
         with:
