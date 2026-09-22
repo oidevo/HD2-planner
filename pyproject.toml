@@ -2,8 +2,9 @@
 name = "helldivers-inventory-planner"
 dynamic = ["version"]
 description = "Offline-first Helldivers 2 inventory tracker and loadout planning foundation"
-requires-python = ">=3.10"
+requires-python = ">=3.14"
 license = {text = "MIT"}
 
 [project.scripts]
 hd2 = "hd2lib.cli:run"
+hd2-gui = "hd2lib.gui_launcher:main"

@@ -23,13 +23,16 @@ def _inventory_snapshot(character: dict[str, Any], catalog: dict[str, Any], pref
         values = []
         for item_id, state in sorted(entries.items(), key=lambda value: index.get(value[0], {}).get("name", value[0])):
             catalog_item = index.get(item_id, {})
-            values.append({
+            value = {
                 "id": item_id,
                 "name": catalog_item.get("name", item_id),
                 "status": state.get("status", "unknown"),
                 "preference": item_prefs.get(item_id, "neutral"),
                 "facts": catalog_item.get("facts", {}),
-            })
+            }
+            if "level" in state:
+                value["level"] = state["level"]
+            values.append(value)
         snapshot[category] = values
     return snapshot
 
@@ -88,7 +91,12 @@ def _state_table(items: list[dict[str, Any]]) -> str:
     if not items:
         return "_No recorded items; treat availability as unknown._\n"
     lines = ["| Item | Unlock | Preference |", "|---|---|---|"]
-    lines.extend(f"| {item['name']} (`{item['id']}`) | {item['status']} | {item['preference']} |" for item in items)
+    lines.extend(
+        f"| {item['name']} (`{item['id']}`)"
+        + (f" — level {item['level']}" if "level" in item else "")
+        + f" | {item['status']} | {item['preference']} |"
+        for item in items
+    )
     return "\n".join(lines) + "\n"
 
 
@@ -111,7 +119,23 @@ def context_markdown(context: dict[str, Any]) -> str:
         "## How to interpret this document", "",
         "`unlocked` means immediately usable, `locked` means known unavailable, and `unknown` means not yet recorded. Player preference is independent of unlock state. Personal gameplay observations are context-scoped evidence, not universal rules. Community observations, when present, are dated third-party evidence rather than game facts.", "",
         "**When recommending an immediately usable loadout, do not equip locked or unknown items. Locked items may be suggested as future progression targets. Do not treat a personal negative experience as a universal game rule.**", "",
-        "## Preferences", "", "```json", json.dumps(context["preferences"], indent=2, ensure_ascii=False), "```", "",
+        "## Resources", "",
+    ]
+    resources = character.get("resources", {})
+    if resources:
+        resource_labels = {
+            "medals": "Medals", "requisition": "Requisition slips",
+            "super_credits": "Super credits", "common_samples": "Common samples",
+            "rare_samples": "Rare samples", "super_samples": "Super samples",
+        }
+        lines.extend(
+            f"- {resource_labels.get(key, key.replace('_', ' ').title())}: {value}"
+            for key, value in resources.items()
+        )
+    else:
+        lines.append("_No resource balances recorded._")
+    lines.extend([
+        "", "## Preferences", "", "```json", json.dumps(context["preferences"], indent=2, ensure_ascii=False), "```", "",
         "## Warbonds", "", _state_table(inventory.get("warbonds", [])),
         "## Weapons", "", "### Primary", "", _state_table(inventory.get("primary_weapons", [])),
         "### Secondary", "", _state_table(inventory.get("secondary_weapons", [])),
@@ -122,7 +146,7 @@ def context_markdown(context: dict[str, Any]) -> str:
         "### Passives", "", _state_table(inventory.get("armor_passives", [])),
         "## Boosters", "", _state_table(inventory.get("boosters", [])),
         "## Stratagems", "",
-    ]
+    ])
     stratagems = inventory.get("stratagems", [])
     groups = (("Support", "support_weapon"), ("Backpack", "backpack"), ("Eagle", "eagle"), ("Orbital", "orbital"), ("Sentry / Emplacement", "sentry_emplacement"), ("Vehicle", "vehicle"), ("Other", "other"))
     used: set[str] = set()

@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from .constants import DISPLAY_CATEGORIES, INVENTORY_TO_CATALOG
-from .profile import add_character, inventory_item_ineligibility, new_profile, save_profile
+from .profile import add_character, inventory_item_ineligibility, new_profile, save_profile, set_inventory_item_status
 
 
 Ask = Callable[[str], str]
@@ -46,17 +46,17 @@ def setup_profile(catalog: dict[str, Any], output_directory: Path, ask: Ask = in
         for category in INVENTORY_TO_CATALOG:
             action = ask(f"Review {category.replace('_', ' ')} now? [Y/n/quit]: ").strip().casefold()
             if action == "quit" or action == "q":
-                tell(f"Stopped safely. Resume with: python hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
+                tell(f"Stopped safely. Resume with: python3.14 hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
                 return path
             if action == "n":
                 profile["characters"][character_id]["onboarding"]["skipped_sections"].append(category)
             else:
                 completed = review_inventory(profile, character_id, category, catalog, path, ask, tell)
                 if not completed:
-                    tell(f"Stopped safely. Resume with: python hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
+                    tell(f"Stopped safely. Resume with: python3.14 hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
                     return path
             save_profile(path, profile)
-    tell("Setup complete. Generate context with: " + f"python hd2.py export-context --player {profile['player']['id']} --character {next(iter(profile['characters']))}")
+    tell("Setup complete. Generate context with: " + f"python3.14 hd2.py export-context --player {profile['player']['id']} --character {next(iter(profile['characters']))}")
     return path
 
 
@@ -93,7 +93,7 @@ def review_inventory(profile: dict[str, Any], character_id: str, category: str, 
             break
         if command in {"u", "l", "?", "f"}:
             status = {"u": "unlocked", "l": "locked", "?": "unknown", "f": "unlocked"}[command]
-            inventory[item["id"]] = {"status": status}
+            set_inventory_item_status(profile, character_id, category, item["id"], status, catalog)
         if command == "f":
             preferences[item["id"]] = "favorite"
         elif command == "d":
