@@ -1,7 +1,10 @@
 # Changelog
 
-## 0.3.0 — 2026-09-21
+## 0.4.0 — 2026-09-21
 
+- Added an unsigned, self-contained Apple Silicon `HD2 Planner.app` built with PyInstaller 6.22.3 and embedding tested Python 3.14.7 plus Tcl/Tk 9.0.4; the embedded app requires no external Python and ignores `HD2_PLANNER_PYTHON`.
+- Raised the source baseline to Python 3.14, added frozen immutable-resource resolution, exact runtime versions in Settings, arm64/runtime/privacy verification, and an Apple-Silicon-specific app archive while preserving the ordinary offline ZIP.
+- Kept all mutable player data in the established external directory and left profile/catalog schemas, catalog version, migrations, CLI behavior, and atomic writes unchanged.
 - Redesigned the Tkinter/ttk interface as a focused inventory-planning workspace with compact grouped navigation, a clear active state, restrained native styling, responsive inventory inspectors, aligned filtering, review progress, and contextual bulk actions.
 - Added focused character-resource editing for medals, requisition slips, super credits, and sample balances. Blank values remain unrecorded, zero remains explicit, character isolation is preserved, and writes continue through the validated atomic profile path.
 - Reworked first-run setup, preferences, settings, update results, confirmations, and context-generation dialogs. Preferences now show explicit non-neutral choices instead of the neutral catalog default.
@@ -11,12 +14,12 @@
 
 ## 0.2.1 — 2026-09-21
 
-- Raised the supported runtime minimum to Python 3.12; the desktop interface now consistently directs users to a Tk-enabled Python 3.12+ installation and reports the executable and detected version when Tkinter is absent.
+- Raised the supported runtime minimum to Python 3.14; the desktop interface now consistently directs users to a Tk-enabled Python 3.14+ installation and reports the executable and detected version when Tkinter is absent.
 - Completed the Tkinter/ttk desktop inventory GUI, including canonical validated atomic autosave, character switching and isolation, filters and visible-only bulk state changes, weapon levels, attachment handling, preferences, observations, loadout validation, context generation, and offline-safe update checks.
 - Kept profiles, loadouts, contexts, settings, migrations, and backups in external per-user data paths; the release ZIP contains examples only and excludes personal runtime data.
 - Existing catalog version and profile schema version are unchanged. CLI-only workflows remain available on supported Python when no display is available.
 
-- Added a Tkinter/ttk desktop checklist launched with `python3.12 hd2.py gui` or `python3.12 hd2_gui.py`.
+- Added a Tkinter/ttk desktop checklist launched with `python3.14 hd2.py gui` or `python3.14 hd2_gui.py`.
 - Added display-independent GUI service logic for canonical profile loading, validated atomic autosave, character switching, filtering, visible-only bulk changes, preferences, observations, and loadout validation.
 - Added optional weapon-level metadata and compatible-attachment views without inventing unsupported per-weapon attachment progression.
 - Reused the existing context exporter and update checker, kept all user data external, and included GUI files in release packages.

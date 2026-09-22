@@ -46,17 +46,17 @@ def setup_profile(catalog: dict[str, Any], output_directory: Path, ask: Ask = in
         for category in INVENTORY_TO_CATALOG:
             action = ask(f"Review {category.replace('_', ' ')} now? [Y/n/quit]: ").strip().casefold()
             if action == "quit" or action == "q":
-                tell(f"Stopped safely. Resume with: python3.12 hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
+                tell(f"Stopped safely. Resume with: python3.14 hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
                 return path
             if action == "n":
                 profile["characters"][character_id]["onboarding"]["skipped_sections"].append(category)
             else:
                 completed = review_inventory(profile, character_id, category, catalog, path, ask, tell)
                 if not completed:
-                    tell(f"Stopped safely. Resume with: python3.12 hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
+                    tell(f"Stopped safely. Resume with: python3.14 hd2.py inventory review --player {profile['player']['id']} --character {character_id} --category {category}")
                     return path
             save_profile(path, profile)
-    tell("Setup complete. Generate context with: " + f"python3.12 hd2.py export-context --player {profile['player']['id']} --character {next(iter(profile['characters']))}")
+    tell("Setup complete. Generate context with: " + f"python3.14 hd2.py export-context --player {profile['player']['id']} --character {next(iter(profile['characters']))}")
     return path
 
 

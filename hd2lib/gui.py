@@ -17,6 +17,7 @@ from .constants import INVENTORY_TO_CATALOG
 from .gui_model import RESOURCE_FIELDS, InventoryRow, PlannerService
 from .profile import ProfileError
 from .update import repository
+from .gui_runtime import runtime_versions
 from .version import PROFILE_SCHEMA_VERSION, application_version
 
 
@@ -644,7 +645,8 @@ class HD2PlannerApp:
     def show_settings(self) -> None:
         self._activate_route("settings"); self._clear_content(); self._page_header("Settings", "Application information, storage location, updates, and player management.")
         info = ttk.LabelFrame(self.content, text="Application", style="Card.TLabelframe", padding=12); info.pack(fill=tk.X)
-        values = [("Application version", application_version()), ("Catalog version", self.service.catalog["manifest"].get("catalog_version", "unknown")), ("Profile schema", PROFILE_SCHEMA_VERSION), ("Update source", f"github.com/{repository()}")]
+        python_version, tk_version = runtime_versions(self.root.tk)
+        values = [("Application version", application_version()), ("Embedded Python", python_version), ("Embedded Tcl/Tk", tk_version), ("Catalog version", self.service.catalog["manifest"].get("catalog_version", "unknown")), ("Profile schema", PROFILE_SCHEMA_VERSION), ("Update source", f"github.com/{repository()}")]
         for row, (label, value) in enumerate(values): ttk.Label(info, text=label, style="Muted.TLabel").grid(row=row, column=0, sticky=tk.W, pady=3, padx=(0, 24)); ttk.Label(info, text=value).grid(row=row, column=1, sticky=tk.W, pady=3)
         ttk.Button(info, text="Check for updates…", command=self.check_updates).grid(row=0, column=2, rowspan=2, sticky=tk.NE, padx=(24, 0)); info.columnconfigure(1, weight=1)
         storage = ttk.LabelFrame(self.content, text="Local data", style="Card.TLabelframe", padding=12); storage.pack(fill=tk.X, pady=(10, 0)); ttk.Label(storage, text="User-data directory", style="Muted.TLabel").pack(anchor=tk.W); ttk.Label(storage, text=str(self.service.paths.root), wraplength=840).pack(anchor=tk.W, pady=(2, 8)); buttons = ttk.Frame(storage); buttons.pack(anchor=tk.W); ttk.Button(buttons, text="Open directory", command=lambda: self._open_safely(self.service.paths.root)).pack(side=tk.LEFT); ttk.Button(buttons, text="Copy path", command=lambda: self._copy_path(self.service.paths.root)).pack(side=tk.LEFT, padx=6); override = os.environ.get("HD2_PLANNER_DATA_DIR"); ttk.Label(storage, text=f"Environment override: {override or 'not set'}", style="Muted.TLabel").pack(anchor=tk.W, pady=(8, 0))
@@ -706,7 +708,11 @@ class HD2PlannerApp:
         actions = ttk.Frame(body); actions.pack(fill=tk.X, pady=(16, 0)); ttk.Button(actions, text="Cancel", command=dialog.destroy).pack(side=tk.RIGHT); ttk.Button(actions, text="Apply", style="Accent.TButton", command=accept).pack(side=tk.RIGHT, padx=(0, 6)); self._run_dialog(dialog); return result
 
 
-def launch_gui(service: PlannerService | None = None) -> int:
+def launch_gui(service: PlannerService | None = None, *, close_after_ms: int | None = None) -> int:
     try: root = tk.Tk()
     except tk.TclError as exc: raise RuntimeError(f"Could not start the desktop interface: {exc}") from exc
-    HD2PlannerApp(root, service); root.mainloop(); return 0
+    HD2PlannerApp(root, service)
+    if close_after_ms is not None:
+        root.after(close_after_ms, root.destroy)
+    root.mainloop()
+    return 0

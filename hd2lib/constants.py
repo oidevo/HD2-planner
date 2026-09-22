@@ -1,10 +1,9 @@
-from pathlib import Path
-
+from .resources import resource_root
 from .version import PROFILE_SCHEMA_VERSION, application_version
 
 SCHEMA_VERSION = PROFILE_SCHEMA_VERSION
 APP_VERSION = application_version()
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = resource_root()
 CATALOG_DIR = ROOT / "catalog"
 
 CATALOG_FILES = {

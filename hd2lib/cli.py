@@ -14,7 +14,7 @@ from .local_data import migrate_local_data
 from .loadout import validate_for_character
 from .migrations import migrate_profile_file
 from .onboarding import review_inventory, setup_profile
-from .packaging import build_package
+from .packaging import build_macos_app_package, build_package
 from .profile import ProfileError, import_profile, load_profile, validate_profile
 from .storage import read_json, write_json
 from .update import check_for_update
@@ -80,6 +80,7 @@ def parser() -> argparse.ArgumentParser:
 
     package = sub.add_parser("package", help="Build an offline distributable ZIP")
     package.add_argument("--output", type=Path, default=ROOT / "dist")
+    package.add_argument("--macos-app", action="store_true", help="Also build the self-contained unsigned Apple Silicon app and archive")
     return command
 
 
@@ -189,6 +190,10 @@ def run(argv: list[str] | None = None) -> int:
         if args.command == "package":
             result = build_package(args.output)
             print(f"Created offline package: {result}")
+            if args.macos_app:
+                bundle, archive = build_macos_app_package(args.output)
+                print(f"Created self-contained macOS app: {bundle}")
+                print(f"Created Apple Silicon app archive: {archive}")
             return 0
     except (ValueError, KeyError, OSError, ProfileError, RuntimeError) as exc:
         print(f"Error: {exc}", file=sys.stderr)

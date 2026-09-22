@@ -16,7 +16,7 @@ class GUIRuntimeTests(unittest.TestCase):
         self.assertIn(sys.executable, message)
         self.assertIn(sys.version.split()[0], message)
         self.assertIn("Tkinter is missing", message)
-        self.assertIn("Tk-enabled Python 3.12 or newer", message)
+        self.assertIn("Tk-enabled Python 3.14 or newer", message)
         self.assertIn("CLI and your stored profile data are unaffected", message)
 
     def test_recognizes_tkinter_import_failures_only(self):

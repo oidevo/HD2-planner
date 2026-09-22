@@ -2,6 +2,9 @@ __pycache__/
 *.py[cod]
 .DS_Store
 dist/
+.build/
+build/
+*.spec~
 catalog-staging/
 catalog-review/
 importer/raw/
@@ -9,4 +12,3 @@ generated/*/
 !generated/example_player/
 profiles/*.json
 !profiles/example_player.json
-
