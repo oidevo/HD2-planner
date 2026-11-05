@@ -52,11 +52,35 @@ boundary, see [Apple Silicon macOS app documentation](docs/MACOS_APP.md).
 The GUI is an inventory workspace, not an advisor. It has no recommendation or
 scoring engine and does not automatically choose or modify a loadout.
 
+### Navigation follows the Super Destroyer
+
+The navigation rail lists the three Super Destroyer terminals, then a separate
+Planner area. Each view shows a breadcrumb (terminal › tab › item) and a tab bar
+so the current terminal and tab are always obvious. If you know where to find
+something aboard the ship, follow the same path here:
+
+| Path | What you find |
+| --- | --- |
+| **Armory › Primary / Secondary / Grenade / Armor / Booster** | Ownership of equipment carried by the character. |
+| **Armory › Primary › (weapon) › Customize** | Attachment purchases recorded for that one weapon and character. The weapon inspector shows the level editor and a mods summary with the **Customize** button. |
+| **Ship Management › Stratagems** | Stratagems grouped by type. A support weapon stratagem links to its **support weapon record**; the **Show** toggle lists all support weapon records (level, customization) under the same tab. |
+| **Ship Management › Ship Modules** | Ship modules grouped by department (Patriotic Administration Center, Orbital Cannons, Hangar, Bridge, Engineering Bay, Robotics Workshop). |
+| **Acquisition Center › Warbonds** | Warbond ownership. Open a Warbond to see its known rewards by page with a reward inspector. |
+| **Planner › Preferences / Observations / Saved Loadouts / Context Export** | Planning records that have no in-game terminal. |
+
+Drilling in (opening a Warbond, a reward, a support weapon record, or a
+weapon's customization) adds a **Back** button that returns to the previous list
+with its search, filters, selection, and scroll position intact. Switching tabs
+or terminals from the rail or tab bar starts fresh.
+
 ### Warbonds and presentation order
 
 Marking a Warbond owned records the Warbond itself. It never changes its rewards
-or deducts currency. Open a Warbond to browse its known catalog-linked items,
-grouped by catalog page where present. The catalog lacks complete rewards,
+or deducts currency. Open a Warbond to browse its known catalog-linked rewards,
+grouped by catalog page where present, and inspect a reward without leaving the
+Warbond. Reward ownership set inside a Warbond is the same record shown in the
+Armory and Ship Management lists; use **Open in …** to jump to that list and
+**Back** to return to the Warbond. The catalog lacks complete rewards,
 page-gate thresholds, and Medals-spent history, so the app shows **Page access
 unverified** instead of claiming a reward is available to buy. Owned rewards
 from grants or incomplete links remain recorded and are flagged for review.
@@ -75,8 +99,8 @@ In inventory, click the **Owned?** checkmark to save one ownership change at
 once. Click elsewhere on a row to inspect it without changing ownership. An
 Undo button appears briefly after a checkmark change. Use the context menu to
 restore **Unreviewed** or set a precise status. Bulk changes ask for confirmation.
-Weapon details show level and compatible attachments; attachment purchases are
-recorded separately for each character and weapon.
+Weapon details show the level and a mods summary; the **Customize** page records
+attachment purchases separately for each character and weapon.
 
 Opening an older profile creates a backup before migrating its schema. Old
 global attachment answers are kept as **legacy answers awaiting review**, not
@@ -86,9 +110,10 @@ weapon inspector also shows the old answer. The original answer stays available 
 review. CLI attachment review now requires `--weapon WEAPON_ID`.
 
 Game-screen order is tracked separately from catalog facts. No complete
-in-game captures were supplied for this release, so the shipped presentation
-order remains unverified and the UI uses an honest deterministic fallback. It
-does **not** claim that this fallback is the game’s order. See
+in-game captures have been supplied, so the terminal and tab structure above is
+the navigation layout while every item order remains unverified and the UI uses
+an honest deterministic fallback. It does **not** claim that this fallback is
+the game’s order. See
 [presentation-order evidence and status](docs/PRESENTATION_ORDER.md).
 
 ## Privacy and offline behavior

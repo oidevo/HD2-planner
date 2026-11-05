@@ -7,6 +7,7 @@ import subprocess
 import sys
 import threading
 import webbrowser
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Callable
 
@@ -16,6 +17,7 @@ from tkinter import ttk
 from .appearance import APPEARANCE_CHOICES, load_appearance, resolved_appearance, save_appearance, semantic_tokens
 from .constants import INVENTORY_TO_CATALOG
 from .gui_model import RESOURCE_FIELDS, InventoryRow, PlannerService
+from .navigation import PLANNER, SUPER_DESTROYER_TERMINALS, TERMINALS, Location, Tab, Terminal, location_for, tab_for_category
 from .presentation import inspector_facts
 from .profile import ProfileError
 from .storage import read_json, write_json
@@ -29,12 +31,24 @@ STATUS_LABELS = {"unlocked": "Owned", "unknown": "Unreviewed", "locked": "Not ow
 STATUS_FILTERS = {"All": "all", "Owned": "unlocked", "Not owned": "locked", "Unreviewed": "unknown"}
 BULK_UNREVIEWED_LABEL = "Mark unreviewed visible items not owned…"
 CATEGORIES = [
-    ("Warbonds", "warbonds"), ("Primaries", "primary_weapons"),
-    ("Secondaries", "secondary_weapons"), ("Grenades", "grenades"),
-    ("Armor", "armor"), ("Boosters", "boosters"),
-    ("Stratagems", "stratagems"), ("Support Weapons", "support_weapons"),
+    ("Warbonds", "warbonds"), ("Primary", "primary_weapons"),
+    ("Secondary", "secondary_weapons"), ("Grenade", "grenades"),
+    ("Armor", "armor"), ("Booster", "boosters"),
+    ("Stratagems", "stratagems"), ("Support weapon records", "support_weapons"),
     ("Ship Modules", "ship_modules"),
 ]
+CATEGORY_KEYS = {key for _label, key in CATEGORIES}
+GROUP_FILTER_LABELS = {"stratagems": "Type", "ship_modules": "Department", "armor": "Armor class"}
+PLANNER_TAB_ROUTES = {"preferences", "observations", "loadouts", "context_export"}
+
+
+def category_label(category: str) -> str:
+    return next((label for label, key in CATEGORIES if key == category), category.replace("_", " ").title())
+
+
+def back_label(route: dict[str, Any]) -> str:
+    """Label for the back button that returns to a captured route."""
+    return f"← Back to {route.get('title') or category_label(str(route.get('category', '')))}"
 
 
 def bulk_confirmation_copy(count: int, status: str, only_unknown: bool) -> tuple[str, str]:
@@ -67,6 +81,13 @@ class HD2PlannerApp:
         self._filter_job: str | None = None
         self._character_ids_by_label: dict[str, str] = {}
         self.nav_buttons: dict[str, tuple[ttk.Button, str]] = {}
+        self.nav_terminal_buttons: dict[str, ttk.Button] = {}
+        self._nav_tab_frames: dict[str, ttk.Frame] = {}
+        self.current_location: Location | None = None
+        self._history: list[dict[str, Any]] = []
+        self._current_title = ""
+        self._customization_context: tuple[str, str] | None = None
+        self._route_args: tuple[tuple[str], dict[str, Any]] = (("warbonds",), {"category": None, "trail": ()})
         self.appearance_choice = load_appearance(self.service.paths.settings)
         self.resolved_appearance = resolved_appearance(self.appearance_choice)
         self._warbond_context: str | None = None
@@ -99,7 +120,16 @@ class HD2PlannerApp:
             self.show_inventory("warbonds")
         else:
             self.root.after(40, lambda: self._show_welcome(open_errors))
-        self.root.after(1500, self._poll_system_appearance)
+        self._appearance_job: str | None = self.root.after(1500, self._poll_system_appearance)
+
+    def shutdown(self) -> None:
+        """Cancel scheduled callbacks before the root window is destroyed."""
+        for attribute in ("_filter_job", "_undo_job", "_nav_close_job", "_appearance_job"):
+            job = getattr(self, attribute, None)
+            if job:
+                try: self.root.after_cancel(job)
+                except tk.TclError: pass
+                setattr(self, attribute, None)
 
     def _configure_style(self) -> None:
         self.root.title("HD2 Planner")
@@ -170,6 +200,17 @@ class HD2PlannerApp:
         style.configure("Rail.TButton", anchor=tk.W, padding=(8, 4), relief="flat", borderwidth=0)
         style.configure("ActiveRail.TButton", anchor=tk.W, padding=(8, 4), relief="flat", borderwidth=0, font=("TkDefaultFont", 10, "bold"), foreground=self.colors["ink"], background=self.colors["gold_soft"])
         style.map("ActiveRail.TButton", background=[("active", self.colors["gold_soft"]), ("!disabled", self.colors["gold_soft"])])
+        style.configure("RailTerminal.TButton", anchor=tk.W, padding=(8, 5), relief="flat", borderwidth=0, font=("TkDefaultFont", 10, "bold"))
+        style.configure("ActiveRailTerminal.TButton", anchor=tk.W, padding=(8, 5), relief="flat", borderwidth=0, font=("TkDefaultFont", 10, "bold"), foreground=self.colors["ink"], background=self.colors["gold_soft"])
+        style.map("ActiveRailTerminal.TButton", background=[("active", self.colors["gold_soft"]), ("!disabled", self.colors["gold_soft"])])
+        style.configure("RailTab.TButton", anchor=tk.W, padding=(22, 3), relief="flat", borderwidth=0)
+        style.configure("ActiveRailTab.TButton", anchor=tk.W, padding=(22, 3), relief="flat", borderwidth=0, font=("TkDefaultFont", 10, "bold"), foreground=self.colors["ink"], background=self.colors["gold_soft"])
+        style.map("ActiveRailTab.TButton", background=[("active", self.colors["gold_soft"]), ("!disabled", self.colors["gold_soft"])])
+        style.configure("Tab.TButton", padding=(14, 5), relief="flat", borderwidth=1, background=tokens["canvas"], foreground=tokens["muted_text"], bordercolor=tokens["divider"])
+        style.map("Tab.TButton", background=[("active", tokens["button_active"])], foreground=[("active", tokens["text"])])
+        style.configure("ActiveTab.TButton", padding=(14, 5), relief="flat", borderwidth=1, background=tokens["accent_soft"], foreground=tokens["text"], bordercolor=tokens["accent"], font=("TkDefaultFont", 10, "bold"))
+        style.map("ActiveTab.TButton", background=[("active", tokens["accent_soft"]), ("!disabled", tokens["accent_soft"])])
+        style.configure("Breadcrumb.TLabel", background=tokens["canvas"], foreground=tokens["accent"], font=("TkDefaultFont", 10, "bold"))
         style.configure("Accent.TButton", background=tokens["accent_soft"], foreground=tokens["text"], font=("TkDefaultFont", 10, "bold"))
         style.map("Accent.TButton", background=[("active", tokens["accent"]), ("!disabled", tokens["accent_soft"])], foreground=[("disabled", tokens["disabled"])])
         style.configure("Inspector.TFrame", background=self.colors["card"], relief="solid", borderwidth=1)
@@ -184,7 +225,7 @@ class HD2PlannerApp:
             current = resolved_appearance("System")
             if current != self.resolved_appearance:
                 self._apply_appearance(refresh=True)
-        self.root.after(1500, self._poll_system_appearance)
+        self._appearance_job = self.root.after(1500, self._poll_system_appearance)
 
     def _menu(self, parent: tk.Misc) -> tk.Menu:
         return tk.Menu(parent, tearoff=False, background=self.colors["menu"], foreground=self.colors["menu_text"],
@@ -251,53 +292,82 @@ class HD2PlannerApp:
 
         nav = ttk.Frame(self.sidebar, style="Rail.TFrame")
         nav.pack(fill=tk.BOTH, expand=True)
-        self._nav_heading_targets: list[tuple[ttk.Label, ttk.Button]] = []
-        self._nav_group(nav, "REQUISITIONS", [("Warbonds", "warbonds", lambda: self.show_inventory("warbonds"))])
-        self._nav_group(nav, "STRATAGEMS", [("Stratagems", "stratagems", lambda: self.show_inventory("stratagems"))])
-        self._nav_group(nav, "SHIP MANAGEMENT", [("Ship Modules", "ship_modules", lambda: self.show_inventory("ship_modules"))])
-        armory = [(label, category, lambda value=category: self.show_inventory(value)) for label, category in CATEGORIES
-                  if category not in {"warbonds", "stratagems", "ship_modules"}]
-        self._nav_group(nav, "ARMORY", armory)
-        self._nav_group(nav, "PLANNING", [
-            ("Preferences", "preferences", self.show_preferences),
-            ("Observations", "observations", self.show_observations),
-            ("Saved Loadouts", "loadouts", self.show_loadouts),
-        ])
+        self.nav_frame = nav
+        self._nav_headings: list[ttk.Label] = []
+        heading = ttk.Label(nav, text="SUPER DESTROYER", style="RailHeading.TLabel")
+        heading.pack(anchor=tk.W, padx=8, pady=(6, 3)); self._nav_headings.append(heading)
+        for terminal in SUPER_DESTROYER_TERMINALS:
+            self._nav_terminal(nav, terminal)
+        heading = ttk.Label(nav, text="PLANNER", style="RailHeading.TLabel")
+        heading.pack(anchor=tk.W, padx=8, pady=(10, 3)); self._nav_headings.append(heading)
+        self._nav_terminal(nav, PLANNER)
 
         footer = ttk.Frame(self.sidebar, style="Rail.TFrame")
         footer.pack(side=tk.BOTTOM, fill=tk.X)
         ttk.Separator(footer).pack(fill=tk.X, pady=(8, 8))
-        self.nav_context_button = ttk.Button(footer, text="Generate ChatGPT Context", style="Rail.TButton", command=self.generate_context)
-        self.nav_context_button.pack(fill=tk.X)
         settings = ttk.Button(footer, text="Settings", style="Rail.TButton", command=self.show_settings)
         settings.pack(fill=tk.X)
         self.nav_buttons["settings"] = (settings, "Settings")
         self.save_status = tk.StringVar(value="Ready")
         self.nav_save_label = ttk.Label(footer, textvariable=self.save_status, style="RailMuted.TLabel", wraplength=204)
         self.nav_save_label.pack(anchor=tk.W, padx=8, pady=(9, 0))
-        self._nav_headings = [child for child in nav.winfo_children() if isinstance(child, ttk.Label)]
         self.sidebar.bind("<Enter>", self._nav_enter)
         self.sidebar.bind("<Leave>", self._nav_leave)
         self._set_nav_open(self._nav_pinned)
 
-    def _nav_group(self, parent: ttk.Frame, heading: str, routes: list[tuple[str, str, Callable[[], None]]]) -> None:
-        heading_widget = ttk.Label(parent, text=heading, style="RailHeading.TLabel")
-        heading_widget.pack(anchor=tk.W, padx=8, pady=(6, 3))
-        for label, key, callback in routes:
-            button = ttk.Button(parent, text=f"   {label}", style="Rail.TButton", command=callback)
-            button.pack(fill=tk.X)
-            button.bind("<FocusIn>", self._nav_enter)
-            button.bind("<FocusOut>", self._nav_leave)
-            self.nav_buttons[key] = (button, label)
-        if routes:
-            self._nav_heading_targets.append((heading_widget, self.nav_buttons[routes[0][1]][0]))
+    def _nav_terminal(self, parent: ttk.Frame, terminal: Terminal) -> None:
+        """One rail entry per terminal; its tabs expand beneath it while the terminal is active."""
+        button = ttk.Button(parent, text=terminal.label, style="RailTerminal.TButton", command=lambda: self.open_terminal(terminal.id))
+        button.pack(fill=tk.X)
+        button.bind("<FocusIn>", self._nav_enter); button.bind("<FocusOut>", self._nav_leave)
+        self.nav_terminal_buttons[terminal.id] = button
+        tabs = ttk.Frame(parent, style="Rail.TFrame")
+        tabs.pack(fill=tk.X)
+        self._nav_tab_frames[terminal.id] = tabs
+        for tab in terminal.tabs:
+            tab_button = ttk.Button(tabs, text=tab.label, style="RailTab.TButton", command=lambda value=tab.id: self.open_tab(value))
+            tab_button.pack(fill=tk.X)
+            tab_button.bind("<FocusIn>", self._nav_enter); tab_button.bind("<FocusOut>", self._nav_leave)
+            self.nav_buttons[tab.id] = (tab_button, tab.label)
 
-    def _activate_route(self, route: str) -> None:
+    def open_terminal(self, terminal_id: str) -> None:
+        """Top-level navigation: open a terminal on its first tab (or its remembered tab)."""
+        terminal = next(value for value in TERMINALS if value.id == terminal_id)
+        if self.current_location is not None and self.current_location.terminal.id == terminal_id:
+            tab = self.current_location.tab
+        else:
+            tab = terminal.tabs[0]
+        self.open_tab(tab.id)
+
+    def open_tab(self, tab_id: str) -> None:
+        """Top-level navigation: switching tabs discards any drill-in history."""
+        self._history.clear()
+        if tab_id == "preferences": self.show_preferences()
+        elif tab_id == "observations": self.show_observations()
+        elif tab_id == "loadouts": self.show_loadouts()
+        elif tab_id == "context_export": self.show_context_export()
+        else: self.show_inventory(tab_id)
+
+    def _activate_route(self, route: str, *, category: str | None = None, trail: tuple[str, ...] = ()) -> None:
         self.current_view = route
-        collapsed_labels = {"warbonds": "WB", "stratagems": "ST", "ship_modules": "SM", "primary_weapons": "P", "secondary_weapons": "2", "grenades": "G", "armor": "A", "boosters": "B", "support_weapons": "SW", "preferences": "♥", "observations": "OB", "loadouts": "LO", "settings": "⚙"}
+        self._route_args = ((route,), {"category": category, "trail": trail})
+        self.current_location = location_for(route, category=category, trail=trail)
+        active_terminal = self.current_location.terminal.id if self.current_location else None
+        active_tab = self.current_location.tab.id if self.current_location else None
+        for terminal_id, button in self.nav_terminal_buttons.items():
+            terminal = next(value for value in TERMINALS if value.id == terminal_id)
+            active = terminal_id == active_terminal
+            button.configure(style="ActiveRailTerminal.TButton" if active else "RailTerminal.TButton",
+                             text=(("›  " if active else "   ") + terminal.label) if self._nav_open else terminal.short)
+            frame = self._nav_tab_frames[terminal_id]
+            if active and self._nav_open: frame.pack(fill=tk.X, after=button)
+            else: frame.pack_forget()
         for key, (button, label) in self.nav_buttons.items():
-            active = key == route or (route == "warbond_contents" and key == "warbonds")
-            button.configure(style="ActiveRail.TButton" if active else "Rail.TButton", text=(f"›  {label}" if active else f"   {label}") if self._nav_open else collapsed_labels.get(key, label[:2].upper()))
+            if key == "settings":
+                button.configure(style="ActiveRail.TButton" if route == "settings" else "Rail.TButton", text=("Settings" if self._nav_open else "⚙"))
+                continue
+            active = key == active_tab
+            button.configure(style="ActiveRailTab.TButton" if active else "RailTab.TButton", text=(f"›  {label}" if active else f"   {label}"))
 
     def _save_ui_settings(self, **changes: Any) -> None:
         try:
@@ -311,17 +381,17 @@ class HD2PlannerApp:
         self._nav_open = opened
         self.sidebar.configure(width=238 if opened else 58)
         self.nav_toggle.configure(text="☰  Menu" if opened else "☰", width=0)
-        self.nav_context_button.configure(text="Export" if not opened else "Generate ChatGPT Context")
-        self.nav_buttons["settings"][0].configure(text="⚙" if not opened else "Settings")
         if opened:
-            self.nav_heading.pack(anchor=tk.W, padx=4)
-            for heading, target in self._nav_heading_targets: heading.pack(anchor=tk.W, padx=8, pady=(6, 3), before=target)
+            self.nav_heading.pack(anchor=tk.W, padx=4, before=self.nav_frame)
+            for index, heading in enumerate(self._nav_headings):
+                anchor = self.nav_terminal_buttons[SUPER_DESTROYER_TERMINALS[0].id if index == 0 else PLANNER.id]
+                heading.pack(anchor=tk.W, padx=8, pady=(6 if index == 0 else 10, 3), before=anchor)
             self.nav_save_label.pack(anchor=tk.W, padx=8, pady=(9, 0))
         else:
             self.nav_heading.pack_forget()
             for heading in self._nav_headings: heading.pack_forget()
             self.nav_save_label.pack_forget()
-        self._activate_route(self.current_view)
+        self._activate_route(*self._route_args[0], **self._route_args[1])
 
     def _toggle_nav(self) -> None:
         self._nav_pinned = not self._nav_pinned
@@ -353,14 +423,76 @@ class HD2PlannerApp:
         for child in self.content.winfo_children():
             child.destroy()
 
-    def _page_header(self, title: str, subtitle: str) -> ttk.Frame:
+    def _page_header(self, title: str, subtitle: str, *, tabs: bool = True) -> ttk.Frame:
+        """Breadcrumb (terminal › tab › drill-in), tab bar for the terminal, title, and optional back button."""
+        self._current_title = title
+        location = self.current_location
         header = ttk.Frame(self.content, style="App.TFrame")
         header.pack(fill=tk.X, pady=(0, 14))
+        if location is not None:
+            crumbs = ttk.Frame(header, style="App.TFrame"); crumbs.pack(fill=tk.X)
+            ttk.Label(crumbs, text=location.breadcrumb(), style="Breadcrumb.TLabel").pack(side=tk.LEFT)
+            if tabs:
+                bar = ttk.Frame(header, style="App.TFrame"); bar.pack(fill=tk.X, pady=(6, 10))
+                for tab in location.terminal.tabs:
+                    active = tab.id == location.tab.id
+                    ttk.Button(bar, text=tab.label, style="ActiveTab.TButton" if active else "Tab.TButton",
+                               command=lambda value=tab.id: self.open_tab(value)).pack(side=tk.LEFT, padx=(0, 4))
+                if location.tab.id == "stratagems":
+                    ttk.Label(bar, text="Show:", style="Muted.TLabel").pack(side=tk.LEFT, padx=(18, 6))
+                    for label, category in (("Stratagem list", "stratagems"), ("Support weapon records", "support_weapons")):
+                        active = self.current_view == category or (self.current_view == "weapon_customization" and category == "support_weapons")
+                        ttk.Button(bar, text=label, style="ActiveTab.TButton" if active else "Tab.TButton",
+                                   command=lambda value=category: self.open_tab(value)).pack(side=tk.LEFT, padx=(0, 4))
         text = ttk.Frame(header, style="App.TFrame")
         text.pack(side=tk.LEFT, fill=tk.X, expand=True)
         ttk.Label(text, text=title, style="Title.TLabel").pack(anchor=tk.W)
         ttk.Label(text, text=subtitle, style="Muted.TLabel", wraplength=760).pack(anchor=tk.W, pady=(2, 0))
+        if self._history:
+            self.back_button = ttk.Button(header, text=back_label(self._history[-1]), command=self.go_back)
+            self.back_button.pack(side=tk.RIGHT, anchor=tk.N, pady=5)
         return header
+
+    # --- Drill-in navigation history ---
+
+    def _capture_route(self) -> dict[str, Any]:
+        """Snapshot the current view, including filters, selection, and scroll, so Back can restore it."""
+        route: dict[str, Any] = {"view": self.current_view, "title": self._current_title}
+        if self.current_view in CATEGORY_KEYS and getattr(self, "inventory_tree", None) is not None and self.inventory_tree.winfo_exists():
+            route.update(category=self.current_category, state={
+                "search": self.search_var.get(), "status": self.status_var.get(), "warbond": self.warbond_var.get(),
+                "group": self.group_var.get(), "selected": self._selected_ids(), "yview": self.inventory_tree.yview()[0],
+            })
+        elif self.current_view == "warbond_contents":
+            route.update(warbond_id=self._warbond_context, state=self._warbond_state() if hasattr(self, "_warbond_state") else {})
+        elif self.current_view == "weapon_customization" and self._customization_context:
+            route.update(category=self._customization_context[0], weapon_id=self._customization_context[1])
+        return route
+
+    def _push_history(self) -> None:
+        self._history.append(self._capture_route())
+
+    def go_back(self) -> None:
+        """Return to the previous list exactly where it was left."""
+        if not self._history:
+            return
+        route = self._history.pop()
+        self._restore_route(route)
+
+    def _restore_route(self, route: dict[str, Any]) -> None:
+        view = route.get("view")
+        if view in CATEGORY_KEYS:
+            self.show_inventory(str(route.get("category", view)), state=route.get("state"))
+        elif view == "warbond_contents" and route.get("warbond_id"):
+            self.show_warbond_contents(str(route["warbond_id"]), state=route.get("state"))
+        elif view == "weapon_customization" and route.get("weapon_id"):
+            self.show_weapon_customization(str(route["category"]), str(route["weapon_id"]))
+        elif view == "preferences": self.show_preferences()
+        elif view == "observations": self.show_observations()
+        elif view == "loadouts": self.show_loadouts()
+        elif view == "context_export": self.show_context_export()
+        elif view == "legacy_attachments": self.show_legacy_attachments()
+        else: self.show_settings()
 
     def _profile_opened(self) -> None:
         profile = self.service.profile
@@ -455,8 +587,8 @@ class HD2PlannerApp:
             except (ValueError, ProfileError, OSError) as exc:
                 error_var.set(str(exc)); return
             welcome.destroy(); self.shell.pack(fill=tk.BOTH, expand=True)
-            self._profile_opened(); self.show_inventory("warbonds")
-            self._show_notice("Welcome", "Your workspace is ready", "Start with Warbonds, then review each inventory section. Every accepted change saves automatically.")
+            self._profile_opened(); self.open_tab("warbonds")
+            self._show_notice("Welcome", "Your workspace is ready", "Navigation follows the Super Destroyer: Acquisition Center for Warbonds, Armory for weapons and armor, Ship Management for stratagems and ship modules. Every accepted change saves automatically.")
 
         ttk.Button(panel, text="Create workspace", style="Accent.TButton", command=create).grid(row=7, column=0, columnspan=2, sticky=tk.E, pady=(18, 0))
         entries[0].focus_set(); entries[-1].bind("<Return>", lambda _event: create())
@@ -466,7 +598,7 @@ class HD2PlannerApp:
         if result is None:
             return
         try:
-            self.service.create_profile(result[0], result[1], result[2], int(result[3])); self._profile_opened(); self.show_inventory("warbonds")
+            self.service.create_profile(result[0], result[1], result[2], int(result[3])); self._profile_opened(); self.open_tab("warbonds")
         except (ValueError, ProfileError, OSError) as exc:
             self._show_error("Could not create player", exc)
 
@@ -517,7 +649,7 @@ class HD2PlannerApp:
         def delete() -> None:
             try: backup, _next_character = self.service.delete_character(confirmation.get())
             except (ProfileError, OSError, ValueError) as exc: error_var.set(f"Nothing was deleted. {exc}"); return
-            dialog.destroy(); self._profile_opened(); self.show_inventory("warbonds"); self._show_notice("Character deleted", f"{display_name} was deleted", f"The remaining profile is active. Backup: {backup}")
+            dialog.destroy(); self._profile_opened(); self.open_tab("warbonds"); self._show_notice("Character deleted", f"{display_name} was deleted", f"The remaining profile is active. Backup: {backup}")
         confirmation.trace_add("write", update_button); delete_button.configure(command=delete); entry.focus_set(); self._run_dialog(dialog)
 
     def _edit_resources(self) -> None:
@@ -576,15 +708,20 @@ class HD2PlannerApp:
             self.service.select_character(character_id); self._profile_opened(); self._show_current_route()
 
     def _show_current_route(self) -> None:
-        if self.current_view in {category for _label, category in CATEGORIES}: self.show_inventory(self.current_view)
+        """Re-render the current view (after character switches, reloads, or appearance changes)."""
+        if self.current_view in CATEGORY_KEYS: self.show_inventory(self.current_view)
         elif self.current_view == "warbond_contents" and self._warbond_context: self.show_warbond_contents(self._warbond_context)
+        elif self.current_view == "weapon_customization" and self._customization_context: self.show_weapon_customization(*self._customization_context)
         elif self.current_view == "preferences": self.show_preferences()
         elif self.current_view == "legacy_attachments": self.show_legacy_attachments()
         elif self.current_view == "observations": self.show_observations()
         elif self.current_view == "loadouts": self.show_loadouts()
+        elif self.current_view == "context_export": self.show_context_export()
         else: self.show_settings()
 
     def show_legacy_attachments(self) -> None:
+        if self.current_view != "legacy_attachments" and self.service.profile is not None and self.current_view in CATEGORY_KEYS:
+            self._push_history()
         self._activate_route("legacy_attachments"); self._clear_content()
         self._page_header("Legacy attachment answers", "Old global answers are preserved here. Choose a compatible weapon before applying one; the original answer remains for further review.")
         legacy = self.service.character().get("legacy_attachment_review", {})
@@ -631,15 +768,28 @@ class HD2PlannerApp:
 
         table.bind("<<TreeviewSelect>>", choose)
         ttk.Button(actions, text="Apply answer to this weapon", command=apply).pack(side=tk.LEFT)
-        ttk.Button(actions, text="Back to inventory", command=lambda: self.show_inventory("primary_weapons")).pack(side=tk.RIGHT)
+        if not self._history:
+            ttk.Button(actions, text="Back to Armory", command=lambda: self.open_tab("primary_weapons")).pack(side=tk.RIGHT)
 
-    def show_inventory(self, category: str, *, warbond_context: str | None = None) -> None:
+    def show_inventory(self, category: str, *, warbond_context: str | None = None, select_item: str | None = None,
+                       state: dict[str, Any] | None = None) -> None:
+        """Show one terminal tab's inventory list.
+
+        ``state`` restores filters, selection, and scroll captured by ``_capture_route``;
+        ``select_item`` preselects one row (used when arriving from a Warbond or a stratagem).
+        """
         if self.service.profile is None:
             return
         self.current_category = category; self._activate_route(category); self._clear_content()
-        label = next((label for label, key in CATEGORIES if key == category), category.replace("_", " ").title())
+        label = category_label(category)
         if category == "warbonds":
-            subtitle = "Check the box to record Warbond ownership. Open a row for known rewards; reward ownership stays separate."
+            subtitle = "Check the box to record Warbond ownership. Open a row for its known rewards by page; reward ownership stays separate."
+        elif category == "stratagems":
+            subtitle = "Stratagems unlocked on this ship. Support weapon stratagems link to their weapon record (level and customization). Click the checkmark to change ownership."
+        elif category == "support_weapons":
+            subtitle = "Weapon records for support weapons called in by stratagem. Ownership here is the existing support-weapon record, kept separate from the stratagem."
+        elif category == "ship_modules":
+            subtitle = "Ship modules by department. Click the checkmark to change ownership; click the row for details."
         else:
             subtitle = "Click the checkmark to change ownership; click the row for details. ? means unreviewed. Space toggles the selected item."
         subtitle += " " + self.service.ordering_message(category)
@@ -660,7 +810,7 @@ class HD2PlannerApp:
                 if label_for_context: self.warbond_var.set(label_for_context)
         self.group_var = tk.StringVar(value="All"); groups = self._groups_for(category); self._group_ids = {"All": None, **{value.replace("_", " ").title(): value for value in groups}}
         if groups:
-            ttk.Label(toolbar, text="Group").grid(row=1, column=warbond_column, sticky=tk.W, padx=(0, 5), pady=(6, 0))
+            ttk.Label(toolbar, text=GROUP_FILTER_LABELS.get(category, "Group")).grid(row=1, column=warbond_column, sticky=tk.W, padx=(0, 5), pady=(6, 0))
             combo = ttk.Combobox(toolbar, textvariable=self.group_var, values=list(self._group_ids), state="readonly", width=17); combo.grid(row=1, column=warbond_column + 1, sticky=tk.EW, pady=(6, 0)); combo.bind("<<ComboboxSelected>>", lambda _event: self._refresh_inventory())
         toolbar.columnconfigure(1, weight=1, minsize=150)
 
@@ -687,7 +837,18 @@ class HD2PlannerApp:
         menu.add_separator()
         menu.add_command(label="Mark all visible items owned…", command=lambda: self._bulk_set("unlocked", False)); menu.add_command(label="Mark all visible items unreviewed…", command=lambda: self._bulk_set("unknown", False)); menu.add_command(label="Mark all visible items not owned…", command=lambda: self._bulk_set("locked", False)); menu.add_separator(); menu.add_command(label="Reload profile from disk", command=self._reload)
         bulk.configure(menu=menu); bulk.pack(side=tk.RIGHT)
+        if state:
+            self.search_var.set(str(state.get("search", ""))); self.status_var.set(str(state.get("status", "All")))
+            if state.get("warbond") in self._warbond_ids: self.warbond_var.set(str(state["warbond"]))
+            if state.get("group") in self._group_ids: self.group_var.set(str(state["group"]))
         self._refresh_inventory()
+        wanted = [select_item] if select_item else list(state.get("selected", [])) if state else []
+        present = [item_id for item_id in wanted if self.inventory_tree.exists(item_id)]
+        if present:
+            self.inventory_tree.selection_set(present); self.inventory_tree.focus(present[0]); self.inventory_tree.see(present[0])
+            self._inventory_selection_changed()
+        if state and isinstance(state.get("yview"), (int, float)):
+            self.root.after_idle(lambda: self.inventory_tree.yview_moveto(state["yview"]) if self.inventory_tree.winfo_exists() else None)
 
     def _layout_inventory_workspace(self, event: tk.Event[Any]) -> None:
         wide = event.width >= 970
@@ -710,7 +871,11 @@ class HD2PlannerApp:
 
     def _schedule_filter(self) -> None:
         if self._filter_job: self.root.after_cancel(self._filter_job)
-        self._filter_job = self.root.after(100, self._refresh_inventory)
+        self._filter_job = self.root.after(100, self._filter_now)
+
+    def _filter_now(self) -> None:
+        self._filter_job = None
+        self._refresh_inventory()
 
     def _refresh_inventory(self) -> None:
         if not hasattr(self, "inventory_tree") or not self.inventory_tree.winfo_exists(): return
@@ -751,9 +916,24 @@ class HD2PlannerApp:
         if self.inventory_tree.identify_column(event.x) == "#1": return "break"
         item_id = self.inventory_tree.identify_row(event.y)
         if self.current_category == "warbonds" and item_id:
-            self.show_warbond_contents(item_id)
+            self.open_warbond(item_id)
             return "break"
         return None
+
+    def open_warbond(self, warbond_id: str) -> None:
+        """Drill into a Warbond from the Warbonds list, remembering the list position."""
+        if self.current_view == "warbonds": self._push_history()
+        self.show_warbond_contents(warbond_id)
+
+    def open_weapon_customization(self, category: str, weapon_id: str) -> None:
+        """Drill into a weapon's customization from its Armory (or support weapon) entry."""
+        if self.current_view in CATEGORY_KEYS: self._push_history()
+        self.show_weapon_customization(category, weapon_id)
+
+    def open_linked_item(self, category: str, item_id: str, *, warbond_context: str | None = None) -> None:
+        """Follow a cross-link (stratagem ↔ support weapon, Warbond reward → inventory) with Back available."""
+        self._push_history()
+        self.show_inventory(category, warbond_context=warbond_context, select_item=item_id)
 
     def _toggle_item(self, item_id: str) -> None:
         prior = self.service.inventory_status(self.current_category, item_id)
@@ -784,9 +964,10 @@ class HD2PlannerApp:
             if weapon_id: self.service.set_attachment_status(weapon_id, item_id, prior)
             else: self.service.set_inventory_status(category, item_id, prior)
             self._clear_undo(); self._saved("Change undone")
-            if self.current_view == "warbond_contents" and self._warbond_context: self.show_warbond_contents(self._warbond_context)
+            if self.current_view == "warbond_contents" and self._warbond_context: self.show_warbond_contents(self._warbond_context, state=self._warbond_state())
             elif self.current_view == "legacy_attachments": self.show_legacy_attachments()
-            else: self._refresh_inventory(); self._inventory_selection_changed()
+            elif self.current_view == "weapon_customization" and self._customization_context: self.show_weapon_customization(*self._customization_context)
+            elif self.current_view in CATEGORY_KEYS: self._refresh_inventory(); self._inventory_selection_changed()
         except (ProfileError, ValueError, OSError) as exc: self._save_failed(exc)
 
     def _toggle_selected(self, _event: tk.Event[Any] | None = None) -> str:
@@ -827,6 +1008,7 @@ class HD2PlannerApp:
         row = next((value for value in self.visible_rows if value.item_id == selected[0]), None)
         if row is None: return
         for child in self.inspector.winfo_children(): child.destroy()
+        actions = ttk.Frame(self.inspector, style="Inspector.TFrame"); actions.pack(fill=tk.X, side=tk.BOTTOM)
         ttk.Label(self.inspector, text=row.name, style="Inspector.TLabel", font=("TkDefaultFont", 13, "bold"), wraplength=410).pack(anchor=tk.W)
         ttk.Label(self.inspector, text=f"{STATUS_SYMBOLS[row.status]}  {STATUS_LABELS[row.status]}", style="Inspector.TLabel").pack(anchor=tk.W, pady=(5, 0)); ttk.Label(self.inspector, text=f"Preference: {self.service.item_preference(row.item_id).title()}", style="InspectorMuted.TLabel").pack(anchor=tk.W, pady=(2, 0))
         warbond_names = {item["id"]: item["name"] for item in self.service.catalog["collections"]["warbonds"]}; source = warbond_names.get(row.warbond_id) or "Catalog / base item"
@@ -838,15 +1020,33 @@ class HD2PlannerApp:
         if facts:
             ttk.Separator(self.inspector).pack(fill=tk.X, pady=(0, 9)); ttk.Label(self.inspector, text="Relevant facts", style="Inspector.TLabel", font=("TkDefaultFont", 10, "bold")).pack(anchor=tk.W); ttk.Label(self.inspector, text="\n".join(facts), style="InspectorMuted.TLabel", wraplength=410, justify=tk.LEFT).pack(anchor=tk.W, pady=(4, 10))
         if self.current_category in {"primary_weapons", "secondary_weapons", "support_weapons"}:
-            self._weapon_progression_inline(row)
-        actions = ttk.Frame(self.inspector, style="Inspector.TFrame"); actions.pack(fill=tk.X, side=tk.BOTTOM)
+            self._weapon_level_editor(self.inspector, row)
         if self.current_category == "warbonds":
             ttk.Label(actions, text="Owning a Warbond does not mean every reward is owned. Reward ownership stays separate.", style="InspectorMuted.TLabel", wraplength=410, justify=tk.LEFT).pack(fill=tk.X, pady=(0, 7))
-            ttk.Button(actions, text="Browse known contents", style="Accent.TButton", command=lambda: self.show_warbond_contents(row.item_id)).pack(fill=tk.X, pady=(0, 5))
+            ttk.Button(actions, text="Open Warbond · rewards by page", style="Accent.TButton", command=lambda: self.open_warbond(row.item_id)).pack(fill=tk.X, pady=(0, 5))
+        elif self.current_category in {"primary_weapons", "secondary_weapons", "support_weapons"}:
+            owned, total = self.service.attachment_summary(row.item_id)
+            summary = f"Customization · {owned} of {total} compatible mods owned for this weapon" if total else "Customization · no compatible mods linked in the catalog"
+            ttk.Label(actions, text=summary, style="InspectorMuted.TLabel", wraplength=410, justify=tk.LEFT).pack(fill=tk.X, pady=(0, 5))
+            ttk.Button(actions, text=f"Customize {row.name}…", style="Accent.TButton", state=tk.NORMAL if total else tk.DISABLED,
+                       command=lambda: self.open_weapon_customization(row.category, row.item_id)).pack(fill=tk.X, pady=(0, 5))
+            if self.current_category == "support_weapons":
+                stratagem_id = self.service.stratagem_for_support_weapon(row.item_id)
+                if stratagem_id:
+                    status = self.service.inventory_status("stratagems", stratagem_id)
+                    ttk.Label(actions, text=f"Called in by stratagem: {self.service.index[stratagem_id]['name']} · {STATUS_SYMBOLS[status]} {STATUS_LABELS[status]}", style="InspectorMuted.TLabel", wraplength=410, justify=tk.LEFT).pack(fill=tk.X, pady=(2, 5))
+                    ttk.Button(actions, text="Open stratagem", command=lambda value=stratagem_id: self.open_linked_item("stratagems", value)).pack(fill=tk.X, pady=(0, 5))
+        elif self.current_category == "stratagems":
+            weapon_id = self.service.support_weapon_for_stratagem(row.item_id)
+            if weapon_id:
+                status = self.service.inventory_status("support_weapons", weapon_id)
+                ttk.Label(actions, text=f"Support weapon record: {self.service.index[weapon_id]['name']} · {STATUS_SYMBOLS[status]} {STATUS_LABELS[status]} (recorded separately)", style="InspectorMuted.TLabel", wraplength=410, justify=tk.LEFT).pack(fill=tk.X, pady=(0, 5))
+                ttk.Button(actions, text="Open support weapon record", style="Accent.TButton", command=lambda value=weapon_id: self.open_linked_item("support_weapons", value)).pack(fill=tk.X, pady=(0, 5))
         ttk.Button(actions, text="Set ownership…", command=lambda: self._availability_dialog(row)).pack(fill=tk.X); ttk.Button(actions, text="Set preference…", command=lambda: self._preference_dialog(row.item_id)).pack(fill=tk.X, pady=(5, 0))
         ttk.Label(actions, text="Ownership and preference are separate records.", style="InspectorMuted.TLabel", wraplength=410, justify=tk.LEFT).pack(fill=tk.X, pady=(7, 0))
-    def _weapon_progression_inline(self, weapon: InventoryRow) -> None:
-        level_row = ttk.Frame(self.inspector, style="Inspector.TFrame")
+
+    def _weapon_level_editor(self, parent: tk.Misc, weapon: InventoryRow) -> None:
+        level_row = ttk.Frame(parent, style="Inspector.TFrame")
         level_row.pack(fill=tk.X, pady=(0, 6))
         ttk.Label(level_row, text="Weapon level", style="Inspector.TLabel").pack(side=tk.LEFT, padx=(0, 6))
         level_entry = ttk.Entry(level_row, width=7)
@@ -858,134 +1058,248 @@ class HD2PlannerApp:
                 if raw and not raw.isdecimal(): raise ProfileError("Weapon level must be a non-negative whole number")
                 self.service.set_weapon_level(weapon.category, weapon.item_id, int(raw) if raw else None)
                 self._saved("Weapon level saved")
-                self._refresh_inventory()
+                if self.current_view in CATEGORY_KEYS: self._refresh_inventory()
             except (ProfileError, ValueError, OSError) as exc: self._save_failed(exc)
             return "break"
         level_entry.bind("<Return>", save_level)
         level_entry.bind("<Escape>", lambda _event: (level_entry.delete(0, tk.END), level_entry.insert(0, "" if weapon.level is None else str(weapon.level)), "break")[2])
         ttk.Button(level_row, text="Save", command=save_level).pack(side=tk.LEFT, padx=(5, 0))
-        section = ttk.LabelFrame(self.inspector, text="Compatible attachments · this weapon", padding=7)
-        section.pack(fill=tk.BOTH, expand=True, pady=(6, 8))
+
+    def _weapon_row(self, category: str, weapon_id: str) -> InventoryRow | None:
+        return next((row for row in self.service.inventory_rows(category) if row.item_id == weapon_id), None)
+
+    def show_weapon_customization(self, category: str, weapon_id: str) -> None:
+        """Armory › <tab> › Customize: attachment purchases recorded for exactly this weapon and character."""
+        if self.service.profile is None:
+            return
+        weapon = self._weapon_row(category, weapon_id)
+        if weapon is None:
+            self._show_error("Customize weapon", "The selected weapon is no longer in the catalog."); return
+        self._customization_context = (category, weapon_id); self.current_category = category
+        self._activate_route("weapon_customization", category=category, trail=(f"Customize · {weapon.name}",)); self._clear_content()
+        self._page_header(f"Customize {weapon.name}",
+                          f"Attachment purchases below are recorded for {weapon.name} only, for the active character. Other weapons that accept the same mod keep their own answer. "
+                          "Click Owned? to toggle; ? means unreviewed. " + self.service.ordering_message("weapon_attachments"))
+        summary = ttk.Frame(self.content, style="Card.TFrame", padding=(12, 8)); summary.pack(fill=tk.X, pady=(0, 10))
+        ttk.Label(summary, text=f"{weapon.name} · {STATUS_SYMBOLS[weapon.status]} {STATUS_LABELS[weapon.status]} · {category_label(category)}", style="BannerHeading.TLabel").pack(anchor=tk.W)
+        self.customization_summary_var = tk.StringVar(); ttk.Label(summary, textvariable=self.customization_summary_var, style="BannerMuted.TLabel").pack(anchor=tk.W, pady=(2, 4))
+        self._weapon_level_editor(summary, weapon)
+        self._attachment_table(self.content, weapon, self.customization_summary_var)
+
+    def _attachment_table(self, parent: tk.Misc, weapon: InventoryRow, summary_var: tk.StringVar | None = None) -> None:
+        section = ttk.LabelFrame(parent, text=f"Compatible mods · {weapon.name} only", padding=7)
+        section.pack(fill=tk.BOTH, expand=True, pady=(0, 8))
         rows = self.service.inventory_rows("weapon_attachments", compatible_weapon_id=weapon.item_id)
         if not rows:
             ttk.Label(section, text="No compatible attachments linked in the catalog.").pack(anchor=tk.W)
+            if summary_var is not None: summary_var.set("No compatible mods linked in the catalog.")
             return
-        tree = ttk.Treeview(section, columns=("owned", "name", "slot"), show="headings", height=min(7, len(rows)), selectmode="browse")
-        for key, title, width in (("owned", "Owned?", 110), ("name", "Attachment", 230), ("slot", "Slot", 100)):
+        tree = ttk.Treeview(section, columns=("owned", "name", "slot", "legacy"), show="headings", selectmode="browse")
+        for key, title, width in (("owned", "Owned?", 120), ("name", "Attachment", 260), ("slot", "Slot", 130), ("legacy", "Legacy global answer", 170)):
             tree.heading(key, text=title); tree.column(key, width=width, minwidth=75, stretch=key == "name")
-        for item in rows:
-            legacy = self.service.legacy_attachment_status(item.item_id)
-            state = self.service.attachment_status(weapon.item_id, item.item_id)
-            name = item.name + (f" · legacy {STATUS_LABELS[legacy]}" if legacy else "")
-            tree.insert("", tk.END, iid=item.item_id, values=(f"{STATUS_SYMBOLS[state]} {STATUS_LABELS[state]}", name, item.group or ""))
+        self.customization_tree = tree
+        for status, color in (("unlocked", self.colors["unlocked"]), ("locked", self.colors["locked"]), ("unknown", self.colors["unknown"])): tree.tag_configure(status, foreground=color)
+        tree.tag_configure("group", foreground=self.colors["accent"])
+        slots = sorted({row.group or "other" for row in rows}, key=str.casefold)
+        for slot in slots:
+            tree.insert("", tk.END, iid=f"slot-{slot}", values=("", slot.replace("_", " ").title(), "", ""), tags=("group",))
+            for item in rows:
+                if (item.group or "other") != slot: continue
+                legacy = self.service.legacy_attachment_status(item.item_id)
+                state = self.service.attachment_status(weapon.item_id, item.item_id)
+                tree.insert("", tk.END, iid=item.item_id, values=(f"{STATUS_SYMBOLS[state]} {STATUS_LABELS[state]}", item.name, item.group or "", STATUS_LABELS[legacy] if legacy else ""), tags=(state,))
         tree.pack(fill=tk.BOTH, expand=True)
+        attachment_ids = {row.item_id for row in rows}
 
-        def update(attachment_id: str, status: str) -> None:
+        def refresh_summary() -> None:
+            if summary_var is None: return
+            owned, total = self.service.attachment_summary(weapon.item_id)
+            summary_var.set(f"{owned} of {total} compatible mods owned for this weapon · recorded for the active character only")
+
+        def update(attachment_id: str, status: str | None) -> None:
+            if attachment_id not in attachment_ids or status is None: return
             try:
                 prior = self.service.attachment_status(weapon.item_id, attachment_id)
                 self.service.set_attachment_status(weapon.item_id, attachment_id, status)
                 self._remember_undo("weapon_attachments", attachment_id, prior, weapon_id=weapon.item_id)
-                tree.set(attachment_id, "owned", f"{STATUS_SYMBOLS[status]} {STATUS_LABELS[status]}")
-                self._saved("Weapon attachment saved · Undo available")
+                tree.item(attachment_id, values=(f"{STATUS_SYMBOLS[status]} {STATUS_LABELS[status]}", *tree.item(attachment_id, "values")[1:]), tags=(status,))
+                self._saved(f"Mod saved for {weapon.name} · Undo available"); refresh_summary()
             except (ProfileError, ValueError, OSError) as exc: self._save_failed(exc)
+
+        def selected() -> str | None:
+            selection = tree.selection()
+            return selection[0] if selection and selection[0] in attachment_ids else None
 
         def click(event: tk.Event[Any]) -> str | None:
             attachment_id = tree.identify_row(event.y)
-            if attachment_id and tree.identify_column(event.x) == "#1":
+            if attachment_id in attachment_ids and tree.identify_column(event.x) == "#1":
                 state = self.service.attachment_status(weapon.item_id, attachment_id)
                 update(attachment_id, "locked" if state == "unlocked" else "unlocked")
                 return "break"
             return None
 
         tree.bind("<Button-1>", click)
-        tree.bind("<space>", lambda _event: (update(tree.selection()[0], "locked" if self.service.attachment_status(weapon.item_id, tree.selection()[0]) == "unlocked" else "unlocked"), "break")[1] if tree.selection() else "break")
+        tree.bind("<space>", lambda _event: (update(selected(), "locked" if selected() and self.service.attachment_status(weapon.item_id, selected()) == "unlocked" else "unlocked"), "break")[1])
         actions = ttk.Frame(section); actions.pack(fill=tk.X, pady=(5, 0))
-        ttk.Button(actions, text="Set unreviewed", command=lambda: update(tree.selection()[0], "unknown") if tree.selection() else None).pack(side=tk.LEFT)
-        ttk.Button(actions, text="Use legacy answer for this weapon", command=lambda: update(tree.selection()[0], self.service.legacy_attachment_status(tree.selection()[0])) if tree.selection() and self.service.legacy_attachment_status(tree.selection()[0]) else None).pack(side=tk.LEFT, padx=(5, 0))
+        ttk.Button(actions, text="Set owned", command=lambda: update(selected(), "unlocked")).pack(side=tk.LEFT)
+        ttk.Button(actions, text="Set not owned", command=lambda: update(selected(), "locked")).pack(side=tk.LEFT, padx=(5, 0))
+        ttk.Button(actions, text="Set unreviewed", command=lambda: update(selected(), "unknown")).pack(side=tk.LEFT, padx=(5, 0))
+        ttk.Button(actions, text="Use legacy answer for this weapon", command=lambda: update(selected(), self.service.legacy_attachment_status(selected()) if selected() else None)).pack(side=tk.LEFT, padx=(5, 0))
+        self._set_attachment_status = update  # exposed for tests and keyboard handlers
+        refresh_summary()
 
     def _availability_dialog(self, row: InventoryRow) -> None:
         value = self._choice_dialog("Set Ownership", row.name, [(label, status) for status, label in STATUS_LABELS.items()], row.status)
         if value: self._set_selected(value)
 
-    def show_warbond_contents(self, warbond_id: str) -> None:
-        self._warbond_context = warbond_id; self._activate_route("warbond_contents"); self._clear_content()
-        warbond = next((item for item in self.service.catalog["collections"]["warbonds"] if item["id"] == warbond_id), None)
+    WARBOND_CONTENT_CATEGORIES = {
+        "All supported categories": "all", "Primary": "primary_weapons", "Secondary": "secondary_weapons",
+        "Support weapon records": "support_weapons", "Grenade": "grenades", "Armor": "armor", "Booster": "boosters",
+        "Stratagems": "stratagems", "Ship Modules": "ship_modules",
+    }
+
+    def show_warbond_contents(self, warbond_id: str, *, state: dict[str, Any] | None = None) -> None:
+        """Acquisition Center › Warbonds › <Warbond>: known rewards grouped by catalog page, with a reward inspector."""
+        if self.service.profile is None:
+            return
+        warbond = self.service.warbond(warbond_id)
         if warbond is None:
             self._show_error("Warbond Contents", "The selected Warbond is no longer in the catalog."); return
-        header = self._page_header(
-            "Known catalog-linked contents",
-            f"{warbond['name']} · Linked rewards only. Page labels come from catalog facts; page gates and Medals spent are unverified. Unmapped rewards may be missing.",
+        self._warbond_context = warbond_id
+        self._activate_route("warbond_contents", trail=(str(warbond["name"]),)); self._clear_content()
+        self._page_header(
+            str(warbond["name"]),
+            "Known catalog-linked rewards by page. Page labels come from catalog facts; page gates and Medals spent are unverified, and unmapped rewards may be missing. "
+            "Reward ownership recorded here is the same record shown in the Armory and Ship Management lists.",
         )
-        ttk.Button(header, text="Back to Warbonds", command=lambda: self.show_inventory("warbonds")).pack(side=tk.RIGHT, anchor=tk.N, pady=5)
-        filters = ttk.LabelFrame(self.content, text="Filter known links", style="Card.TLabelframe", padding=(10, 7)); filters.pack(fill=tk.X, pady=(0, 10))
-        category_labels = {
-            "All supported categories": "all", "Primary weapons": "primary_weapons", "Secondary weapons": "secondary_weapons",
-            "Support weapons": "support_weapons", "Grenades": "grenades", "Armor": "armor", "Boosters": "boosters",
-            "Stratagems": "stratagems", "Ship modules": "ship_modules",
-        }
-        category_var = tk.StringVar(value="All supported categories"); status_var = tk.StringVar(value="All")
+        state = state or {}
+        ownership = ttk.Frame(self.content, style="Card.TFrame", padding=(12, 8)); ownership.pack(fill=tk.X, pady=(0, 10))
+        self.warbond_status_var = tk.StringVar(); ttk.Label(ownership, textvariable=self.warbond_status_var, style="BannerHeading.TLabel").pack(side=tk.LEFT)
+        ttk.Label(ownership, text="Owning a Warbond does not mean every reward is owned; set each reward separately.", style="BannerMuted.TLabel", wraplength=520).pack(side=tk.LEFT, padx=(14, 0))
+        warbond_row = next((row for row in self.service.inventory_rows("warbonds") if row.item_id == warbond_id), None)
+
+        def refresh_warbond_status() -> None:
+            status = self.service.inventory_status("warbonds", warbond_id)
+            self.warbond_status_var.set(f"Warbond: {STATUS_SYMBOLS[status]} {STATUS_LABELS[status]}")
+
+        def set_warbond_ownership() -> None:
+            current = self.service.inventory_status("warbonds", warbond_id)
+            value = self._choice_dialog("Set Warbond Ownership", str(warbond["name"]), [(label, status) for status, label in STATUS_LABELS.items()], current)
+            if not value or value == current: return
+            try:
+                self.service.set_inventory_status("warbonds", warbond_id, value); self._remember_undo("warbonds", warbond_id, current)
+                self._saved("Warbond ownership saved · Undo available"); refresh_warbond_status(); refresh()
+            except (ProfileError, ValueError, OSError) as exc: self._save_failed(exc)
+
+        ttk.Button(ownership, text="Set Warbond ownership…", command=set_warbond_ownership).pack(side=tk.RIGHT)
+        if warbond_row is not None:
+            facts = "  ·  ".join(f"{label}: {value}" for label, value in inspector_facts("warbonds", warbond_row.facts))
+            if facts: ttk.Label(self.content, text=facts, style="Muted.TLabel", wraplength=900).pack(anchor=tk.W, pady=(0, 8))
+
+        filters = ttk.LabelFrame(self.content, text="Filter known rewards", style="Card.TLabelframe", padding=(10, 7)); filters.pack(fill=tk.X, pady=(0, 10))
+        category_labels = self.WARBOND_CONTENT_CATEGORIES
+        category_var = tk.StringVar(value=state.get("category", "All supported categories") if state.get("category") in category_labels else "All supported categories")
+        status_var = tk.StringVar(value=state.get("status", "All") if state.get("status") in STATUS_FILTERS else "All")
+        self._warbond_filter_vars = (category_var, status_var)
         ttk.Label(filters, text="Category").pack(side=tk.LEFT); category_combo = ttk.Combobox(filters, textvariable=category_var, values=list(category_labels), state="readonly", width=24); category_combo.pack(side=tk.LEFT, padx=(6, 16))
         ttk.Label(filters, text="Ownership").pack(side=tk.LEFT); status_combo = ttk.Combobox(filters, textvariable=status_var, values=list(STATUS_FILTERS), state="readonly", width=13); status_combo.pack(side=tk.LEFT, padx=(6, 0))
-        tree = ttk.Treeview(self.content, columns=("category", "name", "page", "availability", "access"), show="headings", selectmode="browse")
-        for key, title, width in (("category", "Category", 140), ("name", "Item", 250), ("page", "Catalog page", 100), ("availability", "Owned?", 130), ("access", "Purchase access", 240)):
-            tree.heading(key, text=title); tree.column(key, width=width, minwidth=80, stretch=key in {"name", "access"})
-        tree.pack(fill=tk.BOTH, expand=True)
+
+        split = tk.PanedWindow(self.content, orient=tk.HORIZONTAL, sashwidth=8, bg=self.colors["divider"], relief=tk.FLAT); split.pack(fill=tk.BOTH, expand=True)
+        table_panel = ttk.Frame(split, style="App.TFrame")
+        tree = ttk.Treeview(table_panel, columns=("page", "category", "name", "availability", "access"), show="headings", selectmode="browse")
+        for key, title, width in (("page", "Page", 70), ("category", "Category", 120), ("name", "Reward", 230), ("availability", "Owned?", 125), ("access", "Purchase access", 220)):
+            tree.heading(key, text=title); tree.column(key, width=width, minwidth=60, stretch=key in {"name", "access"})
+        scrollbar = ttk.Scrollbar(table_panel, orient=tk.VERTICAL, command=tree.yview); tree.configure(yscrollcommand=scrollbar.set)
+        tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True); scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.warbond_tree = tree
+        inspector = ttk.Frame(split, style="Inspector.TFrame", padding=14, width=self._inspector_width); self.warbond_inspector = inspector
+        split.add(table_panel, minsize=320); split.add(inspector, minsize=260)
+        self.root.after_idle(lambda: split.sash_place(0, max(420, split.winfo_width() - self._inspector_width), 1) if split.winfo_exists() else None)
         rows_by_id: dict[str, InventoryRow] = {}
         category_names = {value: label for label, value in category_labels.items()}
 
-        def refresh() -> None:
+        def inspector_empty() -> None:
+            for child in inspector.winfo_children(): child.destroy()
+            ttk.Label(inspector, text="Reward details", style="Inspector.TLabel", font=("TkDefaultFont", 12, "bold")).pack(anchor=tk.W)
+            ttk.Label(inspector, text="Select a reward to review its ownership, page, and catalog facts, or open it in its inventory list. Back returns here.", style="InspectorMuted.TLabel", wraplength=240, justify=tk.LEFT).pack(anchor=tk.W, pady=(5, 0))
+
+        def inspect(row: InventoryRow) -> None:
+            for child in inspector.winfo_children(): child.destroy()
+            placed = tab_for_category(row.category)
+            actions = ttk.Frame(inspector, style="Inspector.TFrame"); actions.pack(fill=tk.X, side=tk.BOTTOM)
+            ttk.Label(inspector, text=row.name, style="Inspector.TLabel", font=("TkDefaultFont", 13, "bold"), wraplength=400).pack(anchor=tk.W)
+            page = self.service.warbond_page_of(row)
+            ttk.Label(inspector, text=f"{category_names.get(row.category, category_label(row.category))} · " + (f"Catalog page {page}" if page else "Page unverified"), style="InspectorMuted.TLabel").pack(anchor=tk.W, pady=(3, 0))
+            ttk.Label(inspector, text=f"{STATUS_SYMBOLS[row.status]}  {STATUS_LABELS[row.status]}", style="Inspector.TLabel").pack(anchor=tk.W, pady=(6, 0))
+            ttk.Label(inspector, text=self.service.reward_access(row), style="InspectorMuted.TLabel", wraplength=400).pack(anchor=tk.W, pady=(2, 0))
+            ttk.Label(inspector, text=f"Preference: {self.service.item_preference(row.item_id).title()}", style="InspectorMuted.TLabel").pack(anchor=tk.W, pady=(2, 8))
+            facts = [f"{label}: {value}" for label, value in inspector_facts(row.category, row.facts)]
+            if facts:
+                ttk.Separator(inspector).pack(fill=tk.X, pady=(0, 8)); ttk.Label(inspector, text="\n".join(facts), style="InspectorMuted.TLabel", wraplength=400, justify=tk.LEFT).pack(anchor=tk.W, pady=(0, 8))
+            ttk.Button(actions, text="Set reward ownership…", style="Accent.TButton", command=lambda: set_status_dialog(row)).pack(fill=tk.X)
+            ttk.Button(actions, text="Set preference…", command=lambda: self._preference_dialog(row.item_id)).pack(fill=tk.X, pady=(5, 0))
+            destination = f"{placed[0].label} › {placed[1].label}" if placed else category_label(row.category)
+            if row.category == "support_weapons": destination = "Ship Management › Stratagems › Support weapon records"
+            ttk.Button(actions, text=f"Open in {destination}", command=lambda: self.open_linked_item(row.category, row.item_id, warbond_context=warbond_id)).pack(fill=tk.X, pady=(5, 0))
+            ttk.Label(actions, text="Back from that list returns to this Warbond.", style="InspectorMuted.TLabel", wraplength=400, justify=tk.LEFT).pack(fill=tk.X, pady=(6, 0))
+
+        def refresh(keep: str | None = None) -> None:
             nonlocal rows_by_id
+            selected = keep or (tree.selection()[0] if tree.selection() else None)
             rows = self.service.warbond_contents(warbond_id, category=category_labels[category_var.get()], status=STATUS_FILTERS[status_var.get()])
             rows_by_id = {row.item_id: row for row in rows}; tree.delete(*tree.get_children())
-            pages = sorted({row.facts.get("warbond_page") for row in rows if isinstance(row.facts.get("warbond_page"), int)})
-            for page in [*pages, None]:
-                members = [row for row in rows if (row.facts.get("warbond_page") if isinstance(row.facts.get("warbond_page"), int) else None) == page]
-                if not members: continue
-                title = f"Catalog page {page} · access unverified" if page is not None else "Page unverified / not mapped"
-                tree.insert("", tk.END, iid=f"group-{page}", values=(title, "", "", "", ""), tags=("group",))
+            for page, members in self.service.warbond_pages(rows):
+                title = f"Page {page} · access unverified" if page is not None else "Page unverified / not mapped"
+                tree.insert("", tk.END, iid=f"group-{page}", values=("", "", title, "", ""), tags=("group",))
                 for row in members:
-                    tree.insert("", tk.END, iid=row.item_id, values=(category_names.get(row.category, row.category.replace("_", " ").title()), row.name, page or "Unverified", f"{STATUS_SYMBOLS[row.status]} {STATUS_LABELS[row.status]}", self.service.reward_access(row)), tags=(row.status,))
-            count_var.set(f"{len(rows)} catalog-linked items shown · unmapped rewards are not counted · page gates unverified")
+                    tree.insert("", tk.END, iid=row.item_id, values=(page or "—", category_names.get(row.category, category_label(row.category)), row.name,
+                                                                        f"{STATUS_SYMBOLS[row.status]} {STATUS_LABELS[row.status]}", self.service.reward_access(row)), tags=(row.status,))
+            count_var.set(f"{len(rows)} catalog-linked rewards shown · unmapped rewards are not counted · page gates unverified")
+            if selected and tree.exists(selected):
+                tree.selection_set(selected); tree.see(selected); inspect(rows_by_id[selected])
+            else:
+                inspector_empty()
 
         category_combo.bind("<<ComboboxSelected>>", lambda _event: refresh()); status_combo.bind("<<ComboboxSelected>>", lambda _event: refresh())
         for status, color in (("unlocked", self.colors["unlocked"]), ("locked", self.colors["locked"]), ("unknown", self.colors["unknown"])): tree.tag_configure(status, foreground=color)
         tree.tag_configure("group", foreground=self.colors["accent"])
         controls = ttk.Frame(self.content); controls.pack(fill=tk.X, pady=(9, 0)); count_var = tk.StringVar(); ttk.Label(controls, textvariable=count_var, style="Muted.TLabel").pack(side=tk.LEFT)
 
-        def set_selected(status: str) -> None:
-            selected = tree.selection()
-            if not selected or selected[0] not in rows_by_id: return
-            row = rows_by_id[selected[0]]
-            try: self.service.set_inventory_status(row.category, row.item_id, status); self._saved(); refresh()
+        def set_reward_status(row: InventoryRow, status: str) -> None:
+            if status == row.status: return
+            try:
+                self.service.set_inventory_status(row.category, row.item_id, status)
+                self._remember_undo(row.category, row.item_id, row.status)
+                self._saved("Reward ownership saved · Undo available"); refresh(keep=row.item_id)
             except (ProfileError, ValueError, OSError) as exc: self._save_failed(exc)
 
-        def open_category() -> None:
-            selected = tree.selection()
-            if selected and selected[0] in rows_by_id:
-                self.show_inventory(rows_by_id[selected[0]].category, warbond_context=warbond_id)
+        def set_status_dialog(row: InventoryRow) -> None:
+            value = self._choice_dialog("Set Reward Ownership", row.name, [(label, status) for status, label in STATUS_LABELS.items()], row.status)
+            if value: set_reward_status(row, value)
 
-        open_button = ttk.Button(controls, text="Open category with this Warbond filter", command=open_category, state=tk.DISABLED); open_button.pack(side=tk.RIGHT)
-        availability = ttk.Menubutton(controls, text="Set item ownership", state=tk.DISABLED); availability_menu = self._menu(availability)
-        for status in ("unlocked", "unknown", "locked"): availability_menu.add_command(label=STATUS_LABELS[status], command=lambda value=status: set_selected(value))
-        availability.configure(menu=availability_menu); availability.pack(side=tk.RIGHT, padx=(0, 7))
         def selection_changed(_event: tk.Event[Any] | None = None) -> None:
-            state = tk.NORMAL if tree.selection() and tree.selection()[0] in rows_by_id else tk.DISABLED; availability.configure(state=state); open_button.configure(state=state)
-        tree.bind("<<TreeviewSelect>>", selection_changed); refresh()
+            selected = tree.selection()
+            if selected and selected[0] in rows_by_id: inspect(rows_by_id[selected[0]])
+            else: inspector_empty()
+
         def click(event: tk.Event[Any]) -> str | None:
             item_id = tree.identify_row(event.y)
             if item_id in rows_by_id and tree.identify_column(event.x) == "#4":
-                row = rows_by_id[item_id]
-                next_status = "locked" if row.status == "unlocked" else "unlocked"
-                try:
-                    self.service.set_inventory_status(row.category, row.item_id, next_status)
-                    self._remember_undo(row.category, row.item_id, row.status)
-                    self._saved("Reward ownership saved · Undo available"); refresh()
-                except (ProfileError, ValueError, OSError) as exc: self._save_failed(exc)
+                row = rows_by_id[item_id]; set_reward_status(row, "locked" if row.status == "unlocked" else "unlocked")
                 return "break"
             return None
+
+        self._warbond_rows = lambda: rows_by_id
+        self._set_warbond_reward_status = set_reward_status
+        self._warbond_refresh = refresh
+        self._warbond_state = lambda: {"category": category_var.get(), "status": status_var.get(), "selected": tree.selection()[0] if tree.selection() else None, "yview": tree.yview()[0]}
+        tree.bind("<<TreeviewSelect>>", selection_changed)
         tree.bind("<Button-1>", click)
-        tree.bind("<space>", lambda _event: (set_selected("locked" if rows_by_id[tree.selection()[0]].status == "unlocked" else "unlocked"), "break")[1] if tree.selection() and tree.selection()[0] in rows_by_id else "break")
-        tree.bind("<Return>", lambda _event: (open_category(), "break")[1])
+        tree.bind("<space>", lambda _event: (set_reward_status(rows_by_id[tree.selection()[0]], "locked" if rows_by_id[tree.selection()[0]].status == "unlocked" else "unlocked"), "break")[1] if tree.selection() and tree.selection()[0] in rows_by_id else "break")
+        tree.bind("<Return>", lambda _event: (self.open_linked_item(rows_by_id[tree.selection()[0]].category, tree.selection()[0], warbond_context=warbond_id), "break")[1] if tree.selection() and tree.selection()[0] in rows_by_id else "break")
+        refresh_warbond_status(); refresh(keep=state.get("selected"))
+        if isinstance(state.get("yview"), (int, float)):
+            self.root.after_idle(lambda: tree.yview_moveto(state["yview"]) if tree.winfo_exists() else None)
 
     def show_preferences(self) -> None:
         self._activate_route("preferences"); self._clear_content(); self._page_header("Preferences", "Personal planning signals included in ChatGPT context. They may guide later planning, but do not score items, change availability, or alter a loadout today. Only explicit non-neutral choices appear.")
@@ -1095,6 +1409,30 @@ class HD2PlannerApp:
 
         ttk.Button(self.content, text="Remove selected…", command=delete_selected).pack(anchor=tk.E, pady=(8, 0))
 
+    def show_context_export(self) -> None:
+        """Planner › Context Export: generate and locate ChatGPT context files without leaving the planner area."""
+        self._activate_route("context_export"); self._clear_content()
+        self._page_header("Context Export", "Create Markdown and JSON snapshots of the active character for ChatGPT. Files are written locally; nothing is uploaded and no recommendations are made.")
+        card = ttk.LabelFrame(self.content, text="Generate", style="Card.TLabelframe", padding=12); card.pack(fill=tk.X)
+        ttk.Label(card, text=f"Character: {self.service.character_label()}").pack(anchor=tk.W)
+        ttk.Label(card, text=f"Catalog: {self.service.catalog['manifest'].get('catalog_version')} · Output: {self.service.paths.generated}", style="Muted.TLabel", wraplength=840).pack(anchor=tk.W, pady=(2, 10))
+        ttk.Button(card, text="Generate ChatGPT context", style="Accent.TButton", command=lambda: (self.generate_context(), self.show_context_export() if self.current_view == "context_export" else None)).pack(anchor=tk.W)
+        recent = ttk.LabelFrame(self.content, text="Generated files", style="Card.TLabelframe", padding=12); recent.pack(fill=tk.BOTH, expand=True, pady=(10, 0))
+        try:
+            files = sorted((path for path in self.service.paths.generated.glob("*") if path.is_file()), key=lambda path: path.stat().st_mtime, reverse=True)[:20]
+        except OSError:
+            files = []
+        if not files:
+            ttk.Label(recent, text="No context files generated yet.", style="Muted.TLabel").pack(anchor=tk.W)
+        else:
+            tree = ttk.Treeview(recent, columns=("name", "modified"), show="headings", height=min(10, len(files))); tree.heading("name", text="File"); tree.heading("modified", text="Modified"); tree.column("name", width=520); tree.column("modified", width=200)
+            for path in files:
+                tree.insert("", tk.END, iid=str(path), values=(path.name, datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d %H:%M")))
+            tree.pack(fill=tk.BOTH, expand=True)
+            buttons = ttk.Frame(recent); buttons.pack(fill=tk.X, pady=(8, 0))
+            ttk.Button(buttons, text="Open selected", command=lambda: self._open_safely(Path(tree.selection()[0])) if tree.selection() else None).pack(side=tk.LEFT)
+            ttk.Button(buttons, text="Reveal in Finder" if sys.platform == "darwin" else "Open folder", command=lambda: self._open_safely(self.service.paths.generated)).pack(side=tk.LEFT, padx=6)
+
     def generate_context(self) -> None:
         try: json_path, markdown_path = self.service.generate_context()
         except (ProfileError, ValueError, OSError) as exc: self._show_error("Context generation failed", exc); return
@@ -1137,7 +1475,7 @@ class HD2PlannerApp:
         profiles = self.service.profiles(); players = ttk.LabelFrame(self.content, text="Players", style="Card.TLabelframe", padding=12); players.pack(fill=tk.X, pady=(10, 0)); profile = self.service.profile or {}; player_names = {f"{value.display_name} [{value.player_id}]": value.player_id for value in profiles}; selected = tk.StringVar(value=next((label for label, value in player_names.items() if value == profile.get("player", {}).get("id")), "")); combo = ttk.Combobox(players, textvariable=selected, values=list(player_names), state="readonly"); combo.pack(side=tk.LEFT, fill=tk.X, expand=True)
 
         def change_player() -> None:
-            try: self.service.open_profile(player_names[selected.get()]); self._profile_opened(); self.show_inventory("warbonds")
+            try: self.service.open_profile(player_names[selected.get()]); self._profile_opened(); self.open_tab("warbonds")
             except (ProfileError, OSError, ValueError) as exc: self._show_error("Could not open player", exc)
 
         ttk.Button(players, text="Switch", command=change_player).pack(side=tk.LEFT, padx=(6, 0)); ttk.Button(players, text="New player…", command=self._new_player).pack(side=tk.LEFT, padx=(6, 0))
@@ -1195,8 +1533,8 @@ class HD2PlannerApp:
 def launch_gui(service: PlannerService | None = None, *, close_after_ms: int | None = None) -> int:
     try: root = tk.Tk()
     except tk.TclError as exc: raise RuntimeError(f"Could not start the desktop interface: {exc}") from exc
-    HD2PlannerApp(root, service)
+    app = HD2PlannerApp(root, service)
     if close_after_ms is not None:
-        root.after(close_after_ms, root.destroy)
+        root.after(close_after_ms, lambda: (app.shutdown(), root.destroy()))
     root.mainloop()
     return 0

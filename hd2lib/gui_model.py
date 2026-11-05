@@ -34,6 +34,7 @@ from .profile import (
     set_weapon_attachment_status,
     validate_profile,
 )
+from .navigation import presentation_screen
 from .presentation_order import load_presentation_order, sort_with_presentation_order
 from .storage import read_json, slugify
 from .update import UpdateResult, check_for_update
@@ -305,28 +306,74 @@ class PlannerService:
                 warbond_id=item_warbond, group=item_group, detail=self._item_detail(category, facts),
                 level=state.get("level"), facts=facts,
             ))
-        screen = {
-            "warbonds": "requisitions_warbonds",
-            "stratagems": "stratagems",
-            "ship_modules": "ship_management",
-        }.get(category, "armory")
+        screen = presentation_screen(category)
         return sort_with_presentation_order(
             rows, self.presentation_order, screen,
             item_id=lambda row: row.item_id,
-            group_id=lambda row: row.group if category in {"stratagems", "ship_modules"} else category,
+            group_id=lambda row: self._presentation_group(category, row),
             fallback=lambda row: (
                 int(row.facts.get("tier", 0) or 0) if category == "ship_modules" else 0,
                 row.name.casefold(), row.item_id,
             ),
         )
 
+    @staticmethod
+    def _presentation_group(category: str, row: InventoryRow) -> str | None:
+        if category in {"stratagems", "ship_modules"}:
+            return row.group
+        if category == "support_weapons":
+            # Support weapon records sit inside the Stratagems tab's Support Weapons group.
+            return "support_weapon"
+        return category
+
     def ordering_message(self, category: str) -> str:
-        screen = {
-            "warbonds": "requisitions_warbonds",
-            "stratagems": "stratagems",
-            "ship_modules": "ship_management",
-        }.get(category, "armory")
-        return self.presentation_order.verification_message(screen)
+        return self.presentation_order.verification_message(presentation_screen(category))
+
+    # --- Ship Management: stratagems and the support weapons they call in ---
+
+    def support_weapon_for_stratagem(self, stratagem_id: str) -> str | None:
+        """Return the support weapon record a stratagem calls in, when the catalog links one."""
+        item = self.index.get(stratagem_id)
+        if item is None or item.get("_collection") != "stratagems":
+            return None
+        weapon_id = item.get("facts", {}).get("support_weapon_id")
+        weapon = self.index.get(weapon_id) if isinstance(weapon_id, str) else None
+        if weapon is None or weapon.get("facts", {}).get("category") != "support_weapon":
+            return None
+        return weapon_id
+
+    def stratagem_for_support_weapon(self, weapon_id: str) -> str | None:
+        """Reverse lookup from a support weapon record to the stratagem that calls it in."""
+        for item in self.catalog["collections"]["stratagems"]:
+            if item.get("facts", {}).get("support_weapon_id") == weapon_id and item.get("facts", {}).get("player_equippable") is True:
+                return item["id"]
+        return None
+
+    # --- Armory: per-weapon customization summary ---
+
+    def attachment_summary(self, weapon_id: str) -> tuple[int, int]:
+        """Return (owned, total) compatible attachments recorded for exactly this weapon."""
+        rows = self.inventory_rows("weapon_attachments", compatible_weapon_id=weapon_id)
+        owned = sum(self.attachment_status(weapon_id, row.item_id) == "unlocked" for row in rows)
+        return owned, len(rows)
+
+    # --- Acquisition Center: Warbond pages ---
+
+    @staticmethod
+    def warbond_page_of(row: InventoryRow) -> int | None:
+        page = row.facts.get("warbond_page")
+        return page if isinstance(page, int) and not isinstance(page, bool) and page >= 1 else None
+
+    def warbond_pages(self, rows: Iterable[InventoryRow]) -> list[tuple[int | None, list[InventoryRow]]]:
+        """Group Warbond rewards by known catalog page; unmapped rewards come last under None."""
+        groups: dict[int | None, list[InventoryRow]] = {}
+        for row in rows:
+            groups.setdefault(self.warbond_page_of(row), []).append(row)
+        ordered = sorted((page for page in groups if page is not None))
+        return [(page, groups[page]) for page in ordered] + ([(None, groups[None])] if None in groups else [])
+
+    def warbond(self, warbond_id: str) -> dict[str, Any] | None:
+        return next((item for item in self.catalog["collections"]["warbonds"] if item["id"] == warbond_id), None)
 
     def warbond_contents(
         self, warbond_id: str, *, category: str = "all", status: str = "all",
