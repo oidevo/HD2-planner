@@ -16,6 +16,7 @@ CATALOG_FILES = {
     "stratagems": "stratagems.json",
     "ship_modules": "ship_modules.json",
     "warbonds": "warbonds.json",
+    "warbond_rewards": "warbond_rewards.json",
     "enemies": "enemies.json",
     "mission_types": "mission_types.json",
     "biomes": "biomes.json",
@@ -23,6 +24,7 @@ CATALOG_FILES = {
 
 INVENTORY_TO_CATALOG = {
     "warbonds": "warbonds",
+    "warbond_rewards": "warbond_rewards",
     "primary_weapons": "weapons",
     "secondary_weapons": "weapons",
     "support_weapons": "weapons",

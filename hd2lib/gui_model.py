@@ -51,6 +51,11 @@ class InventoryRow:
     level: int | None
     facts: dict[str, Any]
 
+    @property
+    def warbond_page(self) -> int | None:
+        page = self.facts.get("warbond_page")
+        return page if type(page) is int and page > 0 else None
+
 
 @dataclass(frozen=True)
 class ProfileChoice:
@@ -91,6 +96,17 @@ class PlannerService:
         self.paths = (paths or user_data_paths()).initialize()
         self.catalog = catalog or load_catalog()
         self.index = catalog_index(self.catalog)
+        self._warbond_rewards: dict[str, list[dict[str, Any]]] = {}
+        self._reward_links: dict[str, dict[str, Any]] = {}
+        for reward in self.catalog["collections"].get("warbond_rewards", []):
+            facts = reward["facts"]
+            self._warbond_rewards.setdefault(facts["warbond_id"], []).append(reward)
+            if ref := facts.get("inventory_ref"):
+                self._reward_links[ref["item_id"]] = facts
+        self._ship_departments = {
+            item["facts"]["section"] for item in self.catalog["collections"]["ship_modules"]
+            if item.get("facts", {}).get("section")
+        }
         self.presentation_order = load_presentation_order(
             catalog_version=str(self.catalog["manifest"].get("catalog_version")),
             known_item_ids=set(self.index),
@@ -286,7 +302,10 @@ class PlannerService:
         rows: list[InventoryRow] = []
         for item in items_for_inventory_category(self.catalog, category):
             facts = item.get("facts", {})
-            item_status = inventory.get(item["id"], {}).get("status", "unknown")
+            if reward := self._reward_links.get(item["id"]):
+                facts = {**facts, "warbond_id": reward["warbond_id"], "warbond_page": reward["warbond_page"]}
+            state = inventory.get(item["id"], {})
+            item_status = state.get("status", "unknown")
             item_warbond = facts.get("warbond_id")
             item_group = self._item_group(category, facts)
             if query and query not in item["name"].casefold() and query not in item["id"].casefold():
@@ -299,10 +318,14 @@ class PlannerService:
                 continue
             if compatible_weapon_id and compatible_weapon_id not in facts.get("compatible_weapon_ids", []):
                 continue
-            state = inventory.get(item["id"], {})
+            detail = self._item_detail(category, facts)
+            if category == "warbonds" and self.has_warbond_reward_pages(item["id"]):
+                rewards = self.warbond_contents(item["id"])
+                unlocked = sum(reward.status == "unlocked" for reward in rewards)
+                detail = f"{unlocked}/{len(rewards)} unlocked"
             rows.append(InventoryRow(
                 item_id=item["id"], name=item["name"], status=item_status, category=category,
-                warbond_id=item_warbond, group=item_group, detail=self._item_detail(category, facts),
+                warbond_id=item_warbond, group=item_group, detail=detail,
                 level=state.get("level"), facts=facts,
             ))
         screen = {
@@ -320,6 +343,22 @@ class PlannerService:
             ),
         )
 
+    def inventory_section(self, row: InventoryRow) -> str | None:
+        if row.category in {"primary_weapons", "secondary_weapons", "grenades"}:
+            return row.group
+        if row.category == "armor" and row.group:
+            return f"{row.group.title()} Armor"
+        if row.category == "ship_modules":
+            return row.facts.get("section") or "Other"
+        if row.category == "stratagems":
+            source = row.facts.get("source")
+            if isinstance(source, str) and source in self._ship_departments:
+                return source
+            if row.warbond_id:
+                return "Warbonds"
+            return "Other Stratagems"
+        return None
+
     def ordering_message(self, category: str) -> str:
         screen = {
             "warbonds": "requisitions_warbonds",
@@ -328,10 +367,13 @@ class PlannerService:
         }.get(category, "armory")
         return self.presentation_order.verification_message(screen)
 
+    def has_warbond_reward_pages(self, warbond_id: str) -> bool:
+        return warbond_id in self._warbond_rewards
+
     def warbond_contents(
         self, warbond_id: str, *, category: str = "all", status: str = "all",
     ) -> list[InventoryRow]:
-        if warbond_id not in {item["id"] for item in self.catalog["collections"]["warbonds"]}:
+        if self.index.get(warbond_id, {}).get("_collection") != "warbonds":
             raise ProfileError(f"Unknown Warbond {warbond_id!r}")
         categories = [
             key for key in INVENTORY_TO_CATALOG
@@ -341,14 +383,35 @@ class PlannerService:
             if category not in categories:
                 raise ValueError(f"Unsupported Warbond content category {category!r}")
             categories = [category]
-        rows = [
-            row for content_category in categories
-            for row in self.inventory_rows(content_category, status=status, warbond_id=warbond_id)
-        ]
-        category_rank = {key: index for index, key in enumerate(categories)}
+        if self.has_warbond_reward_pages(warbond_id):
+            rows = []
+            inventory = self.character()["inventory"]
+            for reward in self._warbond_rewards[warbond_id]:
+                reward_facts = reward["facts"]
+                ref = reward_facts.get("inventory_ref")
+                reward_category = ref["category"] if ref else "warbond_rewards"
+                if reward_category not in categories:
+                    continue
+                item = self.index[ref["item_id"]] if ref else reward
+                state = inventory.get(reward_category, {}).get(item["id"], {})
+                item_status = state.get("status", "unknown")
+                if status != "all" and status != item_status:
+                    continue
+                facts = {**item.get("facts", {}), **reward_facts}
+                if "unlock_cost_normalized" not in reward_facts:
+                    facts.pop("unlock_cost_normalized", None)
+                rows.append(InventoryRow(
+                    item_id=item["id"], name=item["name"], status=item_status, category=reward_category,
+                    warbond_id=warbond_id, group=None, detail=reward_facts["reward_type"],
+                    level=state.get("level"), facts=facts,
+                ))
+        else:
+            rows = [
+                row for content_category in categories if content_category != "warbond_rewards"
+                for row in self.inventory_rows(content_category, status=status, warbond_id=warbond_id)
+            ]
         return sorted(rows, key=lambda row: (
-            category_rank[row.category],
-            int(row.facts.get("warbond_page", 2**31 - 1) or 2**31 - 1),
+            row.warbond_page or 2**31 - 1,
             row.name.casefold(), row.item_id,
         ))
 
@@ -375,8 +438,7 @@ class PlannerService:
             if row.status == "unlocked":
                 return "Owned item · Warbond ownership differs; review source or special grant"
             return "Warbond not owned" if warbond == "locked" else "Warbond ownership unreviewed"
-        page = row.facts.get("warbond_page")
-        if not isinstance(page, int) or page < 1:
+        if row.warbond_page is None:
             return "Warbond owned · Reward page unverified"
         # The accepted catalog does not establish page gate thresholds or spending.
         return "Warbond owned · Page access unverified"
@@ -621,6 +683,8 @@ class PlannerService:
             return facts.get("category", "other")
         if category == "ship_modules":
             return facts.get("path_id") or facts.get("section")
+        if category in {"primary_weapons", "secondary_weapons", "grenades"}:
+            return facts.get("weapon_type")
         if category == "armor":
             return facts.get("armor_class")
         if category == "weapon_attachments":

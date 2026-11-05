@@ -37,7 +37,7 @@ The PyInstaller specification is `build-support/macos/hd2_planner.spec`. Generat
 
 Immutable catalog, schemas, planner inputs, onboarding documentation, examples, version metadata, application code, and license material are read from the frozen bundle. Profiles, loadouts, generated contexts, preferences/settings, backups, migration state, logs, and caches remain exclusively in the established external data directory. Replacing the app therefore does not replace user data. `HD2_PLANNER_DATA_DIR` remains available for isolated testing and CLI/source workflows; `HD2_PLANNER_PYTHON` has no effect on the embedded app.
 
-The frozen resources include `planner/presentation_order.json`; it is immutable presentation metadata linked to the packaged catalog version, not a player-data file or a game-fact catalog. Appearance, pinned navigation, and inspector width are stored only in the external `settings.json`. Character deletion and profile migration backups are written only to the external `backups/` directory.
+The frozen resources include `planner/presentation_order.json`, immutable presentation metadata linked to the packaged catalog version. Appearance and inspector width are stored in the external `settings.json`. Character deletion and profile migration backups are written to the external `backups/` directory.
 
 The archive and app must not include real profiles, generated output, settings, backups, migration state, logs, caches, tests, fixtures, build tools, virtual environments, Git data, or machine-specific paths.
 
@@ -62,6 +62,12 @@ Run every check with the selected Tk-enabled Python 3.14.7 build environment:
 
 ## Unsigned distribution
 
-The app is intentionally unsigned with an Apple Developer identity and unnotarized. PyInstaller may apply ad-hoc signatures required for local Apple Silicon Mach-O loading; these do not establish developer identity or Gatekeeper trust. A downloaded copy may require the user to choose Finder’s contextual **Open** action once. Do not advise users to disable Gatekeeper, remove quarantine attributes, or otherwise bypass macOS protections.
+The release uses ad-hoc signing for Apple Silicon loading. On current macOS,
+an unnotarized download you trust may require **Open Anyway** in
+**System Settings → Privacy & Security** after the first launch attempt.
+To distribute downloads that Gatekeeper can verify, sign with a Developer ID
+Application certificate and notarize the app with Apple.
+[Gatekeeper launch guidance](https://support.apple.com/en-au/102445) ·
+[Apple’s notarization guide](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution)
 
 No Intel, universal, Windows, or Linux release artifact is produced by this workflow.

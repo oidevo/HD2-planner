@@ -155,6 +155,10 @@ def context_markdown(context: dict[str, Any]) -> str:
     lines.extend([
         "", "## Preferences", "", "```json", json.dumps(context["preferences"], indent=2, ensure_ascii=False), "```", "",
         "## Warbonds", "", _state_table(inventory.get("warbonds", [])),
+    ])
+    if inventory.get("warbond_rewards"):
+        lines.extend(["### Warbond-only rewards", "", _state_table(inventory["warbond_rewards"])])
+    lines.extend([
         "## Weapons", "", "### Primary", "", _state_table(inventory.get("primary_weapons", [])),
         "### Secondary", "", _state_table(inventory.get("secondary_weapons", [])),
         "### Support", "", _state_table(inventory.get("support_weapons", [])),

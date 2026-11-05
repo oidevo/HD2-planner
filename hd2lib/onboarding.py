@@ -44,7 +44,7 @@ def setup_profile(catalog: dict[str, Any], output_directory: Path, ask: Ask = in
     for character_id in profile["characters"]:
         tell(f"\nInventory for {character_id}. Each completed or skipped section is saved immediately.")
         for category in INVENTORY_TO_CATALOG:
-            if category == "weapon_attachments":
+            if category in {"weapon_attachments", "warbond_rewards"}:
                 continue
             action = ask(f"Review {category.replace('_', ' ')} now? [Y/n/quit]: ").strip().casefold()
             if action == "quit" or action == "q":

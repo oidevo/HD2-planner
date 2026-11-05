@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Any, Iterable
 
-from .constants import CATALOG_DIR, CATALOG_FILES, SCHEMA_VERSION
+from .constants import CATALOG_DIR, CATALOG_FILES, INVENTORY_TO_CATALOG, SCHEMA_VERSION
 from .storage import fingerprint, read_json, utc_now, write_json
 
 
@@ -20,6 +20,9 @@ def load_catalog(directory: Path = CATALOG_DIR) -> dict[str, Any]:
     integrity_errors: list[str] = []
     for collection, filename in CATALOG_FILES.items():
         path = directory / filename
+        if collection == "warbond_rewards" and not path.exists() and collection not in manifest.get("files", {}):
+            collections[collection] = []  # Catalogs predating the reward snapshot.
+            continue
         if not path.exists():
             raise CatalogError(f"Missing catalog file: {path}")
         document = read_json(path)
@@ -66,6 +69,48 @@ def validate_catalog(catalog: dict[str, Any]) -> list[str]:
             for field, evidence in item.get("fact_provenance", {}).items():
                 if not isinstance(evidence, dict) or evidence.get("kind") not in {"imported", "derived", "manually_curated"}:
                     errors.append(f"{collection}/{item_id}: invalid fact provenance for {field!r}")
+    if not errors:
+        errors.extend(_warbond_reward_errors(catalog))
+    return errors
+
+
+def _warbond_reward_errors(catalog: dict[str, Any]) -> list[str]:
+    from .profile import inventory_item_ineligibility
+
+    rewards = catalog.get("collections", {}).get("warbond_rewards", [])
+    if not rewards:
+        return []
+    index = catalog_index(catalog)
+    errors = []
+    linked_items = set()
+    for reward in rewards:
+        label = f"warbond_rewards/{reward['id']}"
+        facts = reward.get("facts")
+        if not isinstance(facts, dict):
+            errors.append(f"{label}: reward facts must be an object")
+            continue
+        warbond_id = facts.get("warbond_id")
+        if not isinstance(warbond_id, str) or index.get(warbond_id, {}).get("_collection") != "warbonds":
+            errors.append(f"{label}: unknown Warbond")
+        page = facts.get("warbond_page")
+        if type(page) is not int or page < 1:
+            errors.append(f"{label}: reward page must be a positive integer")
+        if not isinstance(facts.get("reward_type"), str) or not facts["reward_type"]:
+            errors.append(f"{label}: missing reward type")
+        if "inventory_ref" not in facts:
+            continue
+        ref = facts["inventory_ref"]
+        category = ref.get("category") if isinstance(ref, dict) else None
+        item_id = ref.get("item_id") if isinstance(ref, dict) else None
+        if (not isinstance(category, str) or category not in INVENTORY_TO_CATALOG
+                or category in {"warbonds", "warbond_rewards", "weapon_attachments", "armor_passives"}
+                or not isinstance(item_id, str) or item_id not in index
+                or inventory_item_ineligibility(category, index[item_id])):
+            errors.append(f"{label}: invalid inventory link")
+        elif item_id in linked_items:
+            errors.append(f"{label}: duplicate inventory link to {item_id!r}")
+        else:
+            linked_items.add(item_id)
     return errors
 
 
@@ -133,6 +178,7 @@ def update_manifest_hashes(directory: Path) -> dict[str, Any]:
     manifest["files"] = {
         key: {"path": filename, "hash": fingerprint(read_json(directory / filename))}
         for key, filename in CATALOG_FILES.items()
+        if key != "warbond_rewards" or (directory / filename).exists()
     }
     write_json(manifest_path, manifest)
     return manifest

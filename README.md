@@ -16,10 +16,10 @@ Python 3.14 is required only for source and developer workflows.
 
 Download the Apple Silicon `.app` archive from the matching GitHub Release,
 unzip it, then move `HD2 Planner.app` to Applications or another folder you
-control. If macOS blocks the first launch because the app is unsigned, keep
-Gatekeeper enabled: in Finder, Control-click the app, choose **Open**, and
-confirm the one-time prompt. Do not disable Gatekeeper or remove quarantine
-attributes.
+control. If macOS blocks the first launch of a copy you trust, choose
+**System Settings → Privacy & Security → Open Anyway** after the launch
+attempt. macOS saves an exception for that copy. A new download may ask again.
+[Apple’s app launch guidance](https://support.apple.com/en-au/102445)
 
 The bundle is replaceable application code. Your profiles, loadouts, settings,
 backups, and generated context stay outside it at:
@@ -52,37 +52,49 @@ boundary, see [Apple Silicon macOS app documentation](docs/MACOS_APP.md).
 The GUI is an inventory workspace, not an advisor. It has no recommendation or
 scoring engine and does not automatically choose or modify a loadout.
 
-### Warbonds and presentation order
+### Navigation aboard the ship
 
-Marking a Warbond owned records the Warbond itself. It never changes its rewards
-or deducts currency. Open a Warbond to browse its known catalog-linked items,
-grouped by catalog page where present. The catalog lacks complete rewards,
-page-gate thresholds, and Medals-spent history, so the app shows **Page access
-unverified** instead of claiming a reward is available to buy. Owned rewards
-from grants or incomplete links remain recorded and are flagged for review.
+- **Armory → Weaponry** groups Primary, Secondary, and Throwables. Select a
+  weapon and open **Customize** to record its level and compatible attachments.
+  **Armory → Armory** lists tracked Body Armor. **Booster** lists boosters.
+- **Ship Management → Stratagems** groups entries by known ship department or
+  source. Select a linked Stratagem to open its support-weapon record, or use
+  **Support Weapon Records** to browse all existing records. **Ship Modules**
+  lists upgrades by department.
+- **Acquisition Center → Warbonds** opens the Warbond list. Select a Warbond and
+  use **Open Warbond** to scroll through all of its reward pages.
+- **Planner** contains Saved Loadouts, Preferences, Observations, Context
+  Export, and Settings.
+
+Use **Mark Warbond owned** at the top of the checklist, then click the
+**Unlocked?** column for each reward you've claimed. Each page shows your
+progress. Use **Jump to** to go straight to a page, or filter by reward type
+and unlock status. **Inspect Reward** opens details, and **Open in Inventory**
+selects the same record for gear tracked elsewhere. Helmets, cosmetics, and
+Super Credits claims have their own records in the checklist. Warbond
+ownership, individual claims, and resource balances are recorded separately.
+Page access remains unverified.
 
 ### Fast inventory workflow
 
 The full-width banner shows player, active character, level, and each resource.
 Click a balance or level to edit in place: Enter saves, Escape cancels, and a
 blank resource means unrecorded while `0` means recorded zero. The character
-switcher and adjacent menu handle switching, creation, editing, and deletion. The menu button or
-Ctrl/Command+B pins the navigation open or closed; hovering over a collapsed
-rail temporarily reveals it. The item inspector has a draggable divider, and
-moves below the list on narrow windows.
+switcher and adjacent menu handle switching, creation, editing, and deletion.
+The terminal buttons stay visible. The item inspector has a draggable divider.
 
 In inventory, click the **Owned?** checkmark to save one ownership change at
 once. Click elsewhere on a row to inspect it without changing ownership. An
 Undo button appears briefly after a checkmark change. Use the context menu to
 restore **Unreviewed** or set a precise status. Bulk changes ask for confirmation.
-Weapon details show level and compatible attachments; attachment purchases are
+Weapon customization shows level and compatible attachments. Attachment purchases are
 recorded separately for each character and weapon.
 
 Opening an older profile creates a backup before migrating its schema. Old
 global attachment answers are kept as **legacy answers awaiting review**, not
 assigned to every compatible weapon. The banner’s **Review legacy mods** button
 lists those answers and lets you apply one to a chosen compatible weapon; the
-weapon inspector also shows the old answer. The original answer stays available for later
+weapon customization view also shows the old answer. The original answer stays available for later
 review. CLI attachment review now requires `--weapon WEAPON_ID`.
 
 Game-screen order is tracked separately from catalog facts. No complete
