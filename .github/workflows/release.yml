@@ -3,6 +3,15 @@ name: Release
 on:
   push:
     tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag to build and publish
+        required: true
+        type: string
+
+env:
+  RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
 
 permissions:
   contents: write
@@ -12,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ env.RELEASE_TAG }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.14'
@@ -19,7 +30,7 @@ jobs:
         shell: bash
         run: |
           version="$(tr -d '[:space:]' < VERSION)"
-          test "$GITHUB_REF_NAME" = "v$version"
+          test "$RELEASE_TAG" = "v$version"
       - name: Run tests
         run: python -m unittest discover -s tests -v
       - name: Build release ZIP
@@ -32,11 +43,12 @@ jobs:
           if-no-files-found: error
 
   macos-app:
-    # macos-14 is GitHub's Apple Silicon runner; the distributable must never
-    # be built with the runner's Homebrew Python or actions/setup-python.
-    runs-on: macos-14
+    # Use the pinned Python.org runtime on an Apple Silicon runner.
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ env.RELEASE_TAG }}
       - name: Install the pinned official Python.org runtime
         env:
           PYTHON_PKG_SHA256: 70c5239ad2d62925d2947e46921d0ddd3d35be3d2f0a2d50db33da507dbcb419
@@ -90,6 +102,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: refs/tags/${{ env.RELEASE_TAG }}
       - name: Download release artifacts
         uses: actions/download-artifact@v5
         with:
@@ -102,4 +116,4 @@ jobs:
           mapfile -t assets < <(find release-artifacts -type f -name '*.zip' | sort)
           test "${#assets[@]}" -eq 2
           printf '%s\n' "${assets[@]}"
-          gh release create "$GITHUB_REF_NAME" "${assets[@]}" --title "HD2 Planner $GITHUB_REF_NAME" --generate-notes
+          gh release create "$RELEASE_TAG" "${assets[@]}" --verify-tag --title "HD2 Planner $RELEASE_TAG" --generate-notes
