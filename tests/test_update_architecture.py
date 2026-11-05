@@ -52,7 +52,8 @@ class UpdateArchitectureTests(unittest.TestCase):
         output = StringIO()
         with redirect_stdout(output):
             self.assertEqual(run(["version"]), 0)
-        self.assertIn("HD2 Planner 0.5.0", output.getvalue())
+        expected_version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+        self.assertIn(f"HD2 Planner {expected_version}", output.getvalue())
         self.assertIn("Catalog 2026.09.21.2", output.getvalue())
         self.assertIn("Profile schema 1.1.0", output.getvalue())
 
@@ -64,7 +65,8 @@ class UpdateArchitectureTests(unittest.TestCase):
             generated, _ = export_context(profile, "pc", self.catalog, paths.generated)
             self.assertTrue(path.exists()); self.assertTrue(generated.is_relative_to(paths.generated))
 
-    def test_update_check_newer_equal_and_network_failure(self):
+    @patch("hd2lib.update.application_version", return_value="0.5.0")
+    def test_update_check_newer_equal_and_network_failure(self, _version):
         payload = json.dumps({"tag_name": "v0.6.0", "html_url": "https://github.com/oidevo/HD2-planner/releases/tag/v0.6.0"}).encode()
         with patch("urllib.request.urlopen", return_value=_Response(payload)):
             result = check_for_update(); self.assertTrue(result.available); self.assertEqual(result.latest, "0.6.0")
