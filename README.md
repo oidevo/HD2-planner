@@ -16,10 +16,10 @@ Python 3.14 is required only for source and developer workflows.
 
 Download the Apple Silicon `.app` archive from the matching GitHub Release,
 unzip it, then move `HD2 Planner.app` to Applications or another folder you
-control. If macOS blocks the first launch because the app is unsigned, keep
-Gatekeeper enabled: in Finder, Control-click the app, choose **Open**, and
-confirm the one-time prompt. Do not disable Gatekeeper or remove quarantine
-attributes.
+control. If macOS blocks the first launch of a copy you trust, choose
+**System Settings → Privacy & Security → Open Anyway** after the launch
+attempt. macOS saves an exception for that copy. A new download may ask again.
+[Apple’s app launch guidance](https://support.apple.com/en-au/102445)
 
 The bundle is replaceable application code. Your profiles, loadouts, settings,
 backups, and generated context stay outside it at:

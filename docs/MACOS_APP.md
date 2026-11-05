@@ -62,6 +62,12 @@ Run every check with the selected Tk-enabled Python 3.14.7 build environment:
 
 ## Unsigned distribution
 
-The app is intentionally unsigned with an Apple Developer identity and unnotarized. PyInstaller may apply ad-hoc signatures required for local Apple Silicon Mach-O loading; these do not establish developer identity or Gatekeeper trust. A downloaded copy may require the user to choose Finder’s contextual **Open** action once. Do not advise users to disable Gatekeeper, remove quarantine attributes, or otherwise bypass macOS protections.
+The release uses ad-hoc signing for Apple Silicon loading. On current macOS,
+an unnotarized download you trust may require **Open Anyway** in
+**System Settings → Privacy & Security** after the first launch attempt.
+To distribute downloads that Gatekeeper can verify, sign with a Developer ID
+Application certificate and notarize the app with Apple.
+[Gatekeeper launch guidance](https://support.apple.com/en-au/102445) ·
+[Apple’s notarization guide](https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution)
 
 No Intel, universal, Windows, or Linux release artifact is produced by this workflow.

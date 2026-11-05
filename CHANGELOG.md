@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0 — 2026-11-05
+
+- Added scrollable checklists for all 24 Warbonds in the catalog, covering 562 rewards. Mark a Warbond owned, check off individual rewards, and see progress for each page and the whole Warbond.
+- Linked gear rewards to the same ownership records used in Armory and Ship Management. Added per-character tracking for helmets, cosmetics, and individual Super Credits claims. Warbond ownership, reward claims, and resource balances are recorded separately.
+- Added page jumps and reward filters. Returning to the Warbond overview restores its search and ownership filter.
+- Updated the macOS launch instructions for current versions of Gatekeeper.
+
 ## 0.6.0 — 2026-11-05
 
 - Added persistent Armory, Ship Management, and Acquisition Center navigation with highlighted tabs. Saved Loadouts, Preferences, Observations, and Context Export live under Planner.
