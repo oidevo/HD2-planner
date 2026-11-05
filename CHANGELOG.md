@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased — Super Destroyer navigation
+
+- Reorganized the desktop navigation around the three Super Destroyer terminals: **Armory** (Primary, Secondary, Grenade, Armor, Booster), **Ship Management** (Stratagems, Ship Modules), and **Acquisition Center** (Warbonds), with a separate **Planner** area for Preferences, Observations, Saved Loadouts, and the new Context Export page. Every view shows a breadcrumb and a tab bar so the current terminal and tab are obvious.
+- Put weapon customization under the individual weapon: the weapon inspector shows a per-weapon mods summary and a **Customize** page records attachment purchases for that weapon and character only.
+- Linked support weapon stratagems to their existing support-weapon records in both directions; the Stratagems tab's **Show** toggle keeps those records reachable from the Stratagems flow.
+- Opening a Warbond now shows known rewards grouped by catalog page beside a reward inspector. Reward ownership edited there is the same record the Armory and Ship Management lists read, while Warbond ownership and page access stay separate.
+- Added drill-in **Back** navigation that restores the previous list's search, filters, selection, and scroll position.
+- Aligned `planner/presentation_order.json` screens with the terminal/tab structure and grouped ship modules by their catalog department. No captures were supplied, so every screen stays `unverified` with empty item orders; the profile schema, stable IDs, ownership states, per-weapon attachments, and saved loadouts are unchanged.
+
 ## 0.5.0 — 2026-09-22
 
 - Redesigned the inventory workspace around clearer category navigation, compact progress-oriented rows, responsive inspectors, and focused bulk actions so players can review and maintain a character's equipment with less visual friction.
