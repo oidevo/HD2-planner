@@ -114,6 +114,8 @@ def inventory_item_ineligibility(category: str, item: dict[str, Any], collection
     if collection != expected_collection:
         return f"{item_id!r} does not belong in {category}"
     facts = item.get("facts", {})
+    if category == "warbond_rewards" and facts.get("inventory_ref"):
+        return f"{item_id!r} uses its linked inventory ownership record"
     expected_weapon_category = {
         "primary_weapons": "primary",
         "secondary_weapons": "secondary",

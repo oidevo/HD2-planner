@@ -12,7 +12,7 @@ from hd2lib.constants import CATALOG_FILES, SCHEMA_VERSION
 from hd2lib.storage import read_json, slugify, utc_now, write_json
 
 API_URL = "https://helldivers.wiki.gg/api.php"
-IMPORTER_VERSION = "1.1.0"
+IMPORTER_VERSION = "1.2.0"
 USER_AGENT = "HD2InventoryPlanner/0.1 (offline catalog updater; respectful MediaWiki API client)"
 
 TABLES = {
@@ -205,6 +205,8 @@ def fetch_catalog(output_directory: Path, overrides_directory: Path, catalog_ver
     counts: dict[str, int] = {}
     records_by_collection: dict[str, list[dict[str, Any]]] = {}
     for collection, filename in CATALOG_FILES.items():
+        if collection == "warbond_rewards":
+            continue
         rows = rows_by_collection.get(collection, [])
         records = [_record(collection, row, revisions, retrieved_at) for row in rows]
         if collection == "weapons":
@@ -223,6 +225,10 @@ def fetch_catalog(output_directory: Path, overrides_directory: Path, catalog_ver
     # present. The normalizer derives values solely from imported fields.
     from importer.normalize import normalize_collections
     normalize_collections(records_by_collection)
+    from importer.warbonds import fetch_warbond_rewards
+    rewards = fetch_warbond_rewards(client, records_by_collection, retrieved_at, IMPORTER_VERSION)
+    records_by_collection["warbond_rewards"] = rewards
+    counts["warbond_rewards"] = len(rewards)
 
     for collection, filename in CATALOG_FILES.items():
         records = records_by_collection[collection]

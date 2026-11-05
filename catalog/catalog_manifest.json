@@ -1,58 +1,62 @@
 {
-  "catalog_version": "2026.09.21.2",
+  "catalog_version": "2026.11.05.1",
   "files": {
     "armor": {
-      "hash": "sha256:8a51ef097e7cfa25a300d96d0983a20f53ce5bf90317460700bcc801c874091e",
+      "hash": "sha256:f641b14ad3a4ed0107f92f8591809f9429fb0ba52b3d25eaa0f8b2d227c1232c",
       "path": "armor.json"
     },
     "armor_passives": {
-      "hash": "sha256:8e60a0a6bc807c3f6d3a4980fc1118981d6722dda7abf6f5687ad4eecb5faacf",
+      "hash": "sha256:8cbbc81270332d7552885142b412ef7cb6c7c56dc36eb517a41a30ab6478fc5f",
       "path": "armor_passives.json"
     },
     "attachments": {
-      "hash": "sha256:9a347e5d861d5e5c79f83031ebb8023b84fdaef3e5ca6bc124d740837e13f26c",
+      "hash": "sha256:354f03e83f7ba16ab00ed80aacc121cd5958f1c31617c4bbdac01948e1a2d9bb",
       "path": "attachments.json"
     },
     "biomes": {
-      "hash": "sha256:bb70c44747a8d10c03293f88b6e9c69f54c664f34f39212b20d2824bedd8d353",
+      "hash": "sha256:8fd605415c89085f013f2a5df6f99a531088facf7854b51d3c424258643ebb59",
       "path": "biomes.json"
     },
     "boosters": {
-      "hash": "sha256:6fa103fe3b15229d9fc75212492d708cd733dd954de5e9014aa0b5931e72ee7e",
+      "hash": "sha256:196a5837ec84902e62cbb2623b807938581e91d1b4d88c76a92b9397698754ab",
       "path": "boosters.json"
     },
     "enemies": {
-      "hash": "sha256:1ad70b0bc95f8ab47c2fa172f648884c8f80653c0d42c1f086559fe7b6ee735e",
+      "hash": "sha256:a4b99b7d07efd291a69c4ece6b10ba697de161b2c2e9884afd6b8d3f5dc5e6aa",
       "path": "enemies.json"
     },
     "grenades": {
-      "hash": "sha256:8f8a2c1ed23c01360749d1b86ebc7cd87048f1d7a38fc09b3dbd7aac719f6e8a",
+      "hash": "sha256:40d98113b3eaeb3b6868fbaed8d9cfa8dc600d23fa132f82b7029a35a1206e4d",
       "path": "grenades.json"
     },
     "mission_types": {
-      "hash": "sha256:f5a7f79da1449fe5502b817eb8ee8725741388c606baf376f622c336b7c87c84",
+      "hash": "sha256:7f468ec5eb5d2c85b06372559f5bd4c4b229404579416694c590ac92e6661c4d",
       "path": "mission_types.json"
     },
     "ship_modules": {
-      "hash": "sha256:0884979d966e3820b0bc159cdde82cd592b1d0c6a54c8a868320425ec3c9228b",
+      "hash": "sha256:14379a2d0ab51d61f655e4c9f18a8658747f533515879e0d8ab8b41eba9f5e65",
       "path": "ship_modules.json"
     },
     "stratagems": {
-      "hash": "sha256:d2d73133b69a76425a9bbd07c4b4ed5675e52ccb61e839daf7a8b21e25417bdd",
+      "hash": "sha256:15212ac63c5f2238f7114e46e1a74c1031ff61a0af61b4b00f0e0cc0e8214998",
       "path": "stratagems.json"
     },
+    "warbond_rewards": {
+      "hash": "sha256:0ed35f031a87223f3f9ea1ab4fe763aa1ab8e34fa34b2ac8848d01e0171b5b04",
+      "path": "warbond_rewards.json"
+    },
     "warbonds": {
-      "hash": "sha256:6746e191dc647b9499f83baa9fc5c93897c076ecfb906c666ac2bf2ad8c166c7",
+      "hash": "sha256:55953635992e57821f0cf15dcfa804565d8764ff0601e385414209478c7b46cf",
       "path": "warbonds.json"
     },
     "weapons": {
-      "hash": "sha256:fc41077c237ac11ce1d7749cebde302de4c14695b830a4d832b533372c8e20c4",
+      "hash": "sha256:35f35fb62f53dee96c02114fbdfc3657da9c84fff6d75243581ad3e508b77461",
       "path": "weapons.json"
     }
   },
   "game_version": "unknown",
-  "generated_at": "2026-09-21T19:18:47Z",
-  "importer_version": "1.0.0",
+  "generated_at": "2026-11-05T21:25:49Z",
+  "importer_version": "1.2.0",
   "normalizer_version": "1.0.0",
   "schema_version": "1.0.0",
   "sources": [
@@ -60,6 +64,12 @@
       "license": "CC BY-NC-SA 4.0",
       "name": "The Helldivers Wiki",
       "retrieved_at": "2026-09-21T19:18:47Z",
+      "url": "https://helldivers.wiki.gg/"
+    },
+    {
+      "license": "CC BY-NC-SA 4.0",
+      "name": "The Helldivers Wiki",
+      "retrieved_at": "2026-11-05T21:25:49Z",
       "url": "https://helldivers.wiki.gg/"
     }
   ]

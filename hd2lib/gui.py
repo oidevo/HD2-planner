@@ -28,6 +28,8 @@ from .version import PROFILE_SCHEMA_VERSION, application_version
 STATUS_SYMBOLS = {"unlocked": "☑", "unknown": "?", "locked": "☐"}
 STATUS_LABELS = {"unlocked": "Owned", "unknown": "Unreviewed", "locked": "Not owned"}
 STATUS_FILTERS = {"All": "all", "Owned": "unlocked", "Not owned": "locked", "Unreviewed": "unknown"}
+REWARD_STATUS_LABELS = {"unlocked": "Unlocked", "unknown": "Unreviewed", "locked": "Locked"}
+REWARD_STATUS_FILTERS = {"All": "all", **{label: key for key, label in REWARD_STATUS_LABELS.items()}}
 BULK_UNREVIEWED_LABEL = "Mark unreviewed visible items not owned…"
 INVENTORY_LABELS = {
     "warbonds": "Warbonds",
@@ -609,6 +611,7 @@ class HD2PlannerApp:
 
     def show_inventory(
         self, category: str, *, warbond_context: str | None = None, selected_id: str | None = None,
+        search: str = "", status_filter: str = "All",
     ) -> None:
         if self.service.profile is None:
             return
@@ -640,9 +643,9 @@ class HD2PlannerApp:
                        command=lambda: self.show_inventory("stratagems")).pack(side=tk.RIGHT, anchor=tk.N, padx=8)
 
         toolbar = ttk.Frame(self.content); toolbar.pack(fill=tk.X, pady=(0, 8))
-        self.search_var = tk.StringVar(); self.search_entry = ttk.Entry(toolbar, textvariable=self.search_var)
+        self.search_var = tk.StringVar(value=search); self.search_entry = ttk.Entry(toolbar, textvariable=self.search_var)
         ttk.Label(toolbar, text="Search").grid(row=0, column=0, sticky=tk.W, padx=(0, 5)); self.search_entry.grid(row=0, column=1, sticky=tk.EW, padx=(0, 12)); self.search_var.trace_add("write", lambda *_args: self._schedule_filter())
-        self.status_var = tk.StringVar(value="All"); ttk.Label(toolbar, text="Status").grid(row=0, column=2, sticky=tk.W, padx=(0, 5))
+        self.status_var = tk.StringVar(value=status_filter); ttk.Label(toolbar, text="Status").grid(row=0, column=2, sticky=tk.W, padx=(0, 5))
         status_combo = ttk.Combobox(toolbar, textvariable=self.status_var, values=list(STATUS_FILTERS), state="readonly", width=13); status_combo.grid(row=0, column=3, sticky=tk.EW, padx=(0, 12)); status_combo.bind("<<ComboboxSelected>>", lambda _event: self._refresh_inventory())
         self.warbond_var = tk.StringVar(value="All"); self._warbond_ids: dict[str, str | None] = {"All": None}; warbond_column = 0
         if category not in {"warbonds", "ship_modules"}:
@@ -975,29 +978,43 @@ class HD2PlannerApp:
 
     def show_warbond_contents(self, warbond_id: str) -> None:
         warbond = self.service.index[warbond_id]
-        known_rows = self.service.warbond_contents(warbond_id)
+        initial_rows = self.service.warbond_contents(warbond_id)
+        overview_search = self.search_var.get() if self.current_view == "warbonds" else ""
+        overview_status = self.status_var.get() if self.current_view == "warbonds" else "All"
         self._activate_route("warbond_contents")
         self._clear_content()
-        header_actions = self._page_header(warbond["name"], "Known catalog-linked rewards. Page access and Medals spent are unverified.")
+        subtitle = "Scroll through the pages and check off the rewards you’ve unlocked. Page access is unverified."
+        if not self.service.has_warbond_reward_pages(warbond_id):
+            subtitle = "Showing catalog-linked rewards. Full reward pages are unavailable for this Warbond."
+        header_actions = self._page_header(warbond["name"], subtitle)
+        bond_button = ttk.Button(header_actions)
+        bond_button.pack(anchor=tk.E)
         ttk.Button(header_actions, text="Back to Warbonds", command=lambda: self.show_inventory(
-            "warbonds", selected_id=warbond_id,
-        )).pack(side=tk.RIGHT, anchor=tk.N)
+            "warbonds", selected_id=warbond_id, search=overview_search, status_filter=overview_status,
+        )).pack(anchor=tk.E, pady=(4, 0))
 
-        filters = ttk.LabelFrame(self.content, text="Rewards", style="Card.TLabelframe", padding=(10, 7))
-        filters.pack(fill=tk.X, pady=(0, 10))
-        pages = {f"Page {page}": page for page in sorted({row.warbond_page for row in known_rows if row.warbond_page is not None})}
-        if any(row.warbond_page is None for row in known_rows):
-            pages["Page unknown"] = None
         category_names = {**INVENTORY_LABELS, "armor": "Armor", "support_weapons": "Support Weapons"}
-        categories = {"All": "all", **{category_names[row.category]: row.category for row in known_rows}}
-        page_var = tk.StringVar(value=next(iter(pages), ""))
+
+        def reward_type(row: InventoryRow) -> str:
+            return row.facts.get("reward_type") or category_names[row.category]
+
         category_var = tk.StringVar(value="All")
         status_var = tk.StringVar(value="All")
-        filter_specs = (
-            ("Page", page_var, list(pages), 13),
-            ("Category", category_var, list(categories), 17),
-            ("Ownership", status_var, list(STATUS_FILTERS), 13),
-        )
+        jump_var = tk.StringVar()
+        types = sorted({reward_type(row) for row in initial_rows}, key=str.casefold)
+        filters = ttk.Frame(self.content)
+        filters.pack(fill=tk.X, pady=(0, 8))
+        ttk.Label(filters, text="Jump to").pack(side=tk.LEFT, padx=(0, 5))
+        jump_combo = ttk.Combobox(filters, textvariable=jump_var, width=13, state="readonly")
+        jump_combo.pack(side=tk.LEFT, padx=(0, 12))
+        for label, variable, values in (
+            ("Reward type", category_var, ["All", *types]),
+            ("Status", status_var, list(REWARD_STATUS_FILTERS)),
+        ):
+            ttk.Label(filters, text=label).pack(side=tk.LEFT, padx=(0, 5))
+            combo = ttk.Combobox(filters, textvariable=variable, values=values, width=15, state="readonly")
+            combo.pack(side=tk.LEFT, padx=(0, 12))
+            combo.bind("<<ComboboxSelected>>", lambda _event: refresh())
 
         controls = ttk.Frame(self.content)
         controls.pack(side=tk.BOTTOM, fill=tk.X, pady=(9, 0))
@@ -1005,80 +1022,123 @@ class HD2PlannerApp:
         ttk.Label(controls, textvariable=count_var, style="Muted.TLabel").pack(side=tk.LEFT)
         table = ttk.Frame(self.content)
         table.pack(fill=tk.BOTH, expand=True)
-        columns = (("owned", "Owned?", 125), ("name", "Reward", 220),
-                   ("category", "Category", 130), ("access", "Purchase access", 180))
+        columns = (("owned", "Unlocked?", 122), ("name", "Reward", 240),
+                   ("type", "Reward type", 160), ("medals", "Medals", 82))
         tree = ttk.Treeview(table, columns=tuple(key for key, _, _ in columns), show="headings", selectmode="browse")
         for key, title, width in columns:
             tree.heading(key, text=title)
-            tree.column(key, width=width, minwidth=100, stretch=key in {"name", "access"})
+            tree.column(key, width=width, minwidth=width, stretch=key in {"name", "type"})
         scrollbar = ttk.Scrollbar(table, orient=tk.VERTICAL, command=tree.yview)
         tree.configure(yscrollcommand=scrollbar.set)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         tree.pack(fill=tk.BOTH, expand=True)
 
         rows_by_id: dict[str, InventoryRow] = {}
+        page_headers: dict[str, str] = {}
 
         def refresh(*, keep_position: bool = False) -> None:
             selected = tree.selection()
             position = tree.yview()[0]
-            rows = self.service.warbond_contents(
-                warbond_id, category=categories[category_var.get()], status=STATUS_FILTERS[status_var.get()],
-            )
+            rows = self.service.warbond_contents(warbond_id)
+            pages: dict[int | None, list[InventoryRow]] = {}
+            for row in rows:
+                pages.setdefault(row.warbond_page, []).append(row)
             rows_by_id.clear()
+            page_headers.clear()
             tree.delete(*tree.get_children())
+            tree.tag_configure("page", foreground=self.colors["accent"], font=("TkDefaultFont", 10, "bold"))
             for status in STATUS_LABELS:
                 tree.tag_configure(status, foreground=self.colors[status])
-            for row in rows:
-                if row.warbond_page != pages.get(page_var.get()):
+
+            status_filter = REWARD_STATUS_FILTERS[status_var.get()]
+            type_filter = category_var.get()
+            for page, rewards in pages.items():
+                visible = [row for row in rewards if (status_filter == "all" or row.status == status_filter)
+                           and (type_filter == "All" or reward_type(row) == type_filter)]
+                if not visible:
                     continue
-                rows_by_id[row.item_id] = row
-                tree.insert("", tk.END, iid=row.item_id, tags=(row.status,), values=(
-                    f"{STATUS_SYMBOLS[row.status]} {STATUS_LABELS[row.status]}", row.name,
-                    category_names[row.category], self.service.reward_access(row),
-                ))
+                page_title = f"Page {page}" if page is not None else "Page unknown"
+                header_id = f"page:{page}"
+                page_headers[page_title] = header_id
+                unlocked = sum(row.status == "unlocked" for row in rewards)
+                tree.insert("", tk.END, iid=header_id, tags=("page",),
+                            values=("", f"{page_title}   ·   {unlocked}/{len(rewards)} unlocked"))
+                for row in visible:
+                    rows_by_id[row.item_id] = row
+                    cost = row.facts.get("unlock_cost_normalized") or {}
+                    medals = cost.get("amount", "—") if cost.get("currency") == "medals" else "—"
+                    tree.insert("", tk.END, iid=row.item_id, tags=(row.status,), values=(
+                        f"{STATUS_SYMBOLS[row.status]} {REWARD_STATUS_LABELS[row.status]}",
+                        row.name, reward_type(row), medals,
+                    ))
+
+            jump_combo.configure(values=list(page_headers), state="readonly" if page_headers else tk.DISABLED)
+            if jump_var.get() not in page_headers:
+                jump_var.set("")
             if keep_position:
                 if selected and selected[0] in rows_by_id:
                     tree.selection_set(selected[0])
                     tree.focus(selected[0])
                 tree.yview_moveto(position)
             status = self.service.inventory_status("warbonds", warbond_id)
-            count_var.set(f"Warbond: {STATUS_LABELS[status]}  ·  {len(rows_by_id)} known rewards")
+            owned = status == "unlocked"
+            bond_button.configure(
+                text=f"{STATUS_SYMBOLS[status]} Warbond owned" if owned else f"{STATUS_SYMBOLS[status]} Mark Warbond owned",
+                style="TButton" if owned else "Accent.TButton",
+            )
+            unlocked = sum(row.status == "unlocked" for row in rows)
+            count_var.set(f"{unlocked}/{len(rows)} rewards unlocked  ·  {len(rows_by_id)} shown")
             selection_changed()
 
         def selected_row() -> InventoryRow | None:
             selection = tree.selection()
             return rows_by_id.get(selection[0]) if selection else None
 
-        def set_status(row: InventoryRow, status: str) -> bool:
-            prior = self.service.inventory_status(row.category, row.item_id)
+        def set_ownership(category: str, item_id: str, status: str) -> bool:
+            prior = self.service.inventory_status(category, item_id)
             if status == prior:
                 return True
             try:
-                self.service.set_inventory_status(row.category, row.item_id, status)
-                self._remember_undo(row.category, row.item_id, prior)
-                self._saved("Reward ownership saved · Undo available")
-                refresh(keep_position=True)
+                self.service.set_inventory_status(category, item_id, status)
             except (ProfileError, ValueError, OSError) as exc:
                 self._save_failed(exc)
                 return False
+            self._remember_undo(category, item_id, prior)
+            self._saved("Ownership saved · Undo available")
+            refresh(keep_position=True)
             return True
+
+        def set_reward_status(row: InventoryRow, status: str) -> bool:
+            return set_ownership(row.category, row.item_id, status)
+
+        def toggle_warbond() -> None:
+            status = self.service.inventory_status("warbonds", warbond_id)
+            set_ownership("warbonds", warbond_id, "locked" if status == "unlocked" else "unlocked")
+
+        def jump_to_page(_event: tk.Event[Any]) -> None:
+            if header_id := page_headers.get(jump_var.get()):
+                tree.yview_moveto(tree.index(header_id) / len(tree.get_children()))
 
         def inspect() -> str:
             if row := selected_row():
-                self._inspect_warbond_reward(row, warbond["name"], page_var.get(), set_status)
+                page = f"Page {row.warbond_page}" if row.warbond_page is not None else "Page unknown"
+                self._inspect_warbond_reward(row, warbond["name"], page, set_reward_status)
                 tree.focus_set()
             return "break"
 
         def open_inventory() -> None:
-            if row := selected_row():
+            if (row := selected_row()) and row.category in INVENTORY_LABELS:
                 self.show_inventory(row.category, warbond_context=warbond_id, selected_id=row.item_id)
 
         def toggle(row: InventoryRow) -> str:
-            set_status(row, "locked" if row.status == "unlocked" else "unlocked")
+            set_reward_status(row, "locked" if row.status == "unlocked" else "unlocked")
             return "break"
 
         def click(event: tk.Event[Any]) -> str | None:
-            row = rows_by_id.get(tree.identify_row(event.y))
+            item_id = tree.identify_row(event.y)
+            if item_id.startswith("page:"):
+                return "break"
+            row = rows_by_id.get(item_id)
             if row and self.click_action(tree.identify_region(event.x, event.y), tree.identify_column(event.x), row.item_id) == "toggle":
                 return toggle(row)
             return None
@@ -1092,22 +1152,18 @@ class HD2PlannerApp:
                 return inspect()
             return None
 
-        inspect_button = ttk.Button(controls, text="Inspect Reward", style="Accent.TButton", command=inspect)
+        inspect_button = ttk.Button(controls, text="Inspect Reward", command=inspect)
         inspect_button.pack(side=tk.RIGHT)
         open_button = ttk.Button(controls, text="Open in Inventory", command=open_inventory)
         open_button.pack(side=tk.RIGHT, padx=6)
 
         def selection_changed(_event: tk.Event[Any] | None = None) -> None:
-            state = tk.NORMAL if selected_row() else tk.DISABLED
-            inspect_button.configure(state=state)
-            open_button.configure(state=state)
+            row = selected_row()
+            inspect_button.configure(state=tk.NORMAL if row else tk.DISABLED)
+            open_button.configure(state=tk.NORMAL if row and row.category in INVENTORY_LABELS else tk.DISABLED)
 
-        for label, variable, values, width in filter_specs:
-            ttk.Label(filters, text=label).pack(side=tk.LEFT, padx=(0, 5))
-            combo = ttk.Combobox(filters, textvariable=variable, values=values, width=width,
-                                 state="readonly" if values else tk.DISABLED)
-            combo.pack(side=tk.LEFT, padx=(0, 12))
-            combo.bind("<<ComboboxSelected>>", lambda _event: refresh())
+        bond_button.configure(command=toggle_warbond)
+        jump_combo.bind("<<ComboboxSelected>>", jump_to_page)
         tree.bind("<<TreeviewSelect>>", selection_changed)
         tree.bind("<Button-1>", click)
         tree.bind("<Double-1>", double_click)
@@ -1124,10 +1180,12 @@ class HD2PlannerApp:
         body.pack(fill=tk.BOTH, expand=True)
         ttk.Label(body, text=row.name, style="Heading.TLabel", wraplength=460).pack(anchor=tk.W)
         ttk.Label(body, text=f"{warbond_name} · {page}", style="Muted.TLabel").pack(anchor=tk.W, pady=(4, 10))
-        ownership = tk.StringVar(value=STATUS_LABELS[row.status])
+        ownership = tk.StringVar(value=REWARD_STATUS_LABELS[row.status])
         access = tk.StringVar(value=self.service.reward_access(row))
         ttk.Label(body, textvariable=access, style="Muted.TLabel", wraplength=460).pack(anchor=tk.W)
-        facts = [f"{label}: {value}" for label, value in inspector_facts(row.category, row.facts)]
+        facts = [f"{label}: {value}" for label, value in inspector_facts(row.category, row.facts) if label != "Warbond page"]
+        if kind := row.facts.get("reward_type"):
+            facts.insert(0, kind)
         ttk.Label(body, text="\n".join(facts), wraplength=460, justify=tk.LEFT).pack(anchor=tk.W, pady=(8, 0))
         actions = ttk.Frame(body)
         actions.pack(side=tk.BOTTOM, fill=tk.X)
@@ -1139,10 +1197,10 @@ class HD2PlannerApp:
             nonlocal row
             if set_status(row, status):
                 row = replace(row, status=status)
-                ownership.set(STATUS_LABELS[status])
+                ownership.set(REWARD_STATUS_LABELS[status])
                 access.set(self.service.reward_access(row))
 
-        for status, label in STATUS_LABELS.items():
+        for status, label in REWARD_STATUS_LABELS.items():
             menu.add_command(label=label, command=lambda value=status: change_status(value))
         menu_button.configure(menu=menu)
         menu_button.pack(side=tk.LEFT)
@@ -1191,6 +1249,8 @@ class HD2PlannerApp:
     def _preference_dialog(self, item_id: str | None = None) -> None:
         candidates: dict[str, str] = {}
         for category in INVENTORY_TO_CATALOG:
+            if category == "warbond_rewards":
+                continue
             for row in self.service.inventory_rows(category): candidates[row.item_id] = row.name
         item_map = {f"{name}  [{item_id}]": item_id for item_id, name in sorted(candidates.items(), key=lambda value: value[1].casefold())}; reverse = {value: key for key, value in item_map.items()}
         dialog = self._dialog("Item Preference", width=520); body = ttk.Frame(dialog, padding=18); body.pack(fill=tk.BOTH, expand=True)

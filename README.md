@@ -62,16 +62,18 @@ scoring engine and does not automatically choose or modify a loadout.
   **Support Weapon Records** to browse all existing records. **Ship Modules**
   lists upgrades by department.
 - **Acquisition Center → Warbonds** opens the Warbond list. Select a Warbond and
-  use **Open Warbond** to browse its known rewards by page.
+  use **Open Warbond** to scroll through all of its reward pages.
 - **Planner** contains Saved Loadouts, Preferences, Observations, Context
   Export, and Settings.
 
-Marking a Warbond owned records the Warbond itself. It never changes its rewards
-or deducts currency. **Inspect Reward** opens details and ownership controls.
-**Back to Rewards** returns to the same page and filters. **Open in Inventory**
-selects the corresponding record in its inventory view. The catalog has partial
-reward coverage, so rewards with missing page data appear under **Page unknown**.
-Page gates and Medals-spent history remain unverified.
+Use **Mark Warbond owned** at the top of the checklist, then click the
+**Unlocked?** column for each reward you've claimed. Each page shows your
+progress. Use **Jump to** to go straight to a page, or filter by reward type
+and unlock status. **Inspect Reward** opens details, and **Open in Inventory**
+selects the same record for gear tracked elsewhere. Helmets, cosmetics, and
+Super Credits claims have their own records in the checklist. Warbond
+ownership, individual claims, and resource balances are recorded separately.
+Page access remains unverified.
 
 ### Fast inventory workflow
 

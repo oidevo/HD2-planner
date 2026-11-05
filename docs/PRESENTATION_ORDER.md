@@ -12,7 +12,7 @@ item-order lists. The app uses a deterministic name/ID fallback for items that
 do not have confirmed positions and says that the display order is still being
 verified. It does not claim that the fallback matches the game.
 
-The catalog version linked by the document is `2026.09.21.2`. Its game build is
+The catalog version linked by the document is `2026.11.05.1`. Its game build is
 recorded as `unknown`; it must not be guessed from a catalog retrieval date.
 
 ## Evidence required to verify an order
@@ -53,7 +53,9 @@ group positions, and item sequences still need complete captures.
   compatible weapons. **Armory → Armory** needs the tracked Body Armor list.
   **Armory → Booster** needs the full booster list.
 - **Acquisition Center → Warbonds** needs the full Warbond list, each Warbond's
-  reward pages and layout, and any visible page-access requirements. Catalog
-  page numbers help navigation. Page access remains unverified.
+  in-game reward layout, and any visible page-access requirements. The catalog
+  supplies complete reward lists and page numbers for the 24 included Warbonds.
+  Within a page, rewards follow the deterministic name and ID order. Page
+  access remains unverified.
 
 The app retains the deterministic item fallback within each displayed section.

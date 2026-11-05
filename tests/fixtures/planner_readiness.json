@@ -1,6 +1,6 @@
 {
   "fixture_version": "1.0.0",
-  "source_catalog_version": "2026.09.21.2",
+  "source_catalog_version": "2026.11.05.1",
   "review_status": "explicitly_reviewed",
   "notes": "A deterministic representative slice, not a replacement catalog. Expected values include only normalized facts supported by the accepted source snapshot.",
   "equipment": {

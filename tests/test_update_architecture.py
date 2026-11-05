@@ -54,7 +54,8 @@ class UpdateArchitectureTests(unittest.TestCase):
             self.assertEqual(run(["version"]), 0)
         expected_version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
         self.assertIn(f"HD2 Planner {expected_version}", output.getvalue())
-        self.assertIn("Catalog 2026.09.21.2", output.getvalue())
+        expected_catalog = self.catalog["manifest"]["catalog_version"]
+        self.assertIn(f"Catalog {expected_catalog}", output.getvalue())
         self.assertIn("Profile schema 1.1.0", output.getvalue())
 
     def test_profile_and_generated_use_external_paths(self):
