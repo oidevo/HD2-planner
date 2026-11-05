@@ -51,6 +51,11 @@ class InventoryRow:
     level: int | None
     facts: dict[str, Any]
 
+    @property
+    def warbond_page(self) -> int | None:
+        page = self.facts.get("warbond_page")
+        return page if type(page) is int and page > 0 else None
+
 
 @dataclass(frozen=True)
 class ProfileChoice:
@@ -91,6 +96,10 @@ class PlannerService:
         self.paths = (paths or user_data_paths()).initialize()
         self.catalog = catalog or load_catalog()
         self.index = catalog_index(self.catalog)
+        self._ship_departments = {
+            item["facts"]["section"] for item in self.catalog["collections"]["ship_modules"]
+            if item.get("facts", {}).get("section")
+        }
         self.presentation_order = load_presentation_order(
             catalog_version=str(self.catalog["manifest"].get("catalog_version")),
             known_item_ids=set(self.index),
@@ -320,6 +329,22 @@ class PlannerService:
             ),
         )
 
+    def inventory_section(self, row: InventoryRow) -> str | None:
+        if row.category in {"primary_weapons", "secondary_weapons", "grenades"}:
+            return row.group
+        if row.category == "armor" and row.group:
+            return f"{row.group.title()} Armor"
+        if row.category == "ship_modules":
+            return row.facts.get("section") or "Other"
+        if row.category == "stratagems":
+            source = row.facts.get("source")
+            if isinstance(source, str) and source in self._ship_departments:
+                return source
+            if row.warbond_id:
+                return "Warbonds"
+            return "Other Stratagems"
+        return None
+
     def ordering_message(self, category: str) -> str:
         screen = {
             "warbonds": "requisitions_warbonds",
@@ -348,7 +373,7 @@ class PlannerService:
         category_rank = {key: index for index, key in enumerate(categories)}
         return sorted(rows, key=lambda row: (
             category_rank[row.category],
-            int(row.facts.get("warbond_page", 2**31 - 1) or 2**31 - 1),
+            row.warbond_page or 2**31 - 1,
             row.name.casefold(), row.item_id,
         ))
 
@@ -375,8 +400,7 @@ class PlannerService:
             if row.status == "unlocked":
                 return "Owned item · Warbond ownership differs; review source or special grant"
             return "Warbond not owned" if warbond == "locked" else "Warbond ownership unreviewed"
-        page = row.facts.get("warbond_page")
-        if not isinstance(page, int) or page < 1:
+        if row.warbond_page is None:
             return "Warbond owned · Reward page unverified"
         # The accepted catalog does not establish page gate thresholds or spending.
         return "Warbond owned · Page access unverified"
@@ -621,6 +645,8 @@ class PlannerService:
             return facts.get("category", "other")
         if category == "ship_modules":
             return facts.get("path_id") or facts.get("section")
+        if category in {"primary_weapons", "secondary_weapons", "grenades"}:
+            return facts.get("weapon_type")
         if category == "armor":
             return facts.get("armor_class")
         if category == "weapon_attachments":

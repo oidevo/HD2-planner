@@ -32,6 +32,28 @@ full sequence. Before marking a screen or group `verified`:
 5. Run the test suite and package checks; the document must continue to match
    the accepted catalog version and known item IDs.
 
-Needed coverage includes Requisitions/Warbonds, Stratagems and its headings,
-Ship Management, and every Armory category. This is a presentation-evidence
-task, not a catalog or progression migration.
+## Navigation references and captures needed
+
+Official references place Stratagems and upgrades in Ship Management, place
+Warbonds and their numbered reward pages in the Acquisition Center, and describe
+leveling individual primary weapons to unlock attachments. The full tab labels,
+group positions, and item sequences still need complete captures.
+[Arrowhead's currency guide](https://arrowhead.zendesk.com/hc/en-us/articles/12517746921756-What-type-of-currencies-are-in-the-game) ·
+[PlayStation's cadet guide](https://www.playstation.com/en-us/editorial/a-beginner-s-guide-to-helldivers-2/) ·
+[Arrowhead's weapon customization announcement](https://blog.playstation.com/2025/05/13/helldivers-2-illuminate-set-sights-on-super-earth-new-enemy-types-deployed/)
+
+- **Ship Management → Stratagems** needs the full department headings and item
+  lists, including support-weapon placements and Warbond-linked Stratagems.
+  The planner groups recognized sources by the department names in the catalog
+  and provides a separate list for existing support-weapon records.
+- **Ship Management → Ship Modules** needs the full department order and each
+  department's upgrade sequence.
+- **Armory → Weaponry** needs Primary, Secondary, and Throwables, including
+  weapon-group headings and the Customize attachment slots and lists for
+  compatible weapons. **Armory → Armory** needs the tracked Body Armor list.
+  **Armory → Booster** needs the full booster list.
+- **Acquisition Center → Warbonds** needs the full Warbond list, each Warbond's
+  reward pages and layout, and any visible page-access requirements. Catalog
+  page numbers help navigation. Page access remains unverified.
+
+The app retains the deterministic item fallback within each displayed section.

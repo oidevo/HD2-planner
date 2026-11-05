@@ -101,6 +101,57 @@ class InventoryRedesignTests(unittest.TestCase):
         owned_row = next(value for value in self.service.inventory_rows(row.category) if value.item_id == row.item_id)
         self.assertIn("special grant", self.service.reward_access(owned_row))
 
+    def test_warbond_reward_keeps_its_page_and_shared_ownership_record(self) -> None:
+        warbond_id = "democratic_detonation"
+        item_id = "cb_9_exploding_crossbow"
+        reward = next(row for row in self.service.warbond_contents(warbond_id) if row.item_id == item_id)
+        self.assertEqual(reward.warbond_page, 3)
+        self.assertEqual(reward.category, "primary_weapons")
+
+        self.service.set_inventory_status(reward.category, reward.item_id, "unlocked")
+        owned = self.service.inventory_rows("primary_weapons", warbond_id=warbond_id, status="unlocked")
+        self.assertEqual([row.item_id for row in owned], [item_id])
+        self.assertEqual(self.service.inventory_status("warbonds", warbond_id), "unknown")
+
+        self.service.set_inventory_status("primary_weapons", item_id, "locked")
+        contents = self.service.warbond_contents(warbond_id, category="primary_weapons", status="locked")
+        self.assertEqual([(row.item_id, row.warbond_page) for row in contents], [(item_id, 3)])
+
+    def test_ship_groups_keep_support_weapon_and_stratagem_records_distinct(self) -> None:
+        stratagem, = self.service.inventory_rows("stratagems", search="mg-43", group="support_weapon")
+        self.assertEqual(self.service.inventory_section(stratagem), "Patriotic Administration Center")
+        weapon, = self.service.inventory_rows("support_weapons", search=stratagem.facts["support_weapon_id"])
+        self.service.set_inventory_status(stratagem.category, stratagem.item_id, "unlocked")
+        self.assertEqual(self.service.inventory_status(weapon.category, weapon.item_id), "unknown")
+        modules = self.service.inventory_rows("ship_modules", group="engineering_bay")
+        self.assertEqual({self.service.inventory_section(row) for row in modules}, {"Engineering Bay"})
+        self.assertEqual([int(row.facts["tier"]) for row in modules], [1, 2, 3, 4, 5])
+
+    def test_detail_routes_highlight_their_terminal_and_parent_tab(self) -> None:
+        app = object.__new__(HD2PlannerApp)
+        app.active_terminal = None
+        app.tab_bar = Mock()
+        app.tab_bar.winfo_children.return_value = []
+        app.nav_buttons = {name: Mock() for name in ("Armory", "Ship Management", "Acquisition Center", "Planner")}
+        app.tab_buttons = {}
+        with patch("hd2lib.gui.ttk.Button", side_effect=lambda *_args, **_kwargs: Mock()):
+            for route, terminal, tab in (
+                ("support_weapons", "Ship Management", "stratagems"),
+                ("ship_modules", "Ship Management", "ship_modules"),
+                ("secondary_weapons", "Armory", "primary_weapons"),
+                ("armor", "Armory", "armor"),
+                ("warbond_contents", "Acquisition Center", "warbonds"),
+                ("context", "Planner", "context"),
+            ):
+                with self.subTest(route=route):
+                    app._activate_route(route)
+                    self.assertEqual(app.current_view, route)
+                    self.assertEqual(app.active_terminal, terminal)
+                    for name, button in app.nav_buttons.items():
+                        button.configure.assert_called_with(style="Accent.TButton" if name == terminal else "TButton")
+                    for key, button in app.tab_buttons.items():
+                        button.configure.assert_called_with(style="Accent.TButton" if key == tab else "TButton")
+
     def test_unverified_reward_page_is_not_claimed_available(self) -> None:
         row = next(row for category in ("primary_weapons", "secondary_weapons", "armor", "grenades")
                    for row in self.service.inventory_rows(category)
@@ -129,7 +180,6 @@ class InventoryRedesignTests(unittest.TestCase):
         app.service = self.service
         app.current_category = "primary_weapons"
         app.current_view = "primary_weapons"
-        app._warbond_context = None
         app.root = Mock()
         app.root.after.return_value = "undo-timer"
         app.undo_button = Mock()
